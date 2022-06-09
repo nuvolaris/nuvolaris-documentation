@@ -3,7 +3,7 @@ Nuvolaris Documentation
 
 Nuvolaris is a distribution of Apache OpenWhisk.
 
-It includes an [all-in-one CLI](/download) that manages both installation on Kubernetes and development.
+It includes an [all-in-one CLI]https://github.com/nuvolaris/nuvolaris/releases that manages both installation on Kubernetes and development.
 
 - [Installation](Installation.md)
 - [Development](https://openwhisk.apache.org/documentation.html)

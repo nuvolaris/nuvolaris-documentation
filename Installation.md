@@ -6,7 +6,7 @@ If you are super lazy, in a nutshell the installation instructions are:
 
 - Get access to a Kubernetes cluster
 - Check the name of the `<kube-context>` with `kubectl config get-contexts`
-- [Download](/download) the Nuvolaris installer and unpack it
+- [Download]https://github.com/nuvolaris/nuvolaris/releases the Nuvolaris installer and unpack it
 - `./nuv setup --context=<kube-context> --apihost=auto`
 
 If you want to know more read on.

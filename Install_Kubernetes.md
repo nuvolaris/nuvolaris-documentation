@@ -12,7 +12,7 @@ If you have an ingress you also need to know the `<public-DNS-name>`.
 
 Now you are ready to install Nuvolaris.
 
-Copy the `<url-address>` of the latest version of the installer [from this page](/download).
+Copy the `<url-address>` of the latest version of the installer [from this page]https://github.com/nuvolaris/nuvolaris/releases.
 
 Then download and unpack it (replace `<url-address>` with the actual URL address):
 
