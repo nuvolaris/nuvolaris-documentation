@@ -1,6 +1,12 @@
-# nuvolaris-documentation
 Nuvolaris Documentation
+========================
 
-- [Preparation](PREREQ.md)
-- [Installation](SETUP.md)
-- [Write your first action](TUTORIAL.md)
+Nuvolaris is a distribution of Apache OpenWhisk.
+
+It includes an [all-in-one CLI](/download) that manages both installation on Kubernetes and development.
+
+- [Installation](Installation.md)
+- [Development](https://openwhisk.apache.org/documentation.html)
+
+**NOTE**: standard Apache OpenWhisk documentation refers to the `wsk` tool, that is embedded in the `nuv` tool, so whenever you see `wsk` you should use `nuv wsk` instead.
+
