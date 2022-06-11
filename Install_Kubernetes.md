@@ -45,16 +45,21 @@ The installation can take a few minutes to complete, mostly because a number of 
 
 If something goes wrong, please check the [troubleshooting](Troubleshooting.md) page.
 
-### Public DNS Name 
+### Installing Nuvolaris with an Ingress
 
-If your Kubernetes does not have a load balancer, like when you installed a Kubernetes cluster in a single VM instance,  you need to provide the `<public-dns-name>` of the instance. It is generally the same you used to access the instance itself. 
+If your Kubernetes does not have a load balancer, for example when you installed a Kubernetes cluster in a single VM instance,  you need to provide the `<public-dns-name>` of the instance. It is generally the same name you used to access the instance itself. 
 
+If you only know the IP address, for example `1.2.3.4` of your virtual machine, you can get a DNS name with the suffix `.nip.io`: `1.2.3.4.nip.io`.
+
+Once you know your `<public-dns-name>` install with:
 
 ```
-./nuv setup --context=<kubernetes-context> --apihost=<public-DNS-name>
+./nuv setup --context=<kubernetes-context> --apihost=<public-dns-name>
 ```
 
-The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. If you are curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch kubectl get po,svc`.
+The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. 
+
+If you are curious to know  what is happening on the Kubernetes cluster, you can execute (in another terminal connected to the same host) the command `watch kubectl get po,svc`.
 
 If something goes wrong, please check the [troubleshooting](Troubleshooting.md) page.
 

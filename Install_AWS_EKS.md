@@ -1,6 +1,10 @@
- # Launch an AWS EKS Cluster
+ # Install in an AWS EKS Cluster
 
-There are many ways to create an EKS cluster. In this guide we recommend using the [`eksctl`](httsp://eksctl.io) tool.
+Before starting this guide you need an account in AWS and [configure CLI access](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+
+## Create an AWS EKS cluster 
+
+If you do not have already an EKS cluster for installing Nuvolaris, you need to create one. There are many ways to create an EKS cluster. In this guide we recommend using the [`eksctl`](httsp://eksctl.io) tool.
 
 Start [following this guide](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html) to install it.
 
@@ -64,7 +68,7 @@ NAME                                              STATUS   ROLES    AGE   VERSIO
 ip-192-168-42-140.eu-central-1.compute.internal   Ready    <none>   34d   v1.22.6-eks-7d68063
 ```
 
-## Kubernetes context
+## Retrieve your Kubernetes context
 
 If you installed Kubernetes following the instructions of your cloud provider, it will be accessible with the `kubectl` tool. 
 
@@ -72,7 +76,7 @@ You can generally have more contexts to access multiple Kubernetes at the same t
 
 Pick the name of the `<kubernetes-context>` corresponding to the cluster you want to install Nuvolaris.
 
-## Download `nuv`
+## Installing Nuvolaris with `nuv`
 
 Now you are ready to install Nuvolaris.
 

@@ -58,7 +58,7 @@ kubectl -n nuvolaris logs pod/nuvolaris-operator
 
 Then [open an issue reporting the logs](https://github.com/nuvolaris/nuvolaris-cli)
 
-## How to retry
+## Uninstall
 
 You can uninstall Nuvolaris with: 
 

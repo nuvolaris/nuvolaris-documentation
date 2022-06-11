@@ -44,7 +44,7 @@ ssh -i <key-file> ubuntu@<public-ipv4-dns>
 Once you are connected to the virtual machine with ssh, you can install Nuvolaris executing:
 
 ```
-curl http://www.nuvolaris.io:8080/scripts/ubuntu-ec2.sh | sudo bash
+curl -s https://www.nuvolaris.io/scripts/ubuntu-ec2.sh | sudo bash
 ```
 
 The script will take a while to install Kubernetes and Nuvolaris.

@@ -38,6 +38,8 @@ NAME               STATUS   ROLES    AGE   VERSION
 ip-172-31-21-189   Ready    <none>   70m   v1.24.0-2+59bbb3530b6769
 ```
 
+If you see `NotReady` wait a bit and try again until the node is `Ready`, it can take up to one minute.
+
 ## Installing Nuvolaris
 
 Now you are ready to install Nuvolaris.
