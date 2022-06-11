@@ -24,16 +24,4 @@ If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a 
 - Use your server from elsewhere configuring access with `nuv wskprops --apihost=<apihost> --auth=<auth>`using the values show in the previous step.
 - Read about [Apache OpenWhisk documentation](https://openwhisk.apache.org/documentation.html) to learn development, remembering to use `nuv wsk` when you see `wsk`
 
-# Installation
-
- Nuvolaris it is tested and supports the latest releases of following Docker and Kubernetes environments:
-
-- Docker Desktop 
-- Ubuntu MicroK8S
-- Amazon EKS
-- Azure AKS
-- Google GKE
-
-
-## Troubleshooting
 
