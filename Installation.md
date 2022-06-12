@@ -1,15 +1,19 @@
 # Installation
 
-Currently Nuvolaris is tested and can be installed in those environments:
+[Nuvolaris](https://www.nuvolaris.io) is an easy to use and portable serverless environment. 
+
+You can install it in the following supported environments:
 
 - [Install on Docker Desktop](Install_Docker_Desktop.md).
 - [Install on a single instance on AWS EC2 Instance](Install_AWS_EC2.md).
 - [Install on a single instance on Hetzner Cloud](Install_Hetzner_Cloud.md).
 - [Install on an AWS EKS Cluster](Install_AWS_EKS.md).
 - [Install on a generic Ubuntu Instance](Install_Ubuntu.md), tested on AWS and Hetzner
-- [Install in a Kubernetes Cluster](Install_Kubernetes.md), tested on EKS, AKS and GKE
+- [Install on a Kubernetes Cluster](Install_Kubernetes.md), tested on EKS, AKS and GKE
 
-It may work on other Docker/Kubernetes environment but it has not been tested elsewhere yet, so you mileage may vary. More environments are on the roadmap.
+It may work on other Docker/Kubernetes environment but it has not been tested elsewhere yet, so you mileage may vary. 
+
+More environments are on the roadmap.
 
 If something goes wrong, here is [what to do to report problems](Troubleshooting.md).
 
