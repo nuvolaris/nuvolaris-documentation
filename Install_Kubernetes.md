@@ -12,7 +12,7 @@ If you do not have a Load Balancer (like in self-provisioned Kubernetes clusters
 
 Now you are ready to install Nuvolaris.
 
-Copy the `<url-address>` of the latest version of the installer [from this page](https://github.com/nuvolaris/nuvolaris/releases).
+Copy the `<url-address>` of the latest version of the installer [from this page](https://github.com/nuvolaris/nuvolaris-cli/releases).
 
 Then download and unpack it (replace `<url-address>` with the actual URL address):
 
