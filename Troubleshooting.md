@@ -2,6 +2,17 @@
 
 If the installation fails or never ends, here a few things to check.
 
+## Cannot execute the `nuv` executable on Mac OSX
+
+On Mac, downloaded binaries from third party developerse are sometimes quarantined.
+
+To allow execution of the `nuv` binary after unpacking execute:
+
+
+```
+xattr -d com.apple.quarantine nuv
+```
+
 ## Check the status of the installation
 
 Run `kubectl -n nuvolaris get po`, you should see something like this:
