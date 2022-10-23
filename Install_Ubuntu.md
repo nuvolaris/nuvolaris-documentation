@@ -27,7 +27,7 @@ Now get the `kubectl` tool  and and the configuration:
 
 ```
 mkdir ~/.kube
-microk8s kubectl config >~/.kube/config
+microk8s config >~/.kube/config
 microk8s kubectl get nodes
 ```
 
