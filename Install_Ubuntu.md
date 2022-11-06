@@ -8,22 +8,23 @@ As a prerequisite you need:
 - firewall opened for port 80 and 443
 - the `<public-dns-name>` of the instance, or at least a public IP address 
 
-**NOTE** if you do not have a public DNS name for your virtual machine but only an IP address, you can use `nip.io` to get one. If you IP address is `1.2.3.4` then you can use `1-2-3-4.nip.io` as a `<public-dns-name>`. 
+**NOTE** if you do not have a public DNS name for your virtual machine but only an IP address, you can use `nip.io` to get one. If your IP address is `1.2.3.4` then you can use `1-2-3-4.nip.io` as a `<public-dns-name>`. 
 
 Use ssh to log into the instance, according the instructions of your cloud provider.
 
 ## Install MicroK8s
 
-First, let's install `microk8s` with `snap` and give access to our user to  `microk8s:
+First, let's install `microk8s` with `snap` and give access to our user to  `microk8s`.
+In the following command replace `<current-user>` with the name of the current user:
 
 ```
 sudo snap install microk8s --classic
 sudo microk8s enable hostpath-storage ingress dns
-sudo usermod -a -G microk8s ubuntu
+sudo usermod -a -G microk8s <current-user>
 newgrp microk8s
 ```
 
-Now get the `kubectl` tool  and and the configuration:
+Now get the `kubectl` tool and generate the configuration:
 
 ```
 mkdir ~/.kube
@@ -60,11 +61,11 @@ Now you can install Nuvolaris.
 
 For Microk8s instances you do not have generally a load balancer configured so you need to provide the `<public-dns-name>` of the instance. It is generally the same you used to access the instance itself.
 
-Also you need the name of the `<kubernetes-context>` to use.  You can have more contexts to access multiple Kubernetes at the same time. With Microk8s there should have be only one and it is named `microk8s`. 
+Also you need the name of the `<kubernetes-context>` to use. You can have more contexts to access multiple Kubernetes at the same time. With Microk8s there should be only one and it should be named `microk8s`. 
 
-You can see the available contexts with the command `kubectl config get-contexts`.
+You can see the available contexts with the command `microk8s kubectl config get-contexts`.
 
-Once you collected the informations you need you can install it with:
+Once you collected the information you need you can install it with:
 
 ```
 nuv setup --context=<kubernetes-context> --apihost=<public-dns-name>
@@ -72,15 +73,15 @@ nuv setup --context=<kubernetes-context> --apihost=<public-dns-name>
 
 The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. 
 
-If you ware curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch kubectl -n nuvolaris get po,svc`.
+If you were curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch microk8s kubectl -n nuvolaris get po,svc`.
 
 If something goes wrong, please check the [troubleshooting](Troubleshooting.md) page.
 
 ### Accessing the serverless environment remotely
 
-Now that your serverless environemnt is ready you can access it from anywhere, using the configured `apihost` and `auth` key.
+Now that your serverless environment is ready you can access it from anywhere, using the configured `apihost` and `auth` key.
 
-Type `nuv wsk proerty get`. It will show something like this:
+Type `nuv wsk property get`. It will show something like this:
 
 ```
 whisk API host		<apihost>
@@ -97,5 +98,5 @@ Take note of the values `<apihost>` and `<auth>` as you wil need it to access yo
 Now you can [download](https://github.com/nuvolaris/nuvolaris/releases) the `nuv` tool elsewhere, and connect to your serverless environment with:
 
 ```
-nuv wskprops --apihost=<apihost> --auth=<auth>
+nuv wsk property set --apihost=<apihost> --auth=<auth>
 ```
