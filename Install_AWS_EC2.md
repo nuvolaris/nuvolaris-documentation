@@ -65,3 +65,10 @@ You can then install the `nuv` command in your favorite client machine, [downloa
 
 Once the installation is completed, proceed reading [Apache OpenWhisk documentation](https://openwhisk.apache.org/documentation.html), remembering to use `nuv wsk` when you see `wsk`.
 
+Set Nuvolaris Environment Variable in Windows
+
+- Extract the Nuvolaris archive, to the directory you wish to install the `nuv` command.
+- Open the directory `command`:
+- To set the `nuv` command as a user environment variable double click `user.cmd`.
+- To set the `nuv` command as a system environment variable double click `system.cmd`.
+- Note: if you change the location of your Nuvolaris root folder you need to run the scripts again.
