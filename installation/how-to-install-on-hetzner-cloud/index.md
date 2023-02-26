@@ -19,7 +19,7 @@ Once you got access to the console and performed the steps before, use the follo
 
 ## Launch an Hetzner Virtual Machine
 
-![](Install_Hetzner_Cloud.png)
+![](install_hetzner_cloud.png)
 
 1. Select your preferred location.
 2. Select Ubuntu 20+ as a distribution.
