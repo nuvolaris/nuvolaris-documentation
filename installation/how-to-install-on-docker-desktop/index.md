@@ -39,7 +39,7 @@ nuv setup --devcluster
 
 The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. 
 
-If something goes wrong, please check the [troubleshooting](Troubleshooting.md) page.
+If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
 
 Once the installation is completed, proceed reading [Apache OpenWhisk documentation](https://openwhisk.apache.org/documentation.html), remembering to use `nuv wsk` when you see `wsk`.
 
