@@ -8,7 +8,7 @@ If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/), i
 
 The most important prerequisite is to reserve al least 6GB of memory to Docker Desktop, since the default is not enough. This is a required step for Mac, but it is not on Windows.
 
-![](Install_Docker_Desktop.png)
+![](install_docker_desktop.png)
 
 On Mac you should:
 - click on the Docker Desktop icon

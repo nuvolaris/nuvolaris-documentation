@@ -14,7 +14,7 @@ Once you got access to the console, use the following instructions to lauch a su
 
 ## Launch the EC2 Virtual Machine
 
-![](Install_AWS_EC2.png)
+![](install_aws_ecs2.png)
 
 1. Click on the Services icon.
 2. Type `EC2` to find the EC2 service and click on the EC2 link.
@@ -31,7 +31,7 @@ Once you got access to the console, use the following instructions to lauch a su
 
 Once the instance is up and running, the following screen will pop up:
 
-![](Install_AWS_EC2_getip.png)
+![](install_aws_ec2_getip.png)
 
 Follow the link, open the instance details, find out the `<public-dns-name>, and copy it.
 
