@@ -5,11 +5,11 @@
 You can install it in the following supported environments:
 
 - [Install on Docker Desktop](how-to-install-on-docker-desktop/index.md).
-- [Install on a single instance on AWS EC2 Instance](Install_AWS_EC2.md).
-- [Install on a single instance on Hetzner Cloud](Install_Hetzner_Cloud.md).
-- [Install on an AWS EKS Cluster](Install_AWS_EKS.md).
-- [Install on a generic Ubuntu Instance](Install_Ubuntu.md), tested on AWS and Hetzner
-- [Install on a Kubernetes Cluster](Install_Kubernetes.md), tested on EKS, AKS and GKE
+- [Install on a single instance on AWS EC2 Instance](how-to-install-on-aws-ec2/index.md).
+- [Install on a single instance on Hetzner Cloud](how-to-install-on-hetzner-cloud/index.md).
+- [Install on an AWS EKS Cluster](how-to-install-on-aws-eks/index.md).
+- [Install on a generic Ubuntu Instance](how-to-install-on-ubuntu/index.md), tested on AWS and Hetzner
+- [Install on a Kubernetes Cluster](how-to-install-on-kubernetes/index.md), tested on EKS, AKS and GKE
 
 It may work on other Docker/Kubernetes environment but it has not been tested elsewhere yet, so you mileage may vary. 
 
