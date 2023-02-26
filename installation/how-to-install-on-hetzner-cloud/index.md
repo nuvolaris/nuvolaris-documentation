@@ -1,3 +1,7 @@
+---
+title: Install on Hetzner Cloud
+---
+
 # Install on an Hetzner Cloud single instance
 
 You can install Nuvolaris on a single Hetzner Cloud instance.
@@ -47,7 +51,7 @@ curl -s https://www.nuvolaris.io/scripts/ubuntu.sh | bash
 
 The script will take a while to install Kubernetes and Nuvolaris.
 
-If something goes wrong, please check the [troubleshooting](Troubleshooting.md) page.
+If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
 
 At the end it will show  a command like this:
 

@@ -1,3 +1,7 @@
+---
+title: Install on Docker Desktop
+---
+
 # Install on Docker Desktop
 
 If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/), installing a local Nuvolaris development cluster is very easy.

@@ -78,7 +78,7 @@ The installation can take a few minutes to complete, mostly because a number of 
 
 If you ware curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch kubectl -n nuvolaris get po,svc`.
 
-If something goes wrong, please check the [troubleshooting](troubleshooting) page.
+If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
 
 ### Accessing the serverless environment remotely
 

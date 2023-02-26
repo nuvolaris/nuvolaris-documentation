@@ -1,3 +1,7 @@
+---
+title: Install on AWS EC2
+---
+
 # Install on an AWS EC2 Instance
 
 You can install Nuvolaris on a single EC2 Instance.
@@ -49,7 +53,7 @@ curl -s https://www.nuvolaris.io/scripts/ubuntu-ec2.sh | sudo bash
 
 The script will take a while to install Kubernetes and Nuvolaris.
 
-If something goes wrong, please check the [troubleshooting](Troubleshooting.md) page.
+If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
 
 At the end it will show  a command like this:
 

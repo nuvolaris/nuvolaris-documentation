@@ -47,7 +47,8 @@ You can then use the following command to install Nuvolaris:
 
 The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. If you are curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch kubectl get po,svc`.
 
-If something goes wrong, please check the [troubleshooting](troubleshooting) page.
+
+If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
 
 ### Installing Nuvolaris with an Ingress
 
