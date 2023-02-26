@@ -4,7 +4,7 @@
 
 You can install it in the following supported environments:
 
-- [Install on Docker Desktop](Install_Docker_Desktop.md).
+- [Install on Docker Desktop](install-docker-desktop/index.md).
 - [Install on a single instance on AWS EC2 Instance](Install_AWS_EC2.md).
 - [Install on a single instance on Hetzner Cloud](Install_Hetzner_Cloud.md).
 - [Install on an AWS EKS Cluster](Install_AWS_EKS.md).
