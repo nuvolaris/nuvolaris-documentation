@@ -15,7 +15,7 @@ It may work on other Docker/Kubernetes environment but it has not been tested el
 
 More environments are on the roadmap.
 
-If something goes wrong, here is [what to do to report problems](Troubleshooting.md).
+If something goes wrong, here is [what to do to report problems](troubleshooting/index.md).
 
 ## TL;DR
 
