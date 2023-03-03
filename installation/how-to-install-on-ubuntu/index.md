@@ -48,7 +48,7 @@ If you see `NotReady` wait a bit and try again until the node is `Ready`, it can
 
 Now you are ready to install Nuvolaris.
 
-Copy the `<url-address>` of the latest version of the installer [from this page](/download).
+Copy the `<url-address>` of the latest version of the installer [from this page](https://www.nuvolaris.io/download).
 
 Then download and unpack it (replace `<url-address>` with the actual URL address):
 
