@@ -27,8 +27,3 @@ If you have problems you can:
 - Open an issue in the CLI [Issue Tracker](https://github.com/nuvolaris/nuvolaris-cli/issues) 
 - Chat with us on [Discord](https://discord.gg/VSGG7aQ2Ds) 
 - Check our [YouTube Channel](https://www.youtube.com/channel/UCPt5hk7qcOkESjB7kii1byw) for more training videos.
-
-![](laow.jpg)
-
-
-
