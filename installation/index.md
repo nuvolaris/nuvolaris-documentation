@@ -1,3 +1,7 @@
+---
+title: Installation
+---
+
 # Installation
 
 [Nuvolaris](https://www.nuvolaris.io) is an easy to use and portable serverless environment. 
