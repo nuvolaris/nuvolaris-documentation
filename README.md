@@ -24,6 +24,6 @@ So when you type `wsk` it will use `nuv wsk`.
 
 If you have problems you can:
 
-- Open an issue in the CLI [Issue Tracker](https://github.com/nuvolaris/nuvolaris-cli/issues) 
-- Chat with us on [Discord](https://discord.gg/VSGG7aQ2Ds) 
+- Discuss with us in the [Nuvolaris Forum](nuvolaris.discourse.group)
 - Check our [YouTube Channel](https://www.youtube.com/channel/UCPt5hk7qcOkESjB7kii1byw) for more training videos.
+- Open an issue in the CLI [Issue Tracker](https://github.com/nuvolaris/nuvolaris-cli/issues) 
