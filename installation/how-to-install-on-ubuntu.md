@@ -78,7 +78,7 @@ The installation can take a few minutes to complete, mostly because a number of 
 
 If you ware curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch kubectl -n nuvolaris get po,svc`.
 
-If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
+If something goes wrong, please check the [troubleshooting](troubleshooting.md) page.
 
 ### Accessing the serverless environment remotely
 
@@ -98,7 +98,7 @@ whisk API build number	67b3e50
 
 Take note of the values `<apihost>` and `<auth>` as you wil need it to access your serverless environment remotely.
 
-Now you can [download](/download) the `nuv` tool elsewhere, and connect to your serverless environment with:
+Now you can [download](https://www.nuvolaris.io/download) the `nuv` tool elsewhere, and connect to your serverless environment with:
 
 ```
 nuv wskprops --apihost=<apihost> --auth=<auth>

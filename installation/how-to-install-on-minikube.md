@@ -2,6 +2,8 @@
 title: Install on Minikube
 ---
 
+WORK IN PROGRESS - UNFINISHED
+
 # Installing on Minikube
 
 1. start minikube with at least 4gb and 30gb disk

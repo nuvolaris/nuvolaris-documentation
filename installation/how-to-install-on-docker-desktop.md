@@ -8,7 +8,7 @@ If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/), i
 
 The most important prerequisite is to reserve al least 6GB of memory to Docker Desktop, since the default is not enough. This is a required step for Mac, but it is not on Windows.
 
-![](install_docker_desktop.png)
+![](how-to-install-on-docker-desktop/install_docker_desktop.png)
 
 On Mac you should:
 - click on the Docker Desktop icon
@@ -43,7 +43,7 @@ nuv setup --devcluster
 
 The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. 
 
-If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
+If something goes wrong, please check the [troubleshooting](troubleshooting.md) page.
 
 Once the installation is completed, proceed reading [Apache OpenWhisk documentation](https://openwhisk.apache.org/documentation.html), remembering to use `nuv wsk` when you see `wsk`.
 

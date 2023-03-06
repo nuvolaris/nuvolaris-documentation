@@ -16,12 +16,12 @@ If you do not have a Load Balancer (like in self-provisioned Kubernetes clusters
 
 Now you are ready to install Nuvolaris.
 
-Copy the `<url-address>` of the latest version of the installer [from this page](/download).
+Copy the `<url-address>` of the latest version of the installer [from this page](download.nuvolaris.io).
 
 Then download and unpack it (replace `<url-address>` with the actual URL address):
 
 ```
-curl -sL <url-addrress> | tar xzvf -
+curl -sL <url-address> | tar xzvf -
 ./nuv -v
 ```
 
@@ -48,7 +48,7 @@ You can then use the following command to install Nuvolaris:
 The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. If you are curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch kubectl get po,svc`.
 
 
-If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
+If something goes wrong, please check the [troubleshooting](troubleshooting.md) page.
 
 ### Installing Nuvolaris with an Ingress
 
@@ -66,7 +66,7 @@ The installation can take a few minutes to complete, mostly because a number of 
 
 If you are curious to know what is happening on the Kubernetes cluster, you can execute (in another terminal connected to the same host) the command `watch kubectl get po,svc`.
 
-If something goes wrong, please check the [troubleshooting](troubleshooting) page.
+If something goes wrong, please check the [troubleshooting](troubleshooting.md) page.
 
 ### Accessing the serverless environment remotely
 
@@ -86,7 +86,7 @@ whisk API build number	67b3e50
 
 Take note of the values `<apihost>` and `<auth>` as you wil need it to access your serverless environment remotely.
 
-Now you can [download](/download) the `nuv` tool elsewhere, and connect to your serverless environment with:
+Now you can [download](download.nuvolaris.io) the `nuv` tool elsewhere, and connect to your serverless environment with:
 
 ```
 nuv wskprops --apihost=<apihost> --auth=<auth>

@@ -19,7 +19,7 @@ Once you got access to the console and performed the steps before, use the follo
 
 ## Launch an Hetzner Virtual Machine
 
-![](install_hetzner_cloud.png)
+![](how-to-install-on-hetzner-cloud/install_hetzner_cloud.png)
 
 1. Select your preferred location.
 2. Select Ubuntu 20+ as a distribution.
@@ -51,7 +51,7 @@ curl -s https://www.nuvolaris.io/scripts/ubuntu.sh | bash
 
 The script will take a while to install Kubernetes and Nuvolaris.
 
-If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
+If something goes wrong, please check the [troubleshooting](troubleshooting.md) page.
 
 At the end it will show  a command like this:
 
@@ -66,4 +66,3 @@ Take note of this command. You will need it to configure access to your serverle
 You can then install the `nuv` command in your favorite client machine, [downloading](https://github.com/nuvolaris/nuvolaris/releases) the correct version and use the command before to connect to your instance.
 
 Once the installation is completed, proceed reading [Apache OpenWhisk documentation](https://openwhisk.apache.org/documentation.html), remembering to use `nuv wsk` when you see `wsk`.
-

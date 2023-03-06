@@ -14,7 +14,7 @@ Once you got access to the console, use the following instructions to lauch a su
 
 ## Launch the EC2 Virtual Machine
 
-![](install_aws_ec2.png)
+![](how-to-install-on-aws-ec2/install_aws_ec2.png)
 
 1. Click on the Services icon.
 2. Type `EC2` to find the EC2 service and click on the EC2 link.
@@ -31,7 +31,7 @@ Once you got access to the console, use the following instructions to lauch a su
 
 Once the instance is up and running, the following screen will pop up:
 
-![](install_aws_ec2_getip.png)
+![](how-to-install-on-aws-ec2/install_aws_ec2_getip.png)
 
 Follow the link, open the instance details, find out the `<public-dns-name>, and copy it.
 
@@ -53,7 +53,7 @@ curl -s https://www.nuvolaris.io/scripts/ubuntu-ec2.sh | sudo bash
 
 The script will take a while to install Kubernetes and Nuvolaris.
 
-If something goes wrong, please check the [troubleshooting](../troubleshooting/index.md) page.
+If something goes wrong, please check the [troubleshooting](troubleshooting.md) page.
 
 At the end it will show  a command like this:
 

@@ -128,3 +128,5 @@ nuv wskprops --apihost=<apihost> --auth=<auth>
 ```
 
 Once the installation is completed, proceed reading [Apache OpenWhisk documentation](https://openwhisk.apache.org/documentation.html), remembering to use `nuv wsk` when you see `wsk`.
+
+If something goes wrong, please check the [troubleshooting](troubleshooting.md) page.

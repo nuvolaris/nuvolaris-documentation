@@ -6,9 +6,9 @@ It includes `nuv`, an [all-in-one CLI](https://github.com/nuvolaris/nuvolaris/re
 
 ## Learn More
 
-- Learn [how to install Nuvolaris](installation/index.md).
+- Learn [how to install Nuvolaris](installation.md).
 - Learn [how to develop with Nuvolaris](https://openwhisk.apache.org/documentation.html) using OpenWhisk documentation.
-- Read  [a book on Apache OpenWhisk](https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless-ebook/dp/B07TYSXWNN/) written by one of the authors of OpenWhisk and Nuvolaris.
+- Read  [a book on Apache OpenWhisk](documentation/https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless-ebook/dp/B07TYSXWNN) written by one of the authors of OpenWhisk and Nuvolaris.
 
 **NOTE**: the Apache OpenWhisk documentation used the `wsk` tool, that  is embedded as a subcommand in the `nuv` tool. If you use Nuvolaris,  whenever you see `wsk` you should use `nuv wsk` instead. 
 
