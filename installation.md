@@ -21,6 +21,7 @@ More environments are on the roadmap.
 
 If something goes wrong, here is [what to do to report problems](installation/troubleshooting.md).
 
+
 ## TL;DR
 
 If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a generic Kubernetes environment that supports a load balancer and block storage (EKS, AKS, GKE) are:
@@ -32,3 +33,8 @@ If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a 
 - Use your server from elsewhere configuring access with `nuv wskprops --apihost=<apihost> --auth=<auth>`using the values show in the previous step.
 - Read about [Apache OpenWhisk documentation](https://openwhisk.apache.org/documentation.html) to learn development, remembering to use `nuv wsk` when you see `wsk`
 
+# Contributions
+
+Some contributed documentation:
+
+- [Set a NUV variable on Window](sinstallation/set-on-window.md)
