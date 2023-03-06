@@ -37,4 +37,4 @@ If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a 
 
 Some contributed documentation:
 
-- [Set a NUV variable on Window](installation/set-on-window.md)
+- [Set a NUV variable on Window](installation/set-on-windows.md)
