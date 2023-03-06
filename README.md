@@ -6,7 +6,7 @@ It includes `nuv`, an [all-in-one CLI](https://github.com/nuvolaris/nuvolaris/re
 
 ## Learn More
 
-- Learn [how to install Nuvolaris](installation.md).
+- Learn [how to install Nuvolaris](documentation/installation.md).
 - Learn [how to develop with Nuvolaris](https://openwhisk.apache.org/documentation.html) using OpenWhisk documentation.
 - Read  [a book on Apache OpenWhisk](documentation/https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless-ebook/dp/B07TYSXWNN) written by one of the authors of OpenWhisk and Nuvolaris.
 
