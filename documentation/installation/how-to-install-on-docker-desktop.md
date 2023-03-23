@@ -45,7 +45,7 @@ Open the PowerShell (search for "powershell" on search bar), open it and type:
 ```
 Invoke-WebRequest -Uri <url-address> -out nuv.zip
 Expand-Archive *.zip
-Copy 
+Copy nuv.exe C:\Windows\
 ```
 
 
