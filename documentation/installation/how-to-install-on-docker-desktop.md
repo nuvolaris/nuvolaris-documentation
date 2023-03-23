@@ -43,10 +43,12 @@ Copy in the clipboard the `<url-address>` of the latest version of the installer
 Open the PowerShell (search for "powershell" on search bar), open it and type:
 
 ```
-Invoke-WebRequest -Uri <url-address>
-
- 
+Invoke-WebRequest -Uri <url-address> -out nuv.zip
+Expand-Archive *.zip
+Copy 
 ```
+
+
 
 ## Installing Nuvolaris 
 
