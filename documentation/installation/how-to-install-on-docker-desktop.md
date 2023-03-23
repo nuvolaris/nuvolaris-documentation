@@ -8,7 +8,7 @@ If you have already installed [Docker Desktop](https://www.docker.com/products/d
 
 ## Memory prerequisites
 
-You need a machine with at least 12 GB of memory. 8GB are not enough. 
+You need a machine with at least 12 GB of memory. *8GB are not enough*. 
 
 On Mac, you need also to reserve al least 6GB of memory to Docker Desktop, since the default is not enough. This is a required step for Mac, but not on Windows and Mac.
 
@@ -40,7 +40,8 @@ If the download went ok, you should see the version number of the installer.
 
 Copy in the clipboard the `<url-address>` of the latest version of the installer [from this page](https://github.com/nuvolaris/nuvolaris/releases) for Windows.
 
-Open the PowerShell (search for "powershell" on search bar), open it and type:
+Open as *administrative* PowerShell: search for "powershell" on search bar, left click on it and select "Run As Administator". 
+Then execute:
 
 ```
 Invoke-WebRequest -Uri <url-address> -out nuv.zip
@@ -48,11 +49,12 @@ Expand-Archive *.zip
 Copy nuv.exe C:\Windows\
 ```
 
+*NOTE*: if you do not want to run as an administator, do not copy it in `C:\Windows\`  but invoke it as `nuv\nuv`.
 
 
 ## Installing Nuvolaris 
 
-Now you can install Nuvolaris on Docker Desktop with 
+Now you can install Nuvolaris on Docker Desktop either  with: 
 
 ```
 nuv setup --devcluster
