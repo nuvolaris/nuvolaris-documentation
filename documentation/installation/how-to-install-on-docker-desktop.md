@@ -48,9 +48,12 @@ Then execute (replace `<url-address>` with the actual URL address):
 Invoke-WebRequest -out nuv.zip -Uri <url-address>
 Expand-Archive nuv.zip
 Copy nuv\nuv.exe C:\Windows\
+nuv -v
 ```
 
-*NOTE*: if you do not want to run as an administator, do not copy it in `C:\Windows\`. In this case it will be not available everywhere but only when you are in current director, amd you can invoke it as `nuv\nuv`.
+If the download went ok, you should see the version number of the installer.
+
+*NOTE*: if you do not want to run as an administator, do not copy it in `C:\Windows\`. In this case the installer it will be not available everywhere but only when you are in current director, amd you can invoke it as `nuv\nuv`.
 
 
 ## Installing Nuvolaris 
