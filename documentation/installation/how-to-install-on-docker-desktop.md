@@ -29,7 +29,7 @@ Download and unpack it (replace `<url-address>` with the actual URL address):
 
 ```
 curl -sL <url-address> | tar xzvf -
-install nuv /usr/local/bin/nuv
+sudo cp nuv /usr/local/bin/nuv
 nuv -v
 ```
 
