@@ -41,10 +41,11 @@ If the download went ok, you should see the version number of the installer.
 Copy in the clipboard the `<url-address>` of the latest version of the installer [from this page](https://github.com/nuvolaris/nuvolaris/releases) for Windows.
 
 Open as *administrative* PowerShell: search for "powershell" on search bar, left click on it and select "Run As Administator". 
-Then execute:
+Then execute (replace `<url-address>` with the actual URL address):
+
 
 ```
-Invoke-WebRequest -Uri <url-address> -out nuv.zip
+Invoke-WebRequest -out nuv.zip -Uri <url-address>
 Expand-Archive *.zip
 Copy nuv\nuv.exe C:\Windows\
 ```
