@@ -47,7 +47,7 @@ Then execute (replace `<url-address>` with the actual URL address):
 ```
 Invoke-WebRequest -out nuv.zip -Uri <url-address>
 Expand-Archive nuv.zip
-Copy nuv\nuv.exe C:\Windows\
+Copy nuv\nuv.exe C:\Windows
 nuv -v
 ```
 
