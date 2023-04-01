@@ -48,7 +48,7 @@ Then execute (replace `<url-address>` with the actual URL address):
 Invoke-WebRequest -out nuv.zip -Uri <url-address>
 Expand-Archive nuv.zip
 Copy nuv\nuv.exe C:\Windows
-nuv -v
+nuv --version
 ```
 
 If the download went ok, you should see the version number of the installer.
