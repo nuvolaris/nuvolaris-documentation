@@ -1,0 +1,11 @@
+
+
+== Installing with Docker
+
+You need Docker Desktop
+
+To install with docker, use:
+
+```
+nuv setup devcluster
+```

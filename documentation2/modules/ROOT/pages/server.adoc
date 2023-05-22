@@ -1,0 +1,8 @@
+== Installing in a server
+
+You need a server accessibile with SSH
+
+You need to know the ip of the server.
+
+You must be able to use the `root` user or an user with `sudo` to become root.
+

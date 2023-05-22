@@ -1,0 +1,11 @@
+== Kubernetes
+
+You nedd access to a Kubernetes cluster.
+
+you can
+
+then you can install it with
+
+```
+nuv setup cluster
+```
