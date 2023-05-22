@@ -1,0 +1,6 @@
+name: documentation2
+title: Component B
+start_page: index.adoc
+version: 0.3.0
+nav:
+- modules/ROOT/nav.adoc

@@ -1,7 +1,14 @@
 version: '3'
 
 tasks:
+  setup: { silent: true } 
+
   origin: 
     - git fetch --all
     - git checkout origin/0.3.0 -B 0.3.0
     
+
+  default:
+    - git commit -m "$(date)" -a
+    - git push origin 0.3.0
+    - antora --fetch antora-playbook.yml
