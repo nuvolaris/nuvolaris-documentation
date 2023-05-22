@@ -1,2 +1,5 @@
-name: documentation2
-
+name: document2
+title: Component B
+version: 0.3.0
+nav:
+- modules/ROOT/nav.adoc
