@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  origin: 
+    - git fetch --all
+    - git checkout origin/0.3.0 -B 0.3.0
+    
