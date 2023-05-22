@@ -4,7 +4,9 @@ site:
 
 content:
   sources:
-    - url: 
+    - url:  https://github.com/msciabarra/nuvolaris-documentation 
+      branches: 0.3.0
+      start_path: documentation2
 
 ui: 
   bundle:
