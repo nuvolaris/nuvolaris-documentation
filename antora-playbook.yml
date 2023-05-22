@@ -3,7 +3,7 @@ site:
 
 content:
   sources:
-    - url:  https://github.com/msciabarra/nuvolaris-documentation
+    - url: https://github.com/msciabarra/nuvolaris-documentation
       branches: 0.3.0
       start_path: documentation2
 
