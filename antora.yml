@@ -1,0 +1,6 @@
+name: nuvolaris
+title: Nuvolaris
+version: '0.2.2'
+nav:
+- documentation/nav.adoc
+
