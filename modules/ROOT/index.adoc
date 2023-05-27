@@ -6,7 +6,7 @@ It includes `nuv`, an https://github.com/nuvolaris/nuvolaris/releases[all-in-one
 
 == Learn More
 
-* Learn xref:documentation/installation.adoc[how to install Nuvolaris].
+* Learn xref:installation.adoc[how to install Nuvolaris].
 * Learn https://openwhisk.apache.org/documentation.html[how to develop with Nuvolaris] using OpenWhisk documentation.
 * Read  https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless-ebook/dp/B07TYSXWNN[a book on Apache OpenWhisk] written by one of the authors of OpenWhisk and Nuvolaris.
 

@@ -2,5 +2,5 @@ name: nuvolaris
 title: Nuvolaris
 version: '0.2.2'
 nav:
-- modules/documentation/nav.adoc
+- modules/ROOT/nav.adoc
 
