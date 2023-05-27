@@ -4,8 +4,6 @@ version: '0.3.0'
 prerelease: dev
 nav:
 - modules/ROOT/nav.adoc
-modules:
-- modules/ROOT/nav.adoc
 - modules/installation/nav.adoc
 - modules/tutorial/nav.adoc
 - modules/development/nav.adoc
