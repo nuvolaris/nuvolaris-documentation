@@ -1,0 +1,8 @@
+* xref:documentation/installation.adoc[Installation]
+* xref:documentation/installation/how-to-install-on-docker-desktop.adoc[Install on Docker Desktop]
+* xref:documentation/installation/how-to-install-on-aws-ec2.adoc[Install on a single instance on AWS EC2 Instance]
+* xref:documentation/installation/how-to-install-on-hetzner-cloud.adoc[Install on a single instance on Hetzner Cloud]
+* xref:documentation/installation/how-to-install-on-aws-eks.adoc[Install on an AWS EKS Cluster]
+* xref:documentation/installation/how-to-install-on-ubuntu.adoc[Install on a generic Ubuntu Instance]
+* xref:documentation/installation/how-to-install-on-kubernetes.adoc[Install on a Kubernetes Cluster]
+
