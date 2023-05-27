@@ -1,0 +1,7 @@
+= Installation
+
+You can install Nuvolaris on:
+
+* Docker
+* A Server
+* A Kubernetes Cluster

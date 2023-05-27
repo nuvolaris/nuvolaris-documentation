@@ -1,6 +1,12 @@
-name: documentation2
-title: Component B
-start_page: index.adoc
-version: 0.3.0
+name: nuvolaris
+title: Nuvolaris
+version: '0.3.0'
+prerelease: dev
 nav:
 - modules/ROOT/nav.adoc
+modules:
+- modules/ROOT/nav.adoc
+- modules/installation/nav.adoc
+- modules/tutorial/nav.adoc
+- modules/development/nav.adoc
+

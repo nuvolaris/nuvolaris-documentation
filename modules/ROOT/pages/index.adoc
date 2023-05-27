@@ -1,4 +1,6 @@
 = Nuvolaris
 
-Nuvolaris documentation.
+Welcome to Nuvolaris.
+
+TODO: describe here what is Nuvolaris.
 
