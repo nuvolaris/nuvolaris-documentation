@@ -1,6 +1,4 @@
-= Install on AWS EKS
-
-# Install in an AWS EKS Cluster
+= Install in an AWS EKS Cluster
 
 Before starting this guide you need an account in AWS and https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html[configure CLI access]
 
