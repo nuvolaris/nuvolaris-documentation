@@ -1,8 +1,0 @@
-= Set Nuvolaris Environment Variable in Windows
-:doctype: book
-
-* Extract the Nuvolaris archive, to the directory you wish to install the `nuv` command.
-* Open the directory `command`:
-* To set the `nuv` command as a user environment variable https://raw.githubusercontent.com/nuvolaris/nuvolaris-documentation/main/documentation/installation/set-on-windows/user.cmd[download this script] and double click  `user.cmd`.
-* To set the `nuv` command as a system environment variable https://raw.githubusercontent.com/nuvolaris/nuvolaris-documentation/main/documentation/installation/set-on-windows/system.cmd[download this script] and double click `system.cmd`.
-* NOTE: if you change the location of your Nuvolaris root folder you need to run the scripts again.
