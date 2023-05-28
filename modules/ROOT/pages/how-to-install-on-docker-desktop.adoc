@@ -1,5 +1,4 @@
 == Install on Docker Desktop
-:doctype: book
 
 If you have already installed https://www.docker.com/products/docker-desktop/[Docker Desktop], installing a local Nuvolaris development cluster is very easy.
 
@@ -9,7 +8,7 @@ You need a machine with at least 12 GB of memory. _8GB are not enough_.
 
 On Mac, you need also to reserve al least 6GB of memory to Docker Desktop, since the default is not enough. This is a required step for Mac, but not on Windows and Mac.
 
-image::how-to-install-on-docker-desktop/install_docker_desktop.png[]
+image::install_docker_desktop.png[]
 
 On Mac you should:
 

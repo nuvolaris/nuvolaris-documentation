@@ -29,8 +29,3 @@ If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a 
 * Use your server from elsewhere configuring access with ``nuv wskprops --apihost=<apihost> --auth=<auth>``using the values show in the previous step.
 * Read about https://openwhisk.apache.org/documentation.html[Apache OpenWhisk documentation] to learn development, remembering to use `nuv wsk` when you see `wsk`
 
-== Contributions
-
-Some contributed documentation:
-
-* xref:set-on-windows.adoc[Set a NUV variable on Window]
