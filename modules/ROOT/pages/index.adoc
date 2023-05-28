@@ -1,7 +1,3 @@
-= Nuvolaris
-:doctype: book
-
-
 == Nuvolaris Documentation
 
 Nuvolaris is a distribution of https://openwhisk.apache.org[Apache OpenWhisk] that aims to be portable to every Kubernetes and to include a set of integrated services to make an awesome developer experiences.
