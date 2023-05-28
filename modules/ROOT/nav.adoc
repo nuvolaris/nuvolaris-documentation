@@ -1,4 +1,4 @@
-* xref:index.adoc[Index]
+* xref:index.adoc[Nuvolaris]
 * xref:how-to-install-on-docker-desktop.adoc[Install on Docker Desktop].
 * xref:how-to-install-on-aws-ec2.adoc[Install on a single instance on AWS EC2 Instance].
 * xref:how-to-install-on-hetzner-cloud.adoc[Install on a single instance on Hetzner Cloud].
