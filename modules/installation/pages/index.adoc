@@ -1,7 +1,11 @@
 = Installation
 
-You can install Nuvolaris on:
+Nuvolaris can be installed in many environments.
 
-* Docker
-* A Server
-* A Kubernetes Cluster
+Nuvolaris includes powerful a xref:index-nuv.adoc[CLI] that manages installation.
+
+Using it can install Nuvolaris on:
+
+* your xref:local.adoc[your local machine] using xref:local-docker.adoc[Docker Desktop] 
+* a xref:server.adoc[Linux Server] accessible with xref:server-ssh.adoc[SSH]
+* a xref:cluster.doc[Kubernetes Cluster] accessible with its kubeconfig file.

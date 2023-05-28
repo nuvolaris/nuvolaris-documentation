@@ -1,8 +1,28 @@
-== Installing in a server
+= Local Installation
 
-You need a server accessibile with SSH
+This section describes how to install Nuvolaris on a remote server
 
-You need to know the ip of the server.
+== Prerequisite
 
-You must be able to use the `root` user or an user with `sudo` to become root.
+Before installing, you need to:
 
+* generate an xref:server-sshkey.adoc[ssh key] to access a server
+* provision a xref:server-generic.adoc[server] adding the ssh key to access it
+* xref:index-config.adoc[configure] the services you want to enable
+* install xref:index-nuv.adoc[nuv].
+
+== Installation
+
+---
+nuv setup server <host> [<user>]
+---
+
+== Update
+
+After installation you can xref:index-config.adoc[update] adding more services== Uninstall
+
+== Uninstall
+
+---
+nuv setup server <host> [<user>] --uninstall
+---
