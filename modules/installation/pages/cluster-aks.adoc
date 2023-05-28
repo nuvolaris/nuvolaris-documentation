@@ -1,0 +1,41 @@
+= Azure AKS
+
+Creating an  AKS Cluster in Azure  using xref:index-nuv.adoc[nuv].
+
+== Access
+
+---
+az login
+---
+
+== Config
+
+Configure to access a new or existing cluster:
+
+---
+nuv config aks
+---
+
+== Create
+
+Create a new cluster if not existing.
+
+---
+nuv config aks create
+---
+
+== Kubeconfig
+
+Extracting the kubeconfig from an existing cluster:
+
+---
+nuv config aks extract
+---
+
+== Delete
+
+You can destroy an existing cluster:
+
+---
+nuv config aks delete
+---

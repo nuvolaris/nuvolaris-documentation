@@ -1,0 +1,27 @@
+= Cluster Installation
+
+This section describes how to install Nuvolaris on a Kubernetes Cluster
+
+== Prerequisite
+
+Before installing, you need to:
+
+* xref:index-config.adoc[configure] the services you want to enable
+* install xref:index-nuv.adoc[nuv].
+* provision a Kubernetes cluster xref:cluster-generic.adoc[server] retrieving its kubeconfig
+
+== Installation
+
+---
+nuv setup cluster [<context>]
+---
+
+== Update
+
+After installation you can xref:index-config.adoc[update] adding more services.
+
+== Uninstall
+
+---
+nuv setup cluster --uninstall
+---

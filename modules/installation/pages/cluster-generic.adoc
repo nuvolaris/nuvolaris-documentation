@@ -1,0 +1,18 @@
+= Provisioning a Kubernetes Cluster
+
+Kubernetes clusters are available from a variety of vendors.
+
+Each vendor will privision one with specific requirements then it will give you a file calles `kubeconfig` that should be placed under `~/.kube/config` to access the cluster.
+
+The tool `nuv` includes automated provisioning in the following enviroments:
+
+* xref:cluster-eks.adoc[Amazon AKS]
+* xref:cluster-aks.adoc[Azure AKS]
+* xref:cluster-gke.adoc[Google GKE]
+
+
+If your cluster is not one of those, contact your provider for informations how to get the `kubeconfig`.
+
+
+
+

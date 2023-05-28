@@ -1,0 +1,41 @@
+= Amazon EKS
+
+Creating an  EKS Cluster in Amazon AWS using xref:index-nuv.adoc[nuv].
+
+== Access
+
+Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+
+TODO provide more info
+
+== Config
+
+Configure to access a new or existing cluster:
+
+---
+nuv config eks
+---
+
+== Create
+
+Create a new cluster if not existing.
+
+---
+nuv config eks create
+---
+
+== Kubeconfig
+
+Extracting the kubeconfig from an existing cluster:
+
+---
+nuv config eks create
+---
+
+== Delete
+
+You can destroy an existing cluster:
+
+---
+nuv config eks delete
+---

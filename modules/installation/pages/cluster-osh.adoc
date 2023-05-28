@@ -1,0 +1,10 @@
+= RedHat OpenShift
+
+
+Install the cluster using the install
+
+TODO
+
+---
+oc login <host> 
+---

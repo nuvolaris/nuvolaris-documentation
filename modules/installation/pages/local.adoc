@@ -1,0 +1,27 @@
+= Local Installation
+
+This section describes how to install Nuvolaris on your local machine.
+
+== Prerequisite
+
+Before installing, you need to:
+
+* install xref:local-docker.adoc[Docker Desktop].
+* install xref:index-nuv.adoc[nuv].
+* xref:index-config.adoc[configure] the services you want
+
+== Installation
+
+---
+nuv setup devcluster
+---
+
+== Update
+
+After installation you can xref:index-config.adoc[update] adding more services
+
+== Uninstall
+
+---
+nuv setup devcluster --uninstall
+---
