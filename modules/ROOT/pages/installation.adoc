@@ -5,18 +5,18 @@ https://www.nuvolaris.io[Nuvolaris] is an easy to use and portable serverless en
 
 You can install it in the following supported environments:
 
-* xref:installation/how-to-install-on-docker-desktop.adoc[Install on Docker Desktop].
-* xref:installation/how-to-install-on-aws-ec2.adoc[Install on a single instance on AWS EC2 Instance].
-* xref:installation/how-to-install-on-hetzner-cloud.adoc[Install on a single instance on Hetzner Cloud].
-* xref:installation/how-to-install-on-aws-eks.adoc[Install on an AWS EKS Cluster].
-* xref:installation/how-to-install-on-ubuntu.adoc[Install on a generic Ubuntu Instance], tested on AWS and Hetzner
-* xref:installation/how-to-install-on-kubernetes.adoc[Install on a Kubernetes Cluster], tested on EKS, AKS and GKE
+* xref:how-to-install-on-docker-desktop.adoc[Install on Docker Desktop].
+* xref:how-to-install-on-aws-ec2.adoc[Install on a single instance on AWS EC2 Instance].
+* xref:how-to-install-on-hetzner-cloud.adoc[Install on a single instance on Hetzner Cloud].
+* xref:how-to-install-on-aws-eks.adoc[Install on an AWS EKS Cluster].
+* xref:how-to-install-on-ubuntu.adoc[Install on a generic Ubuntu Instance], tested on AWS and Hetzner
+* xref:how-to-install-on-kubernetes.adoc[Install on a Kubernetes Cluster], tested on EKS, AKS and GKE
 
 It may work on other Docker/Kubernetes environment but it has not been tested elsewhere yet, so you mileage may vary.
 
 More environments are on the roadmap.
 
-If something goes wrong, here is xref:installation/troubleshooting.adoc[what to do to report problems].
+If something goes wrong, here is xref:troubleshooting.adoc[what to do to report problems].
 
 == TL;DR
 
@@ -33,4 +33,4 @@ If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a 
 
 Some contributed documentation:
 
-* xref:installation/set-on-windows.adoc[Set a NUV variable on Window]
+* xref:set-on-windows.adoc[Set a NUV variable on Window]
