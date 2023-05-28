@@ -1,1 +1,3 @@
-* xref:whats-new.adoc[]
+* xref:index.adoc[Welcome]
+** xref:whats-new.adoc[]
+
