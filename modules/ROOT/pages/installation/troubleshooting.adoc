@@ -1,4 +1,5 @@
 = Troubleshooting
+:doctype: book
 
 If the installation fails or never ends, here a few things to check.
 

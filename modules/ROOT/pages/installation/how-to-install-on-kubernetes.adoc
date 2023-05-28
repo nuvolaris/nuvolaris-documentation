@@ -1,4 +1,5 @@
 = Installing Nuvolaris on a Kubernetes cluster
+:doctype: book
 
 You can install Nuvolaris on any Kubernetes that provides at least:
 

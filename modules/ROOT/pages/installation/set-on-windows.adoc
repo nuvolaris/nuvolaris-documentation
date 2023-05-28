@@ -1,4 +1,5 @@
 = Set Nuvolaris Environment Variable in Windows
+:doctype: book
 
 * Extract the Nuvolaris archive, to the directory you wish to install the `nuv` command.
 * Open the directory `command`:

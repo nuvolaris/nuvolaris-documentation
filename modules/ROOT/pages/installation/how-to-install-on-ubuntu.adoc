@@ -1,4 +1,5 @@
 = Installing Nuvolaris in an Ubuntu instance
+:doctype: book
 
 As a prerequisite you need:
 
