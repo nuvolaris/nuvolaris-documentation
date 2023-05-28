@@ -11,7 +11,7 @@ Once you got access to the console, use the following instructions to lauch a su
 
 == Launch the EC2 Virtual Machine
 
-image::how-to-install-on-aws-ec2/install_aws_ec2.png[]
+image::install_aws_ec2.png[]
 
 . Click on the Services icon.
 . Type `EC2` to find the EC2 service and click on the EC2 link.
