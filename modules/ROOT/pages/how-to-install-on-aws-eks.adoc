@@ -1,10 +1,10 @@
-== Install on AWS EKS
+= Install on AWS EKS
 
 # Install in an AWS EKS Cluster
 
 Before starting this guide you need an account in AWS and https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html[configure CLI access]
 
-=== Create an AWS EKS cluster
+== Create an AWS EKS cluster
 
 If you do not have already an EKS cluster for installing Nuvolaris, you need to create one. There are many ways to create an EKS cluster. In this guide we recommend using the link:httsp://eksctl.io[`eksctl`] tool.
 
@@ -70,7 +70,7 @@ NAME                                              STATUS   ROLES    AGE   VERSIO
 ip-192-168-42-140.eu-central-1.compute.internal   Ready    <none>   34d   v1.22.6-eks-7d68063
 ----
 
-=== Retrieve your Kubernetes context
+== Retrieve your Kubernetes context
 
 If you installed Kubernetes following the instructions of your cloud provider, it will be accessible with the `kubectl` tool.
 
@@ -78,7 +78,7 @@ You can generally have more contexts to access multiple Kubernetes at the same t
 
 Pick the name of the `<kubernetes-context>` corresponding to the cluster you want to install Nuvolaris.
 
-=== Installing Nuvolaris with `nuv`
+== Installing Nuvolaris with `nuv`
 
 Now you are ready to install Nuvolaris.
 
@@ -100,7 +100,7 @@ nuv setup --context=<kubernetes-context> --apihost=auto
 
 The installation can take a few minutes to complete, mostly because a number of large Docker images must be downloaded. If you are curious, you can check what is happening on the Kubernetes cluster running (in another terminal) the command `watch kubectl get po,svc`.
 
-==== Accessing the serverless environment remotely
+=== Accessing the serverless environment remotely
 
 Now that your serverless environemnt is ready you can access it from anywhere, using the configured `apihost` and `auth` key.
 

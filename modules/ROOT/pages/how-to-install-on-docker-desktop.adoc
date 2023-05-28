@@ -1,8 +1,8 @@
-== Install on Docker Desktop
+= Install on Docker Desktop
 
 If you have already installed https://www.docker.com/products/docker-desktop/[Docker Desktop], installing a local Nuvolaris development cluster is very easy.
 
-=== Memory prerequisites
+== Memory prerequisites
 
 You need a machine with at least 12 GB of memory. _8GB are not enough_.
 
@@ -18,7 +18,7 @@ On Mac you should:
 * _increase the memory up to 6GB_
 * click on `Apply & Restart`
 
-=== Download `nuv` on Mac and Linux
+== Download `nuv` on Mac and Linux
 
 Copy the `<url-address>` of the latest version of the installer https://github.com/nuvolaris/nuvolaris/releases[from this page] for your platform (Darwin (Mac), or Linux) and architecture (Intel (AMD64) or ARM (ARM64)).
 
@@ -32,7 +32,7 @@ nuv -v
 
 If the download went ok, you should see the version number of the installer.
 
-=== Download `nuv` on Windows
+== Download `nuv` on Windows
 
 Copy in the clipboard the `<url-address>` of the latest version of the installer https://github.com/nuvolaris/nuvolaris/releases[from this page] for Windows.
 
@@ -50,7 +50,7 @@ If the download went ok, you should see the version number of the installer.
 
 _NOTE_: if you do not want to run as an administator, do not copy it in `C:\Windows\`. In this case the installer it will be not available everywhere but only when you are in current director, amd you can invoke it as `nuv\nuv`.
 
-=== Installing Nuvolaris
+== Installing Nuvolaris
 
 Now you can install Nuvolaris on Docker Desktop either  with:
 

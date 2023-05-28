@@ -1,4 +1,4 @@
-== Installing Nuvolaris on a Kubernetes cluster
+= Installing Nuvolaris on a Kubernetes cluster
 
 You can install Nuvolaris on any Kubernetes that provides at least:
 
@@ -8,7 +8,7 @@ You can install Nuvolaris on any Kubernetes that provides at least:
 
 If you do not have a Load Balancer (like in self-provisioned Kubernetes clusters in a single instance) you also need to know the `<public-dns-name>` where the Kubernetes cluster is listening.
 
-=== Download `nuv`
+== Download `nuv`
 
 Now you are ready to install Nuvolaris.
 
@@ -23,7 +23,7 @@ curl -sL <url-address> | tar xzvf -
 
 If the download went ok, you should see the version number of the installer and you can proceed installing Nuvolaris
 
-=== Retrieve the Kubernetes context name
+== Retrieve the Kubernetes context name
 
 If you want to install Nuvolaris in the current Kubernetes context, use `./nuv setup` and it will tell the name of the current context and you can use it as `<kubernetes-context>` in the next step.
 
@@ -31,7 +31,7 @@ In general you can have access to multiple Kubernetes at the same time. Each Kub
 
 Pick the name of the `<kubernetes-context>` corresponding to the cluster you want to install Nuvolaris as you need to install Nuvolaris in that cluster.
 
-==== Installing Nuvolaris with a Load Balancer
+=== Installing Nuvolaris with a Load Balancer
 
 If you are using a Kubernetes provided by a cloud provider, like AWS, Azure or Gcloud, you have a load balancer and you do not have to provide a DNS name as it is automatically allocated.
 
@@ -45,7 +45,7 @@ The installation can take a few minutes to complete, mostly because a number of 
 
 If something goes wrong, please check the xref:troubleshooting.adoc[troubleshooting] page.
 
-==== Installing Nuvolaris with an Ingress
+=== Installing Nuvolaris with an Ingress
 
 If your Kubernetes does not have a load balancer, for example when you installed a Kubernetes cluster in a single VM instance, you need to provide the `<public-dns-name>` of the instance. It is generally the same name you used to access the instance itself.
 
@@ -63,7 +63,7 @@ If you are curious to know what is happening on the Kubernetes cluster, you can 
 
 If something goes wrong, please check the xref:troubleshooting.adoc[troubleshooting] page.
 
-==== Accessing the serverless environment remotely
+=== Accessing the serverless environment remotely
 
 Now that your serverless environemnt is ready you can access it from anywhere, using the configured `apihost` and `auth` key.
 

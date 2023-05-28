@@ -1,4 +1,4 @@
-== Installing Nuvolaris in an Ubuntu instance
+= Installing Nuvolaris in an Ubuntu instance
 
 As a prerequisite you need:
 
@@ -12,7 +12,7 @@ As a prerequisite you need:
 
 Use ssh to log into the instance, according the instructions of your cloud provider.
 
-=== Install MicroK8s
+== Install MicroK8s
 
 First, let's install `microk8s` with `snap` and give access to our user to `microk8s:
 
@@ -40,7 +40,7 @@ ip-172-31-21-189   Ready    <none>   70m   v1.24.0-2+59bbb3530b6769
 
 If you see `NotReady` wait a bit and try again until the node is `Ready`, it can take up to one minute.
 
-=== Installing Nuvolaris
+== Installing Nuvolaris
 
 Now you are ready to install Nuvolaris.
 
@@ -76,7 +76,7 @@ If you ware curious, you can check what is happening on the Kubernetes cluster r
 
 If something goes wrong, please check the xref:troubleshooting.adoc[troubleshooting] page.
 
-==== Accessing the serverless environment remotely
+=== Accessing the serverless environment remotely
 
 Now that your serverless environemnt is ready you can access it from anywhere, using the configured `apihost` and `auth` key.
 
