@@ -1,9 +1,9 @@
-= Troubleshooting
+== Troubleshooting
 :doctype: book
 
 If the installation fails or never ends, here a few things to check.
 
-== Cannot execute the `nuv` executable on Mac OSX
+=== Cannot execute the `nuv` executable on Mac OSX
 
 On Mac, downloaded binaries from third party developerse are sometimes quarantined.
 
@@ -13,7 +13,7 @@ To allow execution of the `nuv` binary after unpacking execute:
 xattr -d com.apple.quarantine nuv
 ----
 
-== Check the status of the installation
+=== Check the status of the installation
 
 Run `kubectl -n nuvolaris get po`, you should see something like this:
 
@@ -31,7 +31,7 @@ wsk0-48-prewarm-nodejs14      1/1     Running     0          7m28s
 
 If you are using an Ubuntu image, use `sudo microk8s kubectl` instead of `kubectl`
 
-== Check the API host has been return properly
+=== Check the API host has been return properly
 
 Run `kubectl -n nuvolaris get cm/config -o yaml`, you should see something like this:
 
@@ -47,7 +47,7 @@ metadata:
   namespace: nuvolaris
 ----
 
-== Check you have a `.nuvolaris/.wskpros` in your home directory
+=== Check you have a `.nuvolaris/.wskpros` in your home directory
 
 This is the file used to access to Nuvolaris.
 
@@ -58,7 +58,7 @@ AUTH=8c059563-be75-4b39-a725-769304701a6f:CoIM5TNkbX35dTiLLJnrBb72XT7vDHSSAp1GY1
 APIHOST=http://ec2-19-181-212-78.us-east-2.compute.amazonaws.com
 ----
 
-== If there is only the operator running
+=== If there is only the operator running
 
 Check the logs of the operator with:
 
@@ -68,7 +68,7 @@ kubectl -n nuvolaris logs pod/nuvolaris-operator
 
 Then https://github.com/nuvolaris/nuvolaris-cli[open an issue reporting the logs]
 
-== Uninstall
+=== Uninstall
 
 You can uninstall Nuvolaris with:
 

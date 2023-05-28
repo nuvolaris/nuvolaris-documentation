@@ -1,5 +1,4 @@
-= Install on an Hetzner Cloud single instance
-:doctype: book
+== Install on an Hetzner Cloud single instance
 
 You can install Nuvolaris on a single Hetzner Cloud instance.
 
@@ -14,7 +13,7 @@ Before starting you need also to:
 
 Once you got access to the console and performed the steps before, use the following instructions to lauch a suitable virtual machine and install Nuvolaris in it.
 
-== Launch an Hetzner Virtual Machine
+=== Launch an Hetzner Virtual Machine
 
 image::install_hetzner_cloud.png[]
 
@@ -38,7 +37,7 @@ Access the machine with:
 ssh -i <key-file> root@<ip-address>
 ----
 
-== Install Nuvolaris
+=== Install Nuvolaris
 
 Once you are connected to the virtual machine with ssh, you can install Nuvolaris executing:
 

@@ -1,4 +1,4 @@
-= Installation
+== Installation
 :doctype: book
 
 https://www.nuvolaris.io[Nuvolaris] is an easy to use and portable serverless environment.
@@ -18,7 +18,7 @@ More environments are on the roadmap.
 
 If something goes wrong, here is xref:troubleshooting.adoc[what to do to report problems].
 
-== TL;DR
+=== TL;DR
 
 If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a generic Kubernetes environment that supports a load balancer and block storage (EKS, AKS, GKE) are:
 
@@ -29,7 +29,7 @@ If you are in a hurry, in a nutshell the instructions to install Nuvolaris in a 
 * Use your server from elsewhere configuring access with ``nuv wskprops --apihost=<apihost> --auth=<auth>``using the values show in the previous step.
 * Read about https://openwhisk.apache.org/documentation.html[Apache OpenWhisk documentation] to learn development, remembering to use `nuv wsk` when you see `wsk`
 
-= Contributions
+== Contributions
 
 Some contributed documentation:
 

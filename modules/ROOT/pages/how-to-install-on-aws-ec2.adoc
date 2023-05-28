@@ -1,5 +1,4 @@
-= Install on an AWS EC2 Instance
-:doctype: book
+== Install on an AWS EC2 Instance
 
 You can install Nuvolaris on a single EC2 Instance.
 
@@ -9,7 +8,7 @@ As a prerequisite, you need to get access to the AWS Console by registering to A
 
 Once you got access to the console, use the following instructions to lauch a suitable virtual machine:
 
-== Launch the EC2 Virtual Machine
+=== Launch the EC2 Virtual Machine
 
 image::install_aws_ec2.png[]
 
@@ -39,7 +38,7 @@ You can access the virtual machine with:
 ssh -i <key-file> ubuntu@<public-ipv4-dns>
 ----
 
-== Install Nuvolaris
+=== Install Nuvolaris
 
 Once you are connected to the virtual machine with ssh, you can install Nuvolaris executing:
 
