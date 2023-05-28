@@ -5,9 +5,9 @@ To connect to a server you need a couple of file called **ssh keys**
 
 You can generate them on command line using
 
----
+----
 ssh-keygen
----
+----
 
 It will create a couple of files, typically called:
 

@@ -13,9 +13,9 @@ Before installing, you need to:
 
 == Installation
 
----
+----
 nuv setup server <host> [<user>]
----
+----
 
 == Update
 
@@ -23,6 +23,6 @@ After installation you can xref:index-config.adoc[update] adding more services==
 
 == Uninstall
 
----
+----
 nuv setup server <host> [<user>] --uninstall
----
+----

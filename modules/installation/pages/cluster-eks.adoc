@@ -12,30 +12,30 @@ TODO provide more info
 
 Configure to access a new or existing cluster:
 
----
+----
 nuv config eks
----
+----
 
 == Create
 
 Create a new cluster if not existing.
 
----
+----
 nuv config eks create
----
+----
 
 == Kubeconfig
 
 Extracting the kubeconfig from an existing cluster:
 
----
+----
 nuv config eks create
----
+----
 
 == Delete
 
 You can destroy an existing cluster:
 
----
+----
 nuv config eks delete
----
+----

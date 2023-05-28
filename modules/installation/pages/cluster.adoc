@@ -12,9 +12,9 @@ Before installing, you need to:
 
 == Installation
 
----
+----
 nuv setup cluster [<context>]
----
+----
 
 == Update
 
@@ -22,6 +22,6 @@ After installation you can xref:index-config.adoc[update] adding more services.
 
 == Uninstall
 
----
+----
 nuv setup cluster --uninstall
----
+----
