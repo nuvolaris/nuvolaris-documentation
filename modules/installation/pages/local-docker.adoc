@@ -19,5 +19,5 @@ On Mac you should:
 * click on the Docker Desktop icon
 * select Preferences
 * click on Resources
-* _increase the memory up to 6GB_
+* _increase the reserved memory up to (at least) 6GB_
 * click on `Apply & Restart`
