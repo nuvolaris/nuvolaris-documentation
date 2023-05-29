@@ -1,3 +1,23 @@
 == Installing Docker Desktop
 
-TODO docker desktop installation
+You can install Nuvolaris in you local machine.
+
+You need a computer with at least 12 GB of memory, better 16GB. _8GB are definitely **not enough** to run Nuvolaris in your local machine_.
+
+You need also to install https://www.docker.com/products/docker-desktop/[Docker Desktop].
+
+=== Memory Requisites
+
+On Mac, you need also to reserve al least 6GB (better 8GB) of memory to Docker Desktop, since the default is not enough. 
+
+This is a required step for Mac, but not on Windows and Mac.
+
+image::install_docker_desktop.png[]
+
+On Mac you should:
+
+* click on the Docker Desktop icon
+* select Preferences
+* click on Resources
+* _increase the memory up to 6GB_
+* click on `Apply & Restart`

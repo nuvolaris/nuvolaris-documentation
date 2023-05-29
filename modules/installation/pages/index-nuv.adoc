@@ -7,9 +7,9 @@ You can download the cli `nuv` for your system.
 
 It is available:
 
-* For Windows, for Intel 64 bit, in Microsoft Installer `.msi` format
-* For MacOSx, for Intel 64 and ARM 64 Bit, in Package `.pkg` format.
-* For Linux, for Intel 64 and ARM 64 Bit, in Ubuntu/Debian `.deb` and (RedHat/Fedora) `.rpm` 
+* For Windows, for Intel 64 bit, in Microsoft Installer `msi` format
+* For MacOSx, for Intel 64 and ARM 64 Bit, in Package `pkg` format.
+* For Linux, for Intel 64 and ARM 64 Bit, in Ubuntu/Debian `deb` and (RedHat/Fedora) `rpm` 
 
 Download your version from there, then install it double clicking on it.
 
