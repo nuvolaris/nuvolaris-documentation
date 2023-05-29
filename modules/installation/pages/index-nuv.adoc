@@ -7,11 +7,15 @@ You can download the cli `nuv` for your system.
 
 It is available:
 
-* For Windows, for Intel 64 bit, in Microsoft Installer `msi` format
-* For MacOSx, for Intel 64 and ARM 64 Bit, in Package `pkg` format.
-* For Linux, for Intel 64 and ARM 64 Bit, in Ubuntu/Debian `deb` and (RedHat/Fedora) `rpm` 
+* on Microsoft Windows, 64 bit version, for Intel architecture, in Microsoft Installer `msi` format
+* on Apple Mac, for Intel and ARM architectures, in package `pkg` format.
+* on various Linux distributions, 64 bit version, for Intel and ARM architecturs, in Ubuntu/Debian `deb` and (RedHat/Fedora) `rpm` format.
 
-Download your version from there, then install it double clicking on it.
+Download your version from there, then install it according the procedures of your operating system.
+
+In all the operating systems with a graphical user interface,  you can just double clicking on the installer to install it.
+
+== Downloads 
 
 * Windows: 
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Intel]
