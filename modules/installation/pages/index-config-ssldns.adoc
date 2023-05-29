@@ -6,25 +6,26 @@
 
 Get the ip of the server with:
 
----
+----
 nuv TODO
----
+----
 
 configure a record to this IP in your dns server
 
 
 ----
-nuv config apihost **<server>**
+nuv config apihost <server>
 ----
 
 [#wildcard]
 == DNS Wildcard
 
+Use a wildcard for statics `*`
 
 [#ssl]
 == SSL
 
 ----
-nuv config apihost **<server>** --tls=**<email>**
+nuv config apihost <server> --tls=<email>
 ----
 
