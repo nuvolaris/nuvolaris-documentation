@@ -10,25 +10,12 @@ You an install without configuration when performing:
 
 In this case you install a minimal Nuvolaris:
 
-* only the serverless engine
-* no extra services
-* accessibile only with `http`.
+* only the serverless engine, no extra services
+* accessibile only in `http`.
 
 You can configure:
 
-* a custom DNS name
-* enable SSL services
-* activate REDIS cache
-* activate Postgres database
-* activate Postgres
+* a custom xref:index-config-ssldns#dns[DNS name] or a xref:index-config-ssl#wildcard[DNS wildcard] for statics
+* activate xref:index-config-ssldns#ssl[https] with a certificate deployed with https://letsencrypt.org/[Let's Encrypt].
+* activate various integrated xref:index-config-services.adoc[services]: xref:index-config-services.adoc#redis[REDIS], xref:index-config-services.adoc#postgres[Postgres] and xref:index-config-services.adoc#minio[MinIO].
 
-
-
-----
-nuv config apihost <server> [--tls=email]
-----
-
-----
-nuv config enable --redis --postgres --minio 
-nuv config disable --redis --postgres --minio 
-----

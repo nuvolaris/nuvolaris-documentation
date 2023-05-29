@@ -1,13 +1,30 @@
-= Configuring Nuvolaris services
+= Configuring DNS and SSL
 
-How to configure services
+
+[#dns]
+== DNS
+
+Get the ip of the server with:
+
+---
+nuv TODO
+---
+
+configure a record to this IP in your dns server
 
 
 ----
-nuv config apihost <server> [--tls=email]
+nuv config apihost **<server>**
 ----
 
+[#wildcard]
+== DNS Wildcard
+
+
+[#ssl]
+== SSL
+
 ----
-nuv config enable --redis --postgres --minio 
-nuv config disable --redis --postgres --minio 
+nuv config apihost **<server>** --tls=**<email>**
 ----
+

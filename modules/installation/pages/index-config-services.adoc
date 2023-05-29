@@ -1,13 +1,73 @@
 = Configuring Nuvolaris services
 
-How to configure services
 
-
-----
-nuv config apihost <server> [--tls=email]
-----
+Syntax:
 
 ----
-nuv config enable --redis --postgres --minio 
-nuv config disable --redis --postgres --minio 
+nuv config (enable|disable) [--all] [--redis] [--postgres] [--minio]
 ----
+
+== All Services
+
+Enable all services:
+
+----
+nuv config enable --all
+----
+
+Disable all services:
+
+----
+nuv config disable --all
+----
+
+[#redis]
+== REDIS
+
+Enable REDIS:
+
+----
+nuv config enable --redis
+----
+
+Disable REDIS:
+
+----
+nuv config disable --redis
+----
+
+
+[#postgres]
+== Postgres
+
+Enable all services:
+
+----
+nuv config enable --postgres
+----
+
+Disable all services:
+
+----
+nuv config disable --postgres
+----
+
+
+[#minio]
+== MinIO
+
+Enable minio:
+
+----
+nuv config enable --minio
+----
+
+Disable minio:
+
+----
+nuv config disable --minio
+----
+
+
+
+
