@@ -1,0 +1,13 @@
+= Configuring Nuvolaris services
+
+How to configure services
+
+
+----
+nuv config apihost <server> [--tls=email]
+----
+
+----
+nuv config enable --redis --postgres --minio 
+nuv config disable --redis --postgres --minio 
+----
