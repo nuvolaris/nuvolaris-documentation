@@ -2,9 +2,9 @@
 
 Nuvolaris can be installed in many environments.
 
-Nuvolaris includes powerful a xref:index-nuv.adoc[CLI] that manages installation.
+Nuvolaris includes powerful `cli`  that manages installation.
 
-Using it can install Nuvolaris on:
+You can xref:index-nuv.adoc[download] it and use to install the Nuvolaris Community on:
 
 * your xref:local.adoc[your local machine] using xref:local-docker.adoc[Docker Desktop] 
 * a xref:server.adoc[Linux Server] accessible with xref:server-sshkey.adoc[SSH]
