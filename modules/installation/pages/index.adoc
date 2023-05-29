@@ -6,6 +6,6 @@ Nuvolaris includes powerful command line interface, `nuv`  that manages everythi
 
 You can xref:index-nuv.adoc[download] it and use to install the Nuvolaris Community on:
 
-* your xref:local.adoc[your local machine] using xref:local-docker.adoc[Docker Desktop] 
+* in your xref:local.adoc[Local Machine] using xref:local-docker.adoc[Docker Desktop] 
 * a xref:server.adoc[Linux Server] accessible with xref:server-sshkey.adoc[SSH]
 * a xref:cluster.adoc[Kubernetes Cluster] accessible with its kubeconfig file.
