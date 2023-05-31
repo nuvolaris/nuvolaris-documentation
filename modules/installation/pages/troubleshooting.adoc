@@ -1,0 +1,71 @@
+= Troubleshooting
+
+This document gives you hints for solving issues, using the (hidden) subcommand `debug`.
+
+Note it is technical and assumes you have some knowledge of how Kubernetes operates.
+
+
+== Watching
+
+While installing, you can watch the installation (opening another terminal) with the command:
+
+----
+nuv debug watch
+----
+
+Check no pod will go in error while deploying.
+
+You can watch continuosly the output of OpenWhisk actions with:
+
+----
+nuv debug poll
+----
+
+== Configuration
+
+You can inspect the configuration:
+
+* API host: `nuv debug apihost`
+* Static Configuration: `nuv debud crd`. 
+* Dynamic Configuration: `nuv debug config`
+* Runtimes: `nuv debug runtimes`
+* Load Balancer: `nuv debug lb`
+
+== Logs
+
+You can inspect logs of:
+
+* operator: `log:oper`
+* controller: `log:ctl`
+* invoker: `log:inv`
+* database: `log:db`
+* certificate manager `log:cert`
+
+== Kubernetes
+
+You can detect which Kubernetes are you using with:
+
+`nuv debug detect`
+
+You can then inspect Kubernetes objects with:
+
+* namespaces: `nuv debug k:ns`
+* nodes: `nuv debug k:no`
+* pod: `nuv debug k:po`
+* services: `nuv debug k:sv`
+
+You can enter in a pod by name (use `k:po` to find the name) with:
+
+----
+nuv debug k:ex P=<pod-name>
+----
+
+== Kubeconfig
+
+Usually `nuv` uses an hidden kubeconfig so does not override your kubernetes configuration.
+
+If you want to go more in depth and you are knowledegeable of Kubernetes, 
+you can export the kubeconfig with `nuv debug export F=<file>`.
+
+You can *overwrite your kubeconfig* (be aware of this) with `nuv debug export F=-`.
+

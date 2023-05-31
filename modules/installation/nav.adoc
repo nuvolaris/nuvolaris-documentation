@@ -12,3 +12,4 @@
 *** xref:cluster-aks.adoc[Install on Azure AKS]
 *** xref:cluster-gke.adoc[Install on Google GKE]
 *** xref:cluster-osh.adoc[Install on RedHat OpenShift]
+** xref:troubleshooting.adoc[Troubleshooting]

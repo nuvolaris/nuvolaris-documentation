@@ -15,7 +15,7 @@ In this case you install a minimal Nuvolaris:
 
 You can configure:
 
-* a custom xref:index-config-ssldns#dns[DNS name] or a xref:index-config-ssldns#wildcard[DNS wildcard] for statics
+* a custom xref:index-config-ssldns#dns[DNS name] or a xref:index-config-ssldns#wildcard[DNS wildcard] for statics.
 * activate xref:index-config-ssldns#ssl[https] with a certificate deployed with https://letsencrypt.org/[Let's Encrypt].
 * activate various integrated xref:index-config-services.adoc[services]: xref:index-config-services.adoc#redis[REDIS], xref:index-config-services.adoc#postgres[Postgres] and xref:index-config-services.adoc#minio[MinIO].
 

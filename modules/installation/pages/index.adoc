@@ -2,10 +2,12 @@
 
 Nuvolaris can be installed in many environments.
 
-Nuvolaris includes powerful command line interface, `nuv`  that manages everything, including installation.
+Nuvolaris includes powerful command line interface, `nuv` that manages everything, including installation.
 
 You can xref:index-nuv.adoc[download] it and use to install the Nuvolaris Community on:
 
 * in your xref:local.adoc[Local Machine] using xref:local-docker.adoc[Docker Desktop] 
 * a xref:server.adoc[Linux Server] accessible with xref:server-sshkey.adoc[SSH]
 * a xref:cluster.adoc[Kubernetes Cluster] accessible with its kubeconfig file.
+
+if you have issues, please consult the xref:troubleshooting.adoc[troubleshooting] page.
