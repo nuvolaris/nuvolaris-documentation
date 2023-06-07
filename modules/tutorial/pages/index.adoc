@@ -1,1 +1,244 @@
 = Tutorial
+
+This tutorial walks you through developing a simple Nuvolaris application 
+using the Command Line Interface (CLI) and Javascript (but any supported language will do).
+
+Its purpose is to showcase serverless development in action by creating a contact form for a website.
+We will see the development process from start to finish, including the deploying of the platform and running the application.
+
+== Getting Started
+
+Imagine we have a static website and need server logic to store contacts 
+and validate data. This would require a server, a database and
+some code to glue it all together. With a serverless approach we can
+just sprinkle little functions (that we call actions) on top of our static website and let Nuvolaris 
+take care of the rest. No more setting up VMs, backend web servers, databases, etc.
+
+=== Nuvolaris CLI: Nuv
+
+Serverless development is mostly performed on the CLI, and Nuvolaris has 
+it's own tool called "nuv". It's a command line tool that allows you to
+deploy (and interact with) the platform seamlessly to the cloud, locally and custom environments.
+
+Nuv is cross-platform and can be installed on Windows, Linux and MacOS. You can find 
+it here: https://github.com/nuvolaris/nuv/releases[Nuv Releases]
+
+=== Deploy Nuvolaris Locally
+
+To start using Nuvolaris we can easily setup a local deployment consisting of a Kubernetes cluster and Nuvolaris. This 
+will give us a ready to use serverless environment. Let's run in the terminal:
+
+[source,bash]
+----
+nuv setup devcluster
+----
+
+If it's the first time you use the nuv tool, it will ask you to download the tasks. In this case just run:
+
+[source,bash]
+----
+nuv -update
+----
+
+Then re-run the setup command. This will start the local environment.
+
+And with just that, we have a serverless platform ready to use!
+
+== Nuvolaris First Steps
+=== Create the Contact Package 
+
+The nuv tool embeds `wsk` (the OpenWhisk CLI) so we can use it to interact with the platform the same way we would
+with vanilla OpenWhisk. Let's create a new package for our application:
+
+[source,bash]
+----
+nuv -wsk package create contact
+ok: created package contact
+----
+
+With a package we can group related actions together. 
+
+=== Our First Action: the Contact Form
+
+In Nuvolaris, actions can just return html and they can even act as web pages. These are called "web actions".
+Let's create a simple action that returns the contact form html:
+
+[source,javascript]
+----
+function main() {
+    return {
+        body: `<html><head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+      rel="stylesheet" id="bootstrap-css">
+</head><body>
+ <div id="container">
+  <div class="row">
+   <div class="col-md-8 col-md-offset-2">
+    <h4>Get in Touch</h4>
+    <form method="POST" action="submit">
+     <div class="form-group">
+       <input type="text" name="name"
+        class="form-control" placeholder="Name">
+     </div>
+     <div class="form-group">
+        <input type="email" name="email"
+         class="form-control" placeholder="E-mail">
+     </div>
+     <div class="form-group">
+        <input type="tel" name="phone"
+         class="form-control" placeholder="Phone">
+     </div>
+     <div class="form-group">
+        <textarea  name="message" rows="3"
+         class="form-control" placeholder="Message"
+         ></textarea>
+      </div>
+      <button class="btn btn-default" type="submit" name="button">
+        Send
+      </button>
+    </form>
+   </div>
+  </div>
+ </div>
+</body></html>`
+    }
+}
+----
+
+Note that the action is just a function called `main` that returns an object and optionally can have an object in input (not used in this case).
+Save the code in a file called `form.js`.
+
+Let's deploy it in the platform:
+
+[source,bash]
+----
+nuv -wsk action create contact/form form.js --web true
+ok: created action contact/form
+----
+
+We are uploading the action into Nuvolaris under `contact/form` where `contact` is the package name we just created and `form` the action name.
+The `--web true` flag tells Nuvolaris that this action is a web action, so it will be accessible via http. To do that, we have to get its url which was 
+automatically associated to the action (the url might be different in your case):
+
+[source,bash]
+----
+nuv -wsk action get contact/form --url
+ok: got action contact/form
+http://localhost:3233/api/v1/web/nuvolaris/contact/form
+----
+
+Let's open the url in the browser!
+
+image::../images/form.png[Form,align="center"]
+
+=== Form Validation and Submission
+
+Now that we have a contact form, we have to handle the submission. We can do that by adding a new action that will be called when the form is submitted. Let's create a `submit.js` file.
+
+[source,javascript]
+----
+function main(args) {
+  message = []
+  errors = []
+  // TODO: Form Validation
+  // TODO: Returning the Result
+}
+----
+
+This action is a bit more complex. It takes the input object (called args) which will contain the form data (accessible via `args.name`, `args.email`, etc.). With that we will do some validation and then return the result.
+
+==== Form Validation
+
+Let's start filling the "Form Validation" part by checking the name:
+
+[source,javascript]
+----
+// validate the name
+if(args.name) {
+ message.push("name: "+args.name)
+} else {
+ errors.push("No name provided")
+}
+----
+
+Then the email by using a regular expression:
+[source,javascript]
+----
+// validate the email
+var re = /\S+@\S+\.\S+/;
+if(args.email && re.test(args.email)) {
+   message.push("email: "+args.email)
+} else {
+  errors.push("Email missing or incorrect.")
+}
+----
+
+The phone, by checking that it's at least 10 digits:
+[source,javascript]
+----
+// validate the phone
+if(args.phone && args.phone.match(/\d/g).length >= 10) {
+  message.push("phone: "+args.phone)
+} else {
+  errors.push("Phone number missing or incorrect.")
+}
+----
+
+Finally the message text, if present:
+[source,javascript]
+----
+// validate the message
+if(args.message) {
+  message.push("message:" +args.message)
+}
+----
+
+==== Validation Done, Return the Result
+
+With the validation phase, we added to the "errors" array all the errors we found, and to the "message" array all the data we want to show to the user. So if there are errors, we have to show them, otherwise we store the message and return a "thank you" page.
+
+[source,javascript]
+----
+if(errors.length) {
+  var errs = "<ul><li>"+errors.join("</li><li>")+"</li></ul>"
+  return {
+    body: "<h1>Errors!</h1>"+
+      data + errs +
+      '<br><a href="javascript:window.history.back()">Back</a>'
+   }
+} else {
+   var data = "<pre>"+message.join("\n")+"</pre>"
+   // storing in the database
+   // TODO: <Store the message in the database> 
+   return {
+     body: "<h1>Thank you!</h1>"+ data
+   }
+}
+----
+
+The code is not yet complete, but let's start deploying it:
+
+[source,bash]
+----
+nuv -wsk action create contact/submit submit.js --web true
+ok: created action contact/submit
+----
+
+Now if you go to the contact form page and submit it correctly, you should see the "Thank you" page.
+
+image::../images/submit.png["Submit Result",align="center"]
+
+Almost like magic, the submit action is automatically triggered by the form submit button with the right data.
+
+=== Storing the Message in the Database
+
+== Cleaning Up
+
+Once you are done experimenting and want to tear everything down, just run:
+
+[source,bash]
+----
+nuv setup devcluster --uninstall
+----
+
+Which will remove Nuvolaris and the local cluster.
