@@ -1,3 +1,18 @@
+var openwhisk = require('openwhisk')
+
+function save(doc) {
+  var ow = openwhisk({ api_key: "25cdfc80-1e9f-4863-9162-42e8d6ae11c6:0ESe6byS0fD8xi93OIZGeIHFb0siACR1d6OtjLfEeLzEFaWJ8ArddHzsiII8MHMO" })
+  return ow.actions.invoke({
+    "name": "contact/write",
+    "params": {
+      "name": doc.name,
+      "email": doc.email,
+      "phone": doc.phone,
+      "message": doc.message
+    }
+  })
+}
+
 function main(args) {
   message = []
   errors = []
@@ -32,7 +47,12 @@ function main(args) {
   } else {
     var data = "<pre>" + message.join("\n") + "</pre>"
     // storing in the database
-    // TODO: <Store the message in the database> 
+    save({
+      "name": args.name,
+      "email": args.email,
+      "phone": args.phone,
+      "message": args.message
+    })
     return {
       body: "<h1>Thank you!</h1>" + data
     }
