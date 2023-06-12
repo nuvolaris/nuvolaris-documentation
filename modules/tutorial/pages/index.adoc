@@ -154,8 +154,8 @@ Now that we have a contact form, we have to handle the submission. We can do tha
 [source,javascript]
 ----
 function main(args) {
-  message = []
-  errors = []
+  let message = []
+  let errors = []
   // TODO: Form Validation
   // TODO: Returning the Result
 }
@@ -396,6 +396,87 @@ ok: updated action contact/submit
 
 Now the pipeline is complete, and we can test it by submitting the form again. This time the data will be stored in the database.
 
+=== Sending an Email
+
+Now let's add a feature that shows how the system interacts with other systems. We will set up the system to send an email when someone uses our contact form (for both complete and incomplete submissions).
+
+We are going to use the https://sendgrid.com[SendGrid] service to send the email. 
+First, we need to create a Sendgrid account and get an API key in the Settings->ApiKeys menu. Just go on the SendGrid homepage and follow the signup process, once you are in
+you have to create a "Sender" account and finally go on the Api Keys page and create one.
+
+Then we can proceed to create a new action called `send-email.js`.
+
+[source,javascript]
+----
+async function main(args) {
+    let res = await fetch("https://api.sendgrid.com/v3/mail/send", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + args.sendgrid
+        },
+        body: JSON.stringify({
+            "from": { "email": args.from },
+            "subject": "[Contact Form]",
+            "personalizations": [
+                { "to": [{ "email": args.to }] }
+            ],
+            "content": [
+                { "type": "text/plain", "value": args.body }
+            ]
+        })
+    })
+    return { body: { ok: res.ok } }
+}
+----
+
+This action uses 4 parameters, the `args.sendgrid` which is the api key. The `args.from` and `args.to`, the sender and recipient, and finally `args.body` which is the content. This last one will be the body returned from the submit action.
+
+Let's first set up the action:
+
+[source,bash]
+----
+SENDGRID="<put your api key>"
+FROM=<your autorized sender>
+TO=<your destitation>
+
+nuv -wsk action create contact/sendemail send-email.js -p sendgrid $SENDGRID -p from $FROM -p to $TO --web=true
+----
+
+We are already setting the first 3 parameters, the last one is given in input by 
+the submit action at every invocation.
+
+==== Creating the Action Sequence
+
+We have developed an action that can send an email as a standalone action, but we designed it to take the output of the submit action and return it as is so we can create a pipeline of actions, where the output of a command is used as an input for another command.
+
+Note that it will send emails for every submission, even for incorrect inputs, so we will know if someone is trying to use the form without providing all the information. But we will only store the fully validated data in the database. 
+
+Let's create this pipeline, called a sequence, and then test it:
+
+[source,bash]
+----
+nuv -wsk action create contact/submit-sendemail --sequence contact/submit,contact/sendemail --web true
+ok: created action contact/submit-sendemail
+----
+
+Now to start using this sequence, instead of just the submit action, we need to update the `form.js` action to invoke the new sequence:
+
+[source,html]
+----
+--- <form method="POST" action="submit">
++++ <form method="POST" action="submit-sendmail">
+----
+
+[source,bash]
+----
+nuv -wsk action update contact/form form.js --web true
+ok: updated action contact/form
+----
+
+Now try to fill the form again and press send! It will execute the sequence and you will receive the email on your email account that you used
+in sendgrid.
+
 == Cleaning Up
 
 Once you are done experimenting and want to tear everything down, just run:
@@ -406,4 +487,6 @@ nuv setup devcluster --uninstall
 nuv config disable --postgres
 ----
 
-Which will remove Nuvolaris and the local cluster, and disable the postgres database for future deployments.
+This will remove Nuvolaris and the local cluster, and disable the postgres database that we enabled earlier.
+
+Checkout the other tutorials to learn how to build more complex applications with Nuvolaris!

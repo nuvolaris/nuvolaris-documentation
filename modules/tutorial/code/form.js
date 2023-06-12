@@ -1,6 +1,6 @@
 function main() {
-    return {
-        body: `<html><head>
+  return {
+    body: `<html><head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
       rel="stylesheet" id="bootstrap-css">
 </head><body>
@@ -8,7 +8,7 @@ function main() {
   <div class="row">
    <div class="col-md-8 col-md-offset-2">
     <h4>Get in Touch</h4>
-    <form method="POST" action="submit">
+    <form method="POST" action="submit-sendemail">
      <div class="form-group">
        <input type="text" name="name"
         class="form-control" placeholder="Name">
@@ -34,5 +34,5 @@ function main() {
   </div>
  </div>
 </body></html>`
-    }
+  }
 }

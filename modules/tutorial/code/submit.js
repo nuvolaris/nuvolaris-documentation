@@ -14,8 +14,8 @@ function save(doc) {
 }
 
 function main(args) {
-  message = []
-  errors = []
+  let message = []
+  let errors = []
 
   if (args.name) {
     message.push("name: " + args.name)
