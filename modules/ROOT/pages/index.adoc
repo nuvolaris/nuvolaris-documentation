@@ -1,6 +1,16 @@
 = Nuvolaris
 
-Welcome to Nuvolaris.
+Welcome to Nuvolaris!
 
-TODO: describe here what is Nuvolaris.
+Nuvolaris is an Open Source project (https://github.com/nuvolaris/nuvolaris/blob/main/LICENSE[Apache 2.0]) that lets you easily build a complete and portable https://martinfowler.com/articles/serverless.html[Serverless] environment that runs in every https://kubernetes.io/[Kubernetes].
 
+Out of the box Nuvolaris contains the https://openwhisk.apache.org[Apache OpenWhisk] platform as its serverless engine, and on top you can add many optional services such as databases, message brokers, a cron scheduler and multi-tenancy. The platform is paired with an incredibly powerful CLI tool that can deploy Nuvolaris everywhere with one line and manage it easily.
+
+We are building a *complete* distribution of a serverless environment that:
+
+* It is easy to install and manage.
+* Potentially runs in every Kubernetes.
+* It is tested regularly against a set of supported Kubernetes environments.
+* Includes a (possibly large) number of integrated services.
+
+This is the main difference from Apache OpenWhisk, as it only provides a basic engine for serverless. IF you want to know more about our goals are described in our https://github.com/nuvolaris/nuvolaris/blob/main/docs/ROADMAP.md[**roadmap**] document to read about.
