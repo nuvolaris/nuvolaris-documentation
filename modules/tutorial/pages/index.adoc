@@ -145,7 +145,7 @@ http://localhost:3233/api/v1/web/nuvolaris/contact/form
 
 Let's open the url in the browser!
 
-image::form.png[Form,align="center"]
+image::../images/form.png[Form,align="center"]
 
 === Form Validation and Submission
 
@@ -242,7 +242,7 @@ ok: created action contact/submit
 
 Now if you go to the contact form page and submit it correctly, you should see the "Thank you" page.
 
-image::submit.png["Submit Result",align="center"]
+image::../images/submit.png["Submit Result",align="center"]
 
 Almost like magic, the submit action is automatically triggered by the form submit button with the right data.
 
