@@ -13,4 +13,4 @@ We are building a *complete* distribution of a serverless environment that:
 * It is tested regularly against a set of supported Kubernetes environments.
 * Includes a (possibly large) number of integrated services.
 
-This is the main difference from Apache OpenWhisk, as it only provides a basic engine for serverless. IF you want to know more about our goals are described in our https://github.com/nuvolaris/nuvolaris/blob/main/docs/ROADMAP.md[**roadmap**] document to read about.
+This is the main difference from Apache OpenWhisk, as it only provides a basic engine for serverless. If you want to know more about our goals are described in our https://github.com/nuvolaris/nuvolaris/blob/main/docs/ROADMAP.md[**roadmap**] document to read about.
