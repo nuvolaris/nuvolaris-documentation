@@ -2,11 +2,19 @@
 
 Creating an  EKS Cluster in Amazon AWS using xref:index-nuv.adoc[nuv].
 
-== Access
+== Credentials
 
-Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+:create-keys: https://repost.aws/knowledge-center/create-access-key
+:eksctl-permissions: https://eksctl.io/usage/minimum-iam-policies/
+ 
+Before starting, access the AWS console and {create-keys}[create an access key and secret key], 
+giving the minimum required discussions as described [eksctl-permissions-]
 
-TODO provide more info
+Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:
+
+---
+nuv config aws
+---
 
 == Config
 
