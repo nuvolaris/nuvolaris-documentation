@@ -1,6 +1,7 @@
 name: nuvolaris
 title: Nuvolaris
 version: '0.2.2'
+prerelease: 'mvp'
 nav:
 - modules/ROOT/nav.adoc
 
