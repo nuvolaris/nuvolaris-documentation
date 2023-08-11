@@ -1,3 +1,19 @@
 = What's New in Nuvolaris {page-component-version}
 
-TODO: describe what is new
+
+* A rich operator, supporting the deployment of integrated services:
+** [Redis](https://redis.io/), a storage service
+** [MinIO](https://min.io/), an object storage service
+** [Postgres](https://www.postgresql.org/) a relational database
+** [FerretDB](https://www.ferretdb.io/) A mongdb compatible adapter 
+
+* A completely rewritten, rich and extendible CLI, `nuv`
+
+* It currently suports installation on:
+** [Docker](https://www.docker.com/), using [Kind](https://kind.sigs.k8s.io/)
+** [Amazon EKS](https://aws.amazon.com/eks/)
+** [Azure AKS](https://azure.microsoft.com/en-us/products/kubernetes-service)
+** [Google GKE](https://cloud.google.com/kubernetes-engine)
+** [RedHat OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift)
+** [Canonical MickoK8S](https://microk8s.io/)
+** [Rancher (now SuSE) K3S](https://k3s.io/)
