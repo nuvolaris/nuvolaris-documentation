@@ -52,6 +52,7 @@ nuv setup devcluster
 And with just that (when it finishes), we have a serverless platform ready to use!
 
 == Nuvolaris First Steps
+
 === Create the Contact Package 
 
 The nuv tool embeds `wsk` (the OpenWhisk CLI) so we can use it to interact with the platform the same way we would with vanilla OpenWhisk. 
@@ -145,7 +146,7 @@ http://localhost:3233/api/v1/web/nuvolaris/contact/form
 
 Let's open the url in the browser!
 
-image::../images/form.png[Form,align="center"]
+image::form.png[Form,align="center"]
 
 === Form Validation and Submission
 
@@ -242,7 +243,7 @@ ok: created action contact/submit
 
 Now if you go to the contact form page and submit it correctly, you should see the "Thank you" page.
 
-image::../images/submit.png["Submit Result",align="center"]
+image::submit.png["Submit Result",align="center"]
 
 Almost like magic, the submit action is automatically triggered by the form submit button with the right data.
 
