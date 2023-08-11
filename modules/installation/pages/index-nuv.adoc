@@ -1,7 +1,8 @@
-= Installing Nuv
+= Installing Current Version of Nuv
 
 :base-url: github.com/nuvolaris/nuv/releases/download
 
+The current version of `nuv` is: *{cur-ver}*.
 You can download the cli `nuv` for your system.
 
 It is available:
