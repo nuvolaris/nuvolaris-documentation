@@ -1,6 +1,6 @@
 name: nuvolaris
 title: Nuvolaris
-version: 3.0
+version: 3.0.0
 #start_page: index.adoc
 #prerelease: beta
 - modules/ROOT/nav.adoc
