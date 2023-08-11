@@ -1,6 +1,5 @@
 = What's New in Nuvolaris {page-component-version}
 
-
 * A rich operator, supporting the deployment of integrated services:
 ** [Redis](https://redis.io/), a storage service
 ** [MinIO](https://min.io/), an object storage service
