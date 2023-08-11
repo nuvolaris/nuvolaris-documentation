@@ -1,6 +1,6 @@
-= Nuvolaris
+= Nuvolaris Community 3 (beta)
 
-Welcome to Nuvolaris!
+Welcome to Nuvolaris Community v3 (beta)!
 
 Nuvolaris is an Open Source project (https://github.com/nuvolaris/nuvolaris/blob/main/LICENSE[Apache 2.0]) that lets you easily build a complete and portable https://martinfowler.com/articles/serverless.html[Serverless] environment that runs in every https://kubernetes.io/[Kubernetes].
 

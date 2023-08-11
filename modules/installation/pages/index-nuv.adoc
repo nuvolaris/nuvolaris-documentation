@@ -1,6 +1,6 @@
 = Installing Nuv
 
-:base-url: github.com/nuvolaris/nuv/releases/download/
+:base-url: github.com/nuvolaris/nuv/releases/download
 :cur-ver:  0.3.0-dev.2305200925
 
 You can download the cli `nuv` for your system.
