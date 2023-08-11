@@ -1,7 +1,7 @@
 name: nuvolaris
 title: Nuvolaris Community
 version: 3.0
-prerelease: beta
+#prerelease: beta
 - modules/ROOT/nav.adoc
 - modules/installation/nav.adoc
 - modules/tutorial/nav.adoc
