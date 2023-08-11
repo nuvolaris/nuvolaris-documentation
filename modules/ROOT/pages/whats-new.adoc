@@ -1,4 +1,4 @@
-= What's New in Nuvolaris {page-component-version}
+= What's New in Nuvolaris Community 3
 
 * A rich operator, supporting the deployment of integrated services:
 ** https://redis.io[Redis], a storage service
