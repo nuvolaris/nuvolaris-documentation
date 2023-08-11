@@ -1,7 +1,7 @@
 name: nuvolaris
-title: Nuvolaris
-version: '0.3.0'
-#prerelease: dev
+title: Nuvolaris Community
+version: '3'
+prerelease: beta
 nav:
 - modules/ROOT/nav.adoc
 - modules/installation/nav.adoc
