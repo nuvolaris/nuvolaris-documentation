@@ -19,7 +19,9 @@ version: '3'
   
 tasks:
   default: task -l
+  
   setup: {silent:true}
+
   origin:
     - git fetch --all
     - git checkout origin/0.3.0 -B 0.3.0
