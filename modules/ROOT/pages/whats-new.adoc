@@ -7,7 +7,7 @@
 ** https://www.ferretdb.io[FerretDB] A MongoDB compatible adapter 
 
 * A completely rewritten, rich and extendible CLI, `nuv`. It currently supports Nuvolaris installation on:
-** https://www.docker.com[Docker](/), using https://kind.sigs.k8s.io[Kind]
+** https://www.docker.com[Docker] using https://kind.sigs.k8s.io[Kind]
 ** https://aws.amazon.com/eks[Amazon EKS]
 ** https://azure.microsoft.com/en-us/products/kubernetes-service[Azure AKS]
 ** https://cloud.google.com/kubernetes-engine[Google GKE]
