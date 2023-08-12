@@ -2,23 +2,21 @@
 
 Nuvolaris Community is an Open Source project, released under the  https://github.com/nuvolaris/nuvolaris/blob/main/LICENSE[Apache License 2.0] providing a portable and complete https://martinfowler.com/articles/serverless.html[Serverless] environment, allowing to build quickly and easily cloud-native applications.
 
-Our goal is to make Nuvolaris ubitiquous.
+Our goal is to make Nuvolaris ubitiquous, allowing to run easily a complete and portable environment that runs in every https://kubernetes.io/[Kubernetes]. 
 
- lets you easily build a complete and portable environment that runs in every https://kubernetes.io/[Kubernetes].
+Nuvolaris is based on https://openwhisk.apache.org[Apache OpenWhisk], which provides a powerful, production ready serverless engine.
 
-Nuvolaris is based on https://openwhisk.apache.org[Apache OpenWhisk], which provides its serverless engine.
+However it is just the beginning, as we provides on top of it  many additional  services such as databases, object storage, a cron scheduler and multi-tenancy.
 
-However this is just the start, as it provides on top of it  many additional  services such as databases, object storage, a cron scheduler and multi-tenancy. T
+Furthermore, we test it on a number of public cloud providers and private cloud vendors.
 
-he platform is paired with an incredibly powerful CLI tool, `nuv` which lets you to deploy Nuvolaris quickly and easily everywhere
+The platform is paired with an incredibly powerful CLI tool, `nuv` which lets you to deploy Nuvolaris quickly and easily everywhere, and perform a lot of development task.
 
 Out goal is to build a *complete* distribution of a serverless environment with the following featues:
 
 * It is easy to install and manage.
+* Includes a number of integrated services.
 * It is as portable as possible to run in every Kubernetes.
 * It is however tested regularly against a set of supported Kubernetes environments.
-* Includes a number of integrated services.
-
-This is main difference with Apache OpenWhisk,  as it only provides a basic engine for serverless. 
 
 If you want to know more about our goals, check our https://github.com/nuvolaris/nuvolaris/blob/main/docs/ROADMAP.md[**roadmap**] document.
