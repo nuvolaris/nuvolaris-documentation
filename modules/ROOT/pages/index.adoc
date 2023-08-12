@@ -6,6 +6,6 @@ Starting points:
 
 * xref:about.adoc[About Nuvolaris]
 * xref:whats-new[What's New]
-* xref:installation::index.adoc[Installation Guide]
-* xref:tutorial::index.adoc[Tutorial]
+* xref:installation:index.adoc[Installation Guide]
+* xref:tutorial:index.adoc[Tutorial]
 
