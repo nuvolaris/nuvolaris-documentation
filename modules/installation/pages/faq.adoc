@@ -1,0 +1,6 @@
+= Frequently Asked Questions
+
+Q: I am trying to uninstall but the removal gest stuck
+
+A: Use `nuv setup kubernetes unlock` to remove a finalizer and unlock the uninstallation.
+
