@@ -1,6 +1,6 @@
-= Troubleshooting
+= Debug
 
-This document gives you hints for solving issues, using the (hidden) subcommand `debug`.
+This document gives you hints for diagnosticing and solving issues, using the (hidden) subcommand `debug`.
 
 Note it is technical and assumes you have some knowledge of how Kubernetes operates.
 

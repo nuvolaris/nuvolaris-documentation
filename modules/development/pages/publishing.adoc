@@ -30,23 +30,23 @@ In every folder `web` it will check if there is a `nuvolaris.json`
 
 If there is not a `nuvolaris.json` and not a `package.json` it will assume this base `nuvolaris.json`:
 
----
+----
 {
   "collect": ".",
   "install": "echo nothing to install",
   "build": "echo nothing to build"
 }
----
+----
 
 If instead there is `packages.json`, it will assume this base `nuvolaris.json`:
 
----
+----
 {
   "collect": "public",
   "install": "npm install",
   "build": "npm run build"
 }
----
+----
 
 The it will read the `nuvolaris.json` replacing the keys in it with the default ones.
 

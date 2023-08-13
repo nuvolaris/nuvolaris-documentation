@@ -1,0 +1,97 @@
+== Nuvolaris First Steps
+
+=== Create the Contact Package 
+
+The nuv tool embeds `wsk` (the OpenWhisk CLI) so we can use it to interact with the platform the same way we would with vanilla OpenWhisk. 
+The first step we can make is to create a new package to hold our actions, furthermore we can bind to this package the database url, so the actions can directly access it!
+
+Use the debug subcommand to see what's going on and grab the "postgres_url" value:
+
+[source,bash]
+----
+nuv debug config
+----
+
+Copy the postgres url and now we can create a new package for the application:
+
+[source,bash]
+----
+nuv -wsk package create contact -p dbUri <postgres_url>
+ok: created package contact
+----
+
+The actions under this package will be able to access the "dbUri" variable from the args! 
+
+=== Our First Action: the Contact Form
+
+In Nuvolaris, actions can just return html and they can even act as web pages. These are called "web actions".
+Let's create a simple action that returns the contact form html:
+
+[source,javascript]
+----
+function main() {
+    return {
+        body: `<html><head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+      rel="stylesheet" id="bootstrap-css">
+</head><body>
+ <div id="container">
+  <div class="row">
+   <div class="col-md-8 col-md-offset-2">
+    <h4>Get in Touch</h4>
+    <form method="POST" action="submit">
+     <div class="form-group">
+       <input type="text" name="name"
+        class="form-control" placeholder="Name">
+     </div>
+     <div class="form-group">
+        <input type="email" name="email"
+         class="form-control" placeholder="E-mail">
+     </div>
+     <div class="form-group">
+        <input type="tel" name="phone"
+         class="form-control" placeholder="Phone">
+     </div>
+     <div class="form-group">
+        <textarea  name="message" rows="3"
+         class="form-control" placeholder="Message"
+         ></textarea>
+      </div>
+      <button class="btn btn-default" type="submit" name="button">
+        Send
+      </button>
+    </form>
+   </div>
+  </div>
+ </div>
+</body></html>`
+    }
+}
+----
+
+Note that the action is just a function called `main` that returns an object and optionally can have an object in input (not used in this case).
+Save the code in a file called `form.js`.
+
+Let's deploy it in the platform:
+
+[source,bash]
+----
+nuv -wsk action create contact/form form.js --web true
+ok: created action contact/form
+----
+
+We are uploading the action into Nuvolaris under `contact/form` where `contact` is the package name we just created and `form` the action name.
+The `--web true` flag tells Nuvolaris that this action is a web action, so it will be accessible via http. To do that, we have to get its url which was 
+automatically associated to the action (the url might be different in your case):
+
+[source,bash]
+----
+nuv -wsk action get contact/form --url
+ok: got action contact/form
+http://localhost:3233/api/v1/web/nuvolaris/contact/form
+----
+
+Let's open the url in the browser!
+
+image::form.png[Form,align="center"]
+

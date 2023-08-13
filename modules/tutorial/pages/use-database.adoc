@@ -1,0 +1,149 @@
+== Storing the Message in the Database
+
+Now we are ready to use the database that we enabled at the beginning of the tutorial. 
+Since we are using a relational database, we need to create a table to store the contact data. We can do that by creating a new action called `create-table.js`:
+
+[source,javascript]
+----
+const { Client } = require('pg')
+
+async function main(args) {
+    const client = new Client({ connectionString: args.dbUri });
+
+    const createTable = `
+    CREATE TABLE IF NOT EXISTS contacts (
+        id UUID PRIMARY KEY,
+        name varchar(50),
+        email varchar(50),
+        phone varchar(50),
+        message varchar(300)
+    );
+    `
+    // Connect to database server
+    await client.connect();
+
+    try {
+        await client.query(createTable)
+    } catch (e) {
+        console.log(e);
+        throw e
+    } finally {
+        client.end();
+    }
+}
+----
+
+We just need to run this once and it does not need to be a web action. We can deploy it with:
+
+[source,bash]
+----
+nuv -wsk action create contact/create-table create-table.js
+ok: created action contact/create-table
+----
+
+Now we run it:
+
+[source,bash]
+----
+nuv -wsk action invoke contact/create-table -r
+{}
+----
+
+This time we invoked the action manually with `-r` to get the result, which is an empty object because the action does not return anything.
+
+=== The Action to Store the Data
+
+We could just write the code to insert data into the table in the `submit.js` action, but it's better to have a separate action for that. Let's create a new action called `write.js`:
+
+[source,javascript]
+----
+const { Client } = require('pg')
+
+async function main(args) {
+    const client = new Client({ connectionString: args.dbUri });
+
+    // Connect to database server
+    await client.connect();
+
+    const { name, email, phone, message } = args
+
+    try {
+        await client.query(
+            'INSERT INTO nuvolaris_table(name,email,phone,message) VALUES($1,$2,$3,$4)',
+            [name, email, phone, message]
+        )
+    } catch (e) {
+        console.log(e);
+        throw e
+    } finally {
+        client.end();
+    }
+}
+----
+
+Very similar to the create table action, but this time we are inserting data into the table by passing the values as parameters. Let's deploy it:
+
+[source,bash]
+----
+nuv -wsk action create contact/write write.js
+ok: created action contact/write
+----
+
+=== Finalizing the Submit Action
+
+Alright, we are almost done. We just need to add the code to invoke the `write` action to store the data. We can do that by adding a small function
+inside the `submit.js` action:
+
+[source,javascript]
+----
+var openwhisk = require('openwhisk')
+
+function save(doc) {
+  var ow = openwhisk({api_key: "25cdfc80-1e9f-4863-9162-42e8d6ae11c6:0ESe6byS0fD8xi93OIZGeIHFb0siACR1d6OtjLfEeLzEFaWJ8ArddHzsiII8MHMO"})
+  return ow.actions.invoke({
+    "name": "contact/write",
+    "params": {
+      "name": doc.name,
+      "email": doc.email,
+      "phone": doc.phone,
+      "message": doc.message
+    }
+  })
+}
+...
+----
+
+Add that above the `main` function! What we are doing here is to 
+import the special `openwhisk` module that gives you access to the Openwhisk 
+API (the Nuvolaris' serverless engine) from within any action. To construct 
+the `ow` object we need to pass the API key, which you can get with
+
+[source,bash]
+----
+nuv -wsk property get --auth
+ok: whisk auth get
+----
+
+If you are using the default user, the key should be the same as the one in the code above.
+
+Now we can replace that last TODO with a call to the `save` function:
+
+[source,javascript]
+----
+save({
+      "name": args.name,
+      "email": args.email,
+      "phone": args.phone,
+      "message": args.message
+    })
+----
+
+Let's update the action:
+
+[source,bash]
+----
+nuv -wsk action update contact/submit submit.js --web true
+ok: updated action contact/submit
+----
+
+Now the pipeline is complete, and we can test it by submitting the form again. This time the data will be stored in the database.
