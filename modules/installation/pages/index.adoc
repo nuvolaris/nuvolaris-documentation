@@ -10,4 +10,4 @@ You can xref:index-nuv.adoc[download] it and use to install the Nuvolaris Commun
 * a xref:server.adoc[Linux Server] accessible with xref:server-sshkey.adoc[SSH]
 * a xref:cluster.adoc[Kubernetes Cluster] accessible with its kubeconfig file.
 
-if you have issues, please consult the xref:faq.adoc[FAQ] and the xref:troubleshooting.adoc[troubleshooting] page.
+if you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[debug] page.
