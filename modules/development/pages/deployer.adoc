@@ -1,9 +1,9 @@
-= The Deployer
+== The Deployer
 
 You can use `nuv` to scan a folder and build a manifest file to deploy the project contained within, using `nuv -scan`.
 It will scan the current folder (or the given path) looking for the folders named `packages` and `web`. 
 
-== The packages folder
+=== The packages folder
 
 If the `packages` folder is found, `nuv` will proceed to build a manifest file where each sub-folder of `packages` is translated to a package creation command (1 package for each subfolder) and each files in this level is considered
 to create a Single File Action under the `default` package which is pre-created in every Nuvolaris deployment.
@@ -11,7 +11,7 @@ to create a Single File Action under the `default` package which is pre-created 
 In every sub-folder, if it finds files it will generate a command to create [single file actions](#single-file-actions)
 in the package corresponding to the sub-folder's name. If it finds sub-folders, it will generate commands to create [multi file actions](#multi-file-actions). There can be the special `web` sub-folder which will be used to deploy a static frontend under the relative package name, so in this case it is not a MFA.
 
-== Single File Actions
+=== Single File Actions
 
 `nuv` generates an `action create` command for each single file actions, with the flag `--kind nodejs:default`, `--kind python:default`, `--kind go:default` and `--kind java:default` depending on the relative runtime.
 
