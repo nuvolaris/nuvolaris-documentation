@@ -1,11 +1,10 @@
 = Nuvolaris Community 3 (beta)
 
-Welcome to Nuvolaris Community v3 (beta)!
+Welcome to xref:about.adoc[Nuvolaris Community] version 3 beta!
 
-Starting points:
+Here a few starting points to consult thig documentation:
 
-* xref:about.adoc[About Nuvolaris]
 * xref:whats-new[What's New]
 * xref:installation:index.adoc[Installation Guide]
-* xref:tutorial:index.adoc[Tutorial]
+* xref:tutorial:index.adoc[Development Tutorial]
 
