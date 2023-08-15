@@ -1,4 +1,4 @@
-= Nuvolaris Community 3 (beta)
+= Nuvolaris Community 3 beta
 
 Welcome to xref:about.adoc[Nuvolaris Community] version 3 beta!
 

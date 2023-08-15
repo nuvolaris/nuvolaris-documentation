@@ -1,13 +1,33 @@
 = Installation
 
-Nuvolaris can be installed in many environments.
+Nuvolaris can be installed in many environments, using our powerful  command line interface, <<installing nuv,nuv>>. 
 
-Nuvolaris includes powerful command line interface, `nuv` that manages everything, including installation.
-
-You can xref:index-nuv.adoc[download] it and use to install the Nuvolaris Community on:
+For development purposes, you can install a single node version:
 
 * in your xref:local.adoc[Local Machine] using xref:local-docker.adoc[Docker Desktop] 
-* a xref:server.adoc[Linux Server] accessible with xref:server-sshkey.adoc[SSH]
-* a xref:cluster.adoc[Kubernetes Cluster] accessible with its kubeconfig file.
 
-if you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[debug] page.
+* in a xref:server.adoc[Linux Server]  supported by https://docs.k3s.io/installation/requirements[K3S] 
+
+For production purposes, you can install Nuvolaris in a xref:cluster.adoc[Kubernetes Cluster] accessible with its kubeconfig file.
+
+We provide support for installing a  Kubernetes cluster ready for installing Nuvolaris in the following cloud environments:
+
+* EKS in Amazon AWS 
+* AKS in Microsoft Azure
+* GKE in Google Cloud
+
+We also provide support for installing Nuvolaris  the following flavors Kubernetes:
+
+* RedHat OpenShift 
+* Ubuntu MicroK8S
+* RedHat Openshift
+
+Id you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[debug] page.
+
+== Installing `nuv`
+
+Nuvolaris includes powerful command line interface, `nuv` that manages configuration, installation and development with Nuvolaris.
+
+Yoy can xref:index-nuv.adoc[download hrtr] and use to install and develop with Nuvolaris.
+
+

@@ -4,6 +4,9 @@ This section describes how to install Nuvolaris on a remote server
 
 == Prerequisite
 
+as long it is accessible with xref:server-sshkey.adoc[SSH] and you have the permission to run https://en.wikipedia.org/wiki/Sudo[`sudo`].
+
+
 Before installing, you need to:
 
 * generate an xref:server-sshkey.adoc[ssh key] to access a server
