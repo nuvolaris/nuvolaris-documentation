@@ -1,6 +1,6 @@
 = Installation
 
-Nuvolaris can be installed in many environments, using our powerful  command line interface, that can be downladed and installed xref:index-nuv.adoc[from this page].
+Nuvolaris can be installed in many environments, using our powerful  command line interface, that can be downloded and installed xref:index-nuv.adoc[from this page].
 
 For development purposes, you can install a single node version:
 
