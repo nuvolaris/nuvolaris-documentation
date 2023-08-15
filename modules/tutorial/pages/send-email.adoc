@@ -79,16 +79,3 @@ ok: updated action contact/form
 Now try to fill the form again and press send! It will execute the sequence and you will receive the email on your email account that you used
 in sendgrid.
 
-== Cleaning Up
-
-Once you are done experimenting and want to tear everything down, just run:
-
-[source,bash]
-----
-nuv setup devcluster --uninstall
-nuv config disable --postgres
-----
-
-This will remove Nuvolaris and the local cluster, and disable the postgres database that we enabled earlier.
-
-Checkout the other tutorials to learn how to build more complex applications with Nuvolaris!
