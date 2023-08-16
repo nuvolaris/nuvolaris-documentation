@@ -12,13 +12,13 @@ Nuvolaris provides integrated with OpenWhisk a number of additional services suc
 
 Furthermore, we test it on a number of public cloud  kubernetes services and on premises kubernetes vendors.
 
-The platform is paired with an incredibly powerful CLI tool, `nuv` which lets you to deploy Nuvolaris quickly and easily everywhere, and perform a lot of development task.
+The platform is paired with  powerful CLI tool, `nuv`, which lets you to deploy Nuvolaris quickly and easily everywhere, and perform a lot of development task.
 
-Out goal is to build a *complete* distribution of a serverless environment with the following featues:
+Out goal is to build a *complete* distribution of a serverless environment with the following features:
 
 * It is easy to install and manage.
-* Includes a number of integrated services.
-* It is as portable as possible to run in every Kubernetes.
+* Integrates all the key services  to build applications.
+* It is as portable as possible to run potentially in every Kubernetes.
 * It is however tested regularly against a set of supported Kubernetes environments.
 
 If you want to know more about our goals, check our https://github.com/nuvolaris/nuvolaris/blob/main/docs/ROADMAP.md[**roadmap**] document.
