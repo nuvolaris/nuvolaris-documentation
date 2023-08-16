@@ -9,7 +9,7 @@ The current version of `nuv` is: *{cur-ver}*.
 
 You can download it for your system. It is available for the following operating systems, architectures and formats:
 
-* for Microsoft Windows, 64 bit version only, for Intel architecture, in Microsoft Installer `msi` format
+* for Microsoft Windows, 64 bit version only, version 10 or greater, for Intel architecture, in Microsoft Installer `msi` format
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Download `nuv` for Windows/Intel]
 
 * on Apple MacOS, for Intel and ARM architectures, in `pkg` format.
