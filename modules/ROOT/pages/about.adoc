@@ -8,9 +8,9 @@ Nuvolaris is based on https://openwhisk.apache.org[Apache OpenWhisk], which prov
 
 However, the serverless engine  is just the beginning, because a serverless environment requires a set of integrated services.
 
-Nuvolaris provides integrated with OpenWhisk a number of additional services such as databases, object storage, a cron scheduler and multi-tenancy.
+Nuvolaris provides integrated with OpenWhisk a number of additional services such as databases, object storage, a cron scheduler.
 
-Furthermore, we test it on a number of public cloud providers and private cloud vendors.
+Furthermore, we test it on a number of public cloud  kubernetes services and on premises kubernetes vendors.
 
 The platform is paired with an incredibly powerful CLI tool, `nuv` which lets you to deploy Nuvolaris quickly and easily everywhere, and perform a lot of development task.
 
