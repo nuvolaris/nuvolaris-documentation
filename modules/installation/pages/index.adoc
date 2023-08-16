@@ -7,7 +7,7 @@ Once you installed `nuv`, before installing you need to:
 * xref:prereq.adoc[checking the prerequisites] for the installation, and satisfy them
 * xref:configure.adoc[configure] your Nuvolaris installation. 
 
-Finally, once you have the prerequisites satisfied and you have configured your installation,  you can then install:
+Finally, once you have the prerequisites satisfied and your installation configured ,  you can actually install:
 
 * in your xref:install-local.adoc[local machine]
 * in a xref:install-server.adoc[Linux server]
