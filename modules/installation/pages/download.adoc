@@ -3,7 +3,7 @@
 
 :base-url: github.com/nuvolaris/nuv/releases/download
 
-You can install Nuvolaris using the Command Line Tool `nuv`.
+You can install Nuvolaris using its Command Line Tool `nuv`.
 
 The current version of `nuv` is: *{cur-ver}*.
 
