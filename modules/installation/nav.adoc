@@ -2,7 +2,7 @@
 ** xref:index-nuv.adoc[Installer]
 ** xref:local.adoc[Local Install]
 
-
+** xref:index.adoc[Prerequisites]
 *** xref:local-docker.adoc[Docker Desktop]
 ** xref:server.adoc[Server Install]
 *** xref:server-sshkey.adoc[Create SSH Key]
