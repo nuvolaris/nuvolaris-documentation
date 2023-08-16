@@ -20,5 +20,4 @@ We provide support for installing a  Kubernetes cluster ready for Nuvolaris in t
 * xref:cluster-osh.adoc[RedHat OpenShift in supported cloud] 
 
 
-
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page.
