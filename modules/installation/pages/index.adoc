@@ -20,4 +20,4 @@ We support for installing a  Kubernetes cluster ready for Nuvolaris in the follo
 
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page. 
 
-You can contact us in our http://nuvolaris.discourse.group][online forum]
+You can contact us in our http://nuvolaris.discourse.group][online forum].
