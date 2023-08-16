@@ -10,7 +10,6 @@ For **development** purposes, you can install a single node version:
 ** xref:server-k3s.adoc[SuSE K3S] 
 ** xref:server-mk8s.adoc[Ubuntu MicroK8S] 
 
-https://microk8s.io/[Canonical MicroK8S]
 
 For **production** purposes, you can install Nuvolaris in any xref:cluster-generic.adoc[Kubernetes Cluster] accessible with its kubeconfig file that satifies  xref:cluster-requirements.adoc[some requirements].
 
