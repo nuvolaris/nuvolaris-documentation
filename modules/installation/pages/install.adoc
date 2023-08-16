@@ -14,7 +14,7 @@ Then you can proceed installing:
 
 After the installation, you can:
 
-*  xref:update.adoc[update the system]. 
+*  xref:update.adoc[reconfigure and update the system]. 
 
 If something goes wrong, you can check:
 
