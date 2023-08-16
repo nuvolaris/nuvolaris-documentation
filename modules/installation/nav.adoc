@@ -6,7 +6,7 @@
 *** xref:local-docker.adoc[Docker Desktop]
 *** xref:server.adoc[Linux Server]
 **** xref:server-sshkey.adoc[Create SSH Key]
-*** xref:index.adoc[Kubernetes Cluster]
+**** xref:index.adoc[Kubernetes Cluster]
 
 
 *** xref:server-generic.adoc[Prepare Linux Server]
