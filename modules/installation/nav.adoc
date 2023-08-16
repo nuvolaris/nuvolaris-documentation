@@ -1,9 +1,9 @@
 * xref:index.adoc[Installation]
 ** xref:index-nuv.adoc[Download Installer]
 
-** xref:index.adoc[Prerequisites]
-*** xref:local-docker.adoc[Docker Desktop]
-*** xref:server.adoc[Linux Server]
+** xref:prereq.adoc[Prerequisites]
+*** xref:prereq-docker.adoc[Docker Desktop]
+*** xref:prereq-server.adoc[Linux Server]
 **** xref:server-sshkey.adoc[Create SSH Key]
 *** xref:prereq-kubernetes.adoc[Kubernetes Cluster]
 **** xref:prereq-eks.adoc[Amazon EKS]
