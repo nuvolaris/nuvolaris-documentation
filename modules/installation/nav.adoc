@@ -10,7 +10,7 @@
 **** xref:prereq-gke.adoc[Google GKE]
 **** xref:prereq-osh.adoc[RedHat OpenShift]
 ** xref:configure.adoc[Configure Nuvolaris]
-** xref:index.adoc[Install Nuvolaris]
+** xref:install.adoc[Install Nuvolaris]
 *** xref:local.adoc[Local Installation]
 *** xref:server-generic.adoc[Server Installation]
 *** xref:cluster.adoc[Cluster Installation]
