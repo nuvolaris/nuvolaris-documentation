@@ -5,7 +5,6 @@ Nuvolaris can be installed in many environments, using our powerful  command lin
 For **development** purposes, you can install a single node version:
 
 * in your xref:local.adoc[Local Machine] using xref:local-docker.adoc[Docker Desktop] 
-
 * in a *single* xref:server.adoc[Linux Server] using
 ** xref:server-k3s.adoc[SuSE K3S] 
 ** xref:server-mk8s.adoc[Ubuntu MicroK8S] 
