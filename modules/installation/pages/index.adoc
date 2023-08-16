@@ -5,18 +5,18 @@ Nuvolaris can be installed in many environments, using our powerful  command lin
 For **development** purposes, you can install a single node Nuvolaris deployment:
 
 * in your xref:local.adoc[Local Machine] using xref:local-docker.adoc[Docker Desktop] 
-* in a *single* xref:server.adoc[Linux Server] using either:
+* in a *single* xref:server.adoc[Linux Server] using the following supported environments:
 ** xref:server-k3s.adoc[SuSE K3S] 
-** xref:server-mk8s.adoc[Ubuntu MicroK8S] 
+** xref:server-mk8s.adoc[Ubuntu MicroK8S]
+
 
 For **production** purposes, you can install a multi-node Nuvolaris deployment in any xref:cluster-generic.adoc[Kubernetes Cluster] accessible with its kubeconfig file that satifies  xref:cluster-requirements.adoc[some requirements].
 
-We provide support for installing a  Kubernetes cluster ready for Nuvolaris in the following  environments:
+We support for installing a  Kubernetes cluster ready for Nuvolaris in the following  environments:
 
 * xref:cluster-eks.adoc[EKS in Amazon AWS] 
 * xref:cluster-aks.adoc[AKS in Microsoft Azure]
 * xref:cluster-gke.adoc[GKE in Google Cloud]
 * xref:cluster-osh.adoc[RedHat OpenShift in supported cloud] 
-
-
+  s
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page.
