@@ -1,4 +1,4 @@
-= Installation
+= Installation Overview
 
 Nuvolaris can be installed in many environments, using our powerful  command line interface `nuv`. You can downloded the installer xref:download.adoc[from this page].
 
