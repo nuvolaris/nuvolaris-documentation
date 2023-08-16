@@ -15,6 +15,6 @@
 *** xref:local.adoc[Local Installation]
 *** xref:server-generic.adoc[Server Installation]
 *** xref:cluster.adoc[Cluster Installation]
-** xref:index-update.adoc[Update Installation]
+** xref:update.adoc[Update Installation]
 ** xref:debug.adoc[Troubleshooting]
 ** xref:faq.adoc[FAQ]
