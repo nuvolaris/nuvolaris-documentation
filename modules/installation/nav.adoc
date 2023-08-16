@@ -12,15 +12,9 @@
 *** xref:cluster-osh.adoc[RedHat OpenShift]
 ** xref:index-config.adoc[Configure Nuvolaris]
 ** xref:index.adoc[Install Nuvolaris]
-
 *** xref:local.adoc[Local Installation]
 *** xref:server-generic.adoc[Server Installation]
 *** xref:cluster.adoc[Cluster Installation]
-
-
-
 ** xref:index-update.adoc[Update]
-
-
 ** xref:debug.adoc[Troubleshooting]
 ** xref:faq.adoc[FAQ]
