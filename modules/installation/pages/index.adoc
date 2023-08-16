@@ -13,7 +13,7 @@ Finally, once you have the prerequisites satisfied and your installation configu
 * in a xref:install-server.adoc[Linux server]
 * in a xref:install-cluster.adoc[Kubernetes cluster].
 
-After the installation, you ca
+After the installation, you can change the configuration then xref:update.adoc[update the system]. 
 
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page. 
 
