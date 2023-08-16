@@ -10,10 +10,17 @@ The current version of `nuv` is: *{cur-ver}*.
 You can download it for your system. It is available:
 
 * on Microsoft Windows, 64 bit version, for Intel architecture, in Microsoft Installer `msi` format
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Download Windows/Intel installer]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[download Windows/Intel installer]
 
-* on Apple Mac, for Intel and ARM architectures, in package `pkg` format.
-* on various Linux distributions, 64 bit version, for Intel and ARM architecturs, in Ubuntu/Debian `deb` and (RedHat/Fedora) `rpm` format.
+* on Apple Mac, for Intel and ARM architectures, in `pkg` format.
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Download Mac/Intel Installer] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[Download Mac/Intel Mac/ARM Installer]
+
+* on various Linux distributions, 64 bit version, for Intel and ARM architectures, in Ubuntu/Debian `deb` and (RedHat/Fedora) `rpm` format.
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Download Linux/Intel for Debian/Ubuntu] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.deb[Download Limix/ARM for Debian/Ubuntu]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.rpm[Download Linux/Intel for RedHat/SuSE] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.rpm[ARM]
 
 Download your version from there, then install it according the procedures of your operating system.
 
@@ -23,11 +30,4 @@ In all the operating systems with a graphical user interface,  you can just doub
 
 * Windows: 
 * MacOSx: 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Intel] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[ARM]
 * Linux (Ubuntu/Debian): 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Intel] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.deb[ARM]
-* Linux (RedHat/Fedora): 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.rpm[Intel] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.rpm[ARM]
