@@ -1,8 +1,8 @@
 * xref:index.adoc[Installation]
-** xref:index-nuv.adoc[Download]
-** xref:index-config.adoc[Configure]
-** xref:index-update.adoc[Update]
+** xref:index-nuv.adoc[Installer]
 ** xref:local.adoc[Local Install]
+
+
 *** xref:local-docker.adoc[Docker Desktop]
 ** xref:server.adoc[Server Install]
 *** xref:server-sshkey.adoc[Create SSH Key]
@@ -12,5 +12,10 @@
 *** xref:cluster-aks.adoc[Install on Azure AKS]
 *** xref:cluster-gke.adoc[Install on Google GKE]
 *** xref:cluster-osh.adoc[Install on RedHat OpenShift]
+
+** xref:index-config.adoc[Configure]
+** xref:index-update.adoc[Update]
+
+
 ** xref:debug.adoc[Troubleshooting]
 ** xref:faq.adoc[FAQ]
