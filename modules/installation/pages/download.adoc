@@ -25,9 +25,3 @@ You can download it for your system. It is available:
 Download your version from there, then install it according the procedures of your operating system.
 
 In all the operating systems with a graphical user interface,  you can just double clicking on the installer to install it.
-
-== Downloads 
-
-* Windows: 
-* MacOSx: 
-* Linux (Ubuntu/Debian): 
