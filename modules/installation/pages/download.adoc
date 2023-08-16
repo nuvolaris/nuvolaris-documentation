@@ -26,4 +26,4 @@ Download your version from this page, then install it according the procedures o
 
 In all the operating systems with a graphical user interface, you can just double clicking on the installer to install it.
 
-**NOTE:** beta version is currently unsigned. Check https://www.wikihow.com/Install-Software-from-Unsigned-Developers-on-a-Mac[here for install on Mac] 
+**NOTE:** beta version is currently unsigned. Check https://www.wikihow.com/Install-Software-from-Unsigned-Developers-on-a-Mac[here for install on Mac].
