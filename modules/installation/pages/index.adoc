@@ -9,14 +9,14 @@ For **development** purposes, you can install a single node Nuvolaris deployment
 ** xref:prereq-k3s.adoc[SuSE K3S] 
 ** xref:prereq-mk8s.adoc[Ubuntu MicroK8S]
 
-For **production** purposes, you can install a multi-node Nuvolaris deployment in any xref:install-cluster.adoc[Kubernetes Cluster] accessible with its `kubeconfig` file that satifies xref:prereq-generic.adoc[some requirements].
+For **production** purposes, you can install a multi-node Nuvolaris deployment in any xref:install-cluster.adoc[Kubernetes Cluster] accessible with its `kubeconfig` file as long the cluster satifies xref:prereq-generic.adoc[some requirements].
 
 We support for installing a  Kubernetes cluster ready for Nuvolaris in the following  environments:
 
-* xref:cluster-eks.adoc[EKS in Amazon AWS] 
-* xref:cluster-aks.adoc[AKS in Microsoft Azure]
-* xref:cluster-gke.adoc[GKE in Google Cloud]
-* xref:cluster-osh.adoc[RedHat OpenShift in supported cloud] 
+* xref:prereq-eks.adoc[EKS in Amazon AWS] 
+* xref:prereq-aks.adoc[AKS in Microsoft Azure]
+* xref:prereq-gke.adoc[GKE in Google Cloud]
+* xref:prereq-osh.adoc[RedHat OpenShift in supported cloud] 
 
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page. 
 
