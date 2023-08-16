@@ -2,7 +2,7 @@
 
 Welcome to xref:about.adoc[Nuvolaris Community] version 3 beta!
 
-Here a few starting points to consult thig documentation:
+Here a few starting points to consult this documentation:
 
 * xref:whats-new.adoc[What's New]
 * xref:installation:index.adoc[Installation Guide]
