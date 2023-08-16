@@ -4,7 +4,7 @@ Once you got your `id_rsa.pub` and a server, get access to it.
 
 The exact instructions depends on the specific provider.
 
-== Generic instrctions.
+== Generic instructios.
 
 The generic instructions are the following:
 
