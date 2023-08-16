@@ -1,22 +1,24 @@
 * xref:index.adoc[Installation]
-** xref:index-nuv.adoc[Installer]
-** xref:local.adoc[Local Install]
+** xref:index-nuv.adoc[Download Installer]
 
 ** xref:index.adoc[Prerequisites]
 *** xref:local-docker.adoc[Docker Desktop]
 *** xref:server.adoc[Linux Server]
 **** xref:server-sshkey.adoc[Create SSH Key]
-**** xref:index.adoc[Kubernetes Cluster]
+*** xref:index.adoc[Kubernetes Cluster]
+*** xref:cluster-eks.adoc[Amazon EKS]
+*** xref:cluster-aks.adoc[Azure AKS]
+*** xref:cluster-gke.adoc[Google GKE]
+*** xref:cluster-osh.adoc[RedHat OpenShift]
+** xref:index-config.adoc[Configure Nuvolaris]
+** xref:index.adoc[Install Nuvolaris]
+
+*** xref:local.adoc[Local Installation]
+*** xref:server-generic.adoc[Server Installation]
+*** xref:cluster.adoc[Cluster Installation]
 
 
-*** xref:server-generic.adoc[Prepare Linux Server]
-** xref:cluster.adoc[Cluster Install]
-*** xref:cluster-eks.adoc[Install on Amazon EKS]
-*** xref:cluster-aks.adoc[Install on Azure AKS]
-*** xref:cluster-gke.adoc[Install on Google GKE]
-*** xref:cluster-osh.adoc[Install on RedHat OpenShift]
 
-** xref:index-config.adoc[Configure]
 ** xref:index-update.adoc[Update]
 
 
