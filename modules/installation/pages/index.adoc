@@ -18,5 +18,6 @@ We support for installing a  Kubernetes cluster ready for Nuvolaris in the follo
 * xref:cluster-aks.adoc[AKS in Microsoft Azure]
 * xref:cluster-gke.adoc[GKE in Google Cloud]
 * xref:cluster-osh.adoc[RedHat OpenShift in supported cloud] 
-  s
+
+
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page.
