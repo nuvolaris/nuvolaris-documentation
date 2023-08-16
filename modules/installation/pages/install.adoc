@@ -1,0 +1,22 @@
+= Installation Overview
+
+Before Installing you need to:
+
+* xref:download.adoc[download the installer]
+* xref:prereq.adoc[satisfy the prerequisites] 
+* xref:configure.adoc[configure your installation] your 
+
+Then you can proceed installing:
+
+* in your xref:install-local.adoc[local machine]
+* in a xref:install-server.adoc[Linux server]
+* in a xref:install-cluster.adoc[Kubernetes cluster].
+
+After the installation,  you can
+*  xref:update.adoc[update the system]. 
+
+If something goes wrong, check 
+
+* our xref:faq.adoc[FAQ] 
+* the xref:debug.adoc[Troubleshooting] page
+* our online http://nuvolaris.discourse.group[Forum]
