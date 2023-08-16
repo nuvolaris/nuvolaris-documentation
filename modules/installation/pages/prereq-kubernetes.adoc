@@ -10,7 +10,6 @@ The tool `nuv` includes automated provisioning in the following enviroments:
 * xref:cluster-aks.adoc[Azure AKS]
 * xref:cluster-gke.adoc[Google GKE]
 
-
 If your cluster is not one of those, contact your provider for informations how to get the `kubeconfig`.
 
 
