@@ -11,7 +11,7 @@ For **development** purposes, you can install a single node Nuvolaris deployment
 
 For **production** purposes, you can install a multi-node Nuvolaris deployment in any xref:install-cluster.adoc[Kubernetes cluster] accessible with its `kubeconfig` file as long the cluster satifies xref:prereq-generic.adoc[some requirements].
 
-We support installing a  Kubernetes cluster ready for Nuvolaris in the following  environments:
+We support installing Nuvolaris in the following  Kubernetes environments:
 
 * xref:prereq-eks.adoc[EKS in Amazon AWS] 
 * xref:prereq-aks.adoc[AKS in Microsoft Azure]
