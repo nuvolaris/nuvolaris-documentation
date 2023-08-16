@@ -16,7 +16,7 @@ You can download it for your system. It is available:
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Download Mac/Intel Installer] 
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[Download Mac/Intel Mac/ARM Installer]
 
-* on various Linux distributions, 64 bit version, for Intel and ARM architectures, in Ubuntu/Debian `deb` and (RedHat/Fedora) `rpm` format.
+* on various Linux distributions, 64 bit version, for Intel and ARM architectures, in Ubuntu/Debian `deb` and RedHat/SuSE `rpm` format.
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Download Linux/Intel for Debian/Ubuntu] 
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.deb[Download Limix/ARM for Debian/Ubuntu]
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.rpm[Download Linux/Intel for RedHat/SuSE] 
