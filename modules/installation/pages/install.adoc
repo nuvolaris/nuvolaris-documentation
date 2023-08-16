@@ -12,11 +12,14 @@ Then you can proceed installing:
 * in a xref:install-server.adoc[Linux server]
 * in a xref:install-cluster.adoc[Kubernetes cluster].
 
-After the installation,  you can
+After the installation, you can:
+
 *  xref:update.adoc[update the system]. 
 
-If something goes wrong, check 
+If something goes wrong, you can check:
 
 * our xref:faq.adoc[FAQ] 
 * the xref:debug.adoc[Troubleshooting] page
 * our online http://nuvolaris.discourse.group[Forum]
+
+
