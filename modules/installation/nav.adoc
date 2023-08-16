@@ -4,7 +4,8 @@
 
 ** xref:index.adoc[Prerequisites]
 *** xref:local-docker.adoc[Docker Desktop]
-** xref:server.adoc[Server Install]
+*** xref:server.adoc[Linux Server]
+
 *** xref:server-sshkey.adoc[Create SSH Key]
 *** xref:server-generic.adoc[Prepare Linux Server]
 ** xref:cluster.adoc[Cluster Install]
