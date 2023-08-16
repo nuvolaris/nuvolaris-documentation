@@ -1,1 +1,2 @@
 = Support K3S
+https://docs.k3s.io/installation/requirements[Suse K3S]
