@@ -17,4 +17,4 @@ After the installation, you can change the configuration then xref:update.adoc[u
 
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page. 
 
-You can contact us in our http://nuvolaris.discourse.group[online forum].
+You can also discuss with us in our http://nuvolaris.discourse.group[online forum].
