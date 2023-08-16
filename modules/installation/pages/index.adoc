@@ -6,22 +6,22 @@ For **development** purposes, you can install a single node version:
 
 * in your xref:local.adoc[Local Machine] using xref:local-docker.adoc[Docker Desktop] 
 
-* in a single xref:server.adoc[Linux Server] installing either
-** https://docs.k3s.io/installation/requirements[Suse K3S]
-** https://microk8s.io/[Canonical MicroK8S]
+* in a *single* xref:server.adoc[Linux Server] using
+** xref:server-k3s.adoc[SuSE K3S] 
+** xref:server-mk8s.adoc[Ubuntu MicroK8S] 
+
+https://microk8s.io/[Canonical MicroK8S]
 
 For **production** purposes, you can install Nuvolaris in any xref:cluster-generic.adoc[Kubernetes Cluster] accessible with its kubeconfig file that satifies  xref:cluster-requirements.adoc[some requirements].
 
-We provide support for installing a  Kubernetes cluster ready for Nuvolaris in the following cloud environments:
+We provide support for installing a  Kubernetes cluster ready for Nuvolaris in the following  environments:
 
 * xref:cluster-eks.adoc[EKS in Amazon AWS] 
 * xref:cluster-aks.adoc[AKS in Microsoft Azure]
 * xref:cluster-gke.adoc[GKE in Google Cloud]
-* xref:cluster-osh.adoc[RedHat OpenShift] 
+* xref:cluster-osh.adoc[RedHat OpenShift in any cloud] 
 
-We also provide support for installing Nuvolaris also on the following  cloud-independent flavors of Kubernetes running either in cloud or on premises.
-
-* xref:server-mk8s.adoc[Ubuntu MicroK8S]
-* xref:server-k3s.adoc[SuSE K3S]
+* 
+*
 
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page.
