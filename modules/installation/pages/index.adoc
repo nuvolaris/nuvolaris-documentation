@@ -2,7 +2,7 @@
 
 Nuvolaris can be installed in many environments, using our powerful  command line interface `nuv`. You can downloded the installer xref:download.adoc[from this page].
 
-Once you installed `nuv` you can proceed   xref:prereq[checking the prerequisites] for the installation.
+Once you installed `nuv` you can proceed   xref:prereq.adoc[checking the prerequisites] for the installation.
 
 You can then xref:configure.adoc[configure] your Nuvolaris installation. 
 
