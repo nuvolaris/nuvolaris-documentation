@@ -1,13 +1,17 @@
-= Installing Current Version of Nuv
+= Download Installer
+
 
 :base-url: github.com/nuvolaris/nuv/releases/download
 
-The current version of `nuv` is: *{cur-ver}*.
-You can download the cli `nuv` for your system.
+You can install Nuvolaris using the Command Line Tool `nuv`.
 
-It is available:
+The current version of `nuv` is: *{cur-ver}*.
+
+You can download it for your system. It is available:
 
 * on Microsoft Windows, 64 bit version, for Intel architecture, in Microsoft Installer `msi` format
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Download Windows/Intel installer]
+
 * on Apple Mac, for Intel and ARM architectures, in package `pkg` format.
 * on various Linux distributions, 64 bit version, for Intel and ARM architecturs, in Ubuntu/Debian `deb` and (RedHat/Fedora) `rpm` format.
 
@@ -18,7 +22,6 @@ In all the operating systems with a graphical user interface,  you can just doub
 == Downloads 
 
 * Windows: 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Intel]
 * MacOSx: 
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Intel] 
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[ARM]
