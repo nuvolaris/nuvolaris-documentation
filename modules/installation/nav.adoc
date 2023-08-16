@@ -5,10 +5,10 @@
 ** xref:index.adoc[Prerequisites]
 *** xref:local-docker.adoc[Docker Desktop]
 *** xref:server.adoc[Linux Server]
+**** xref:server-sshkey.adoc[Create SSH Key]
 *** xref:index.adoc[Kubernetes Cluster]
 
 
-*** xref:server-sshkey.adoc[Create SSH Key]
 *** xref:server-generic.adoc[Prepare Linux Server]
 ** xref:cluster.adoc[Cluster Install]
 *** xref:cluster-eks.adoc[Install on Amazon EKS]
