@@ -10,7 +10,7 @@ Finally, once you have the prerequisites satisfied and you have configured your 
 
 * in your xref:install-local.adoc[local machine]
 * in a xref:install-server.adoc[Linux server]
-* in a xref:install-kubernetes.adoc[Kubernetes cluster].
+* in a xref:install-cluster.adoc[Kubernetes cluster].
 
 After the installation, you ca
 
