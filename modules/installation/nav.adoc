@@ -1,5 +1,5 @@
 * xref:index.adoc[Installation]
-** xref:index-nuv.adoc[Download Installer]
+** xref:download.adoc[Download Installer]
 
 ** xref:prereq.adoc[Prerequisites]
 *** xref:prereq-docker.adoc[Docker Desktop]
