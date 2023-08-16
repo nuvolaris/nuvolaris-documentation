@@ -5,7 +5,7 @@
 *** xref:local-docker.adoc[Docker Desktop]
 *** xref:server.adoc[Linux Server]
 **** xref:server-sshkey.adoc[Create SSH Key]
-*** xref:index.adoc[Kubernetes Cluster]
+*** xref:prereq-kubernetes.adoc[Kubernetes Cluster]
 **** xref:cluster-eks.adoc[Amazon EKS]
 **** xref:cluster-aks.adoc[Azure AKS]
 **** xref:cluster-gke.adoc[Google GKE]
