@@ -4,7 +4,7 @@ This is a quick start guide to the installation process, omitting a lot of detai
 
 == Prerequisites
 
-First, xref:download.adoc[download our CLI `nuv`] picking the version suitable for your environment. We support only 64 bit versions of recent Windows, MacOS and Linux os/distributions. 
+First, xref:download.adoc[download `nuv`], the Nuvolaris CLI, the version suitable for your environment. We support the 64 bit version of recent Windows, MacOS and major Linux distributions.
 
 Second, configure the services you want to enable. By defalt Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:
 
@@ -14,8 +14,13 @@ nuv config enable --all
 
 otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres that is implicitly also enabled. More details xref:configure.adoc[here]. 
 
-Now, pick a suitable environment and install Nuvolaris.
+Now, install Nuvolaris either:
+* <<locally>> in your workstation
+* in a Linux <<server>>  virtual or physical you have access, 
+* in a Kubernets <<cluster>> you have access 
+* setup a Kubernetes <<cloud>> in a cloud to install it.
 
+[#locally]
 == Local Install
 
 If you have a decent machine with at least 16GB of memory running a 64bit recente operationg system and you do now want to use any server or cloud, install 
@@ -27,26 +32,18 @@ Once you have installed the CLI and configured you services, you can install Nuv
 nuv setup devcluster
 ----
 
-Once it is installed, you can proceed to read the xref:tutorial:index.adoc[ tutorial].
+Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial].
 
+[#server]
 == Server Install
 
-If you have root access to Linux Server with at least 8GB of memory, you can install a suitable Kubernetes cluster
+If you have root access to Linux Server, either physical or virtual, with at least 8GB of memory and 30GB of space, you can install Nuvolaris directly in it. The installer takes care of installing a Kubernetes instance in it.
 
- available, with at , configure it to access with ssh without a password, using `authorized_keys` and ensure the user you are using 
+Before installing you have to decide how you want to access to it.
 
-== Configure
+[#cluster]
+== Cluster Install
 
-By default you will install only the serverless engine, using the http protocol and no additional services.
-
-If you want to enable additional services, you need to enable  them. You can enable all of them
-
-== Local Install
+If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it.
 
 
-
-`nuv setup devcluster`
-
-== Linux Install
-
-If you have a Linux server
