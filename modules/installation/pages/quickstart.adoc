@@ -48,12 +48,13 @@ Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutor
 
 If you have access to server on Internet, you will get an IP address to reach it.
 
-Many cloud providers also gives you a DNS name, that can be very ugly as 
+Many cloud providers also gives you a DNS name, that can be very ugly as  `ec2-12-34-56-78.us-west-2.compute.amazonaws.com`, but nonetheles is better than just the IP addres and should be used
 
 [#server]
 == Server Installation
 
-If you have access to a Linux server, having ip address `<server>`, with:
+If you have access to a Linux server, with:
+. an IP address or DNS name, referred as `<server>`
 . at least 8GB of memory and 50GB of disk space available
 . passwordless access with `ssh` to a Linux user `<user>`
 . the user `<user>` has passwordless `sudo` rights
