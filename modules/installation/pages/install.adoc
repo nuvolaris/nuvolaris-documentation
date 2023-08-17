@@ -10,7 +10,7 @@ Please ensure you have:
 . xref:prereq.adoc[satisfied the prerequisites] 
 . xref:configure.adoc[configured your installation] 
 
-=== Actual Installation
+=== Core Installation
 
 Once you have completed the preparation steps,  you can proceed installing:
 
