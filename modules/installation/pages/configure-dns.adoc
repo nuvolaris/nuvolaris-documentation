@@ -1,6 +1,5 @@
 = Configuring DNS and SSL
 
-
 [#dns]
 == DNS
 
@@ -11,7 +10,6 @@ nuv TODO
 ----
 
 configure a record to this IP in your dns server
-
 
 ----
 nuv config apihost <server>
