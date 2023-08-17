@@ -114,17 +114,22 @@ If you have access to a cloud provider, you can setup a Kubernetes cluster in it
 
 We provide commands to easily configure and install a compliant Kubernetes clusters for the major cloud providers:
 
-* for Amazon AWS:
+=== Amazon AWS
+
 ====
 nuv config eks
 nuv cloud eks create
 ====
-* for Azure AKS:
+
+=== Azure AKS:
+
 ====
 nuv config aks
 nuv cloud aks create
 ====
-* for Google GKS:
+
+=== Google GKE:
+
 ====
 nuv config gke
 nuv cloud gke create
