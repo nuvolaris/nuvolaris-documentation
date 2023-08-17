@@ -24,9 +24,8 @@ Your options are:
 * in a Kubernets <<cluster,cluster>> in your intranet
 * in <<cloud-cluster,cloud>>, where you can provision a Kubernetes cluster 
 
-
 [#locally]
-== Local Installion
+== Local Installtion
 
 If you have a *decent* workstation (with at least 16GB of memory) running a  *recent*  and **64 bit** operating system and you do now want to use any server or cloud, install 
 https://www.docker.com/products/docker-desktop/[Docker Desktop].
