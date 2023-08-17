@@ -23,7 +23,7 @@ otherwise pick those who you want, among `--redis`, `--mongodb`, `--minio`, `--c
 
 Once you have configured you services, install Nuvolaris and its services in Docker with:
 
----
+----
 nuv setup devcluster
 ----
 
