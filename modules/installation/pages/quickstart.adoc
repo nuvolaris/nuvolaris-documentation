@@ -90,7 +90,7 @@ The server can be physical or virtual. We need Kubernetes in it but the installe
 
 [IMPORTANT]
 ====
-Replace in the following command `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same and  `<dns-name>` you have configured in the previous paragraph, is you did it.
+Replace in the following command `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same and  `<dns-name>` you have configured in the previous paragraph, if you did it.
 ====
 
 To install Nuvolaris, first check you have access to the server with:
