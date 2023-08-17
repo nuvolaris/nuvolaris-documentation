@@ -1,10 +1,14 @@
-= Installation Overview
+== Installation Overview
+
+=== Prerequisites
 
 Before Installing you need to:
 
 . xref:download.adoc[download the installer]
 . xref:prereq.adoc[satisfy the prerequisites] 
-. xref:configure.adoc[configure your installation] your 
+. xref:configure.adoc[configure your installation] 
+
+== Actual Installation
 
 Then you can proceed installing:
 
