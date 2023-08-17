@@ -20,6 +20,6 @@ You can configure:
 * enable Nuvolaris  xref:configure-services.adoc[services]:
 ** xref:configure-services.adoc#redis[REDIS], a powerful cache
 ** xref:configure-services.adoc#minio[MinIO], an object storage
-** xref:configure-services.adoc#postgres[Postgres] 
-** xref:configure-services.adoc#postgres[FerretDB] a MongoDB compatible adapter 
+** xref:configure-services.adoc#postgres[Postgres], a SQL database 
+** xref:configure-services.adoc#postgres[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres 
 
