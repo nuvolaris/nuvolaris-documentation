@@ -28,8 +28,8 @@ After the installation, you can:
 
 If something goes wrong, you can check:
 
-* our xref:faq.adoc[FAQ] 
+* the list of the xref:faq.adoc[FAQ] 
 * the xref:debug.adoc[Troubleshooting] page
-* our online http://nuvolaris.discourse.group[Forum]
+* use our online http://nuvolaris.discourse.group[Forum]
 
 
