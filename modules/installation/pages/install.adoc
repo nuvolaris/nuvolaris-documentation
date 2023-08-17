@@ -24,6 +24,8 @@ After the installation, you can:
 
 *  xref:update.adoc[reconfigure and update the system]. 
 
+=== Support 
+
 If something goes wrong, you can check:
 
 * our xref:faq.adoc[FAQ] 
