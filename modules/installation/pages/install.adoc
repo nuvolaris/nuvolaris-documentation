@@ -1,10 +1,14 @@
 == Installation Overview
 
+This page provides an overview of the installation process.
+
 === Before installation
 
-. xref:download.adoc[download the installer]
-. xref:prereq.adoc[satisfy the prerequisites] 
-. xref:configure.adoc[configure your installation] 
+Please ensure you have
+
+. xref:download.adoc[downloaded the installer]
+. xref:prereq.adoc[satisfies the prerequisites] 
+. xref:configure.adoc[configured your installation] 
 
 === Actual Installation
 
