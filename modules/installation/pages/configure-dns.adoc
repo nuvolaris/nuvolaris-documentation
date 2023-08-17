@@ -22,10 +22,3 @@ nuv config apihost <server>
 
 Use a wildcard for statics `*`
 
-[#ssl]
-== SSL
-
-----
-nuv config apihost <server> --tls=<email>
-----
-
