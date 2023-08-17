@@ -54,11 +54,12 @@ Many cloud providers also gives you a DNS name, that can be very ugly as  `ec2-1
 == Server Installation
 
 If you have access to a Linux server, with:
+
 . an IP address or DNS name, referred as `<server>`
-. at least 8GB of memory and 50GB of disk space available
 . passwordless access with `ssh` to a Linux user `<user>`
+. at least 8GB of memory and 50GB of disk space available
 . the user `<user>` has passwordless `sudo` rights
-. the firewall allows traffic to the  ports 80, 443 and 6443
+. the firewall that allows traffic to the  ports 80, 443 and 6443
 
 then you can install Nuvolaris in it.
 
