@@ -124,7 +124,7 @@ nuv cloud eks create
 nuv config aks
 nuv cloud aks create
 ----
-=== Google GKE:
+* Google GKE:
 ----
 nuv config gke
 nuv cloud gke create
@@ -133,6 +133,6 @@ nuv cloud gke create
 [#cluster]
 == Cluster Install
 
-If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it.
+If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it. You can get this access either from your 
 
 
