@@ -20,7 +20,7 @@ Your options are:
 
 * <<locally,locally>> in your workstation;
 * in a Linux <<intranet-server,server>> in your intranet
-* in a Linux <<internet-server,server>> available on internet
+* in a Linux <<internet-server,server>> available on Internet
 * in a Kubernets <<intranet-cluster,cluster>> in your intranet
 * in <<cloud-cluster,cloud>>, where you can provision a Kubernetes cluster 
 
