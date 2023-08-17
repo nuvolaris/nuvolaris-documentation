@@ -11,7 +11,7 @@ For **development** purposes, you can install a single node Nuvolaris deployment
 
 Our installer automatically installs https://k3s.io[K3S], but if you prefer you can preinstall a single node Kubernetes nstances. If you choose to install 
 
-* If you choose to install Kubernetes in your cluster, you need to install either:
+* If you choose to install Kubernetes in your server, you need either:
 ** xref:prereq-k3s.adoc[SuSE K3S] 
 ** xref:prereq-mk8s.adoc[Canonical MicroK8S]
 
