@@ -40,16 +40,19 @@ Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutor
 [#server]
 == Server Install
 
-If you have root access to Linux Server, either physical or virtual, with at least 8GB of memory and 30GB of space, you can install Nuvolaris directly in it. The installer takes care of installing a Kubernetes instance in it.
+If you have `root` access to Linux server with at least 8GB of memory and 30GB of space, you can install Nuvolaris directly in it. 
+
+The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing a flavor of Kubernetes, https://k3s.io[K3S] in it.
 
 Before installing you have to decide how you want to access to it.
 
-[#cluster]
-== Cluster Install
-
-If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it.
 
 [#cloud]
 == Cloud Install
+
+
+[#cluster]
+== Cluster Install
+If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it.
 
 
