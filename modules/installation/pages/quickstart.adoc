@@ -63,7 +63,7 @@ If you have access to a Linux server, with:
 
 then you can install Nuvolaris in it.
 
-The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, https://k3s.io[K3S], courtesy of https://github.com/alexellis/k3sup[K3Sup]
+The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, https://k3s.io[K3S], courtesy of https://github.com/alexellis/k3sup[K3Sup].
 
 
 [IMPORTANT]
