@@ -15,8 +15,8 @@ Our installer automatically installs https://k3s.io[K3S], but if you prefer you 
 
 If you choose to install Kubernetes in your server, we provide support for:
 
-** xref:prereq-k3s.adoc[SuSE K3S] 
-** xref:prereq-mk8s.adoc[Canonical MicroK8S]
+* xref:prereq-k3s.adoc[SuSE K3S] 
+* xref:prereq-mk8s.adoc[Canonical MicroK8S]
 
 === Multi Node production installation
 
