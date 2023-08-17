@@ -1,4 +1,4 @@
-= Local Installation
+= Server Installation
 
 This section describes how to install Nuvolaris on a remote server
 
