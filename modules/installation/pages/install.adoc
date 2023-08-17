@@ -8,7 +8,7 @@ Before Installing you need to:
 . xref:prereq.adoc[satisfy the prerequisites] 
 . xref:configure.adoc[configure your installation] 
 
-== Actual Installation
+=== Actual Installation
 
 Then you can proceed installing:
 
