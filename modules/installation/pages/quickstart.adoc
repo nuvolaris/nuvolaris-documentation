@@ -58,7 +58,7 @@ If you are comfortable with this *insecure* setup, skip to the <<server,server>>
 
 So, once you got the IP address of your server, either use the assigned DNS name of your provider, or give to it a DNS name https://en.wikipedia.org/wiki/List_of_managed_DNS_providers[using a domain name provider]. We cannot give here precise instructions as there are many DNS provider and each has different rules to do the setup. Check with your choosen domain name provider.
 
-You can give a fixed DNS name to your server, but you can also give a wildcard dns name, and you are advised to do so, even if the setup is more complex. Wildcard DNS is used to provision multiple front-end to your serverless apps.
+
 
 
 [#server]
