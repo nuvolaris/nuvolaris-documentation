@@ -19,9 +19,9 @@ Now, choose where to install Nuvolaris.
 Your options are:
 
 * <<locally,locally>> in your workstation;
-* in a Linux <<intranet-server,server>> in your Intranet
+* in a Linux <<server,server>> in your intranet
 * in a Linux <<internet-server,server>> available on Internet
-* in a Kubernets <<intranet-cluster,cluster>> in your intranet
+* in a Kubernets <<cluster,cluster>> in your intranet
 * in <<cloud-cluster,cloud>>, where you can provision a Kubernetes cluster 
 
 you already have `root` access with `ssh`
