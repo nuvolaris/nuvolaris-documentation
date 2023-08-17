@@ -46,6 +46,10 @@ Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutor
 [#internet-server]
 == Internet Server Configuration
 
+If you have access to server on Internet, you will get an IP address to reach it.
+
+Many cloud providers also gives you a DNS name, that can be very ugly as 
+
 [#server]
 == Server Installation
 
@@ -71,7 +75,7 @@ To install Nuvolaris, first check you have access to the server with:
 ssh <user>@<server> sudo hostname
 ----
 
-If you do not receive errors, you can install Nuvolaris with 
+If you do not receive errors, you can install Nuvolaris with: 
 
 ----
 nuv setup server <server> <user>
