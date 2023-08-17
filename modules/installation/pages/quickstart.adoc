@@ -26,7 +26,6 @@ Your options are:
 [#locally]
 == Local Install
 
-First option s
 If you have a *decent* workstation (with at least 16GB of memory) running a  *recent*  and **64 bit** operating system and you do now want to use any server or cloud, install 
 https://www.docker.com/products/docker-desktop/[Docker Desktop].
 
