@@ -21,5 +21,6 @@ You can configure:
 ** xref:configure-services.adoc#redis[REDIS], a powerful cache
 ** xref:configure-services.adoc#minio[MinIO], an object storage
 ** xref:configure-services.adoc#postgres[Postgres], a SQL database 
-** xref:configure-services.adoc#postgres[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres 
+** xref:configure-services.adoc#ferret[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres
+
 
