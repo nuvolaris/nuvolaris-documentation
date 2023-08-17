@@ -6,14 +6,7 @@ This is a quick start guide to the installation process, omitting a lot of detai
 
 First, xref:download.adoc[download our CLI `nuv`] picking the version suitable for your environment. We support only 64 bit versions of recent Windows, MacOS and Linux os/distributions. 
 
-Now, pick a suitable environment and install Nuvolaris.
-
-== Local Install
-
-If you have a decent machine with at least 16GB of memory running a 64bit recente operationg system and you do now want to use any server or cloud, install 
-https://www.docker.com/products/docker-desktop/[Docker Desktop].
-
-By defalt Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:
+Second, configure the services you want to enable. By defalt Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:
 
 ----
 nuv config enable --all
@@ -21,17 +14,26 @@ nuv config enable --all
 
 otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres that is implicitly also enabled. More details xref:configure.adoc[here]. 
 
-Once you have configured you services, install Nuvolaris and its services in Docker with:
+Now, pick a suitable environment and install Nuvolaris.
+
+== Local Install
+
+If you have a decent machine with at least 16GB of memory running a 64bit recente operationg system and you do now want to use any server or cloud, install 
+https://www.docker.com/products/docker-desktop/[Docker Desktop].
+
+Once you have installed the CLI and configured you services, you can install Nuvolaris and its services in Docker with:
 
 ----
 nuv setup devcluster
 ----
 
-and then proceed to read the xref:tutorial:index.adoc[ tutorial].
+Once it is installed, you can proceed to read the xref:tutorial:index.adoc[ tutorial].
 
 == Server Install
 
-If you have a Linux a server available, configure it to access with ssh without a password, using `authorized_keys` and ensure the user you are using 
+If you have root access to Linux Server with at least 8GB of memory, you can install a suitable Kubernetes cluster
+
+ available, with at , configure it to access with ssh without a password, using `authorized_keys` and ensure the user you are using 
 
 == Configure
 
