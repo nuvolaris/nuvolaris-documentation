@@ -99,7 +99,9 @@ To install Nuvolaris, first check you have access to the server with:
 ssh <user>@<server> sudo hostname
 ----
 
-If you do not receive errors, you can install Nuvolaris with: 
+You shold see no errors and read the internal hostname of your server.
+
+If you do not receive errors, you can proceed install Nuvolaris with: 
 
 ----
 nuv setup server <server> <user>
