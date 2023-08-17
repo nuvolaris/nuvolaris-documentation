@@ -114,26 +114,21 @@ If you have access to a cloud provider, you can setup a Kubernetes cluster in it
 
 We provide the following commands to easily configure and install a compliant Kubernetes clusters for the major cloud providers. At the end of the installation you will hava available and accessible a Kubernetes Cluster able to install Nuvolaris.
 
-=== Amazon AWS
-
-====
+* Amazon AWS:
+----
 nuv config eks
 nuv cloud eks create
-====
-
-=== Azure AKS
-
-====
+----
+* Azure AKS:
+----
 nuv config aks
 nuv cloud aks create
-====
-
+----
 === Google GKE:
-
-====
+----
 nuv config gke
 nuv cloud gke create
-====
+----
 
 [#cluster]
 == Cluster Install
