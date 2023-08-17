@@ -18,10 +18,8 @@ Now, choose where to install Nuvolaris. Your options are:
 
 * <<locally>> in your workstation;
 * in a Linux <<server>> you have `root` access with `SSH`
-* in a Kubernets <<cluster>> you have `cluster-admin`  access with a `kubeconfig`
-
-
-* setup a Kubernetes cluster in <<cloud>> to install it.
+* in a Kubernets <<cluster>> you have `cluster-admin`  access to it with `kubectl`
+* setup in cloud Kubernetes cluster in <<cloud>> to install it.
 
 [#locally]
 == Local Install
