@@ -49,12 +49,16 @@ Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutor
 [#server]
 == Server Installation
 
-you already have `root` access with `ssh`
-you have `cluster-admin` access to it with `kubectl`
-
-If you have `root` access to Linux server with at least 8GB of memory and 30GB of space, you can install Nuvolaris directly in it. 
+If you have access to a Linux server, with:
+. at least 8GB of memory and 50GB of disk space available
+. you have passwordless access with `ssh` to a Linux user
+. the user has passwordless `sudo` rights
+then you can install Nuvolaris in it.
 
 The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, https://k3s.io[K3S].
+
+
+
 
 [#cloud-clouster]
 == Cloud Cluster Provisioning
