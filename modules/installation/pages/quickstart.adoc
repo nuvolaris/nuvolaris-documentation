@@ -52,7 +52,10 @@ Many cloud providers also gives you a DNS name, that can be very ugly as `ec2-12
 
 You can access the server directly with the IP and not configure any DNS names, and also use the server, even if it is on Internet, with just using the protocol http. If you are comfortables with this setup, skip to the <<server,server>> installation section.
 
-Otherwise, you do better to setup a DNS name and enable `https` protocol provisioning a certificate, 
+Otherwise, you do better to setup a DNS name and enable `https` protocol provisioning a certificate. Setup your dns name, or better a wildcard dns for it and do the following;
+
+
+
 
 [#server]
 == Server Installation
