@@ -119,6 +119,16 @@ We provide commands to easily configure and install a compliant Kubernetes clust
 nuv config eks
 nuv cloud eks create
 ===
+* for Azure AKS:
+===
+nuv config aks
+nuv cloud aks create
+===
+* for Google GKS:
+===
+nuv config gke
+nuv cloud gke create
+===
 
 
 [#cluster]
