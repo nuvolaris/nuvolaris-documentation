@@ -133,6 +133,8 @@ nuv cloud gke create
 [#cluster]
 == Cluster Install
 
-If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it. You can get this access either from your 
+If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it. You can get this access either provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
+
+Whatever is the way you get access to your kubernetes cluster, 
 
 
