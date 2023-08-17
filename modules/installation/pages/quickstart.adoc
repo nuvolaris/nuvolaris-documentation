@@ -20,6 +20,7 @@ Now, install Nuvolaris either:
 * in a Kubernets <<cluster>> you have access 
 * setup a Kubernetes <<cloud>> in a cloud to install it.
 
+
 [#locally]
 == Local Install
 
