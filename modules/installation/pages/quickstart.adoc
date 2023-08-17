@@ -112,7 +112,7 @@ nuv setup server <server> <user>
 
 If you have access to a cloud provider, you can setup a Kubernetes cluster in it. The kubernetes cluster needs to satisfy certain xref:prereq-cluster[prerequisites] to be able to install Nuvolaris with no issues.
 
-We provide the following commands to easily configure and install a compliant Kubernetes clusters for the major cloud providers
+We provide the following commands to easily configure and install a compliant Kubernetes clusters for the major cloud providers. At the end of the installation you will hava available and accessible a Kubernetes Cluster able to install Nuvolaris.
 
 === Amazon AWS
 
@@ -121,7 +121,7 @@ nuv config eks
 nuv cloud eks create
 ====
 
-=== Azure AKS:
+=== Azure AKS
 
 ====
 nuv config aks
@@ -134,7 +134,6 @@ nuv cloud aks create
 nuv config gke
 nuv cloud gke create
 ====
-
 
 [#cluster]
 == Cluster Install
