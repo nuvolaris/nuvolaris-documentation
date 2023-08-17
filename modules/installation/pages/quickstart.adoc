@@ -37,14 +37,18 @@ nuv setup devcluster
 
 Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial].
 
-[#server]
+[#server-dns]
+== Server Install
+
+
+[#server-install]
 == Server Install
 
 If you have `root` access to Linux server with at least 8GB of memory and 30GB of space, you can install Nuvolaris directly in it. 
 
-The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing a flavor of Kubernetes, https://k3s.io[K3S] in it.
+The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, https://k3s.io[K3S].
 
-Before installing you have to decide how you want to access to it.
+
 
 [#cloud]
 == Cloud Install
