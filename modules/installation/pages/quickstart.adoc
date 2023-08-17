@@ -15,11 +15,11 @@ nuv config enable --all
 otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres that is implicitly also enabled. More details xref:configure.adoc[here]. 
 
 Now, install Nuvolaris either:
+
 * <<locally>> in your workstation
 * in a Linux <<server>>  virtual or physical you have access, 
 * in a Kubernets <<cluster>> you have access 
 * setup a Kubernetes <<cloud>> in a cloud to install it.
-
 
 [#locally]
 == Local Install
