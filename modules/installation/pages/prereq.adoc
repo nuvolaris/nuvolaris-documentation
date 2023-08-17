@@ -18,11 +18,10 @@ Our installer automatically installs https://k3s.io[K3S], but if you prefer you 
 For **production** purposes, need a multi-node Kubernetes cluster which satifies xref:prereq-generic.adoc[some requirements], accessible with its `kubeconfig` file.
 
 If you have such a cluster, you can perform a xref:install-cluster.adoc[Nuvolaris Kubernetes cluster]
-deployment in any   as long the cluster 
 
-We support installing Nuvolaris in the following  Kubernetes environments:
+We provide support for configuring the following  Kubernetes environments:
 
 * xref:prereq-eks.adoc[EKS in Amazon AWS] 
 * xref:prereq-aks.adoc[AKS in Microsoft Azure]
 * xref:prereq-gke.adoc[GKE in Google Cloud]
-* xref:prereq-osh.adoc[RedHat OpenShift in supported cloud] 
+* xref:prereq-osh.adoc[RedHat OpenShift] 
