@@ -46,7 +46,6 @@ The server can be physical or virtual. We need Kubernetes in it but the installe
 
 Before installing you have to decide how you want to access to it.
 
-
 [#cloud]
 == Cloud Install
 
