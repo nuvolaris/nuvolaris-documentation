@@ -18,7 +18,6 @@ Once you have completed the preparation steps,  you can proceed with:
 * a single server installation in a xref:install-server.adoc[Linux server]
 * a clustered installation in a xref:install-cluster.adoc[Kubernetes cluster].
 
-
 === Post installation
 
 After the installation, you can:
