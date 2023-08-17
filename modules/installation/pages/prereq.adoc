@@ -1,9 +1,13 @@
 == Prerequesites
 
-For **development** purposes, you can install a single node Nuvolaris deployment in:
+This page lists the prerequisites to install Nuvolaris in the various environments.
 
-* your xref:install-local.adoc[local machine] using xref:prereq-docker.adoc[Docker Desktop] 
-* a *single* xref:install-server.adoc[Linux server] using the following supported environments:
+For **development** purposes, you can install a single node Nuvolaris deployment in the following enviroments.
+
+* Install in your xref:install-local.adoc[local machine]:
+** you need xref:prereq-docker.adoc[Docker Desktop] 
+* Install in a *single node* xref:install-server.adoc[Linux server]: 
+** you need a xref:prereq-server.adoc[Linux server]  accessible with SSH
 ** xref:prereq-k3s.adoc[SuSE K3S] 
 ** xref:prereq-mk8s.adoc[Ubuntu MicroK8S]
 
