@@ -19,6 +19,6 @@ You can configure:
 * activate xref:configure-ssl.adoc[https] obtaining a certificate with https://letsencrypt.org/[Let's Encrypt].
 * enable nuvolaris  xref:configure-services.adoc[services]:
 ** xref:configure-services.adoc#redis[REDIS]
-** xref:index-config-services.adoc#minio[MinIO]
+** xref:configure-services.adoc#minio[MinIO]
 ** xref:configure-services.adoc#postgres[Postgres] 
 
