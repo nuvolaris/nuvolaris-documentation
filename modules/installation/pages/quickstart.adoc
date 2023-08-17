@@ -27,7 +27,6 @@ Once you have configured you services, install Nuvolaris and its services in Doc
 nuv setup devcluster
 ----
 
-
 and then proceed to read the xref:tutorial:index.adoc[ tutorial].
 
 === Server
