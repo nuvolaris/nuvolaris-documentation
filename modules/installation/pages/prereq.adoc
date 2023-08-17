@@ -25,3 +25,5 @@ We provide support for configuring the following  Kubernetes environments:
 * xref:prereq-aks.adoc[AKS in Microsoft Azure]
 * xref:prereq-gke.adoc[GKE in Google Cloud]
 * xref:prereq-osh.adoc[RedHat OpenShift] 
+
+After you have satisfied the prerequisites, you can proceed xref:install.adoc[installing Nuvolaris].
