@@ -9,7 +9,7 @@ For **development** purposes, you can install a single node Nuvolaris deployment
 * Install in a *single node* xref:install-server.adoc[Linux server]: 
 ** you need a xref:prereq-server.adoc[Linux server]  accessible with SSH
 
-Our installer automatically installs https://k3s.io[K3S], but if you prefer you can preinstall a single node Kubernetes nstances. If you choose to install 
+Our installer automatically installs https://k3s.io[K3S], but if you prefer you can preinstall a single node Kubernetes nstances. 
 
 * If you choose to install Kubernetes in your server, you need either:
 ** xref:prereq-k3s.adoc[SuSE K3S] 
