@@ -1,4 +1,5 @@
 * xref:index.adoc[Installation]
+** xref:quickstart.adoc[Quick Start]
 ** xref:download.adoc[Download Installer]
 ** xref:prereq.adoc[Prerequisites]
 *** xref:prereq-docker.adoc[Local Docker]
