@@ -1,8 +1,6 @@
 == Installation Overview
 
-=== Prerequisites
-
-Before Installing you need to:
+=== Before installation
 
 . xref:download.adoc[download the installer]
 . xref:prereq.adoc[satisfy the prerequisites] 
@@ -15,6 +13,9 @@ Then you can proceed installing:
 * a local installation in your xref:install-local.adoc[local machine]
 * or a single server installation in a xref:install-server.adoc[Linux server]
 * or a clustered installation in a xref:install-cluster.adoc[Kubernetes cluster].
+
+
+=== Post installation
 
 After the installation, you can:
 
