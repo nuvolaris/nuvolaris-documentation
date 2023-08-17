@@ -17,5 +17,6 @@ You can configure:
 
 * a custom xref:configure-dns.adoc#dns[DNS name] or a xref:configure-dns.adoc#dns[DNS wildcard] for statics.
 * activate xref:configure-ssl.adoc[https] obtaining a certificate with https://letsencrypt.org/[Let's Encrypt].
-* activate various integrated xref:index-config-services.adoc[services]: xref:index-config-services.adoc#redis[REDIS], xref:index-config-services.adoc#postgres[Postgres] and xref:index-config-services.adoc#minio[MinIO].
+* enable nuvolaris  xref:configure-services.adoc[services]:
+** xref:index-config-services.adoc#redis[REDIS], xref:index-config-services.adoc#postgres[Postgres] and xref:index-config-services.adoc#minio[MinIO].
 
