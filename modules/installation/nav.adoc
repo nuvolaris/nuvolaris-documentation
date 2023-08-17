@@ -17,7 +17,7 @@
 ** xref:install.adoc[Install Nuvolaris]
 *** xref:install-local.adoc[Local Installation]
 *** xref:install-server.adoc[Server Installation]
-*** xref:cluster.adoc[Cluster Installation]
+*** xref:install-cluster.adoc[Cluster Installation]
 ** xref:update.adoc[Update Installation]
 ** xref:debug.adoc[Troubleshooting]
 ** xref:faq.adoc[FAQ]
