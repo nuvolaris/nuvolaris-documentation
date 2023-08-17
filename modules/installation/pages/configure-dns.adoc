@@ -1,4 +1,6 @@
-= Configuring DNS and SSL
+= Configuring DNS 
+
+ You can give a fixed DNS name to your server, but you can also give a wildcard dns name, and you are advised to do so, even if the setup is more complex. Wildcard DNS is used to provision multiple front-end to your serverless apps.
 
 [#dns]
 == DNS
