@@ -30,6 +30,6 @@ If something goes wrong, you can check:
 
 * the list of the xref:faq.adoc[FAQ] 
 * the xref:debug.adoc[Troubleshooting] page
-* use our online http://nuvolaris.discourse.group[Forum]
+* our online http://nuvolaris.discourse.group[Forum]
 
 
