@@ -107,10 +107,10 @@ If you do not receive errors, you can proceed install Nuvolaris with this comman
 nuv setup server <server> <user>
 ----
 
-
 [#cloud-cluster]
 == Cloud Cluster Provisioning
 
+If you have access to a cloud provider, you can setup a Kubernetes cluster in it. The kubernetes cluster needs to satisfy certain x
 
 [#cluster]
 == Cluster Install
