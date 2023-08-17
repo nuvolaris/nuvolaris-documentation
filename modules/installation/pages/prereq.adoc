@@ -1,7 +1,7 @@
-For **development** purposes, you can install a single node Nuvolaris deployment:
+For **development** purposes, you can install a single node Nuvolaris deployment in:
 
-* in your xref:install-local.adoc[local machine] using xref:prereq-docker.adoc[Docker Desktop] 
-* in a *single* xref:install-server.adoc[Linux server] using the following supported environments:
+* your xref:install-local.adoc[local machine] using xref:prereq-docker.adoc[Docker Desktop] 
+* a *single* xref:install-server.adoc[Linux server] using the following supported environments:
 ** xref:prereq-k3s.adoc[SuSE K3S] 
 ** xref:prereq-mk8s.adoc[Ubuntu MicroK8S]
 
