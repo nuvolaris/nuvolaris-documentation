@@ -1,6 +1,6 @@
 == Prerequisites
 
-This page lists the prerequisites to install Nuvolaris in the various environments.
+This page lists the prerequisites to install Nuvolaris in  various environments.
 
 === Single Node development installation
 
