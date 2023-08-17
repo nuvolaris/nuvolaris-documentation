@@ -4,7 +4,7 @@ This page provides an overview of the installation process.
 
 === Before installation
 
-Please ensure you have
+Please ensure you have:
 
 . xref:download.adoc[downloaded the installer]
 . xref:prereq.adoc[satisfies the prerequisites] 
