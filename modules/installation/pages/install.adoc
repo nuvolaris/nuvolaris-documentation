@@ -15,7 +15,7 @@ Please ensure you have:
 Once you have completed the preparation steps,  you can proceed with:
 
 * a local installation in your xref:install-local.adoc[local machine]
-* or a single server installation in a xref:install-server.adoc[Linux server]
+* a single server installation in a xref:install-server.adoc[Linux server]
 * or a clustered installation in a xref:install-cluster.adoc[Kubernetes cluster].
 
 
