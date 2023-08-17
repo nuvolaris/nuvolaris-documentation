@@ -135,6 +135,18 @@ nuv cloud gke create
 
 If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it. You can get this access either provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
 
-Whatever is the way you get access to your kubernetes cluster, 
+Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file names `.kube/config` in your home directory.
 
+If the cluster satifies the xref:prereq-cluster.adoc[prerequisites], you can install Nuvolaris in it.
 
+First, check you have actually access to a Kubernetes cluster, performing this command:
+
+----
+nuv debug kube info
+----
+
+You should get something like this:
+
+=====
+Kubernetes control plane is running at https://api.nuvolaris.osh.n9s.cc:6443
+=====
