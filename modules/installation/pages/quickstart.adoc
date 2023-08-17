@@ -2,7 +2,7 @@
 
 This is a quick start guide to the installation process, omitting a lot of details. You can use this if you are experienced and come back to the documentation when something does not work properly.
 
-= Prerequisites
+== Prerequisites
 
 First, xref:download.adoc[download our CLI `nuv`] picking the version suitable for your environment. We support only 64 bit versions of recent Windows, MacOS and Linux os/distributions. 
 
