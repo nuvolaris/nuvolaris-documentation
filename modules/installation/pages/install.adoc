@@ -12,7 +12,7 @@ Please ensure you have:
 
 === Core Installation
 
-Once you have completed the preparation steps,  you can proceed installing:
+Once you have completed the preparation steps,  you can proceed with:
 
 * a local installation in your xref:install-local.adoc[local machine]
 * or a single server installation in a xref:install-server.adoc[Linux server]
