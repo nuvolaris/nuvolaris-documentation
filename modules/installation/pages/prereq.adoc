@@ -17,7 +17,7 @@ Our installer automatically installs https://k3s.io[K3S], but if you prefer you 
 ** xref:prereq-k3s.adoc[SuSE K3S] 
 ** xref:prereq-mk8s.adoc[Canonical MicroK8S]
 
-=== Pro Installation
+=== Multi Node production installation
 
 For **production** purposes, need a multi-node Kubernetes cluster which satifies xref:prereq-generic.adoc[some requirements], accessible with its `kubeconfig` file.
 
