@@ -50,4 +50,7 @@ Before installing you have to decide how you want to access to it.
 
 If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it.
 
+[#cloud]
+== Cloud Install
+
 
