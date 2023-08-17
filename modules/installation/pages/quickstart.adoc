@@ -59,6 +59,7 @@ The server can be physical or virtual. We need Kubernetes in it but the installe
 
 [#cluster]
 == Cluster Install
+
 If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it.
 
 
