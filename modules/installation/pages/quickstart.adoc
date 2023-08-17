@@ -2,13 +2,13 @@
 
 This is a quick start guide to the installation process, omitting a lot of details. You can use this if you are experienced and come back to the documentation when something does not work properly.
 
-== Prerequisites
+= Prerequisites
 
 First, xref:download.adoc[download our CLI `nuv`] picking the version suitable for your environment. We support only 64 bit versions of recent Windows, MacOS and Linux os/distributions. 
 
 Now, pick a suitable environment and install Nuvolaris.
 
-=== Local Install
+== Local Install
 
 If you have a decent machine with at least 16GB of memory running a 64bit recente operationg system and you do now want to use any server or cloud, install 
 https://www.docker.com/products/docker-desktop/[Docker Desktop].
