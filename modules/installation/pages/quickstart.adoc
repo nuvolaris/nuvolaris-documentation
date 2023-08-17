@@ -59,11 +59,24 @@ then you can install Nuvolaris in it.
 
 The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, https://k3s.io[K3S], courtesy of https://github.com/alexellis/k3sup[K3Sup]
 
+
+[IMPORTANT]
+====
+Replace in the following command `<server>`  with the address of your server, and `<user>` with the actual user in your server.
+====
+
 To install Nuvolaris, first check you have access to the server with:
 
 ----
 ssh <user>@<server> sudo hostname
 ----
+
+If you do not receive errors, you can install Nuvolaris with 
+
+----
+nuv setup server <server> <user>
+----
+
 
 [#cloud-cluster]
 == Cloud Cluster Provisioning
