@@ -101,7 +101,7 @@ ssh <user>@<server> sudo hostname
 
 You shold see no errors and read the internal hostname of your server.
 
-If you do not receive errors, you can proceed install Nuvolaris with: 
+If you do not receive errors, you can proceed install Nuvolaris with this command: 
 
 ----
 nuv setup server <server> <user>
