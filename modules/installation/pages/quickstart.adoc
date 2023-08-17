@@ -53,8 +53,8 @@ If you have `root` access to Linux server with at least 8GB of memory and 30GB o
 The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, https://k3s.io[K3S].
 
 
-[#cloud]
-== Cloud Install
+[#cloud-clouster]
+== Cloud Cluster Provisioning
 
 
 [#cluster]
