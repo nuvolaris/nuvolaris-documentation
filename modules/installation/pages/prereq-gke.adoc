@@ -16,6 +16,43 @@ Configure to access a new or existing cluster:
 nuv config gke
 ----
 
+Example:
+
+----
+ *** Please, specify GCloud Project Id and press enter.
+nuvolaris-testing
+*** Please, specify GCloud Cluster Name and press enter.
+The cluster name must be unique.
+
+Just press enter for default [nuvolaris]: 
+nuvolaris-testing
+*** Please, specify GCloud Cluster Zone and press enter.
+To get a list of valid values use:
+  gcloud compute zones list
+
+Just press enter for default [us-east1]: 
+
+*** Please, specify GCloud number of worker nodes and press enter.
+Just press enter for default [3]: 
+
+*** Please, specify GKE virtual machine type and press enter.
+To get a list of valid values, use:
+  gcloud compute machine-types list
+
+Just press enter for default [e2-standard-2]: 
+
+*** Please, specify GKE disk size in gigabyte and press enter.
+Just press enter for default [50]: 
+
+GKE_COUNT=3
+GKE_DISK=50
+GKE_PROJECT=nuvolaris-testing
+GKE_NAME=nuvolaris-testing
+GKE_REGION=us-east1
+GKE_VM=e2-standard-2
+----
+
+
 == Create
 
 Create a new cluster if not existing.
