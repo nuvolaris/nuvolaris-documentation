@@ -29,7 +29,7 @@ nuv setup devcluster
 
 and then proceed to read the xref:tutorial:index.adoc[ tutorial].
 
-=== Server
+== Server Install
 
 If you have a Linux a server available, configure it to access with ssh without a password, using `authorized_keys` and ensure the user you are using 
 
