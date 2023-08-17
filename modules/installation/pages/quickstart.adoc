@@ -59,7 +59,7 @@ If you have access to a Linux server, with:
 . passwordless access with `ssh` to a Linux user `<user>`
 . at least 8GB of memory and 50GB of disk space available
 . the user `<user>` has passwordless `sudo` rights
-. the firewall that allows traffic to the  ports 80, 443 and 6443
+. the firewall that allows traffic to the ports 80, 443 and 6443
 
 then you can install Nuvolaris in it.
 
