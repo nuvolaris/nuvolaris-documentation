@@ -68,6 +68,21 @@ Disable minio:
 nuv config disable --minio
 ----
 
+[#ferretdb]
+== FerretDB
+
+Enable minio:
+
+----
+nuv config enable --minio
+----
+
+Disable minio:
+
+----
+nuv config disable --minio
+----
+
 
 
 
