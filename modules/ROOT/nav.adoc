@@ -1,4 +1,3 @@
 * xref:index.adoc[✅ Welcome]
 ** xref:about.adoc[✅ About Nuvolaris ]
 ** xref:whats-new.adoc[✅ Whats is New ]
-
