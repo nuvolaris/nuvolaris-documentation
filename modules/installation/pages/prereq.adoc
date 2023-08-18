@@ -20,7 +20,7 @@ If you choose to install Kubernetes in your server, we provide support for:
 
 === Multi Node production installation
 
-For **production** purposes, need a multi-node Kubernetes cluster which satifies xref:prereq-generic.adoc[some requirements], accessible with its `kubeconfig` file.
+For **production** purposes, need a multi-node Kubernetes cluster which satifies xref:prereq-kubernetes.adoc[some requirements], accessible with its `kubeconfig` file.
 
 If you have such a cluster, you can perform a xref:install-cluster.adoc[Nuvolaris Kubernetes cluster]
 
