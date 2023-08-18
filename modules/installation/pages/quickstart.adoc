@@ -130,10 +130,12 @@ nuv config gke
 nuv cloud gke create
 ----
 
+Once this process is complete (note it can takes a long time), you should have a cluster ready to deploy nuvolaris in it as described in next paragraph.
+
 [#cluster]
 == Cluster Install
 
-If you have access to a Kubernetes cluster with `cluster-admin` role you can install Nuvolaris in it. You can get this access either provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
+If you have access to a Kubernetes cluster with `cluster-admin` role, you can install Nuvolaris in it. You can get this access either provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
 
 Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file names `.kube/config` in your home directory.
 
@@ -150,3 +152,12 @@ You should get something like this:
 =====
 Kubernetes control plane is running at https://api.nuvolaris.osh.n9s.cc:6443
 =====
+
+Then type the command:
+
+----
+nuv setup cluster
+----
+
+Wait until the process is complete and if there are no errors, Nuvolaris is installed and ready to go.
+
