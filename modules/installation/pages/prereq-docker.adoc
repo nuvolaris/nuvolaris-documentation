@@ -5,9 +5,9 @@ You can install Nuvolaris in you local machine.
 You need a computer with at least 16 GB of memory. 
 
 [IMPORTANT]
-===
+====
 8GB are definitely **not enough** to run Nuvolaris in your local machine.
-===
+====
 
 You need also to install https://www.docker.com/products/docker-desktop/[Docker Desktop].
 
