@@ -9,11 +9,11 @@ The current version of `nuv` is: *{cur-ver}*.
 You can download it for your system. It is available for the following operating systems, architectures and formats:
 
 * for Microsoft Windows, 64 bit version only, version 10 or greater, for Intel architecture, in Microsoft Installer `msi` format
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Download `nuv` for Windows/Intel]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Download `nuv` for Windows on Intel]
 
 * on Apple macOS,  version 12 (Monterey) or greater, for Intel and ARM architectures, in `pkg` format.
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Download `nuv` for Mac/Intel ] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[Download `nuv` for  Mac/ARM]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Download `nuv` for Mac on Intel ] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[Download `nuv` for  Mac on ARM]
 
 * On Linux, for Ubuntu at least version 22, for Debian at least version 12 Linux, 64 bit version, in format `.deb`; for RedHat at least version 8 and for SuSE at least version 12, in `rpm` format; Available for Intel and ARM architectures, 64 bit only.
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Download `nuv` for Debian/Ubuntu on Intel] 
