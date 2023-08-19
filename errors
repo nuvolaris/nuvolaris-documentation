@@ -1,0 +1,5 @@
+task: [snap] cd "3.0.0"
+git add *
+git commit -m "$(date +%D-%T)" -a
+git push origin "3.0.0"
+
