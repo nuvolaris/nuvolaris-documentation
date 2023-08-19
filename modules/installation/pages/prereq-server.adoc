@@ -2,6 +2,7 @@
 
 You can install Nuvolaris in any server either in your intranet on in Internet running a Linux distribution.
 
+
 The requirements are:
 
 . The server requires at least 8GB of memory and 30GB of disk space available.
