@@ -1,4 +1,4 @@
-== Installing Nuvolaris in a Linux Server
+== Prerequisites to install Nuvolaris in a Linux server
 
 You can install Nuvolaris in any server either in your intranet on in Internet running a Linux distribution.
 
