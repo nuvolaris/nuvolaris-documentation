@@ -18,7 +18,7 @@ nuv setup cluster [<context>]
 
 == Update
 
-After installation you can xref:configure.adoc[update] adding more services.
+After installation, you can xref:configure.adoc[update] adding more services.
 
 == Uninstall
 

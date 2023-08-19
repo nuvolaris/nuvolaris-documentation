@@ -1,26 +1,26 @@
 == Prerequisites to install Nuvolaris in a Linux server
 
-You can install Nuvolaris in any server either in your intranet on in Internet running a Linux distribution.
+You can install Nuvolaris on any server either in your intranet or on in Internet running a Linux distribution.
 
 
 The requirements are:
 
 . The server requires at least 8GB of memory and 30GB of disk space available.
 . It should be running a Linux distribution https://docs.k3s.io/installation/requirements[supported by K3S].
-. You must open the firewall to access the ports 80, 443 and 6443 from your your machine. 
-. You have to install a <<sshkey, public ssh key>> to access to it without a password.
-. You have to configure <<sudo, sudo>> to execute root comands without a password.
+. You must open the firewall to access ports 80, 443 and 6443 from your machine. 
+. You have to install a <<sshkey, public ssh key>> to access it without a password.
+. You have to configure <<sudo, sudo>> to execute root commands without a password.
 
-For informations, how to open the firewall, please consult documentation of your cloud provider to know how to do it, as there are no common procedures.
+For information on how to open the firewall, please consult the documentation of your cloud provider, as there are no common procedures.
 
 Read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
 
 [#sshkey]
 == Installing a Public SSH key
 
-To connect to a server without a password using `openssh` you need a couple of file called **ssh keys**.
+To connect to a server without a password using `openssh` you need a couple of files called **ssh keys**.
 
-You can generate them on command line using this command:
+You can generate them on the command line using this command:
 
 ----
 ssh-keygen
@@ -33,9 +33,9 @@ It will create a couple of files, typically called:
 
 where `~` is your home directory.
 
-You have to keep secret the `id_rsa` file, because it is the private key. You can copy the `id_rsa.pub` in the server or even share it publicly, as it is the public key.
+You have to keep secret the `id_rsa` file because it is the private key. You can copy the `id_rsa.pub` in the server or even share it publicly, as it is the public key.
 
-Once you have generated the public key, access to your server and edit the file `~/.ssh/authorized_keys` and add the public key to it (it is just one line, contained in the `id_rsa.pub` file).  
+Once you have generated the public key, access your server and edit the file `~/.ssh/authorized_keys` and add the public key to it (it is just one line, contained in the `id_rsa.pub` file).  
 
 Create the file if it does not exist and do not remove 
 other lines if you do not want to remove access to others.
@@ -43,11 +43,11 @@ other lines if you do not want to remove access to others.
 [#sudo]
 == Configure SUDO
 
-You normalyl access to Linux servers using an user that is *not* `root` (the system administrator). It depends on the  system, it can be `ubuntu`, `ec2-user`, `admin` or others.
+You normally access Linux servers using a user that is *not* `root` (the system administrator). It depends on the system, it can be `ubuntu`, `ec2-user`, `admin` or others.
 
-But you need to give to this user the right to execute commands as `root` without a password, and you do this configuring the command `sudo`.
+But you need to give this user the right to execute commands as `root` without a password, and you do this by configuring the command `sudo`.
 
-You usally have either access to root with the `su` command, or you can execute `sudo` with a password.
+You usually have either access to root with the `su` command, or you can execute `sudo` with a password.
 
 Type either `su` or `sudo bash` to become root and edit the file `/etc/sudoers` adding the following line:
 

@@ -3,7 +3,7 @@
 === Create the Contact Package 
 
 The nuv tool embeds `wsk` (the OpenWhisk CLI) so we can use it to interact with the platform the same way we would with vanilla OpenWhisk. 
-The first step we can make is to create a new package to hold our actions, furthermore we can bind to this package the database url, so the actions can directly access it!
+The first step we can make is to create a new package to hold our actions, furthermore, we can bind to this package the database url, so the actions can directly access it!
 
 Use the debug subcommand to see what's going on and grab the "postgres_url" value:
 
@@ -12,7 +12,7 @@ Use the debug subcommand to see what's going on and grab the "postgres_url" valu
 nuv debug config
 ----
 
-Copy the postgres url and now we can create a new package for the application:
+Copy the Postgres URL and now we can create a new package for the application:
 
 [source,bash]
 ----
@@ -24,8 +24,8 @@ The actions under this package will be able to access the "dbUri" variable from 
 
 === Our First Action: the Contact Form
 
-In Nuvolaris, actions can just return html and they can even act as web pages. These are called "web actions".
-Let's create a simple action that returns the contact form html:
+In Nuvolaris, actions can just return HTML and they can even act as web pages. These are called "web actions".
+Let's create a simple action that returns the contact form HTML:
 
 [source,javascript]
 ----
@@ -81,8 +81,7 @@ ok: created action contact/form
 ----
 
 We are uploading the action into Nuvolaris under `contact/form` where `contact` is the package name we just created and `form` the action name.
-The `--web true` flag tells Nuvolaris that this action is a web action, so it will be accessible via http. To do that, we have to get its url which was 
-automatically associated to the action (the url might be different in your case):
+The `--web true` flag tells Nuvolaris that this action is a web action, so it will be accessible via HTTP. To do that, we have to get its URL which was automatically associated with the action (the URL might be different in your case):
 
 [source,bash]
 ----
@@ -91,7 +90,7 @@ ok: got action contact/form
 http://localhost:3233/api/v1/web/nuvolaris/contact/form
 ----
 
-Let's open the url in the browser!
+Let's open the URL in the browser!
 
 image::form.png[Form,align="center"]
 

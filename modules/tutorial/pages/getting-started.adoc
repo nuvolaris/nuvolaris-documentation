@@ -2,15 +2,14 @@
 
 Imagine we have a static website and need server logic to store contacts 
 and validate data. This would require a server, a database and
-some code to glue it all together. With a serverless approach we can
+some code to glue it all together. With a serverless approach, we can
 just sprinkle little functions (that we call actions) on top of our static website and let Nuvolaris 
 take care of the rest. No more setting up VMs, backend web servers, databases, etc.
 
 === Nuvolaris CLI: Nuv
 
-Serverless development is mostly performed on the CLI, and Nuvolaris has 
-it's own tool called "nuv". It's a command line tool that allows you to
-deploy (and interact with) the platform seamlessly to the cloud, locally and custom environments.
+Serverless development is mostly performed on the CLI, and Nuvolaris has its tool called "nuv". It's a command line tool that allows you to
+deploy (and interact with) the platform seamlessly to the cloud, locally and in custom environments.
 
 Nuv is cross-platform and can be installed on Windows, Linux and MacOS. You can find 
 it here: https://github.com/nuvolaris/nuv/releases[Nuv Releases]
@@ -18,14 +17,14 @@ it here: https://github.com/nuvolaris/nuv/releases[Nuv Releases]
 === Deploy Nuvolaris Locally
 
 To start using Nuvolaris we can easily setup a local deployment consisting of a Kubernetes cluster and Nuvolaris. This 
-will give us a ready to use serverless environment. We also want to enable an extra service: a Postgres database, because we will use it later. Let's run in the terminal:
+will give us a ready-to-use serverless environment. We also want to enable an extra service: a Postgres database, because we will use it later. Let's run in the terminal:
 
 [source,bash]
 ----
 nuv config enable --postgres
 ----
 
-If it's the first time you use the nuv tool, it will ask you to download the tasks. In this case just run:
+If it's the first time you use the nuv tool, it will ask you to download the tasks. In this case, just run:
 
 [source,bash]
 ----
@@ -53,6 +52,6 @@ nuv setup devcluster --uninstall
 nuv config disable --postgres
 ----
 
-This will remove Nuvolaris and the local cluster, and disable the postgres database that we enabled earlier.
+This will remove Nuvolaris and the local cluster, and disable the Postgres database that we enabled earlier.
 
-Checkout the other tutorials to learn how to build more complex applications with Nuvolaris!
+Check out the other tutorials to learn how to build more complex applications with Nuvolaris!

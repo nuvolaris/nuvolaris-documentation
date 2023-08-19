@@ -2,14 +2,14 @@
 
 If you are in a hurry and you don't want to read everything, read our xref:quickstart.adoc[quick start] installation guide. Otherwise read on, or come back if something does not work.
 
-Nuvolaris can be installed in many environments, using our powerful  command line interface `nuv`. You can downloded the installer xref:download.adoc[from this page].
+Nuvolaris can be installed in many environments, using our powerful command line interface `nuv`. You can download the installer xref:download.adoc[from this page].
 
 Once you installed `nuv`, before installing you need to:
 
 * xref:prereq.adoc[checking the prerequisites] for the installation, and satisfy them
 * xref:configure.adoc[configure] your Nuvolaris installation. 
 
-Finally, once you have the prerequisites satisfied and your installation configured ,  you can actually install:
+Finally, once you have the prerequisites satisfied and your installation configured, you can install:
 
 * in your xref:install-local.adoc[local machine]
 * in a xref:install-server.adoc[Linux server]
@@ -19,4 +19,4 @@ After the installation, you can change the configuration then xref:update.adoc[u
 
 If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page. 
 
-You can also discuss with us in our http://nuvolaris.discourse.group[online forum].
+You can also discuss this with us at our http://nuvolaris.discourse.group[online forum].

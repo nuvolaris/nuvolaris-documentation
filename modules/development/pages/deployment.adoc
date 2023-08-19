@@ -5,23 +5,22 @@ It will scan the current folder (or the given path) looking for the folders name
 
 === The packages folder
 
-If the `packages` folder is found, `nuv` will proceed to build a manifest file where each sub-folder of `packages` is translated to a package creation command (1 package for each subfolder) and each files in this level is considered
-to create a Single File Action under the `default` package which is pre-created in every Nuvolaris deployment.
+If the `packages` folder is found, `nuv` will proceed to build a manifest file where each sub-folder of `packages` is translated to a package creation command (1 package for each subfolder) and each file in this level is considered to create a Single File Action under the `default` package which is pre-created in every Nuvolaris deployment.
 
 In every sub-folder, if it finds files it will generate a command to create [single file actions](#single-file-actions)
-in the package corresponding to the sub-folder's name. If it finds sub-folders, it will generate commands to create [multi file actions](#multi-file-actions). There can be the special `web` sub-folder which will be used to deploy a static frontend under the relative package name, so in this case it is not a MFA.
+in the package corresponding to the sub-folder's name. If it finds sub-folders, it will generate commands to create [multi file actions](#multi-file-actions). There can be a special `web` sub-folder that will be used to deploy a static frontend under the relative package name, so in this case, it is not an MFA.
 
 === Single File Actions
 
-`nuv` generates an `action create` command for each single file actions, with the flag `--kind nodejs:default`, `--kind python:default`, `--kind go:default` and `--kind java:default` depending on the relative runtime.
+`nuv` generates an `action create` command for each single file action, with the flag `--kind nodejs:default`, `--kind python:default`, `--kind go:default` and `--kind java:default` depending on the relative runtime.
 
-The possible runtimes are described by `runtime.json` that can be downloaded from the configured api host.
+The possible runtimes are described by `runtime.json` which can be downloaded from the configured API host.
 
 If the extension is in format: `.<version>.<extension>`, the command will have `--kind <language>:<version>`.
 
 === Multi File Actions
 
-`nuv` implements some heuristics to decide the correct type of the file to build.
+`nuv` implements some heuristics to decide the correct type of file to build.
 
 Currently:
 

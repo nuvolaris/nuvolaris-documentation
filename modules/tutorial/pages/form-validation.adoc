@@ -12,11 +12,11 @@ function main(args) {
 }
 ----
 
-This action is a bit more complex. It takes the input object (called args) which will contain the form data (accessible via `args.name`, `args.email`, etc.). With that we will do some validation and then return the result.
+This action is a bit more complex. It takes the input object (called args) which will contain the form data (accessible via `args.name`, `args.email`, etc.). With that. we will do some validation and then return the result.
 
 === Form Validation
 
-Let's start filling the "Form Validation" part by checking the name:
+Let's start filling out the "Form Validation" part by checking the name:
 
 [source,javascript]
 ----
@@ -51,7 +51,7 @@ if(args.phone && args.phone.match(/\d/g).length >= 10) {
 }
 ----
 
-Finally the message text, if present:
+Finally, the message text, if present:
 [source,javascript]
 ----
 // validate the message
@@ -62,7 +62,7 @@ if(args.message) {
 
 === Validation Done, Return the Result
 
-With the validation phase, we added to the "errors" array all the errors we found, and to the "message" array all the data we want to show to the user. So if there are errors, we have to show them, otherwise we store the message and return a "thank you" page.
+With the validation phase, we added to the "errors" array all the errors we found, and to the "message" array all the data we want to show to the user. So if there are errors, we have to show them, otherwise, we store the message and return a "thank you" page.
 
 [source,javascript]
 ----

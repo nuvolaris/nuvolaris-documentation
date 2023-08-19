@@ -1,6 +1,6 @@
 = Debug
 
-This document gives you hints for diagnosticing and solving issues, using the (hidden) subcommand `debug`.
+This document gives you hints for diagnostics and solving issues, using the (hidden) subcommand `debug`.
 
 Note it is technical and assumes you have some knowledge of how Kubernetes operates.
 
@@ -30,10 +30,10 @@ You can inspect the configuration with the `nuv debug subcommand`
 
 You can inspect logs with `nuv debug log` subcommand. Logs you can show:
 
-* operator: `nuv debug log operator` (continuosly: `nuv debug log foperator`)
-* controller: `nuv debug log controller` (continuosly: `nuv debug log fcontroller`)
-* database: `nuv debug log couchdb` (continuosly: `nuv debug log fcouchdb`)
-* certificate manager: database: `nuv debug log certman` (continuosly: `nuv debug log fcertmap`)
+* operator: `nuv debug log operator` (continuously: `nuv debug log foperator`)
+* controller: `nuv debug log controller` (continuously: `nuv debug log fcontroller`)
+* database: `nuv debug log couchdb` (continuously: `nuv debug log fcouchdb`)
+* certificate manager: database: `nuv debug log certman` (continuously: `nuv debug log fcertmap`)
 
 == Kubernetes
 
@@ -50,7 +50,7 @@ You can then inspect Kubernetes objects with:
 * users: `nuv debug kube users`
 
 
-You can enter in a pod by name (use `kube pod` to find the name) with:
+You can enter a pod by name (use `kube pod` to find the name) with:
 
 ----
 nuv debug kube exec P=<pod-name>
@@ -58,9 +58,9 @@ nuv debug kube exec P=<pod-name>
 
 == Kubeconfig
 
-Usually `nuv` uses an hidden kubeconfig so does not override your kubernetes configuration.
+Usually, `nuv` uses a hidden kubeconfig so does not override your Kubernetes configuration.
 
-If you want to go more in depth and you are knowledegeable of Kubernetes, 
+If you want to go more in-depth and you are knowledgeable of Kubernetes, 
 you can export the kubeconfig with `nuv debug export F=<file>`.
 
 You can *overwrite your kubeconfig* (be aware there is no backup) with `nuv debug export F=-`.
