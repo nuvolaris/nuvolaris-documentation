@@ -30,27 +30,27 @@ It will create a couple of files, typically called:
 * ~/.ssh/id_rsa
 * ~/.ssh/id_rsa.pub
 
-You have to keep secret the `id_rsa` file, while you can copy the `id_rsa.pub` file and install in the server to access it.
+where `~` is your home directory.
 
+You have to keep secret the `id_rsa` file, because it is the private key. You can copy the `id_rsa.pub` in the server or even share it publicly, as it is the public key.
+
+Once you have generated the public key, access to your server and edit the file `~/.ssh/authorized_keys` and add the public key to it (it is just one line, contained in the `id_rsa.pub` file).  
+
+Create the file if it does not exist and do not remove 
+other lines if you do not want to remove access to others.
 
 [#sudo]
 == Configure SUDO
-* ti give sudo rights to a non-root user, usually you need to use the root password, then edit the file /etc/sudoers and add the line:
+
+You normalyl access to Linux servers using an user that is *not* `root` (the system administrator). It depends on the  system, it can be `ubuntu`, `ec2-user`, `admin` or others.
+
+But you need to give to this user the right to execute commands as `root` without a password, and you do this configuring the command `sudo`.
+
+You usally have either access to root with the `su` command, or you can execute `sudo` with a password.
+
+Type either `su` or `sudo bash` to become root and edit the file `/etc/sudoers` adding the following line:
 
 ----
 <user> ALL=(ALL) NOPASSWD:ALL
 ----
-
-== Generic instructions.
-
-The generic instructions are the following:
-
-* Usually you will be given an IP address and a password.
-* Using those informations you will be able to enter in the server, edit the file `~/.ssh/authorized_keys` and  add your `id_rsa.pub` 
-* if you are using a non-root user, ensure this user has the right to use `sudo` to run commands as a root without a password. 
-
-(change `<user>` with your actual user).
-
-
-See xref:server-generic.adoc[here] for informations how to install it in a server.
  
