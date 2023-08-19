@@ -111,31 +111,50 @@ nuv setup server <server> <user>
 
 Now wait until the installation completes. Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial] to learn how to code with it.
 
-
 [#cloud-cluster]
 == Cloud Cluster Provisioning
 
 If you have access to a cloud provider, you can setup a Kubernetes cluster in it. The kubernetes cluster needs to satisfy certain xref:prereq-cluster[prerequisites] to be able to install Nuvolaris with no issues.
 
-We provide the following commands to easily configure and install a compliant Kubernetes clusters for the major cloud providers. At the end of the installation you will hava available and accessible a Kubernetes Cluster able to install Nuvolaris.
+We provide the support to easily configure and install a compliant Kubernetes clusters for the following clouds:
 
-* Amazon AWS:
+* <<aws, Amazon AWS>>
+* <<azure, Microsot Azure>>
+* <<gcloud, Google Cloud>>
+
+
+At the end of the installation you will have available and accessible a Kubernetes Cluster able to install Nuvolaris, so proceed with a <<cluster, cluster installation>>.
+
+[#aws]
+=== Amazon AWS
+
+Configure and install an Amazon EKS cluster on Amazon AWS with: 
+
 ----
 nuv config eks
 nuv cloud eks create
 ----
-* Azure AKS:
+
+[#azure]
+=== Azure AKS:
+
+Configure and install an Azure AKS cluster on Microsoft Azure with: 
+
 ----
 nuv config aks
 nuv cloud aks create
 ----
-* Google GKE:
+
+[#gcloud]
+=== Google Cloud
+
+Configure and install a Google Cloud GKE with:
+
 ----
 nuv config gke
 nuv cloud gke create
 ----
 
-Once this process is complete (note it can takes a long time), you should have a cluster ready to deploy nuvolaris in it as described in next paragraph.
 
 [#cluster]
 == Cluster Install
