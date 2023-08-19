@@ -34,8 +34,8 @@ https://www.docker.com/products/docker-desktop/[Docker Desktop] and then install
 
 Once you have: 
 
-. installed the CLI a
-. configured you services 
+. installed the CLI 
+. configured the services 
 . installed Docker Desktop
 
 you can install Nuvolaris and its services in Docker with just:
