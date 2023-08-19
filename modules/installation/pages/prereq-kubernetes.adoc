@@ -6,8 +6,8 @@ Each vendor will provision one with specific requirements then it will give you 
 
 The tool `nuv` includes automated provisioning in the following environments:
 
-* xref:cluster-eks.adoc[Amazon AKS]
-* xref:cluster-aks.adoc[Azure AKS]
-* xref:cluster-gke.adoc[Google GKE]
+* xref:prereq-eks.adoc[Amazon AKS]
+* xref:prereq-aks.adoc[Azure AKS]
+* xref:prereq-gke.adoc[Google GKE]
 
 If your cluster is not one of those, contact your provider for information on how to get the `kubeconfig`.

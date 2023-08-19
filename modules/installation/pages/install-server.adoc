@@ -4,15 +4,14 @@ This section describes how to install Nuvolaris on a remote server
 
 == Prerequisite
 
-as long it is accessible with xref:server-sshkey.adoc[SSH] and you have permission to run https://en.wikipedia.org/wiki/Sudo[`sudo`].
-
+as long it is accessible with xref:prereq-server.adoc[SSH] and you have the permission to run https://en.wikipedia.org/wiki/Sudo[`sudo`].
 
 Before installing, you need to:
 
-* generate an xref:server-sshkey.adoc[ssh key] to access a server
-* provision a xref:server-generic.adoc[server] adding the ssh key to access it
-* xref:index-config.adoc[configure] the services you want to enable
-* install xref:index-nuv.adoc[nuv].
+* generate an xref:prereq-server.adoc[ssh key] to access a server
+* provision a xref:prereq-server.adoc[server] adding the ssh key to access it
+* xref:configure.adoc[configure] the services you want to enable
+* install xref:download.adoc[nuv].
 
 == Installation
 
@@ -22,7 +21,7 @@ nuv setup server <host> [<user>]
 
 == Update
 
-After installation, you can xref:index-config.adoc[update] adding more services== Uninstall
+After installation you can xref:configure.adoc[update] adding more services== Uninstall
 
 == Uninstall
 

@@ -1,4 +1,4 @@
-== Prerequisites
+== Prerequisites to install Nuvolaris
 
 This page lists the prerequisites to install Nuvolaris in various environments.
 

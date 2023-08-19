@@ -1,0 +1,21 @@
+replace cluster-aks.adoc prereq-aks.adoc *.adoc
+replace cluster-eks.adoc prereq-eks.adoc *.adoc
+replace cluster-generic.adoc prereq-cluster.adoc *.adoc
+replace cluster-gke.adoc prereq-gke.adoc *.adoc
+replace cluster.adoc install-cluster.adoc *.adoc
+configure.adoc
+replace index-config.adoc configure.adoc *.adoc
+replace index-nuv.adoc download.adoc *.adoc
+install-cluster.adoc
+install-local.adoc
+install-server.adoc
+replace local-docker.adoc prereq-docker.adoc *.adoc
+local.adoc
+prereq-aks.adoc
+prereq-eks.adoc
+prereq-gke.adoc
+prereq-kubernetes.adoc
+replace server-generic.adoc prereq-server.adoc *.adoc
+replace server-sshkey.adoc prereq-server.adoc *.adoc
+replace server.adoc prereq-server.adoc *.adoc
+
