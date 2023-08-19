@@ -4,7 +4,7 @@ This section guides to configuring the nuvolaris installation.
 
 You an install without configuration when performing:
 
-* a xref:local.adoc[local] installation when Docker Desktop is available;
+* a xref:prereq-docker.adoc[local] installation when Docker Desktop is available;
 * a xref:prereq-server.adoc[server] installation when a server is accessible with ssh;
 * a xref:install-cluster.adoc[cluster] installation when a cluster is accessible with a kubeconfig.
 
