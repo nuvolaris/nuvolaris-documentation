@@ -109,6 +109,9 @@ If you do not receive errors, you can proceed install Nuvolaris with this comman
 nuv setup server <server> <user>
 ----
 
+Now wait until the installation completes. Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial] to learn how to code with it.
+
+
 [#cloud-cluster]
 == Cloud Cluster Provisioning
 
