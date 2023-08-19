@@ -3,7 +3,7 @@
 ** xref:download.adoc[✅ Download Installer]
 ** xref:prereq.adoc[✅ Prerequisites]
 *** xref:prereq-docker.adoc[✅ Local Docker]
-*** xref:prereq-server.adoc[❌ Linux Server]
+*** xref:prereq-server.adoc[✅ Linux Server]
 **** xref:prereq-k3s.adoc[❌ K3S]
 **** xref:prereq-mk8s.adoc[❌ MicroK8S]
 *** xref:prereq-kubernetes.adoc[🚧 Kubernetes Cluster]
