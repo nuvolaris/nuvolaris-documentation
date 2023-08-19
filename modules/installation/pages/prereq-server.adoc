@@ -15,13 +15,11 @@ For informations, how to open the firewall, please consult documentation of your
 Read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
 
 [#sshkey]
-== Installing Public SSH key
+== Installing a Public SSH key
 
-== Generate an SSH key
+To connect to a server without a password using `openssh` you need a couple of file called **ssh keys**.
 
-To connect to a server you need a couple of file called **ssh keys**
-
-You can generate them on command line using
+You can generate them on command line using this command:
 
 ----
 ssh-keygen
