@@ -16,10 +16,10 @@ You can download it for your system. It is available for the following operating
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[Download `nuv` for  Mac/ARM]
 
 * On Linux, for Ubuntu at least version 22, for Debian at least version 12 Linux, 64 bit version, in format `.deb`; for RedHat at least version 8 and for SuSE at least version 12, in `rpm` format; Available for Intel and ARM architectures, 64 bit only.
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Download `nuv` for Debian/Ubuntu] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.deb[Download `nuv` for Debian/Ubuntu]
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.rpm[Download `nuv` for RedHat/SuSE] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.rpm[Download `nuv` for RedHat/SuSE]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Download `nuv` for Debian/Ubuntu on Intel] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.deb[Download `nuv` for Debian/Ubuntu on ARM]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.rpm[Download `nuv` for RedHat/SuSE on Intel] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.rpm[Download `nuv` for RedHat/SuSE on ARM]
 
 Download your version from this page, then install it according the procedures of your operating system.
 
