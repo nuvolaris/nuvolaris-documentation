@@ -32,7 +32,9 @@ beta version is currently unsigned. Check https://www.wikihow.com/Install-Softwa
 
 [IMPORTANT]
 ====
-Once installed, in the first run it will tell you that you need to install the tasks. Execute `nuv -update` to install them. This command should be also executed frequently as the tasks are continuosly evolving and expanding.
+Once installed, in the first run `nuv`` will tell to update the tasks with `nuv -update`.
 
-You nornally just need to update the tasks but sometimes you also need to update `nuv` itself. The system will detect when and tell you what to do.
+Executing this command will update to the latest version of the tasks.  This command should be also executed frequently as the tasks are continuosly evolving and expanding, and `nuv` will suggest to do it at least once in a day.
+
+You nornally just need to update the tasks but sometimes you also need to update `nuv` itself. The system will detect when it is the case and tell you what to do.
 ====
