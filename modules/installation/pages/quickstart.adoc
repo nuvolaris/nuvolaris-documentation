@@ -122,7 +122,6 @@ We provide the support to easily configure and install a compliant Kubernetes cl
 * <<azure, Microsot Azure>>
 * <<gcloud, Google Cloud>>
 
-
 At the end of the installation you will have available and accessible a Kubernetes Cluster able to install Nuvolaris, so proceed with a <<cluster, cluster installation>>.
 
 [#aws]
