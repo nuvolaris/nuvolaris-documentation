@@ -36,7 +36,6 @@ It will create a couple of files, typically called:
 You have to keep secret the `id_rsa` file, while you can copy the `id_rsa.pub` file and install in the server to access it.
 
 
-
 [#sudo]
 == Configure SUDO
 * ti give sudo rights to a non-root user, usually you need to use the root password, then edit the file /etc/sudoers and add the line:
