@@ -32,7 +32,9 @@ beta version is currently unsigned. Check https://www.wikihow.com/Install-Softwa
 
 [IMPORTANT]
 ====
-Once installed, in the first run `nuv` will tell to update the tasks with `nuv -update`.
+Once installed, in the first run `nuv` will tell to update the tasks executing:
+ 
+`nuv -update`
 
 Executing this command will update to the latest version of the tasks.  This command should be also executed frequently as the tasks are continuosly evolving and expanding, and `nuv` will suggest to do it at least once in a day.
 
