@@ -8,12 +8,11 @@ The requirements are:
 . It should be running a Linux distribution https://docs.k3s.io/installation/requirements[supported by K3S].
 . You must open the firewall to access the ports 80, 443 and 6443 from your your machine. 
 . You have to install a <<sshkey, public ssh key>> to access to it without a password.
-. You have to configure <<sudo,
+. You have to configure <<sudo, sudo>> to execute root comands without a password.
 
+For informations, how to open the firewall, please consult documentation of your cloud provider to know how to do it, as there are no common procedures.
 
-Please consult documentation of your cloud provider to know how to do it.
-
-
+Read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
 
 [#sshkey]
 == Installing Public SSH key
