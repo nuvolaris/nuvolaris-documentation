@@ -15,7 +15,7 @@ You need also to install https://www.docker.com/products/docker-desktop/[Docker 
 
 On Mac, you need also to reserve al least 6GB (better 8GB) of memory to Docker Desktop, since the default is not enough. 
 
-This is a required step for Mac, but not on Windows and Mac.
+This is a required step for Mac, but not on Windows and Linux.
 
 image::install_docker_desktop.png[]
 
