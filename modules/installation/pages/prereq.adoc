@@ -6,9 +6,9 @@ This page lists the prerequisites to install Nuvolaris in  various environments.
 
 For **development** purposes, you can install a single node Nuvolaris deployment in the following enviroments.
 
-* Install in your xref:install-local.adoc[local machine]:
+* To install in your xref:install-local.adoc[local machine]:
 ** you need xref:prereq-docker.adoc[Docker Desktop] 
-* Install in a *single node* xref:install-server.adoc[Linux server]: 
+* To install in a *single node* xref:install-server.adoc[Linux server]: 
 ** you need a xref:prereq-server.adoc[Linux server]  accessible with SSH
 
 Our installer automatically installs https://k3s.io[K3S], but if you prefer you can preinstall a single node Kubernetes nstances. 
