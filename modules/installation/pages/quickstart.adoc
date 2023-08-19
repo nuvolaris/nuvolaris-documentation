@@ -134,6 +134,8 @@ nuv config eks
 nuv cloud eks create
 ----
 
+then <<cluster, install the cluster>>.
+
 [#azure]
 === Azure AKS:
 
@@ -143,6 +145,8 @@ Configure and install an Azure AKS cluster on Microsoft Azure with:
 nuv config aks
 nuv cloud aks create
 ----
+
+then <<cluster, install the cluster>>.
 
 [#gcloud]
 === Google Cloud
@@ -154,33 +158,37 @@ nuv config gke
 nuv cloud gke create
 ----
 
+then <<cluster, install the cluster>>.
 
 [#cluster]
 == Cluster Install
 
-If you have access to a Kubernetes cluster with `cluster-admin` role, you can install Nuvolaris in it. You can get this access either provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
+If you have access to a Kubernetes cluster with `cluster-admin` role, you can install Nuvolaris in it. 
 
-Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file names `.kube/config` in your home directory.
+You can get this access either provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
+
+Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
 
 If the cluster satifies the xref:prereq-cluster.adoc[prerequisites], you can install Nuvolaris in it.
 
-First, check you have actually access to a Kubernetes cluster, performing this command:
+To install, first, check you have actually access to a Kubernetes cluster, running this command:
 
 ----
 nuv debug kube info
 ----
 
-You should get something like this:
+You should get informations about your cluster, something like this:
 
 =====
 Kubernetes control plane is running at https://api.nuvolaris.osh.n9s.cc:6443
 =====
 
-Then type the command:
+If you have access to the cluster, you can install Nuvolaris with the command:
 
 ----
 nuv setup cluster
 ----
 
-Wait until the process is complete and if there are no errors, Nuvolaris is installed and ready to go.
+Now, wait until the process is complete and if there are no errors, Nuvolaris is installed and ready to go.
 
+Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial] to learn how to code with it.
