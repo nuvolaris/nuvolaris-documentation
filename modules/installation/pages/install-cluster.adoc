@@ -8,7 +8,7 @@ Before installing, you need to:
 
 * xref:configure.adoc[configure] the services you want to enable
 * install xref:download.adoc[nuv].
-* provision a Kubernetes cluster xref:prereq-install-cluster.adoc[server] retrieving its kubeconfig
+* provision a Kubernetes cluster xref:install-cluster.adoc[server] retrieving its kubeconfig
 
 == Installation
 
