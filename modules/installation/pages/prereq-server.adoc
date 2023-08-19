@@ -30,7 +30,6 @@ The exact instructions depends on the specific provider.
 <user> ALL=(ALL) NOPASSWD:ALL
 ----
 
-
 == Generic instructions.
 
 The generic instructions are the following:
