@@ -2,18 +2,18 @@
 
 What's new in Nuvolaris Community 3?
 
-We have already implemented large part of our roadmap, integrating support for many integrates services and running it in many different environments.
+We have already implemented a large part of our roadmap, integrating support for many integrated services and running it in many different environments.
 
-Nuvolaris itself is based on a rich operator, supporting the deployment of a number of integrated services:
+Nuvolaris itself is based on a rich operator, supporting the deployment of several integrated services:
 
 * https://redis.io[Redis], a storage service
 * https://min.io[MinIO], an object storage service
 * https://www.postgresql.org[Postgres] a relational database
-* https://www.ferretdb.io[FerretDB] A MongoDB compatible adapter 
+* https://www.ferretdb.io[FerretDB] A MongoDB-compatible adapter 
 
 Nuvolaris is coupled with a  rich and extendible CLI, `nuv`.
 
-You can use it install and run Nuvolaris locally on https://www.docker.com[Docker Desktop] using https://kind.sigs.k8s.io[Kind]
+You can use it to install and run Nuvolaris locally on https://www.docker.com[Docker Desktop] using https://kind.sigs.k8s.io[Kind]
 
 You can then install Nuvolaris in the following cloud providers:
 

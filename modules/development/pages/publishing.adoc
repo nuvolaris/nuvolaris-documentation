@@ -2,13 +2,13 @@
 
 The `web` folder in the root of a project is used to deploy static frontends. A static front-end is a collection of static asset under a given folder that will be published in a web server under a path.
 
-The path that will serve the a static asset is determined by:
+The path that will serve the static asset is determined by:
 * Hostname
 * Location of the asset
 
 === Hostname
 
-In general, for each namespace there will be a `https://<namespace>.<domain>` website where to publish the resources. For the local deployment there will be a website `http://127.0.0.1:8080` where the resources are published, with the namespace and the domain ignored.
+In general, for each namespace, there will be a `https://<namespace>.<domain>` website where to publish the resources. For the local deployment, there will be a website `http://127.0.0.1:8080` where the resources are published, with the namespace and the domain ignored.
 
 === Path detection
 
@@ -48,15 +48,15 @@ If instead there is `packages.json`, it will assume this base `nuvolaris.json`:
 }
 ----
 
-The it will read the `nuvolaris.json` replacing the keys in it with the default ones.
+Then it will read the `nuvolaris.json` replacing the keys in it with the default ones.
 
-The generated taskfile will execute at deployment step:
+The generated taskfile will execute at the deployment step:
 
 * the command defined by `install` only if there is not a `node_modules`
 * the command defined by `build` always
 * then it will collect for publishing (creating a crd instance) the files in the folder defined by `collect`
 
-It is recommended that `nuv scan` does not execute directy the command but instead it delegates to another command like `nuv build` and in turn the creation of `crd` to another `nuv crd` subcommand, after changing to the corresponding sudfolder. All those commands should work by default in current folder. 
+It is recommended that `nuv scan` does not execute directly the command but instead, it delegates to another command like `nuv build` and in turn the creation of `crd` to another `nuv crd` subcommand, after changing to the corresponding subfolder. All those commands should work by default in the current folder. 
 
 == The Complete Mapping
 

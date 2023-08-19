@@ -113,8 +113,7 @@ function save(doc) {
 ...
 ----
 
-Add that above the `main` function! What we are doing here is to 
-import the special `openwhisk` module that gives you access to the Openwhisk 
+Add that above the `main` function! What we are doing here is importing the special `openwhisk` module that gives you access to the Openwhisk 
 API (the Nuvolaris' serverless engine) from within any action. To construct 
 the `ow` object we need to pass the API key, which you can get with
 

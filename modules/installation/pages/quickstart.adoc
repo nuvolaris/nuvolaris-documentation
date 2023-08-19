@@ -1,20 +1,20 @@
 = Quick Start
 
-This is a TL;DR (too long, don't read)  guide to the installation process, aimed to experienced people in a hurry, that gives you a high level overview of the installation process, omitting a lot of details, that are covered in the rest of the documentation.
+This is a TL;DR (too long, don't read)  guide to the installation process, aimed at experienced people in a hurry, that gives you a high-level overview of the installation process, omitting a lot of details, that are covered in the rest of the documentation.
 
-Of course, it this guide is not enough and things fails, you can always apply the rule: "if everything fails, read the manual", as it is there, even if you don't want to read it.
+Of course, if this guide is not enough and things fail, you can always apply the rule: "if everything fails, read the manual", as it is there, even if you don't want to read it.
 
 == Prerequisites
 
-First, xref:download.adoc[download `nuv`], the Nuvolaris CLI, the version suitable for your environment. We support the 64 bit version of recent Windows, MacOS and major Linux distributions.
+First, xref:download.adoc[download `nuv`], the Nuvolaris CLI, the version suitable for your environment. We support the 64-bit version of recent Windows, MacOS and major Linux distributions.
 
-Second, configure the services you want to enable. By defalt Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:
+Second, configure the services you want to enable. By default, Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:
 
 ----
 nuv config enable --all
 ----
 
-otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres that is implicitly also enabled. More details xref:configure.adoc[here]. 
+otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres which is implicitly also enabled. More details xref:configure.adoc[here]. 
 
 Now, choose where to install Nuvolaris. 
 
@@ -23,13 +23,13 @@ Your options are:
 * <<locally,locally>> in your workstation;
 * in a Linux <<server,server>> in your intranet
 * in a Linux <<internet-server,server>> available on Internet
-* in a Kubernets <<cluster,cluster>> in your intranet
+* in a Kubernetes <<cluster,cluster>> in your intranet
 * in <<cloud-cluster,cloud>>, where you can provision a Kubernetes cluster 
 
 [#locally]
 == Local Installation
 
-If you have a *decent* workstation (with at least 16GB of memory) running a  *recent*  and **64 bit** operating system, you can install 
+If you have a *decent* workstation (with at least 16GB of memory) running a *recent* **64-bit** operating system, you can install 
 https://www.docker.com/products/docker-desktop/[Docker Desktop] and then install Nuvolaris in it.
 
 Once you have: 
@@ -49,21 +49,21 @@ Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutor
 [#internet-server]
 == Internet Server Configuration
 
-If you have access to server on Internet, you will get an IP address to reach it.
+If you have access to the server on the Internet, you will get an IP address to reach it.
 
-Many cloud providers also gives you a DNS name, usually  very hard to remember such as `ec2-12-34-56-78.us-west-2.compute.amazonaws.com`. Nonetheless you are advised to use it as it is  than just the IP addres and should be used to refer to your server.
+Many cloud providers also give you a DNS name, usually very hard to remember such as `ec2-12-34-56-78.us-west-2.compute.amazonaws.com`. Nonetheless, you are advised to use it as it is more than just the IP address and should be used to refer to your server.
 
-However, you can access the server directly with the IP without configuring any DNS names. If you do so, you cannot configure `https` so you will access to it insecurely just using http and everything on the wire, including access keys, are unencrypted. 
+However, you can access the server directly with the IP without configuring any DNS names. If you do so, you cannot configure `HTTPS` so you will access it insecurely just using `HTTP` and everything on the wire, including access keys, is unencrypted. 
 
-If you are comfortable with this *insecure* setup, skip to the <<server,server>> installation section. Otherwise, you do better to setup a DNS name and enable `https` protocol provisioning a certificate. 
+If you are comfortable with this *insecure* setup, skip to the <<server,server>> installation section. Otherwise, you do better to set up a DNS name and enable `HTTPS` protocol provisioning a certificate. 
 
-So, once you got the IP address of your server, either use the assigned DNS name of your provider, or give to it a DNS name https://en.wikipedia.org/wiki/List_of_managed_DNS_providers[using a domain name provider]. We cannot give here precise instructions as there are many DNS provider and each has different rules to do the setup. Check with your choosen domain name provider.
+So, once you got the IP address of your server, either use the assigned DNS name of your provider or give it a DNS name https://en.wikipedia.org/wiki/List_of_managed_DNS_providers[using a domain name provider]. We cannot give here precise instructions as there are many DNS providers and each has different rules to do the setup. Check with your chosen domain name provider.
 
 Once you got a name in the DNS for your server, let's say `<dns-name>` you can configure it and enable SSL
 
 [IMPORTANT]
 ====
-Replace the `<dns-name>` with the actual DNS name, without using prefixes like `http://` or suffixes like `:443`. Also replace `<email-address>` with your actual email address.
+Replace the `<dns-name>` with the actual DNS name, without using prefixes like `http://` or suffixes like `:443`. Also, replace `<email-address>` with your actual email address.
 ====
 
 Use  the following command to give a DNS name to your server and enable SSL:
@@ -82,7 +82,7 @@ If you have access to a Linux server, with:
 . passwordless access with `ssh` to a Linux user `<user>`
 . at least 8GB of memory and 50GB of disk space available
 . the user `<user>` has passwordless `sudo` rights
-. the firewall that allows traffic to the ports 80, 443 and 6443
+. the firewall that allows traffic to ports 80, 443 and 6443
 . **without** any Docker or Kubernetes installed
 . **without** any Web server or Web application installed
 
@@ -92,7 +92,7 @@ The server can be physical or virtual. We need Kubernetes in it but the installe
 
 [IMPORTANT]
 ====
-Replace in the following command `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same and  `<dns-name>` you have configured in the previous paragraph, if you did it.
+Replace in the following command `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same as `<dns-name`>` you have configured in the previous paragraph if you did it.
 ====
 
 To install Nuvolaris, first check you have access to the server with:
@@ -101,9 +101,9 @@ To install Nuvolaris, first check you have access to the server with:
 ssh <user>@<server> sudo hostname
 ----
 
-You shold see no errors and read the internal hostname of your server.
+You should see no errors and read the internal hostname of your server.
 
-If you do not receive errors, you can proceed install Nuvolaris with this command: 
+If you do not receive errors, you can proceed to install Nuvolaris with this command: 
 
 ----
 nuv setup server <server> <user>
@@ -114,12 +114,12 @@ Now wait until the installation completes. Once it is installed, you can proceed
 [#cloud-cluster]
 == Cloud Cluster Provisioning
 
-If you have access to a cloud provider, you can setup a Kubernetes cluster in it. The kubernetes cluster needs to satisfy certain xref:prereq-cluster[prerequisites] to be able to install Nuvolaris with no issues.
+If you have access to a cloud provider, you can set up a Kubernetes cluster in it. The Kubernetes cluster needs to satisfy certain xref:prereq-cluster[prerequisites] to be able to install Nuvolaris with no issues.
 
-We provide the support to easily configure and install a compliant Kubernetes clusters for the following clouds:
+We provide the support to easily configure and install a compliant Kubernetes cluster for the following clouds:
 
 * <<aws, Amazon AWS>>
-* <<azure, Microsot Azure>>
+* <<azure, Microsoft Azure>>
 * <<gcloud, Google Cloud>>
 
 At the end of the installation you will have available and accessible a Kubernetes Cluster able to install Nuvolaris, so proceed with a <<cluster, cluster installation>>.
@@ -165,19 +165,19 @@ then <<cluster, install the cluster>>.
 
 If you have access to a Kubernetes cluster with `cluster-admin` role, you can install Nuvolaris in it. 
 
-You can get this access either provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
+You can get this access either by provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
 
-Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
+Whatever the way you get access to your Kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
 
-If the cluster satifies the xref:prereq-cluster.adoc[prerequisites], you can install Nuvolaris in it.
+If the cluster satisfies the xref:prereq-cluster.adoc[prerequisites], you can install Nuvolaris in it.
 
-To install, first, check you have actually access to a Kubernetes cluster, running this command:
+To install, first, check you have actually access to a Kubernetes cluster, by running this command:
 
 ----
 nuv debug kube info
 ----
 
-You should get informations about your cluster, something like this:
+You should get information about your cluster, something like this:
 
 =====
 Kubernetes control plane is running at https://api.nuvolaris.osh.n9s.cc:6443

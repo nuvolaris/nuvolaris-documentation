@@ -1,6 +1,6 @@
 = Google GKE
 
-Creating a GKE Cluster in Google Cloud   using xref:index-nuv.adoc[nuv].
+Creating a GKE Cluster in Google Cloud using xref:index-nuv.adoc[nuv].
 
 == Access
 
@@ -41,7 +41,7 @@ To get a list of valid values, use:
 
 Just press enter for default [e2-standard-2]: 
 
-*** Please, specify GKE disk size in gigabyte and press enter.
+*** Please, specify GKE disk size in gigabytes and press enter.
 Just press enter for default [50]: 
 
 GKE_COUNT=3
