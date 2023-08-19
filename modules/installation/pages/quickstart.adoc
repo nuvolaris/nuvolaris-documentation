@@ -33,6 +33,7 @@ If you have a *decent* workstation (with at least 16GB of memory) running a  *re
 https://www.docker.com/products/docker-desktop/[Docker Desktop] and then install Nuvolaris in it.
 
 Once you have: 
+
 . installed the CLI a
 . configured you services 
 . installed Docker Desktop
