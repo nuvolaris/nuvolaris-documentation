@@ -12,8 +12,8 @@ Once you installed `nuv`, before installing you need to:
 Finally, once you have the prerequisites satisfied and your installation configured ,  you can actually install:
 
 * in your xref:install-local.adoc[local machine]
-* in a xref:install-server.adoc[Linux server]
-* in a xref:install-cluster.adoc[Kubernetes cluster].
+* in a xref:install-prereq-server.adoc[Linux server]
+* in a xref:install-install-cluster.adoc[Kubernetes cluster].
 
 After the installation, you can change the configuration then xref:update.adoc[update the system]. 
 

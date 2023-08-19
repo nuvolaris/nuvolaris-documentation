@@ -1,6 +1,6 @@
 = Amazon EKS
 
-Creating an  EKS Cluster in Amazon AWS using xref:index-nuv.adoc[nuv].
+Creating an  EKS Cluster in Amazon AWS using xref:download.adoc[nuv].
 
 == Credentials
 

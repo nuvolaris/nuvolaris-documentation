@@ -1,6 +1,6 @@
 = Google GKE
 
-Creating a GKE Cluster in Google Cloud   using xref:index-nuv.adoc[nuv].
+Creating a GKE Cluster in Google Cloud   using xref:download.adoc[nuv].
 
 == Access
 

@@ -169,7 +169,7 @@ You can get this access either provisioning a Kubernetes cluster in <<cloud,clou
 
 Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
 
-If the cluster satifies the xref:prereq-cluster.adoc[prerequisites], you can install Nuvolaris in it.
+If the cluster satifies the xref:prereq-install-cluster.adoc[prerequisites], you can install Nuvolaris in it.
 
 To install, first, check you have actually access to a Kubernetes cluster, running this command:
 

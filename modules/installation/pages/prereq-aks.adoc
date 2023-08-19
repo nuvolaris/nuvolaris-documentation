@@ -1,6 +1,6 @@
 = Azure AKS
 
-Creating an  AKS Cluster in Azure  using xref:index-nuv.adoc[nuv].
+Creating an  AKS Cluster in Azure  using xref:download.adoc[nuv].
 
 == Access
 
