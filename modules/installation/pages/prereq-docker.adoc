@@ -1,4 +1,4 @@
-== Installing Docker Desktop
+== Installing Nuvolaris with Docker Desktop
 
 You can install Nuvolaris in you local machine.
 
