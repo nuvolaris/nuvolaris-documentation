@@ -9,7 +9,7 @@ You need a computer with at least 16 GB of memory.
 8GB are definitely **not enough** to run Nuvolaris on your local machine.
 ====
 
-Furthermore, you need Docker. Let's see the requiremnts for installing on:
+Furthermore, you need Docker. Let's see the requirements for installing on:
 
 * <<windows, Windows>>
 * <<macos, MacOS>>
@@ -23,16 +23,22 @@ Download and install https://www.docker.com/products/docker-desktop/[Docker Desk
 [#macos]
 == Installing Docker on Linux
 
-On Mac, you need also to reserve at least 6GB (better 8GB) of memory to Docker Desktop, since the default is not enough. 
+Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for MacOS.
 
-This is a required step for Mac, but not on Windows and Linux.
+Since MacOS uses a virtual machine for Docker with a constrained memory. you also need also to reserve at least 8GB.
+
+[IMPORTANT]
+====
+On MacOS, the default 2GB and they are definitely **not enough** to run Nuvolaris on your local machine.
+====
 
 image::install_docker_desktop.png[]
 
-On Mac, you should:
 
-* click on the Docker Desktop icon
+Instructions to increase the memory reserved to Docker Desktopo on MacOS:
+
+* click on the Docker Desktop icon in the menu
 * select Preferences
 * click on Resources
-* _increase the reserved memory up to (at least) 6GB_
+* _increase the reserved memory up to (at least) 8GB_
 * click on `Apply & Restart`
