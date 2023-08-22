@@ -1,6 +1,7 @@
 = Installation Overview
 
-If you are in a hurry and you don't want to read everything, read our xref:quickstart.adoc[quick start] installation guide. Otherwise read on, or come back if something does not work.
+First please read our xref:quickstart.adoc[quick start] installation guide. Even if you are in a hurry, please read it. It is a single page and it is not too long.
+
 
 Nuvolaris can be installed in many environments, using our powerful command line interface `nuv`. You can download the installer xref:download.adoc[from this page].
 
