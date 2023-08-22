@@ -4,7 +4,7 @@ First please read our xref:quickstart.adoc[quick start] installation guide. It g
 
 If you are in a hurry, please at least read it. It is a single page and it is not too long, and it should give a good idea of what you need to so.
 
-If you instead want the full documentation, read on.
+If you instead want the read full documentation, please read on.
 
 == Installation Steps
 
