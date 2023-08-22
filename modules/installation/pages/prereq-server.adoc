@@ -32,7 +32,9 @@ It will create a couple of files, typically called:
 
 where `~` is your home directory.
 
-You have to keep secret the `id_rsa` file because it is the private key. You can copy the `id_rsa.pub` in the server or even share it publicly, as it is the public key.
+You have to keep secret the `id_rsa` file because it is the private key and contains the information to identify you uniquely. Think to is as your password.
+
+You can copy the `id_rsa.pub` in the server or even share it publicly, as it is the public key. Think to it as your login name, and adding this file to the server adds you to the  users who can login into it.
 
 Once you have generated the public key, access your server and edit the file `~/.ssh/authorized_keys` and add the public key to it (it is just one line, contained in the `id_rsa.pub` file).  
 
