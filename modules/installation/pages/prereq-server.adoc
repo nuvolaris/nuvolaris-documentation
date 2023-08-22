@@ -42,13 +42,14 @@ It is just one line, contained in the `id_rsa.pub` file.
 
 Create the file if it does not exist. Append the line to the file (as a single line) if it already exists. Do not remove  other lines if you do not want to remove access to other users.
 
-
 [#sudo]
 == Configure SUDO
 
-You normally access Linux servers using a user that is *not* `root` (the system administrator). It depends on the system, it can be `ubuntu`, `ec2-user`, `admin` or others.
+You normally access Linux servers using a user that is *not* `root` (the system administrator with unlimited power on the system). 
 
-But you need to give this user the right to execute commands as `root` without a password, and you do this by configuring the command `sudo`.
+Depending on the system, the user to use to access  be `ubuntu`, `ec2-user`, `admin` or something else entirely. However if you have access to the server, the information of which user to use should have been provided, including a way to access to the `root` user.
+
+You need to give this user the right to execute commands as `root` without a password, and you do this by configuring the command `sudo`.
 
 You usually have either access to root with the `su` command, or you can execute `sudo` with a password.
 
@@ -58,3 +59,4 @@ Type either `su` or `sudo bash` to become root and edit the file `/etc/sudoers` 
 <user> ALL=(ALL) NOPASSWD:ALL
 ----
  
+where `<user>` is the uset you use to log into the system.
