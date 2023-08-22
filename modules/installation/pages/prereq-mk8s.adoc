@@ -22,10 +22,10 @@ Furthermore, since MicroK8S is installed using `snap`, you also need to  https:/
 While `snap` is available for many linux distributions, it is typically pre-installed and well supported in in Ubuntu and  its derivatives. So we recommend MicroK8S only if you are actually using an Ubuntu-like Linux distribution.
 ====
 
-If you system is suitable,  you can use the following subcommand to install in the server:
+If you system is suitable to run MicroK8S you can use the following subcommand to install in the server:
 
 ----
-nuv cloud k3s create SERVER=<server> USERNAME=<usernam>
+nuv cloud mk8s create SERVER=<server> USERNAME=<username>
 ----
 
 where `<server>` is the internet address or name to access the server, and `<username>` is the user you use to access the server.
