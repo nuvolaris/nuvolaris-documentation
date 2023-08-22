@@ -17,4 +17,27 @@ Before installing ensure you have xref:prereq-server.adoc[satified the prerequis
 Then you can use the following subcommand to install in the server:
 
 ----
-nuv
+nuv cloud k3s create SERVER=<server> USERNAME=<usernam>
+----
+
+where `<server>` is the internet address or name to access the server, and `<username>` is the user you use to access the server.
+
+Those informations should have been provided when provisioning the server.
+
+[IMPORTANT]
+====
+If you installed a Kubernetes cluster in the server in this way, you should proceed installing Nuvolars as in xref:install-cluster.adoc[a Kubernetes cluster],  **not** as a server.
+====
+
+The installation retrieves also a kubernets configuration file so you can proceed to installing it without any other step involved.
+
+== Additional commands
+
+In addition to `create` you have available also the following sub commands:
+
+* `nuv cloud k3s delete SERVER=<server> USERNAME=<username>`: uninstall K3S from the server
+
+* info:             info on the server
+* `nuv cloud k3s kubeconfig SERVER=<server> USERNAME=<username>`:  retrieve the kubeconfig from the server with K3S
+* `nuv cloud k3s info SERVER=<server> USERNAME=<username>`:  status of the server
+* `nuv cloud k3s info SERVER=<server> USERNAME=<username>`:  status of the server
