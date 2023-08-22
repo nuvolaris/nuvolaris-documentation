@@ -1,3 +1,8 @@
-== TODO: Cluster requirements
+= Kubernetes Cluster requirements
 
-List here the requirements for installing Nuvolaris in a generic Kubernetes environment.
+Nuvolaris installs in any Kubernetes cluster which satisfies the following requirements:
+
+- at least 3 worker nodes with 4GB of memory each
+- support for block storage configured as default storage class
+- support for LoadBalancer
+- the https://github.com/kubernetes/ingress-nginx[nginx ingress] installed
