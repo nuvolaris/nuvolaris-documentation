@@ -33,7 +33,7 @@ The installation retrieves also a kubernets configuration file so you can procee
 
 == Additional Commands
 
-In addition to `create` you have available also the following sub commands:
+In addition to `create` you have available also the following subcommands:
 
 * `nuv cloud k3s delete SERVER=<server> USERNAME=<username>`: uninstall K3S from the server
 * `nuv cloud k3s kubeconfig SERVER=<server> USERNAME=<username>`: retrieve the kubeconfig from the K3S server
