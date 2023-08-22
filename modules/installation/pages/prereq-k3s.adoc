@@ -37,4 +37,4 @@ In addition to `create` you have available also the following sub commands:
 
 * `nuv cloud k3s kubeconfig SERVER=<server> USERNAME=<username>`:  retrieve the kubeconfig from the server with K3S
 * `nuv cloud k3s info SERVER=<server> USERNAME=<username>`:  status of the server
-* `nuv cloud k3s info SERVER=<server> USERNAME=<username>`:  status of the server
+* `nuv cloud k3s info SERVER=<server> USERNAME=<username>`:  informations on the server
