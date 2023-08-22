@@ -2,7 +2,9 @@
 
 Nuvolaris installs in any Kubernetes cluster which satisfies the following requirements:
 
+- `cluster-admin` access
 - at least 3 worker nodes with 4GB of memory each
 - support for block storage configured as default storage class
 - support for LoadBalancer services 
 - the https://github.com/kubernetes/ingress-nginx[nginx ingress] installed
+- on OpenShift, additionally 
