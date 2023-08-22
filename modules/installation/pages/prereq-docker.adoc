@@ -21,7 +21,7 @@ Furthermore, you need Docker. Let's see the requirements for installing on:
 Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for Windows.
 
 [#macos]
-== Installing Docker on Linux
+== Installing Docker on MacOS
 
 Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for MacOS.
 
@@ -48,4 +48,4 @@ Instructions to increase the memory reserved to Docker Desktopo on MacOS:
 
 Docker Desktop is available also on Linux, however we advice to install instead the https://docs.docker.com/engine/install/#server[Server Docker Engine] 
 
-On Linux, the Docker for the server does not run in a virtual machine, so it is faster and consumes less memory. 
+On Linux, the Docker Engine for the server does not run in a virtual machine, so it is faster and consumes less memory. 
