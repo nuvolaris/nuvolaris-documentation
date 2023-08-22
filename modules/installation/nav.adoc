@@ -6,7 +6,7 @@
 *** xref:prereq-server.adoc[✅ Linux Server]
 **** xref:prereq-k3s.adoc[✅ K3S]
 **** xref:prereq-mk8s.adoc[✅ MicroK8S]
-*** xref:prereq-kubernetes.adoc[🚧 Kubernetes Cluster]
+*** xref:prereq-kubernetes.adoc[✅ Kubernetes Cluster]
 **** xref:prereq-eks.adoc[❌ Amazon EKS]
 **** xref:prereq-aks.adoc[❌ Azure AKS]
 **** xref:prereq-gke.adoc[❌ Google GKE]
