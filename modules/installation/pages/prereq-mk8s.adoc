@@ -9,17 +9,20 @@ If you install MicroK8S, you can then proceed xref:install-cluster.adoc[installi
 [#installing-microk8s]
 == Installing MicroK8S in a server
 
-Before installing ensure you have xref:prereq-server.adoc[satisfied the prerequisites]. most notably:
+Before installing ensure you have xref:prereq-server.adoc[satisfied the prerequisites], most notably:
 
 . you have passwordless access with ssh
 . you have an user with passwordless sudo rights
 . you have opened the port *16443* in the firewall
 
-. you server operating system has https://snapcraft.io/docs/installing-snapd[`snap`] installed
+Furthermore, since MicroK8S is installed using `snap`, you also need to  https://snapcraft.io/docs/installing-snapd[install `snap`].
 
-MicroK8S
+[NOTE]
+====
+While `snap` is available for many linux distributions, it is typically pre-installed and well supported in in Ubuntu and  its derivatives. So we recommend MicroK8S only if you are actually using an Ubuntu-like Linux distribution.
+====
 
-Then you can use the following subcommand to install in the server:
+If you system is suitable,  you can use the following subcommand to install in the server:
 
 ----
 nuv cloud k3s create SERVER=<server> USERNAME=<usernam>
