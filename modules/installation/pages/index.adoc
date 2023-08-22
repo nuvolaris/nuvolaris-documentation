@@ -1,23 +1,40 @@
 = Installation Overview
 
-First please read our xref:quickstart.adoc[quick start] installation guide. Even if you are in a hurry, please read it. It is a single page and it is not too long.
+First please read our xref:quickstart.adoc[quick start] installation guide. It gives you an overview of the process, omitting some more advanced details. Even if you are in a hurry, please at least read. It is a single page and it is not too long.
 
+If you instead want the full documentation, read on.
 
-Nuvolaris can be installed in many environments, using our powerful command line interface `nuv`. You can download the installer xref:download.adoc[from this page].
+== Installation Steps
+
+Nuvolaris can be installed in many environments, using our powerful command line interface `nuv`. 
+
+So start downloading the CLI xref:download.adoc[from this page].
 
 Once you installed `nuv`, before installing you need to:
 
-* xref:prereq.adoc[checking the prerequisites] for the installation, and satisfy them
+* xref:prereq.adoc[check the prerequisites] for the installation, and satisfy them
 * xref:configure.adoc[configure] your Nuvolaris installation. 
 
-Finally, once you have the prerequisites satisfied and your installation configured, you can install:
+Finally, once you have:
+
+. downloaded `nuv`
+. satisfied the prerequisites  
+. configured your installation
+
+you can choose where to install, either:
 
 * in your xref:install-local.adoc[local machine]
 * in a xref:install-server.adoc[Linux server]
 * in a xref:install-cluster.adoc[Kubernetes cluster].
 
-After the installation, you can change the configuration then xref:update.adoc[update the system]. 
+== Post Installation
 
-If you have issues, please consult the xref:faq.adoc[FAQ] and the xref:debug.adoc[troubleshooting] page. 
+After the installation, you can change later the configuration then xref:update.adoc[update the system] to align to the new configuration.
 
-You can also discuss this with us at our http://nuvolaris.discourse.group[online forum].
+== Support
+
+If you have issues, please check:
+
+* the xref:faq.adoc[FAQ] 
+* the xref:debug.adoc[troubleshooting] page. 
+* our  http://nuvolaris.discourse.group[discussion forum].
