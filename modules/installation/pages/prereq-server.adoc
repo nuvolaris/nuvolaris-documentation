@@ -17,7 +17,7 @@ Read below for information how to create a <<sshkey, sshkey>> and <<sudo, config
 [#sshkey]
 == Installing a Public SSH key
 
-To connect to a server without a password using `openssh` you need a couple of files called **ssh keys**.
+To connect to a server without a password using `openssh` (used by the installer), you need a couple of files called **ssh keys**.
 
 You can generate them on the command line using this command:
 
