@@ -46,5 +46,5 @@ In addition to `create` you have available also the following subcommands:
 * `nuv cloud mk8s delete SERVER=<server> USERNAME=<username>`: uninstall K3S from the server
 * `nuv cloud mk8s kubeconfig SERVER=<server> USERNAME=<username>`: retrieve the kubeconfig from the MicroK8S server
 * `nuv cloud mk8s info`: informations about the server
-* `nuv cloud k3s status`: status of the server
+* `nuv cloud mk8s status`: status of the server
 
