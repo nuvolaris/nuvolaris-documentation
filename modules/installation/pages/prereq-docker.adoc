@@ -42,3 +42,11 @@ Instructions to increase the memory reserved to Docker Desktopo on MacOS:
 * click on Resources
 * _increase the reserved memory up to (at least) 8GB_
 * click on `Apply & Restart`
+
+[#linux]
+== Installing Docker on Linux
+
+Docker Desktop is available also on Linux, however we advice to install instead the https://docs.docker.com/engine/install/#server[Server Docker Engine] 
+
+On Linux, the Docker for the server does not run in a virtual machine, so it is more efficient.
+
