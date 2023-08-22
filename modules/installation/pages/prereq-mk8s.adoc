@@ -9,12 +9,15 @@ If you install MicroK8S, you can then proceed xref:install-cluster.adoc[installi
 [#installing-microk8s]
 == Installing MicroK8S in a server
 
-Before installing ensure you have xref:prereq-server.adoc[satified the prerequisites], most notably:
+Before installing ensure you have xref:prereq-server.adoc[satisfied the prerequisites]. most notably:
 
-. you server operating system satisfies the https://docs.k3s.io/installation/requirements[K3S requiements]
 . you have passwordless access with ssh
 . you have an user with passwordless sudo rights
-. you have opened the port 6443 in the firewall
+. you have opened the port *16443* in the firewall
+
+. you server operating system has https://snapcraft.io/docs/installing-snapd[`snap`] installed
+
+MicroK8S
 
 Then you can use the following subcommand to install in the server:
 
