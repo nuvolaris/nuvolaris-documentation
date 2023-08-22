@@ -10,7 +10,7 @@ The requirements are:
 . You have to install a <<sshkey, public ssh key>> to access it without a password.
 . You have to configure <<sudo, sudo>> to execute root commands without a password.
 
-For information on how to open the firewall, please consult the documentation of your cloud provider, as there are no common procedures.
+For information on how to open the firewall, please consult the documentation of your cloud provider or contact your system administrator, as there are no common procedures and they depends on the cloud provider.
 
 Read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
 
