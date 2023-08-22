@@ -3,6 +3,7 @@
 This page lists the prerequisites to install Nuvolaris in various environments.
 
 You can install Nuvolaris:
+
 * for **development** in a <<single-node, single node>> environment, either in your local machine or in a Linux server.
 * **production**, in a <<multi-node, multi node>> environment provided by a Kubernetes cluster.
 
