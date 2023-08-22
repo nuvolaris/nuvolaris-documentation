@@ -2,12 +2,11 @@
 
 You can install Nuvolaris on any server either in your intranet or on in Internet running a Linux distribution.
 
-
 The requirements are:
 
 . The server requires at least 8GB of memory and 30GB of disk space available.
 . It should be running a Linux distribution https://docs.k3s.io/installation/requirements[supported by K3S].
-. You must open the firewall to access ports 80, 443 and 6443 from your machine. 
+. You must open the firewall to access ports   80, 443 and 6443 (for K3S) or 16443 (for MicroK8S) from your machine. 
 . You have to install a <<sshkey, public ssh key>> to access it without a password.
 . You have to configure <<sudo, sudo>> to execute root commands without a password.
 
