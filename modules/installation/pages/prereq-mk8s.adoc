@@ -4,10 +4,10 @@ You can install Nuvolaris as xref:install-server.adoc[describe here] and you do 
 
 But you can <<install-mk8s, install MicroK8S>> instead, if you prefer. Check here for https://microk8s.io/[ informations about MicroK8S]) 
 
-If you install MicroK8S, you can then proceed xref:install-cluster.adoc[installing as in any other Kubernetes cluster].
+If you install MicroK8S, you can then proceed xref:install-cluster.adoc[installing Nuvolaris in any other Kubernetes cluster].
 
-[#installing-k3s]
-== Installing K3S in a server
+[#installing-microk8s]
+== Installing MicroK8S in a server
 
 Before installing ensure you have xref:prereq-server.adoc[satified the prerequisites], most notably:
 
