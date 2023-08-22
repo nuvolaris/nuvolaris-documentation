@@ -27,8 +27,8 @@ ssh-keygen
 
 It will create a couple of files, typically called:
 
-* ~/.ssh/id_rsa
-* ~/.ssh/id_rsa.pub
+* `~/.ssh/id_rsa`
+* `~/.ssh/id_rsa.pub`
 
 where `~` is your home directory.
 
