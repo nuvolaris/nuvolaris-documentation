@@ -41,5 +41,5 @@ nuv cloud gke lb
 
 == Additional Commands
 
-* `nuv cloud aks delete`
-* `nuv cloud aks kubeconfig`
+* `nuv cloud gke delete`
+* `nuv cloud gke kubeconfig`
