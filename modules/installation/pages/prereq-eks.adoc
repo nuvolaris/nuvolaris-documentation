@@ -56,9 +56,58 @@ Take note of them as you need them for configuring out CLI.
 
 Once you have the access and secret key you can configure EKS with the command `nuv config eks` answering to all the questions, as in the following example:
 
----
-nuv config aws
----
+----
+$ nuv config eks
+*** Please, specify AWS Access Id and press enter.
+AKIAIOSFODNN7EXAMPLE
+*** Please, specify AWS Secret Key and press enter.
+wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+*** Please, specify AWS Region to use and press enter.
+To get a list of valid values use:
+  aws ec2 describe-regions --output table
+
+Just press enter for default [us-east-2]: 
+
+*** Please, specify AWS public SSH key  and press enter.
+If you already have a public SSH key in AWS, provide its name here.
+If you do not have it, generate a key pair with the following command:
+  ssh-keygen
+The public key defaults to ~/.ssh/id_rsa.pub and you can import with:
+  aws ec2 import-key-pair --key-name nuvolaris-key --public-key-material --region=<your-region> fileb://~/.ssh/id_rsa.pub
+
+Just press enter for default [nuvolaris-key]: 
+
+*** Please, specify EKS Name for Cluster and Node Group and press enter.
+Just press enter for default [nuvolaris]: 
+
+*** Please, specify EKS region and press enter.
+To get a list of valid values use:
+  aws ec2 describe-regions --output table
+
+Just press enter for default [us-east-1]: 
+
+*** Please, specify EKS number of worker nodes and press enter.
+Just press enter for default [3]: 
+
+*** Please, specify EKS virtual machine type and press enter.
+To get a list of valid values, use:
+  aws ec2 describe-instance-types --query 'InstanceTypes[].InstanceType' --output table 
+
+Just press enter for default [m5.xlarge]: 
+
+*** Please, specify EKS disk size in gigabyte and press enter.
+Just press enter for default [50]: 
+
+*** Please, specify EKS Kubernetes Version and press enter.
+Just press enter for default [1.25]: 
+
+EKS_KUBERNETES_VERSION=1.25
+EKS_NAME=nuvolaris
+EKS_REGION=us-east-1
+EKS_VM=m5.xlarge
+EKS_DISK=50
+EKS_COUNT=3
+----
 
 [#provision]
 == Provisioning Amazon EKS
