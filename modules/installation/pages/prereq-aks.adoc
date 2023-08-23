@@ -14,7 +14,7 @@ Once you have AKS up and running you can proceed xref:configure.adoc[configuring
 [#install-cli]
 == Installing the Azure CLI
 
-Our CLI `nuv` uses under the hood Azure  CLI `az`. the https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html[AWS CLI version 2], so you need to dowload and install it https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[following those instructions].
+Our CLI `nuv` uses under the hood the https://learn.microsoft.com/en-us/cli/azure/[Azure CLI], so you need to dowload and install it https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[following those instructions].
 
 
 [#get-credentials]
