@@ -1,35 +1,28 @@
 = Prerequisites to install Nuvolaris in an Azure AKS Cluster
 
-https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offered by the cloud provider https://aws.amazon.com/[Amazon Web Services].
+https://aws.amazon.com/eks/[Azure AKS] is a pre-built Kubernetes cluster offered by the cloud provider https://azure.microsoft.com/[Microsoft Azure].
 
-You can create an EKS Cluster in Amazon AWS for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
+You can create an AKS Cluster in Microsoft Azure for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
 
-. install the <<install-cli, AWS CLI>>
-. get <<get-credentials, Access and Secret Key>>
-. <<configure, configure EKS>>
-. <<provision, provision EKS>>
+. install the <<install-cli, Azure CLI>>
+. <<get-credentials, ling >>
+. <<configure, configure AKS>>
+. <<provision, provision AKS>>
 . optionally, retrieve the <<retrieve-lb, load balancer address>> to configure a DNS name
 
-Once you have EKS up and running you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
+Once you have AKS up and running you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
 
 [#install-cli]
-== Installing the AWS CLI
+== Installing the Azure CLI
 
 [#get-credentials]
-== Getting the Access and Secret key
-
-:create-keys: https://repost.aws/knowledge-center/create-access-key
-:eksctl-permissions: https://eksctl.io/usage/minimum-iam-policies/
- 
-Before starting, you need to retrieve access the AWS console and {create-keys}[create an access key and secret key],  giving the minimum required discussions as described [eksctl-permissions-]
-
-Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:
+== Login in Azure
 
 [#configure]
-== Configuring Amazon EKS
+== Configuring Azure AKS
 
 ---
-nuv config aws
+nuv config aks
 ---
 
 [#provision]
