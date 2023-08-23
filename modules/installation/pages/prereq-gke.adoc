@@ -26,10 +26,10 @@ nuv config gke
 ---
 
 [#provision]
-== Provisioning Azure AKS
+== Provisioning GKE
 
 ----
-nuv cloud aks create
+nuv cloud gke create
 ----
 
 [#retrieve-lb]
