@@ -114,7 +114,7 @@ nuv cloud eks create
 
 It will take around 20 minutes to be ready. Please be patient.
 
-At the end of the process, you will have access directly to the created Kubernetes cluster for installation
+At the end of the process, you will have access directly to the created Kubernetes cluster for installation.
 
 [#retrieve-lb]
 == Retrieving the Load Balancer DNS name
