@@ -5,7 +5,6 @@ https://cloud.google.com/kubernetes-engine[Google GKE] is a pre-built Kubernetes
 You can create a GKE Cluster in GCP for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
 
 . install the <<install-cli, GCloud CLI>>
-. <<get-credentials, login >>
 . <<configure, configure GKE>>
 . <<provision, provision GKE>>
 . optionally, retrieve the <<retrieve-lb, load balancer address>> to configure a DNS name
