@@ -1,10 +1,5 @@
-= RedHat OpenShift
+= Prerequisites to install Nuvolaris in RedHat OpenShift
 
+https://www.redhat.com/en/technologies/cloud-computing/openshift[RedHat OpenShift] is a Kubernetes distribution offered by https://www.redhat.com[RedHat], a division of IBM.
 
-Install the cluster using the install
-
-TODO
-
-----
-oc login <host> 
-----
+You can install Nuvolaris in OpenShift.
