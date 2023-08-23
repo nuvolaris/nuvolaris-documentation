@@ -25,7 +25,7 @@ Download and install https://www.docker.com/products/docker-desktop/[Docker Desk
 [#macos]
 == Installing Docker on MacOS
 
-You require a recent version of MacOS (at least version 11.xb BigSur). The installer `nuv` is available bot for Intel and ARM. 
+You require a recent version of MacOS (at least version 11.xb BigSur). The installer `nuv` is available both for Intel and ARM. 
 
 Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for MacOS.
 
