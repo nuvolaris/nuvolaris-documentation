@@ -22,7 +22,7 @@ You require the 64 bit edition in Intel Architecture of a recent version of Wind
 
 Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for Windows.
 
-Once installed, you can proceed xref:configre.adoc[configuring Nuvolaris] for the installation.
+Once installed, you can proceed xref:configure.adoc[configuring Nuvolaris] for the installation.
 
 [#macos]
 == Installing Docker on MacOS
