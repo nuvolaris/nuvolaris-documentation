@@ -9,9 +9,9 @@ You can xref:install-cluster[install Nuvolaris in OpenShift], provided you have 
 
 The procedure is the following:
 
-1) Install OpenShift in any supported environment https://docs.openshift.com/container-platform/4.13/installing/index.html[following this guide]
+. Install OpenShift in any supported environment https://docs.openshift.com/container-platform/4.13/installing/index.html[following this guide]
 
-2) At the end of the installation, the installer  will leave a `kubeconfig` file in a folder. You need to import it with the command:
+. At the end of the installation, the installer  will leave a `kubeconfig` file in a folder. You need to import it with the command:
 
 ----
 nuv cloud osh import <kubeconfig>
@@ -19,7 +19,7 @@ nuv cloud osh import <kubeconfig>
 
 where `<kubeconfig>` is the path to the generated `kubeconfig`
 
-3) Setup the required components (currently, `acme-openshift`) with 
+. Setup the required components (currently, `acme-openshift`) with 
 
 ---- 
 nuv cloud config setup
