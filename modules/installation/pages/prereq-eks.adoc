@@ -112,7 +112,7 @@ EKS_COUNT=3
 [#provision]
 == Provisioning Amazon EKS
 
-Once you have configured
+Once you have configured, you can install:
 
 ----
 nuv cloud eks create
