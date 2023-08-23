@@ -15,7 +15,7 @@ For information on how to open the firewall, please consult the documentation of
 
 Read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
 
-Once configure you server, you can proceed xref:configure.adoc[configuring Nuvolaris] for the installation.
+Once you have configured you server, you can proceed xref:configure.adoc[configuring Nuvolaris] for the installation.
 
 
 [#sshkey]
