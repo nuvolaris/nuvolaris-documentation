@@ -33,10 +33,10 @@ nuv cloud gke create
 ----
 
 [#retrieve-lb]
-== Provisioning Amazon EKS
+== Retrieve the Load Balancer Address
 
 ----
-nuv cloud aks lb
+nuv cloud gke lb
 ----
 
 == Additional Commands
