@@ -1,4 +1,4 @@
-= Amazon EKS
+= = Prerequisites to install Nuvolaris in a Amazon EKS
 
 Creating an  EKS Cluster in Amazon AWS using xref:download.adoc[nuv].
 
