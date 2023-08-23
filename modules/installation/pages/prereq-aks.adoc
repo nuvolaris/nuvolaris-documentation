@@ -33,7 +33,6 @@ you should receive something like this:
 }`
 ====
 
-
 [#configure]
 == Configuring Azure AKS
 
