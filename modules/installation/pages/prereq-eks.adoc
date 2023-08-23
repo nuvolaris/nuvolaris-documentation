@@ -2,14 +2,25 @@
 
 https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offered by the cloud provider https://aws.amazon.com/[Amazon Web Services].
 
-Creating an  EKS Cluster in Amazon AWS using xref:download.adoc[nuv].
+You can create an EKS Cluster in Amazon AWS for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
 
-== Credentials
+. install the <<install-cli, AWS CLI>>
+. get the <<get-credentials, Access and Secret Key>>
+. <<configure-eks, configure EKS>>
+. <<provision-eks, install EKS>>
+
+Once you have EKS up and running you can procees xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
+
+[#install-cli]
+== Installing the AWS CLI
+
+[#get-credentials]
+== Getting the Access and Secret key
 
 :create-keys: https://repost.aws/knowledge-center/create-access-key
 :eksctl-permissions: https://eksctl.io/usage/minimum-iam-policies/
  
-Before starting, access the AWS console and {create-keys}[create an access key and secret key], 
+Before starting, you need to retrieve access the AWS console and {create-keys}[create an access key and secret key], 
 giving the minimum required discussions as described [eksctl-permissions-]
 
 Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:
