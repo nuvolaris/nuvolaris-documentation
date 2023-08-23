@@ -22,6 +22,8 @@ You require the 64 bit edition in Intel Architecture of a recent version of Wind
 
 Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for Windows.
 
+Once installed, you can proceed xref:configre.adoc[configuring Nuvolaris] for the installation.
+
 [#macos]
 == Installing Docker on MacOS
 
@@ -38,7 +40,6 @@ On MacOS, the default 2GB and they are definitely **not enough** to run Nuvolari
 
 image::install_docker_desktop.png[]
 
-
 Instructions to increase the memory reserved to Docker Desktopo on MacOS:
 
 * click on the Docker Desktop icon in the menu
@@ -46,6 +47,8 @@ Instructions to increase the memory reserved to Docker Desktopo on MacOS:
 * click on Resources
 * _increase the reserved memory up to (at least) 8GB_
 * click on `Apply & Restart`
+
+Once installed, you can proceed xref:configre.adoc[configuring Nuvolaris] for the installation.
 
 [#linux]
 == Installing Docker on Linux
