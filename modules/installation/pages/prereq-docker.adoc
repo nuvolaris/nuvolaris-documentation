@@ -18,12 +18,14 @@ Furthermore, you need to install Docker. Let's see the which one to install and 
 [#windows]
 == Installing Docker on Windows
 
-You require the 64 bit edition in Intel Architecture of a  recennte version of Windows (at least version 10). The installer `nuv` does not run on 32 bit versions nor in the ARM architecture.
+You require the 64 bit edition in Intel Architecture of a recent version of Windows (at least version 10). The installer `nuv` does not run on 32 bit versions nor in the ARM architecture.
 
 Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for Windows.
 
 [#macos]
 == Installing Docker on MacOS
+
+You require a recent version of MacOS (at least version 11.xb BigSur). The installer `nuv` is available bot for Intel and ARM. 
 
 Download and install https://www.docker.com/products/docker-desktop/[Docker Desktop] for MacOS.
 
