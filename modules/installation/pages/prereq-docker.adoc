@@ -57,4 +57,4 @@ Docker Desktop is available also on Linux, however we advice to install instead 
 
 On Linux, the Docker Engine for the server does not run in a virtual machine, so it is faster and uses less memory. 
 
-Once installed, you can proceed xref:configre.adoc[configuring Nuvolaris] for the installation.
+Once installed, you can proceed xref:configure.adoc[configuring Nuvolaris] for the installation.
