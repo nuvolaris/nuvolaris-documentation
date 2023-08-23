@@ -1,78 +1,45 @@
-= Google GKE
+= Prerequisites to install Nuvolaris in an Azure AKS Cluster
 
-Creating a GKE Cluster in Google Cloud using xref:download.adoc[nuv].
+https://aws.amazon.com/eks/[Azure AKS] is a pre-built Kubernetes cluster offered by the cloud provider https://azure.microsoft.com/[Microsoft Azure].
 
-== Access
+You can create an AKS Cluster in Microsoft Azure for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
 
-----
-gloud auth login
-----
+. install the <<install-cli, Azure CLI>>
+. <<get-credentials, ling >>
+. <<configure, configure AKS>>
+. <<provision, provision AKS>>
+. optionally, retrieve the <<retrieve-lb, load balancer address>> to configure a DNS name
 
-== Config
+Once you have AKS up and running you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
 
-Configure to access a new or existing cluster:
+[#install-cli]
+== Installing the Azure CLI
 
-----
-nuv config gke
-----
+[#get-credentials]
+== Login in Azure
 
-Example:
+[#configure]
+== Configuring Azure AKS
 
-----
- *** Please, specify GCloud Project Id and press enter.
-nuvolaris-testing
-*** Please, specify GCloud Cluster Name and press enter.
-The cluster name must be unique.
+---
+nuv config aks
+---
 
-Just press enter for default [nuvolaris]: 
-nuvolaris-testing
-*** Please, specify GCloud Cluster Zone and press enter.
-To get a list of valid values use:
-  gcloud compute zones list
-
-Just press enter for default [us-east1]: 
-
-*** Please, specify GCloud number of worker nodes and press enter.
-Just press enter for default [3]: 
-
-*** Please, specify GKE virtual machine type and press enter.
-To get a list of valid values, use:
-  gcloud compute machine-types list
-
-Just press enter for default [e2-standard-2]: 
-
-*** Please, specify GKE disk size in gigabytes and press enter.
-Just press enter for default [50]: 
-
-GKE_COUNT=3
-GKE_DISK=50
-GKE_PROJECT=nuvolaris-testing
-GKE_NAME=nuvolaris-testing
-GKE_REGION=us-east1
-GKE_VM=e2-standard-2
-----
-
-
-== Create
-
-Create a new cluster if not existing.
+[#provision]
+== Provisioning Azure AKS
 
 ----
-nuv config gke create
+nuv cloud aks create
 ----
 
-== Kubeconfig
-
-Extracting the kubeconfig from an existing cluster:
-
-----
-nuv config gke extract
-----
-
-== Delete
-
-You can destroy an existing cluster:
+[#retrieve-lb]
+== Provisioning Amazon EKS
 
 ----
-nuv config gke delete
+nuv cloud aks lb
 ----
+
+== Additional Commands
+
+* `nuv cloud aks delete`
+* `nuv cloud aks kubeconfig`
