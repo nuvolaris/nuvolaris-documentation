@@ -17,6 +17,21 @@ Once you have EKS up and running you can proceed xref:configure.adoc[configuring
 
 Our cli `nuv` uses under the hood the https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html[AWS CLI version 2], so you need to dowloand and install it https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html[following those instructions].
 
+Once installed, ensure it is available on the command line with the following command:
+
+
+----
+aws --version
+----
+
+you should receive something like this:
+
+====
+aws-cli/2.9.4 Python/3.9.11 Linux/5.19.0-1025-aws exe/x86_64.ubuntu.22 prompt/off
+====
+
+Ensure the version is at least 2.
+
 [#get-credentials]
 == Getting the Access and Secret key
 
