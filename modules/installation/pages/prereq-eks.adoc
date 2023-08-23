@@ -112,14 +112,19 @@ EKS_COUNT=3
 [#provision]
 == Provisioning Amazon EKS
 
-Once you have configured, you can install:
+Once you have configured, you can the EKS cluster with:
 
 ----
 nuv cloud eks create
 ----
 
+It will take around 20 minutes to be ready.
+
+
 [#retrieve-lb]
 == Provisioning Amazon EKS
+
+Once the cluster is up and running
 
 == Additional Commands
 
