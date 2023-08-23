@@ -15,14 +15,15 @@ Once you have EKS up and running you can proceed xref:configure.adoc[configuring
 [#install-cli]
 == Installing the AWS CLI
 
+Our cli `nuv` uses under the hood the https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html[AWS CLI version 2], so you need to dowloand and install it https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html[following those instructions].
+
 [#get-credentials]
 == Getting the Access and Secret key
 
 :create-keys: https://repost.aws/knowledge-center/create-access-key
 :eksctl-permissions: https://eksctl.io/usage/minimum-iam-policies/
  
-Before starting, you need to retrieve access the AWS console and {create-keys}[create an access key and secret key], 
-giving the minimum required discussions as described [eksctl-permissions-]
+Before starting, you need to retrieve access the AWS console and {create-keys}[create an access key and secret key],  giving the minimum required discussions as described [eksctl-permissions-]
 
 Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:
 
