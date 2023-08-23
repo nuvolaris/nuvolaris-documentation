@@ -26,18 +26,21 @@ giving the minimum required discussions as described [eksctl-permissions-]
 
 Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:
 
+[#configure]
 == Configuring Amazon EKS
 
 ---
 nuv config aws
 ---
 
+[#provision]
 == Provisioning Amazon EKS
 
 ----
 nuv cloud eks create
 ----
 
+[#retrieve-lb]
 == Provisioning Amazon EKS
 
 
