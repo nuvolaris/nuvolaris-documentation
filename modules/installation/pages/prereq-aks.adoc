@@ -26,10 +26,10 @@ nuv config aks
 ---
 
 [#provision]
-== Provisioning Amazon EKS
+== Provisioning Azure AKS
 
 ----
-nuv cloud eks create
+nuv cloud aks create
 ----
 
 [#retrieve-lb]
