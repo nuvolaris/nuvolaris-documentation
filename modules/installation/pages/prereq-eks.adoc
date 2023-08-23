@@ -1,15 +1,16 @@
-= Prerequisites to install Nuvolaris in a Amazon EKS
+= Prerequisites to install Nuvolaris in an Amazon EKS Cluster
 
 https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offered by the cloud provider https://aws.amazon.com/[Amazon Web Services].
 
 You can create an EKS Cluster in Amazon AWS for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
 
 . install the <<install-cli, AWS CLI>>
-. get the <<get-credentials, Access and Secret Key>>
-. <<configure-eks, configure EKS>>
-. <<provision-eks, install EKS>>
+. get <<get-credentials, Access and Secret Key>>
+. <<configure, configure EKS>>
+. <<provision, provision EKS>>
+. optionally, retrieve the <<retrieve-lb, load balancer address>> to configure a DNS name
 
-Once you have EKS up and running you can procees xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
+Once you have EKS up and running you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
 
 [#install-cli]
 == Installing the AWS CLI
@@ -33,10 +34,11 @@ nuv config aws
 
 == Provisioning Amazon EKS
 
+----
+nuv cloud eks create
+----
 
-----
-nuv config eks
-----
+== Provisioning Amazon EKS
 
 
 == Additional Commands
