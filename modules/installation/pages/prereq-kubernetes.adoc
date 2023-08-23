@@ -22,13 +22,13 @@ This file should be placed in `~/.kube/config` to give access to the cluster
 nuv debug kube info
 ----
  
- You should see something like this:
+You should see something like this:
 
 ====
 Kubernetes control plane is running at https://xxxxxx.yyy.us-east-1.eks.amazonaws.com
 ==== 
- 
- you can proceed xref:configure.adoc[configuring the installation] and then xref:install-cluster.adoc[installing Nuvolaris] in the cluster.
+
+Once you have got access to the Kubernetes cluster, either installing one with out commands or privisioning one by yourself, you can proceed xref:configure.adoc[configuring the installation] and then xref:install-cluster.adoc[installing Nuvolaris] in the cluster.
 
 If your cluster is not one of those, contact your provider for information on how to get the `kubeconfig`.
 
