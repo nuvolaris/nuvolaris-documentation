@@ -1,41 +1,49 @@
-= Azure AKS
+= Prerequisites to install Nuvolaris in an Amazon EKS Cluster
 
-Creating an  AKS Cluster in Azure using xref:download.adoc[nuv].
+https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offered by the cloud provider https://aws.amazon.com/[Amazon Web Services].
 
-== Access
+You can create an EKS Cluster in Amazon AWS for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
+
+. install the <<install-cli, AWS CLI>>
+. get <<get-credentials, Access and Secret Key>>
+. <<configure, configure EKS>>
+. <<provision, provision EKS>>
+. optionally, retrieve the <<retrieve-lb, load balancer address>> to configure a DNS name
+
+Once you have EKS up and running you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
+
+[#install-cli]
+== Installing the AWS CLI
+
+[#get-credentials]
+== Getting the Access and Secret key
+
+:create-keys: https://repost.aws/knowledge-center/create-access-key
+:eksctl-permissions: https://eksctl.io/usage/minimum-iam-policies/
+ 
+Before starting, you need to retrieve access the AWS console and {create-keys}[create an access key and secret key],  giving the minimum required discussions as described [eksctl-permissions-]
+
+Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:
+
+[#configure]
+== Configuring Amazon EKS
+
+---
+nuv config aws
+---
+
+[#provision]
+== Provisioning Amazon EKS
 
 ----
-az login
+nuv cloud eks create
 ----
 
-== Config
+[#retrieve-lb]
+== Provisioning Amazon EKS
 
-Configure to access a new or existing cluster:
+== Additional Commands
 
-----
-nuv config aks
-----
-
-== Create
-
-Create a new cluster if not existing.
-
-----
-nuv config aks create
-----
-
-== Kubeconfig
-
-Extracting the kubeconfig from an existing cluster:
-
-----
-nuv config aks extract
-----
-
-== Delete
-
-You can destroy an existing cluster:
-
-----
-nuv config aks delete
-----
+* `nuv cloud eks delete`
+* `nuv cloud eks kubeconfig`
+* `nuv cloud eks lb`
