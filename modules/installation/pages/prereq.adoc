@@ -23,7 +23,7 @@ If you choose to install Kubernetes on your server, we provide support for:
 * xref:prereq-mk8s.adoc[Canonical MicroK8S]
 
 [#multi-node]
-=== Multi Node production installation
+== Multi Node production installation
 
 For **production** purposes, need a multi-node Kubernetes cluster that satisfies xref:prereq-kubernetes.adoc[those requirements], accessible with its `kubeconfig` file.
 
