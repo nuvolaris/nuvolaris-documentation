@@ -37,13 +37,38 @@ gsutil 5.25
 `
 ====
 
-
 [#configure]
 == Configuring GKE
 
----
-nuv config gke
----
+Before starting, you need to create a project in Google Cloud. Then, to install GKE you need to configure `nuv` for GKE with the command `nuv config gke` answering to all the questions, as in the following example:
+
+----
+$ nuv config gke
+*** Please, specify GCloud Project Id and press enter.
+nuvolaris
+*** Please, specify GCloud Cluster Name and press enter.
+The cluster name must be unique.
+
+Just press enter for default [nuvolaris]: 
+
+*** Please, specify GCloud Cluster Zone and press enter.
+To get a list of valid values use:
+  gcloud compute zones list
+
+Just press enter for default [us-east1]: 
+
+*** Please, specify GCloud number of worker nodes and press enter.
+Just press enter for default [3]: 
+
+*** Please, specify GKE virtual machine type and press enter.
+To get a list of valid values, use:
+  gcloud compute machine-types list
+
+Just press enter for default [e2-standard-2]: 
+
+*** Please, specify GKE disk size in gigabyte and press enter.
+Just press enter for default [50]: 
+----
 
 [#provision]
 == Provisioning GKE
