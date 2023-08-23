@@ -25,38 +25,22 @@ giving the minimum required discussions as described [eksctl-permissions-]
 
 Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:
 
+== Configuring Amazon EKS
+
 ---
 nuv config aws
 ---
 
-== Config
+== Provisioning Amazon EKS
 
-Configure to access a new or existing cluster:
 
 ----
 nuv config eks
 ----
 
-== Create
 
-Create a new cluster if not existing.
+== Additional Commands
 
-----
-nuv config eks create
-----
-
-== Kubeconfig
-
-Extracting the kubeconfig from an existing cluster:
-
-----
-nuv config eks create
-----
-
-== Delete
-
-You can destroy an existing cluster:
-
-----
-nuv config eks delete
-----
+* `nuv cloud eks delete`
+* `nuv cloud eks kubeconfig`
+* `nuv cloud eks lb`
