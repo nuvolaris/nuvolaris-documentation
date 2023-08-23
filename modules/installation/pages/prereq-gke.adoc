@@ -19,7 +19,7 @@ Our cli `nuv` uses under the hood the https://cloud.google.com/sdk/gcloud[GCloud
 Once installed, ensure it is available on the terminal executing the following command:
 
 ----
-aws --version
+gcloud version
 ----
 
 you should receive something like this:
