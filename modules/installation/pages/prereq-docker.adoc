@@ -48,7 +48,7 @@ Instructions to increase the memory reserved to Docker Desktopo on MacOS:
 * _increase the reserved memory up to (at least) 8GB_
 * click on `Apply & Restart`
 
-Once installed, you can proceed xref:configre.adoc[configuring Nuvolaris] for the installation.
+Once installed, you can proceed xref:configure.adoc[configuring Nuvolaris] for the installation.
 
 [#linux]
 == Installing Docker on Linux
