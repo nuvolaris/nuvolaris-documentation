@@ -4,7 +4,7 @@ https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offere
 
 You can create an EKS Cluster in Amazon AWS for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
 
-. install the <<install-cli, AWS CLI>>
+. install `aws`, the <<install-cli, AWS CLI>>
 . get <<get-credentials, Access and Secret Key>>
 . <<configure, configure EKS>>
 . <<provision, provision EKS>>
