@@ -43,7 +43,6 @@ nuv cloud eks create
 [#retrieve-lb]
 == Provisioning Amazon EKS
 
-
 == Additional Commands
 
 * `nuv cloud eks delete`
