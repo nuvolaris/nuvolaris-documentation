@@ -1,6 +1,6 @@
 = Prerequisites to install Nuvolaris in a Amazon EKS
 
-https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offered by https://aws.amazon.com/[Amazon Web Services].
+https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offered by the cloud provider https://aws.amazon.com/[Amazon Web Services].
 
 Creating an  EKS Cluster in Amazon AWS using xref:download.adoc[nuv].
 
