@@ -4,7 +4,7 @@ You can install Nuvolaris in any Kubernetes cluster which xref:prereq-cluster.ad
 
 Kubernetes clusters are  available pre-built from a variety of cloud providers. We provide with our `nuv` tool the commands to install a Kubernetes cluster ready for Nuvolaris in the following environments:
 
-* xref:prereq-eks.adoc[Amazon AKS]
+* xref:prereq-eks.adoc[Amazon EKS]
 * xref:prereq-aks.adoc[Azure AKS]
 * xref:prereq-gke.adoc[Google GKE]
 * xref:prereq-osh.adoc[RedHat OpenShift]
