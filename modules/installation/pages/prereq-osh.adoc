@@ -2,4 +2,28 @@
 
 https://www.redhat.com/en/technologies/cloud-computing/openshift[RedHat OpenShift] is a Kubernetes distribution offered by https://www.redhat.com[RedHat], a division of IBM.
 
-You can install Nuvolaris in OpenShift.
+
+OpenShift is available in a variety of cloud environment and provider, https://github.com/openshift/installer[using its own installer]
+
+You can xref:install-cluster[install Nuvolaris in OpenShift], provided you have already installed OpenShift.
+
+The procedure is the following:
+
+1) Install OpenShift in any supported environment https://docs.openshift.com/container-platform/4.13/installing/index.html[following this guide]
+
+2) At the end of the installation, the installer  will leave a `kubeconfig` file in a folder. You need to import it with the command:
+
+----
+nuv cloud osh import <kubeconfig>
+----
+
+where `<kubeconfig>` is the path to the generated `kubeconfig`
+
+3) Setup the required components (currently, `acme-openshift`) with 
+
+---- 
+nuv cloud config setup
+----
+
+
+
