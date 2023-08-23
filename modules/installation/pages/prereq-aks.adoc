@@ -35,8 +35,11 @@ nuv cloud aks create
 [#retrieve-lb]
 == Provisioning Amazon EKS
 
+----
+nuv cloud aks create
+----
+
 == Additional Commands
 
-* `nuv cloud eks delete`
-* `nuv cloud eks kubeconfig`
-* `nuv cloud eks lb`
+* `nuv cloud aks delete`
+* `nuv cloud aks kubeconfig`
