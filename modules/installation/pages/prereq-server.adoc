@@ -9,6 +9,7 @@ The requirements are:
 . You must open the firewall to access ports   80, 443 and 6443 (for K3S) or 16443 (for MicroK8S) from your machine. 
 . You have to install a <<sshkey, public ssh key>> to access it without a password.
 . You have to configure <<sudo, sudo>> to execute root commands without a password.
+. Optionally (it is not required) install xref:prereq-k3s.adoc[K3S] or xref:prereq-mk8s.adoc[MicroK8S] in it.
 
 For information on how to open the firewall, please consult the documentation of your cloud provider or contact your system administrator, as there are no common procedures and they depends on the cloud provider.
 
