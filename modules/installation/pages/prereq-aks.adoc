@@ -4,8 +4,7 @@ https://aws.amazon.com/eks/[Azure AKS] is a pre-built Kubernetes cluster offered
 
 You can create an AKS Cluster in Microsoft Azure for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
 
-. install the <<install-cli, Azure CLI>>
-. <<get-credentials, ling >>
+. install `az`, the <<install-cli, Azure CLI>>
 . <<configure, configure AKS>>
 . <<provision, provision AKS>>
 . optionally, retrieve the <<retrieve-lb, load balancer address>> to configure a DNS name
@@ -14,6 +13,9 @@ Once you have AKS up and running you can proceed xref:configure.adoc[configuring
 
 [#install-cli]
 == Installing the Azure CLI
+
+Our CLI `nuv` uses under the hood Azure  CLI `az`. the https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html[AWS CLI version 2], so you need to dowload and install it https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[following those instructions].
+
 
 [#get-credentials]
 == Login in Azure
