@@ -1,8 +1,13 @@
-= Provisioning a Kubernetes Cluster
+= Prerequisites to install Nuvolars in a Kubernetes cluster
 
-Kubernetes clusters are available from a variety of vendors.
+You can install Nuvolaris in any Kubernetes cluster which xref:prereq-cluster.adoc[satisfy some requirements].
 
-Each vendor will provision one with specific requirements then it will give you a file called `kubeconfig` that should be placed under `~/.kube/config` to access the cluster.
+You can provision a suitable cluster by yourself, in any cloud or on premises. Once provisioned, you will receive a configuration file to access the cluster, called `kubeconfig` and usually placed in `~/.kube/config`. If you have this file, you can proceed xref:configure.adoc[configuring the installation] and then
+
+
+Kubernetes clusters pre-built  are available from a variety of cloud providers. We provide with our `nuv` the commands to install a Kubernetes cluster ready to use 
+
+
 
 The tool `nuv` includes automated provisioning in the following environments:
 
