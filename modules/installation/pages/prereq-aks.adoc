@@ -36,9 +36,39 @@ you should receive something like this:
 [#configure]
 == Configuring Azure AKS
 
----
-nuv config aks
----
+Before provisioning your AKS cluster you need to configure AKS with the command `nuv config aks` answering to all the questions, as in the following example:
+
+----
+$ nuv config aks
+*** Please, specify AKS Name for Cluster and Resource Group and press enter.
+Just press enter for default [nuvolaris]: 
+
+*** Please, specify AKS number of worker nodes and press enter.
+Just press enter for default [3]: 
+
+*** Please, specify AKS location and press enter.
+To get a list of valid values use:
+  az account list-locations -o table
+
+Just press enter for default [eastus]: 
+
+*** Please, specify AKS virtual machine type and press enter.
+To get a list of valid values use:
+  az vm list-sizes --location <location> -o table
+where <location> is your current location.
+
+Just press enter for default [Standard_B4ms]: 
+
+*** Please, specify AKS disk size in gigabyte and press enter.
+Just press enter for default [50]: 
+
+*** Please, specify AKS public SSH key in AWS and press enter.
+If you already have a public SSH key provide its path here. If you do not have it, generate a key pair with the following command:
+  ssh-keygen
+The public key defaults to ~/.ssh/id_rsa.pub.
+
+Just press enter for default [~/.ssh/id_rsa.pub]: 
+----
 
 [#provision]
 == Provisioning Azure AKS
