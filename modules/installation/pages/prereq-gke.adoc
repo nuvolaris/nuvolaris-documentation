@@ -38,10 +38,6 @@ gsutil 5.25
 ====
 
 
-
-[#get-credentials]
-== Login in GCloud
-
 [#configure]
 == Configuring GKE
 
