@@ -36,7 +36,7 @@ nuv cloud aks create
 == Provisioning Amazon EKS
 
 ----
-nuv cloud aks create
+nuv cloud aks lb
 ----
 
 == Additional Commands
