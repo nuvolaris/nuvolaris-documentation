@@ -25,5 +25,5 @@ where `<kubeconfig>` is the path to the generated `kubeconfig`
 nuv cloud config setup
 ----
 
-
+Once you have OpenShift up and running and you imported its kubeconfig you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
 
