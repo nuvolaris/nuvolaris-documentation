@@ -16,6 +16,22 @@ Once you have AKS up and running you can proceed xref:configure.adoc[configuring
 
 Our CLI `nuv` uses under the hood the https://learn.microsoft.com/en-us/cli/azure/[Azure CLI], so you need to dowload and install it https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[following those instructions].
 
+Once installed, ensure it is available on the terminal executing the following command:
+
+----
+az version
+----
+
+you should receive something like this:
+
+====
+`{
+  "azure-cli": "2.51.0",
+  "azure-cli-core": "2.51.0",
+  "azure-cli-telemetry": "1.1.0",
+  "extensions": {}
+}`
+====
 
 
 [#configure]
