@@ -7,7 +7,7 @@ Kubernetes clusters are  available pre-built from a variety of cloud providers. 
 * xref:prereq-eks.adoc[Amazon AKS]
 * xref:prereq-aks.adoc[Azure AKS]
 * xref:prereq-gke.adoc[Google GKE]
-* xref:prereq-osh.adoc[Google GKE]
+* xref:prereq-osh.adoc[RedHat OpenShift]
 
 You can also provision a suitable cluster by yourself, in any cloud or on premises, ensuring the prerequites are satisfied.
 
