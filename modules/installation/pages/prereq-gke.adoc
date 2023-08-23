@@ -76,7 +76,7 @@ Once you have configured it, you can create the EKS cluster with the command:
 nuv cloud gke create
 ----
 
-It will take around 20 minutes to be ready. Please be patient.
+It will take around 10 minutes to be ready. Please be patient.
 
 At the end of the process, you will have access directly to the created Kubernetes cluster for installation.
 
@@ -88,7 +88,7 @@ Once the cluster is up and running, you need to retrieve the DNS name of the loa
 You can read this with the command:
 
 ----
-nuv cloud eks lb
+nuv cloud gke lb
 ----
 
 Take note of the result as it is required for  xref:configure-dns.adoc[configuring a dns name] for your cluster.
