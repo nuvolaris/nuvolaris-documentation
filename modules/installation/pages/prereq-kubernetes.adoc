@@ -9,7 +9,6 @@ Kubernetes clusters are  available pre-built from a variety of cloud providers. 
 * xref:prereq-gke.adoc[Google GKE]
 * xref:prereq-osh.adoc[Google GKE]
 
-
 You can also provision a suitable cluster by yourself, in any cloud or on premises, ensuring the prerequites are satisfied.
 
 Once provisioned, you will receive a configuration file to access the cluster, called `kubeconfig`.
@@ -30,6 +29,3 @@ Kubernetes control plane is running at https://xxxxxx.yyy.us-east-1.eks.amazonaw
 
 Once you have got access to the Kubernetes cluster, either installing one with out commands or privisioning one by yourself, you can proceed xref:configure.adoc[configuring the installation] and then xref:install-cluster.adoc[installing Nuvolaris] in the cluster.
 
-If your cluster is not one of those, contact your provider for information on how to get the `kubeconfig`.
-
-You can provision a suitable cluster by yourself, in any cloud or on premises. Once provisioned, you will receive a configuration file to access the cluster, called `kubeconfig` and usually placed in `~/.kube/config`. If you have this file, you can proceed xref:configure.adoc[configuring the installation] and then xref:install-cluster.adoc[installing Nuvolaris] in the cluster.
