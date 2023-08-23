@@ -120,7 +120,6 @@ nuv cloud eks create
 
 It will take around 20 minutes to be ready.
 
-
 [#retrieve-lb]
 == Provisioning Amazon EKS
 
