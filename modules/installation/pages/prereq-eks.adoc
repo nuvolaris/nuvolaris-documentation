@@ -55,8 +55,6 @@ Take note of them as you need them for configuring out CLI.
 [#configure]
 == Configuring Amazon EKS
 
-Once you have the access and secret key you can configure EKS with the command `nuv config eks` answering to all the questions, as in the following example:
-
 ----
 $ nuv config eks
 *** Please, specify AWS Access Id and press enter.
