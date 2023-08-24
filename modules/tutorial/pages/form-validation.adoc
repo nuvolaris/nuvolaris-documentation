@@ -87,7 +87,7 @@ The code is not yet complete, but let's start deploying it:
 
 [source,bash]
 ----
-nuv -wsk action create contact/submit submit.js --web true
+nuv action create contact/submit submit.js --web true
 ok: created action contact/submit
 ----
 
