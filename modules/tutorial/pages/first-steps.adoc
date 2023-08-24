@@ -16,7 +16,7 @@ Copy the Postgres URL and now we can create a new package for the application:
 
 [source,bash]
 ----
-nuv -wsk package create contact -p dbUri <postgres_url>
+nuv package create contact -p dbUri <postgres_url>
 ok: created package contact
 ----
 
@@ -76,7 +76,7 @@ Let's deploy it in the platform:
 
 [source,bash]
 ----
-nuv -wsk action create contact/form form.js --web true
+nuv action create contact/form form.js --web true
 ok: created action contact/form
 ----
 
@@ -85,7 +85,7 @@ The `--web true` flag tells Nuvolaris that this action is a web action, so it wi
 
 [source,bash]
 ----
-nuv -wsk action get contact/form --url
+nuv action get contact/form --url
 ok: got action contact/form
 http://localhost:3233/api/v1/web/nuvolaris/contact/form
 ----

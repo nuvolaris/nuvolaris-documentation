@@ -42,7 +42,7 @@ SENDGRID="<put your api key>"
 FROM=<your autorized sender>
 TO=<your destitation>
 
-nuv -wsk action create contact/sendemail send-email.js -p sendgrid $SENDGRID -p from $FROM -p to $TO --web=true
+nuv action create contact/sendemail send-email.js -p sendgrid $SENDGRID -p from $FROM -p to $TO --web=true
 ----
 
 We are already setting the first 3 parameters, the last one is given in input by 
@@ -58,7 +58,7 @@ Let's create this pipeline, called a sequence, and then test it:
 
 [source,bash]
 ----
-nuv -wsk action create contact/submit-sendemail --sequence contact/submit,contact/sendemail --web true
+nuv action create contact/submit-sendemail --sequence contact/submit,contact/sendemail --web true
 ok: created action contact/submit-sendemail
 ----
 
@@ -72,7 +72,7 @@ Now to start using this sequence, instead of just the submit action, we need to 
 
 [source,bash]
 ----
-nuv -wsk action update contact/form form.js --web true
+nuv action update contact/form form.js --web true
 ok: updated action contact/form
 ----
 

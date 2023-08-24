@@ -7,6 +7,7 @@ Its purpose is to showcase serverless development in action by creating a contac
 We will see the development process from start to finish, including the deployment of the platform and running the application.
 
 ** xref:getting-started.adoc[Getting Started]
+** xref:first-steps.adoc[First Steps]
 ** xref:form-validation.adoc[Form Validation]
 ** xref:use-database.adoc[Use Database]
 ** xref:send-email.adoc[Sending Email]

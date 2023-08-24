@@ -37,7 +37,7 @@ We just need to run this once and it does not need to be a web action. We can de
 
 [source,bash]
 ----
-nuv -wsk action create contact/create-table create-table.js
+nuv action create contact/create-table create-table.js
 ok: created action contact/create-table
 ----
 
@@ -45,7 +45,7 @@ Now we run it:
 
 [source,bash]
 ----
-nuv -wsk action invoke contact/create-table -r
+nuv action invoke contact/create-table -r
 {}
 ----
 
@@ -85,7 +85,7 @@ Very similar to the create table action, but this time we are inserting data int
 
 [source,bash]
 ----
-nuv -wsk action create contact/write write.js
+nuv action create contact/write write.js
 ok: created action contact/write
 ----
 
@@ -119,7 +119,7 @@ the `ow` object we need to pass the API key, which you can get with
 
 [source,bash]
 ----
-nuv -wsk property get --auth
+nuv property get --auth
 ok: whisk auth get
 ----
 
@@ -141,7 +141,7 @@ Let's update the action:
 
 [source,bash]
 ----
-nuv -wsk action update contact/submit submit.js --web true
+nuv action update contact/submit submit.js --web true
 ok: updated action contact/submit
 ----
 
