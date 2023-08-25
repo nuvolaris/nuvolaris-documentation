@@ -14,24 +14,13 @@ Without any configuration, you get a minimal Nuvolaris:
 * accessible is only in `http`
 
 You can:
-* configure as DNS name for your server or cluster, thus enabling SSL
-* enable some or all the integrated services 
 
-* a xref:prereq-docker.adoc[local] installation when Docker Desktop is available;
-* a xref:prereq-server.adoc[server] installation when a server is accessible with ssh;
-* a xref:install-cluster.adoc[cluster] installation when a cluster is accessible with a kubeconfig.
-
-
-You can configure:
-
-* a custom xref:configure-dns.adoc#dns[DNS name] or a xref:configure-dns.adoc#dns[DNS wildcard] for statics.
-* enable Nuvolaris  xref:configure-services.adoc[services]:
-
-
-* xref:configure-services.adoc#static[Static], enable statics
-* xref:configure-services.adoc#redis[REDIS], a powerful cache
-* xref:configure-services.adoc#minio[MinIO], an object storage
-* xref:configure-services.adoc#postgres[Postgres], a SQL database 
-* xref:configure-services.adoc#ferret[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres
+* xref:configure-dns[configure a DNS name or wildcard] for your server or cluster, thus enabling SSL
+* xref:configure-services[enable some or all] of the integrated services:
+** xref:configure-services.adoc#static[Static], publishing of static content
+** xref:configure-services.adoc#redis[REDIS], a powerful key-value store
+** xref:configure-services.adoc#minio[MinIO], an object storage
+** xref:configure-services.adoc#postgres[Postgres], a SQL database 
+** xref:configure-services.adoc#ferret[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres
 
 
