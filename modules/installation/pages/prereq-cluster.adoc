@@ -7,3 +7,5 @@ Nuvolaris installs in any Kubernetes cluster which satisfies the following requi
 - support for block storage configured as default storage class
 - support for LoadBalancer services 
 - the https://github.com/kubernetes/ingress-nginx[nginx ingress] already installed
+- the https://cert-manager.io/[cert manager] already installed
+
