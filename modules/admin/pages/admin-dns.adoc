@@ -6,7 +6,6 @@ Reconfigure DNS:
 
 . xref:installation:configure-dns.adoc[configure] as in the installation guide
 . apply the changes:
-
 ----
 nuv update apply
 ----
