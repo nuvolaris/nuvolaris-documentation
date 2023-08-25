@@ -21,9 +21,9 @@ If you have installed it in some other namespace or with another name, change th
 
 The result should be something like this:
 
-====
-NAME                       TYPE           CLUSTER-IP   EXTERNAL-IP    PORT(S)                      AGE
+----
+`NAME                       TYPE           CLUSTER-IP   EXTERNAL-IP    PORT(S)                      AGE
 ingress-nginx-controller   LoadBalancer   10.0.9.99    20.62.156.19   80:30898/TCP,443:31451/TCP   4d1h
-====
+----
 
 Take note of the value under **EXTERNAL-IP** as  you need it in the next step of installation, xref:configure-dns.adoc[configuring DNS].
