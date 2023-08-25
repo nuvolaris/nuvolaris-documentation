@@ -11,6 +11,7 @@ If you install MicroK8S in your server, you can then proceed xref:configure.adoc
 
 Before installing ensure you have xref:prereq-server.adoc[satisfied the prerequisites], most notably:
 
+. you know the **IP address or DNS name**
 . you have passwordless access with ssh
 . you have an user with passwordless sudo rights
 . you have opened the port *16443* in the firewall
@@ -28,7 +29,7 @@ If you system is suitable to run MicroK8S you can use the following subcommand t
 nuv cloud mk8s create SERVER=<server> USERNAME=<username>
 ----
 
-where `<server>` is the internet address or name to access the server, and `<username>` is the user you use to access the server.
+where `<server>` is **IP address or DNS name** to access the server, and `<username>` is the user you use to access the server.
 
 Those informations should have been provided when provisioning the server.
 
