@@ -1,12 +1,19 @@
 = Configuring DNS 
 
+In order to configure the DNS, 
+
+. <<ip-or-dns, retrieve the IP address of the DNS name>> of your server or cluster
+. register a DNS 
+
+== Retrieving the IP address or the DNS name 
+
 If Nuvolaris is installed in your local machine with Docker, you do not need configure any DNS nor SSL, so you can proceed xref:configure-services.adoc[configuring the services].
 
 If Nuvolaris is installed in a single server, after you xref:prereq-server.adoc[satisfied the server prerequisites] you know the **IP address or DNS name** of you server.
 
-If Nuvolaris is installed in a Kubernetes cluster, after you xref:prereq-server.adoc[satisfied the server prerequisites]
+If Nuvolaris is installed in a Kubernetes cluster, after you xref:prereq-server.adoc[satisfied the server cluster] prerequisites you know either the IP address  or the DNS name of the load balancer.
 
-Nuvolaris can be installed:
+Nuvolaris can be installed in
 
 
 Once you satisfied
