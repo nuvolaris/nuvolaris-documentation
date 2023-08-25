@@ -21,7 +21,7 @@ Then you can use the following subcommand to install in the server:
 nuv cloud k3s create SERVER=<server> USERNAME=<usernam>
 ----
 
-where `<server>` is the internet address or name to access the server, and `<username>` is the user you use to access the server.
+where `<server>` is the **IP address or DNS name** to access the server, and `<username>` is the user you use to access the server.
 
 Those informations should have been provided when provisioning the server.
 
