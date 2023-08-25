@@ -43,9 +43,12 @@ Registering a wildcard is required to xref:update-users.adoc[get a different web
 [#configure-apihost]
 == Configure Nuvolaris to use your DNS and and enable SSL
 
-Once you registers a `<domain-name>` (for example `nuvolaris.example.com`) or a wildcard DNS name (for example `*.example.com`) you can communicate to the installer what is this DNS name, as it is not able to detect it automatically.
+Once you registrered a `<dns-name>` (for example `nuvolaris.example.com`) or a wildcard DNS name (for example `*.example.com`) you can communicate to the installer what is this DNS name, as it is not able to detect it automatically.
 
-Note that if you use
+[NOTE]
+====
+If you use a wildcard DNS name, you have to choose anyway a DNS name in the DNS to be used as the api endpoint.
+====
 
 ----
 nuv config apihost <server>
