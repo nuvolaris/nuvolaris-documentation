@@ -1,6 +1,6 @@
 = Installation Overview
 
-First please read our xref:quickstart.adoc[quick start] installation guide. It gives you an overview of the process, omitting some more advanced details. 
+First please read our xref:ROOT:quickstart.adoc[quick start] installation guide. It gives you an overview of the process, omitting some more advanced details. 
 
 If you are in a hurry, please at least read it. It is a single page and it is not too long, and it should give a good idea of what you need to so.
 
