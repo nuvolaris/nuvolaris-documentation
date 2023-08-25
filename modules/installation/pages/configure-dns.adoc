@@ -28,7 +28,7 @@ Using the address of your server or cluster, you need either to configure a DNS 
 
 You need at least one DNS name in a domain you control, for example `nuvolaris.example.com` that points to you IP or address.
 
-Note that
+Note that:
 
 * If you have an IP address to your load balancer you need to configure an `A` record mapping `nuvolaris.example.com` to the IP address of your server.
 * If you have a DNS name to your load balancer, you need to configure a `CNAME` record mapping `nuvolaris.example.com` to the DNS name of your server.
@@ -38,8 +38,14 @@ Note that
 If you are registering a dedicated domain name for your cluster, you are advised to register wildcard name (`*`) for every domain name in `example.com` will resolve to your server. 
 ====
 
-Registering a wildcard is useful to manage statics.
+Registering a wildcard is useful to manage statics for multiple users
 
+[#configure-apihost]
+== Configure Nuvolaris to use your DNS and and enable SSL
+
+Once you registers a `<domain-name>` (for example `nuvolaris.example.com`) or a wildcard DNS name (for example `*.example.com`) you can communicate to the installer what is this DNS name, as it is not able to detect it automatically.
+
+Note that if you use
 
 ----
 nuv config apihost <server>
