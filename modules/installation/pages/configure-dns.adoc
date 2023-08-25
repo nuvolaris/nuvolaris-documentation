@@ -23,6 +23,10 @@ If Nuvolaris is installed in a Kubernetes cluster, after you xref:prereq-server.
 
 Using this address, you need either to configure a DNS name your already own or https://www.icann.org/en/accredited-registrars[contact a domain name registrar] to register a new DNS name dedicated to your server or cluster.
 
+You have 2 options:
+
+. register single DNS names for namespace 
+. register a wildcard
 
 [#dns]
 == DNS
