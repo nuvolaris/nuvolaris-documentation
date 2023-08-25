@@ -9,8 +9,8 @@ Furthermore, once you decided for a DNS name for your server, you can enable the
 In order to configure the DNS and the SSL the steps are:
 
 . <<ip-or-dns, retrieve the IP address or the the DNS name>> of your server or cluster
-. register a DNS name of your choice with your registration name provider
-. configure Nuvolaris so he knows of the DNS and SSL and can use it
+. <<register-dns, register a DNS name>> of your choice with your registration name provider
+. <<configure-apihost, configure Nuvolaris>> so he knows of the DNS and SSL and can use it
 
 [#ip-or-dns]
 == Retrieving the IP address or the DNS name 
@@ -21,19 +21,25 @@ If Nuvolaris is installed in a single server, after you xref:prereq-server.adoc[
 
 If Nuvolaris is installed in a Kubernetes cluster, after you xref:prereq-server.adoc[satisfied the server cluster] prerequisites you know either the IP address or the DNS name of the load balancer.
 
-Using this address, you need either to configure a DNS name your already own or https://www.icann.org/en/accredited-registrars[contact a domain name registrar] to register a new DNS name dedicated to your server or cluster.
+[#register-dns]
+== Register a DNS name or wildcard
 
+Using the address of your server or cluster, you need either to configure a DNS name your already own or https://www.icann.org/en/accredited-registrars[contact a domain name registrar] to register a new DNS name dedicated to your server or cluster.
 
-[#dns]
-== DNS
+You need at least one DNS name in a domain you control, for example `nuvolaris.example.com` that points to you IP or address.
 
-Get the IP of the server with:
+Note that
 
-----
-nuv TODO
-----
+* If you have an IP address to your load balancer you need to configure an `A` record mapping `nuvolaris.example.com` to the IP address of your server.
+* If you have a DNS name to your load balancer, you need to configure a `CNAME` record mapping `nuvolaris.example.com` to the DNS name of your server.
 
-configure a record to this IP in your DNS server
+[NOTE]
+====
+If you are registering a dedicated domain name for your cluster, you are advised to register wildcard name (`*`) for every domain name in `example.com` will resolve to your server. 
+====
+
+Registering a wildcard is useful to manage statics.
+
 
 ----
 nuv config apihost <server>
