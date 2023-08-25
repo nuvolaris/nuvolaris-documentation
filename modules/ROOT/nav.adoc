@@ -1,4 +1,4 @@
 * xref:index.adoc[Welcome]
-** xref:quickstart.adoc[About Nuvolaris ]
+** xref:quickstart.adoc[Quick Start]
 ** xref:about.adoc[About Nuvolaris ]
 ** xref:whats-new.adoc[Whats is New ]
