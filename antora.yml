@@ -5,6 +5,7 @@ display_version: 3 beta
 nav:
 - modules/ROOT/nav.adoc
 - modules/installation/nav.adoc
+- modules/admin/nav.adoc
 - modules/tutorial/nav.adoc
 - modules/development/nav.adoc
 
