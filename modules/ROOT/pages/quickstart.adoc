@@ -6,7 +6,7 @@ Of course, if this guide is not enough and things fail, you can always apply the
 
 == Prerequisites
 
-First, xref:download.adoc[download `nuv`], the Nuvolaris CLI, the version suitable for your environment. We support the 64-bit version of recent Windows, MacOS and major Linux distributions.
+First, xref:installation:download.adoc[download `nuv`], the Nuvolaris CLI, the version suitable for your environment. We support the 64-bit version of recent Windows, MacOS and major Linux distributions.
 
 Second, configure the services you want to enable. By default, Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:
 
