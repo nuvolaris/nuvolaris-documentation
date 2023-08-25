@@ -11,6 +11,7 @@
 **** xref:prereq-aks.adoc[✅ Azure AKS]
 **** xref:prereq-gke.adoc[✅ Google GKE]
 **** xref:prereq-osh.adoc[✅ RedHat OpenShift]
+**** xref:prereq-cluster.adoc[✅ Generic Kubernetes]
 ** xref:configure.adoc[✅ Configure Nuvolaris]
 *** xref:configure-dns.adoc[❌ DNS]
 *** xref:configure-ssl.adoc[❌ SSL]
