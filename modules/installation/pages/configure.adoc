@@ -1,13 +1,21 @@
 = Configuring Nuvolaris Installation
 
-This section guides configuring the Nuvolaris installation.
+This section guides configuring the Nuvolaris installation. 
 
-You can actually install Nuvolaris without any configuration.
+Note that you can also skip this configuration, and install Nuvolaris without any configuration.
+
+You can then configure the system later, applying the changes and xref:update.adoc[updating the system].
+
+== Minimal Configuration
 
 Without any configuration, you get a minimal Nuvolaris:
 
 * only the serverless engine, no extra services
 * accessible is only in `http`
+
+You can:
+* configure as DNS name for your server or cluster, thus enabling SSL
+* enable some or all the integrated services 
 
 * a xref:prereq-docker.adoc[local] installation when Docker Desktop is available;
 * a xref:prereq-server.adoc[server] installation when a server is accessible with ssh;
@@ -20,8 +28,7 @@ You can configure:
 * enable Nuvolaris  xref:configure-services.adoc[services]:
 
 
-Available services:
-
+* xref:configure-services.adoc#static[Static], enable statics
 * xref:configure-services.adoc#redis[REDIS], a powerful cache
 * xref:configure-services.adoc#minio[MinIO], an object storage
 * xref:configure-services.adoc#postgres[Postgres], a SQL database 
