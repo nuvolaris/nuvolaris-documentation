@@ -20,7 +20,6 @@ You can:
 ** xref:configure-services.adoc#static[Static], publishing of static content
 ** xref:configure-services.adoc#redis[REDIS], a powerful key-value store
 ** xref:configure-services.adoc#minio[MinIO], an object storage
-** xref:configure-services.adoc#postgres[Postgres], a SQL database 
+** xref:configure-services.adoc#postgres[Postgres], a powerful SQL database 
 ** xref:configure-services.adoc#ferret[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres
-
 
