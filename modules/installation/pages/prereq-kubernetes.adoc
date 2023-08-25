@@ -15,7 +15,7 @@ Once provisioned, you will receive a configuration file to access the cluster, c
 
 This file should be placed in `~/.kube/config` to give access to the cluster
 
- If you have this file, you can check if you have access to the cluster with the command:
+If you have this file, you can check if you have access to the cluster with the command:
 
 ----
 nuv debug kube info
