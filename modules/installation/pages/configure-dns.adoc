@@ -1,7 +1,6 @@
 = Configuring DNS 
 
-
-If Nuvolaris is installed in your local machine with Docker, you do not need configure any DNS nor SSL, so you can proceed xref:configure-services.adoc[configuring the services]/
+If Nuvolaris is installed in your local machine with Docker, you do not need configure any DNS nor SSL, so you can proceed xref:configure-services.adoc[configuring the services].
 
 If Nuvolaris is installed in a single server, after you xref:prereq-server.adoc[satisfied the server prerequisites] you know the **IP address or DNS name** of you server.
 
