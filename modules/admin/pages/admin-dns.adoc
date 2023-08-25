@@ -1,12 +1,13 @@
 = Updating Nuvolaris services
 
-TODO
+*Work in progress!*
+
+Reconfigure DNS:
+
+. xref:installation:configure-dns.adoc[configure] as in the installation guide
+. apply the changes:
 
 ----
-nuv update apihost <server> [--tls=email]
+nuv update apply
 ----
 
-----
-nuv update enable --redis --postgres --minio 
-nuv update disable --redis --postgres --minio 
-----
