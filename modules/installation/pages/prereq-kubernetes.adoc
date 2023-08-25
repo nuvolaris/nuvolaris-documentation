@@ -27,5 +27,5 @@ You should see something like this:
 Kubernetes control plane is running at https://xxxxxx.yyy.us-east-1.eks.amazonaws.com
 ==== 
 
-Once you have got access to the Kubernetes cluster, either installing one with out commands or privisioning one by yourself, you can proceed xref:configure.adoc[configuring the installation] and then xref:install-cluster.adoc[installing Nuvolaris] in the cluster.
+Once you have got access to the Kubernetes cluster, either installing one with out commands or provisioning one by yourself, you can proceed xref:configure.adoc[configuring the installation] and then xref:install-cluster.adoc[installing Nuvolaris] in the cluster.
 
