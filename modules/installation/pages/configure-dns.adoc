@@ -70,8 +70,13 @@ Since requests contain sensitive information like security keys, this is *highly
 
 Once you have a DNS name, enabling `https` is pretty easy, since we can do it automatically using the free service `Let's Encrypt`. We have however to provide a valid email address `<email>`.
 
-Once you know your `<apihost>` and the `<email>` to receive informations, you can configure and enable:
+Once you know your `<apihost>` and the `<email>` to receive communications from Let's Encrypt (mostly, when a domain name is invalidated and needs to be renewed), you can configure your apihost and enable SSL as follows:
 
-====
-====
+----
+nuv config apihost <apihost> --tls=<email>
+----
 
+[NOTE]
+====
+Of course, replace the `<apihost>` with the actual DNS name you registered, and `<email>` with your email address
+====
