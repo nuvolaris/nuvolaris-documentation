@@ -1,5 +1,17 @@
 = Configuring DNS 
 
+
+If Nuvolaris is installed in your local machine with Docker, you do not need configure any DNS nor SSL, so you can proceed xref:configure-services.adoc[configuring the services]/
+
+If Nuvolaris is installed in a single server, after you xref:prereq-server.adoc[satisfied the server prerequisites] you know the **IP address or DNS name** of you server.
+
+If Nuvolaris is installed in a Kubernetes cluster, after you xref:prereq-server.adoc[satisfied the server prerequisites]
+
+Nuvolaris can be installed:
+
+
+Once you satisfied
+
 You can give a fixed DNS name to your server, but you can also give a wildcard DNS name, and you are advised to do so, even if the setup is more complex. Wildcard DNS is used to provision multiple front-end to your serverless apps.
 
 [#dns]
