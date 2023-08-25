@@ -1,0 +1,12 @@
+= Updating Nuvolaris services
+
+TODO
+
+----
+nuv update apihost <server> [--tls=email]
+----
+
+----
+nuv update enable --redis --postgres --minio 
+nuv update disable --redis --postgres --minio 
+----
