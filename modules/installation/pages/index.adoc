@@ -1,10 +1,12 @@
 = Installation Overview
 
-First please read our xref:ROOT:quickstart.adoc[quick start] installation guide. It gives you an overview of the process, omitting some more advanced details. 
+If you are in hurry and you think this guide is TL;DR (too long, don't read), please read at least our xref:ROOT:quickstart.adoc[quick start] single page installation guide. 
 
-If you are in a hurry, please at least read it. It is a single page and it is not too long, and it should give a good idea of what you need to so.
+It gives you an overview of the installation process,  omitting some more advanced details. It  can be enough to get you started and install Nuvolaris.
 
-If you instead want the read full documentation, please read on.
+Once you want to know more, you can come back.
+
+If you instead want the read the full documentation first, please read on.
 
 == Installation Steps
 
