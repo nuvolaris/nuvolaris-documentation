@@ -1,9 +1,16 @@
-= Configuring DNS 
+= Configuring DNS and SSL
 
-In order to configure the DNS, 
+You can use Nuvolaris as just as a serverless engine, and use the default IP or DNS provided when provisioned your server or cluster. If you do so, only http is avaialble, and it is not secure.
 
-. <<ip-or-dns, retrieve the IP address of the DNS name>> of your server or cluster
-. register a DNS 
+If you want your server or cluster is available with a well-known internet name, you can associate the **IP address** or the "ugly" default DNS name of serveres or clusters to a DNS name of your choice, to use it also to publish the static front-end of your server.
+
+Furthermore, once you decided for a DNS name for your server, you can enable the provisioning of an SSL certificate so you server will be accessible with `https`.
+
+In order to configure the DNS and the SSL the steps are:
+
+. <<ip-or-dns, retrieve the IP address or the the DNS name>> of your server or cluster
+. register a DNS name of your choice with your registration name provider
+. configure Nuvolaris so he knows of the DNS and SSL and can use it
 
 == Retrieving the IP address or the DNS name 
 
