@@ -2,16 +2,16 @@
 
 This section guides configuring the Nuvolaris installation.
 
-You can install without configuration when performing:
+You can actually install Nuvolaris without any configuration when performing:
 
 * a xref:prereq-docker.adoc[local] installation when Docker Desktop is available;
 * a xref:prereq-server.adoc[server] installation when a server is accessible with ssh;
 * a xref:install-cluster.adoc[cluster] installation when a cluster is accessible with a kubeconfig.
 
-In this case, you install a minimal Nuvolaris:
+Without any configuration, you get a minimal Nuvolaris:
 
 * only the serverless engine, no extra services
-* accessible only in `http`.
+* accessible is only in `http`
 
 You can configure:
 
