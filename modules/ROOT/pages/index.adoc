@@ -7,7 +7,7 @@ Welcome to xref:about.adoc[Nuvolaris Community] version 3 beta!
 This is a **preview** of the documentation.
 Since it is not yet complete, pages that are still incomple are marked as follows:
 
-* 🚧 **Work in progress**
+🚧 **Work in progress**
 ====
 
 Here a few starting points to consult this documentation:
