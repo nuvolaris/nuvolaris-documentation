@@ -18,8 +18,6 @@
 *** xref:install-local.adoc[Local Installation]
 *** xref:install-server.adoc[Server Installation]
 *** xref:install-cluster.adoc[Cluster Installation]
-** xref:update.adoc[🚧 Update Installation]
-** xref:update-users.adoc[🚧 Adding Users]
 ** xref:debug.adoc[🚧 Troubleshooting]
 ** xref:faq.adoc[🚧 FAQ]
 
