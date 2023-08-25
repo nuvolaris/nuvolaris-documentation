@@ -32,7 +32,9 @@ you can choose where to install, either:
 
 == Post Installation
 
-After the installation, you can change later the configuration then xref:update.adoc[update the system] to align to the new configuration.
+After the installation, you can change later the configuration and update the system.
+
+Consult the  xref:admin:index.adoc[administrative guide] for more informations.
 
 == Support
 

@@ -114,7 +114,7 @@ Now wait until the installation completes. Once it is installed, you can proceed
 [#cloud-cluster]
 == Cloud Cluster Provisioning
 
-If you have access to a cloud provider, you can set up a Kubernetes cluster in it. The Kubernetes cluster needs to satisfy certain xref:prereq-cluster[prerequisites] to be able to install Nuvolaris with no issues.
+If you have access to a cloud provider, you can set up a Kubernetes cluster in it. The Kubernetes cluster needs to satisfy certain xref:installation:prereq-cluster[prerequisites] to be able to install Nuvolaris with no issues.
 
 We provide the support to easily configure and install a compliant Kubernetes cluster for the following clouds:
 
@@ -169,7 +169,7 @@ You can get this access either by provisioning a Kubernetes cluster in <<cloud, 
 
 Whatever the way you get access to your Kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
 
-If the cluster satisfies the xref:prereq-cluster.adoc[prerequisites], you can install Nuvolaris in it.
+If the cluster satisfies the xref:installation:prereq-cluster.adoc[prerequisites], you can install Nuvolaris in it.
 
 To install, first, check you have actually access to a Kubernetes cluster, by running this command:
 

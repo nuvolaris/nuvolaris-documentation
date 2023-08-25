@@ -20,9 +20,8 @@ Once you have completed the preparation steps,  you can proceed with:
 
 === Post installation
 
-After the installation, you can:
-
-*  xref:update.adoc[reconfigure and update the system]. 
+After the installation, you can consult the  xref:admin:index.adoc[administrative guide]. 
+for informations how to reconfigure and update the system.
 
 === Support 
 
