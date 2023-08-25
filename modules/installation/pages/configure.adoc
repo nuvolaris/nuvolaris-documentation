@@ -15,11 +15,10 @@ Without any configuration, you get a minimal Nuvolaris:
 
 You can:
 
-* xref:configure-dns[configure a DNS name or wildcard] for your server or cluster, thus enabling SSL
+* xref:configure-dns[configure a DNS name or wildcard] for your server or cluster, thus enabling SSL and static publishing.
 * xref:configure-services[enable some or all] of the integrated services:
 ** xref:configure-services.adoc#static[Static], publishing of static content
 ** xref:configure-services.adoc#redis[REDIS], a powerful key-value store
 ** xref:configure-services.adoc#minio[MinIO], an object storage
 ** xref:configure-services.adoc#postgres[Postgres], a powerful SQL database 
 ** xref:configure-services.adoc#ferret[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres
-
