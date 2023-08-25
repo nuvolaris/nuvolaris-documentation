@@ -14,7 +14,7 @@ Second, configure the services you want to enable. By default, Nuvolaris will in
 nuv config enable --all
 ----
 
-otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres which is implicitly also enabled. More details xref:configure.adoc[here]. 
+otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres which is implicitly also enabled. More details xref:installation:configure.adoc[here]. 
 
 Now, choose where to install Nuvolaris. 
 
@@ -165,7 +165,7 @@ then <<cluster, install the cluster>>.
 
 If you have access to a Kubernetes cluster with `cluster-admin` role, you can install Nuvolaris in it. 
 
-You can get this access either by provisioning a Kubernetes cluster in <<cloud,cloud>> or getting access to it from your system administrator.
+You can get this access either by provisioning a Kubernetes cluster in <<cloud, cloud>> or getting access to it from your system administrator.
 
 Whatever the way you get access to your Kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
 
