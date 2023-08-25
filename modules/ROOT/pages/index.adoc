@@ -12,7 +12,7 @@ Since it is not yet complete, pages that are still incomple are marked as follow
 
 Here a few starting points to consult this documentation:
 
-* xref:installation:quickstart.adoc[Quick Start]
+* xref:quickstart.adoc[Quick Start]
 * xref:whats-new.adoc[What's New]
 * xref:installation:index.adoc[Installation Guide]
 * xref:tutorial:index.adoc[Development Tutorial]
