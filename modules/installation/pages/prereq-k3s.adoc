@@ -9,6 +9,7 @@ Or you can <<install-k3s, install K3S in advance>>, and then proceed xref:config
 
 Before installing ensure you have xref:prereq-server.adoc[satified the prerequisites], most notably:
 
+. you know the **IP address or DNS name**
 . you server operating system satisfies the https://docs.k3s.io/installation/requirements[K3S requiements]
 . you have passwordless access with ssh
 . you have an user with passwordless sudo rights
