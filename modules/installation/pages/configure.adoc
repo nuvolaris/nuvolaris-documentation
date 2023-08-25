@@ -2,24 +2,29 @@
 
 This section guides configuring the Nuvolaris installation.
 
-You can actually install Nuvolaris without any configuration when performing:
-
-* a xref:prereq-docker.adoc[local] installation when Docker Desktop is available;
-* a xref:prereq-server.adoc[server] installation when a server is accessible with ssh;
-* a xref:install-cluster.adoc[cluster] installation when a cluster is accessible with a kubeconfig.
+You can actually install Nuvolaris without any configuration.
 
 Without any configuration, you get a minimal Nuvolaris:
 
 * only the serverless engine, no extra services
 * accessible is only in `http`
 
+* a xref:prereq-docker.adoc[local] installation when Docker Desktop is available;
+* a xref:prereq-server.adoc[server] installation when a server is accessible with ssh;
+* a xref:install-cluster.adoc[cluster] installation when a cluster is accessible with a kubeconfig.
+
+
 You can configure:
 
 * a custom xref:configure-dns.adoc#dns[DNS name] or a xref:configure-dns.adoc#dns[DNS wildcard] for statics.
 * enable Nuvolaris  xref:configure-services.adoc[services]:
-** xref:configure-services.adoc#redis[REDIS], a powerful cache
-** xref:configure-services.adoc#minio[MinIO], an object storage
-** xref:configure-services.adoc#postgres[Postgres], a SQL database 
-** xref:configure-services.adoc#ferret[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres
+
+
+Available services:
+
+* xref:configure-services.adoc#redis[REDIS], a powerful cache
+* xref:configure-services.adoc#minio[MinIO], an object storage
+* xref:configure-services.adoc#postgres[Postgres], a SQL database 
+* xref:configure-services.adoc#ferret[FerretDB] a NO-SQL, MongoDB compatible adapter for Postgres
 
 
