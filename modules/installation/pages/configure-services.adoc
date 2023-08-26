@@ -2,7 +2,7 @@
 
 After you satisfied the xref:prereq.adoc[prerequisites] and before you actually xref:install.adoc[install] Nuvolaris, you have to select which services you want to install:
 
-* <<statics>>, publishing of statics
+* <<static>>, publishing of statics
 * <<redis>>, a storage service
 * <<minio>> an object storage service
 * <<postgres>> a relational  SQL database
