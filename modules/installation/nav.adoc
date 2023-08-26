@@ -19,5 +19,4 @@
 *** xref:install-server.adoc[Server Installation]
 *** xref:install-cluster.adoc[Cluster Installation]
 ** xref:debug.adoc[Troubleshooting]
-** xref:faq.adoc[🚧 FAQ]
 
