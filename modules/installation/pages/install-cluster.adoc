@@ -20,7 +20,11 @@ nuv setup cluster [<context>]
 
 After installation, you can xref:configure.adoc[update] adding more services.
 
-== Uninstall
+== Post Install
+
+* xref:tutorial:index.adoc[Check the tutorial] to learn how to use it.
+* xref:admin:index.adoc[Check the Administrative Guide] to learn how to maintain it
+* To uninstall, execute the command:
 
 ----
 nuv setup cluster --uninstall
