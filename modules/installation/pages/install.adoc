@@ -1,8 +1,8 @@
-== Installation Overview
+= Installation Overview
 
 This page provides an overview of the installation process.
 
-=== Before installation
+== Before installation
 
 Please ensure you have:
 
@@ -10,7 +10,7 @@ Please ensure you have:
 . xref:prereq.adoc[satisfied the prerequisites] 
 . xref:configure.adoc[configured your installation] 
 
-=== Core Installation
+== Core Installation
 
 Once you have completed the preparation steps,  you can proceed with:
 
@@ -18,12 +18,12 @@ Once you have completed the preparation steps,  you can proceed with:
 * a single server installation in a xref:install-server.adoc[Linux server]
 * a clustered installation in a xref:install-cluster.adoc[Kubernetes cluster].
 
-=== Post installation
+== Post installation
 
 After the installation, you can consult the  xref:admin:index.adoc[administrative guide]. 
 for informations how to reconfigure and update the system.
 
-=== Support 
+== Support 
 
 If something goes wrong, you can check:
 
