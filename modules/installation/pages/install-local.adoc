@@ -23,7 +23,7 @@ Run the command:
 nuv setup devcluster
 ----
 
-Once the command terminates, Nuvolaris is ready to go, and you can read the tutorial to learn how to use it:
+Once the command terminates, Nuvolaris is ready to go, please xref:tutorial:index.adoc[check the tutorial] to learn how to use it.
 
 == Maintenance
 
