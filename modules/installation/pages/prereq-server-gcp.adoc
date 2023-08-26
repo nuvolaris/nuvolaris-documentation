@@ -81,7 +81,7 @@ You can provision one or more servers  using `nuv`. The servers will use the par
 You can create a new server with:
 
 ----
-nuv cloud aws vm-create <server-name>
+nuv cloud gcloud vm-create <server-name>
 ----
 
 [IMPORTANT]
@@ -89,7 +89,7 @@ nuv cloud aws vm-create <server-name>
 Replace `<server-name>` with a name you choose, for example `nuvolaris-server`
 =====
 
-The command will create a new server in AWS with the parameters you specified in configuration.
+The command will create a new server in Google CLoud with the parameters you specified in configuration.
 
 You can also:
 
