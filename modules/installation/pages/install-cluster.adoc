@@ -6,15 +6,26 @@ This section describes how to install Nuvolaris on a Kubernetes Cluster
 
 Before installing, you need to:
 
-* xref:configure.adoc[configure] the services you want to enable
-* install xref:download.adoc[nuv].
-* provision a Kubernetes cluster xref:install-cluster.adoc[server] retrieving its kubeconfig
+* xref:prereq-kubernetes.adoc[Provision] a Kubernetes Cluster
+* xref:configure.adoc[Configure] the installation
+* install xref:download.adoc[Download and install] Nuvolaris CLI, `nuv`.
 
 == Installation
 
+If you have a Kubernetes cluster directly accessible with its configuration, or you provisioned a cluster in some cloud using `nuv` embedded tools, you just need to type:
+
 ----
-nuv setup cluster [<context>]
+nuv setup cluster 
 ----
+
+Sometimes the kubeconfig includes access to multiple kubernetes, each one identified by a different `<context>` name. You can install in a specified `<context>` with:
+
+----
+nuv setup cluster <context> 
+----
+
+
+
 
 == Update
 
