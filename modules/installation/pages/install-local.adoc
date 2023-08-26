@@ -23,15 +23,13 @@ Run the command:
 nuv setup devcluster
 ----
 
-Once the command terminates, Nuvolaris is ready to go, please xref:tutorial:index.adoc[check the tutorial] to learn how to use it.
+and wait until the command terminates.
 
-== Maintenance
+== Post Install
 
-After installation, you can xref:configure.adoc[update] adding more services
-
-== Uninstall
-
-Execute the command:
+. xref:tutorial:index.adoc[Check the tutorial] to learn how to use it.
+. xref:admin:index.adoc[Check the Administrative Guide] to learn how to maintain it
+. To uninstall, execute the command:
 
 ----
 nuv setup devcluster --uninstall
