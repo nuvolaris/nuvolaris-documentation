@@ -24,14 +24,16 @@ az version
 
 you should receive something like this:
 
-====
-`{
+
+----
+{
   "azure-cli": "2.51.0",
   "azure-cli-core": "2.51.0",
   "azure-cli-telemetry": "1.1.0",
   "extensions": {}
-}`
-====
+}
+----
+
 
 [#configure]
 == Configuring Azure AKS
