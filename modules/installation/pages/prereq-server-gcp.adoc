@@ -1,6 +1,6 @@
 = Provision a Linux Server in Google Cloud
 
-You can provision a server suitable to install Nuvolaris in cloud providerhttps://cloud.google.com/gcp[Google Cloud Platform (GCP)] as follows:
+You can provision a server suitable to install Nuvolaris in cloud provider https://cloud.google.com/gcp[Google Cloud Platform (GCP)] as follows:
 
 . install the <<install-cli, GCloud CLI>>
 . <<configure, configure GKE>>
