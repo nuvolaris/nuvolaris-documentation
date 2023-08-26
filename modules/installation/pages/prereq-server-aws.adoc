@@ -108,7 +108,7 @@ Just press enter for default [100]:
 
 You can provision one or more servers now using `nuv`. The servers will use the parameters you have just configured.
 
-You can create a new server wit 
+You can create a new server with:
 
 ----
 nuv cloud aws vm-create <server-name>
