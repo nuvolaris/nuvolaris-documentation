@@ -1,4 +1,4 @@
-= Provision a server in Amamazon Web Services
+= Provision a server in Amazon Web Services
 
 https://aws.amazon.com/eks/[Amazon EKS] is a pre-built Kubernetes cluster offered by the cloud provider https://aws.amazon.com/[Amazon Web Services].
 
