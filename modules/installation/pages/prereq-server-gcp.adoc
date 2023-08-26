@@ -94,7 +94,7 @@ The command will create a new server in Google CLoud with the parameters you spe
 You can also:
 
 . list servers you created with `nuv cloud gcloud vm-list`
-. delete a server you created and you do not need anymore with `nuv cloud aws vm-delete <server-name>`
+. delete a server you created and you do not need anymore with `nuv cloud gcloud vm-delete <server-name>`
 
 [#retrieve-ip]
 == Retrieve IP
