@@ -12,7 +12,7 @@ Before installing, you need to:
 
 [NOTE]
 ====
-You cannot have https and static publishing in a local installation. If you enable them, the configuration will be ignored.
+You cannot have `https`` and static publishing in a local installation. If you enable them, the configuration will be ignored.
 ====
 
 == Installation
