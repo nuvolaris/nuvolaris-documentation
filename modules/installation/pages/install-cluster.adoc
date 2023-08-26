@@ -24,7 +24,6 @@ Sometimes the kubeconfig includes access to multiple kubernetes, each one identi
 nuv setup cluster <context> 
 ----
 
-
 == Post Install
 
 * xref:tutorial:index.adoc[Check the tutorial] to learn how to use it.
