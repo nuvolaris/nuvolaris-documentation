@@ -6,8 +6,6 @@ This is a single node installation, so it is advisable only for development purp
 
 == Prerequisite
 
-as long it is accessible with xref:prereq-server.adoc[SSH] and you have permission to run https://en.wikipedia.org/wiki/Sudo[`sudo`].
-
 Before installing, you need to:
 
 . install the Nuvolaris CLI xref:download.adoc[nuv].
