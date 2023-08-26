@@ -17,15 +17,21 @@ You cannot have https and static publishing in a local installation. If you enab
 
 == Installation
 
+Run the command:
+
 ----
 nuv setup devcluster
 ----
 
-== Update
+Once the command terminates, Nuvolaris is ready to go, and you can read the tutorial to learn how to use it:
+
+== Maintenance
 
 After installation, you can xref:configure.adoc[update] adding more services
 
 == Uninstall
+
+Execute the command:
 
 ----
 nuv setup devcluster --uninstall
