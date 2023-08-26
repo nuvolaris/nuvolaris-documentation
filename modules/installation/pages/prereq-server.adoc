@@ -12,6 +12,7 @@ You can install Nuvolaris on any server either in your intranet or on in Interne
 
 
 You can:
+
 * get a server on any cloud provider or even install by yourself and then xref:prereq-server-generic.adoc[configure it]
 * provision such a server with `nuv` xref:prereq-server-aws.adoc[on Amazon Web Services]
 * provision such a server with `nuv` on xref:prereq-server-gcp.adoc[on Google Cloud Platform]
