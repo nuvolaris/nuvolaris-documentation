@@ -131,7 +131,7 @@ You can also:
 
 The server will be provisioned with an IP address assigned by AWS.
 
-You can read the IP  with 
+You can read the IP address of your server with 
 
 ----
 nuv cloud aws vm-getip <server-name>
