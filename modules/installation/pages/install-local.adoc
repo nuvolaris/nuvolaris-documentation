@@ -1,6 +1,6 @@
 = Local Installation
 
-This section describes how to install Nuvolaris on your local machine.
+This page describes how to install Nuvolaris on your local machine.
 
 == Prerequisite
 
