@@ -1,6 +1,6 @@
 = Local Installation
 
-This page describes how to install Nuvolaris on your local machine.
+This page describes how to install Nuvolaris on your local machine. The services are limited and not accessible from the outside so it is an installation useful only for development purposes.
 
 == Prerequisite
 
@@ -26,6 +26,7 @@ nuv setup devcluster
 and wait until the command terminates.
 
 == Post Install
+
 
 * xref:tutorial:index.adoc[Check the tutorial] to learn how to use it.
 * xref:admin:index.adoc[Check the Administrative Guide] to learn how to maintain it
