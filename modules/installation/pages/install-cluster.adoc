@@ -25,12 +25,6 @@ nuv setup cluster <context>
 ----
 
 
-
-
-== Update
-
-After installation, you can xref:configure.adoc[update] adding more services.
-
 == Post Install
 
 * xref:tutorial:index.adoc[Check the tutorial] to learn how to use it.
