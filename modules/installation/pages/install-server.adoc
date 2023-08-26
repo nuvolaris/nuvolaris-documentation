@@ -2,29 +2,38 @@
 
 This page describes how to install Nuvolaris on a Linux server accessible with SSH.
 
+This is a single node installation, so it is advisable only for development purposes.
+
 == Prerequisite
 
 as long it is accessible with xref:prereq-server.adoc[SSH] and you have permission to run https://en.wikipedia.org/wiki/Sudo[`sudo`].
 
 Before installing, you need to:
 
-* generate an xref:prereq-server.adoc[ssh key] to access a server
-* provision a xref:prereq-server.adoc[server] adding the ssh key to access it
-* xref:configure.adoc[configure] the services you want to enable
-* install xref:download.adoc[nuv].
+. install the Nuvolaris CLI xref:download.adoc[nuv].
+. provision a xref:prereq-server.adoc[server running a Linux operating system], either a virtual machine or a physical server, and you know its IP address or DNS name
+. configure it to have passwordless ssh access and sudo rights
+. open the firewall to have access to ports 80, 443 and 6443 or 16443 from your client machine
+. xref:configure.adoc[configure] the DNS name for the server and choose the services you want to enable 
 
 == Installation
 
-----
-nuv setup server <host> [<user>]
-----
-
-== Update
-
-After installation you can xref:configure.adoc[update] adding more services== Uninstall
-
-== Uninstall
+If the prerequisites are satisfied, execute the  dommand:
 
 ----
-nuv setup server <host> [<user>] --uninstall
+nuv setup server <server> <user>
 ----
+
+[IMPORTANT]
+====
+Replace in the command before `<server>` with the IP address or DNS name used to access the server, and `<user>` with the username you have to use to access the server
+====
+
+Wait until the command completes and you will have Nuvolaris up and running.
+
+== Post Install
+
+
+* xref:tutorial:index.adoc[Check the tutorial] to learn how to use it.
+* xref:admin:index.adoc[Check the Administrative Guide] to learn how to maintain it
+* To uninstall, execute the command:
