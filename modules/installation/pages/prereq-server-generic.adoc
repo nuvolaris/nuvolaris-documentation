@@ -4,8 +4,9 @@ If you have access to a generic Linux server, to be able to install Nuvolaris it
 
 . be accessible without a password with `ssh`
 . be able to run root commands without a password with `sudo`
+. open the ports 80, 443 and 6443 or 16443
 
-If your server does not already satisfy those requirements, read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
+If your server does not already satisfy those requirements, read below for information how to create a <<sshkey, sshkey>>, <<sudo, configure sudo>> and <<firewall, open the firewall>>
 
 [#sshkey]
 == Installing a Public SSH key
@@ -53,3 +54,14 @@ Type either `su` or `sudo bash` to become root and edit the file `/etc/sudoers` 
 ----
  
 where `<user>` is the user you use to log into the system.
+
+
+== Open the Firewall
+
+You need to open the following ports in the firewall of the server:
+
+- 443 for HTTPS
+- 80  for HTTP and provisioning certificates
+- 6443 (K3S) or 16443 (MicroK8S) for Kubernetes
+
+For information on how to open the firewall, please consult the documentation of your cloud provider or contact your system administrator, as there are no common procedures and they depends on the cloud provider.
