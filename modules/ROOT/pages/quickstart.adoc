@@ -57,32 +57,27 @@ Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutor
 
 If you have access to a server on the Internet, you will know its **IP address**.
 
-Many cloud providers also give you a DNS name, usually very hard to remember such as `ec2-12-34-56-78.us-west-2.compute.amazonaws.com`. Nonetheless, you are advised to use it as it is more than just the IP address and should be used to refer to your server.
+Many cloud providers also give you a DNS name usually derived by the IP and very hard to remember such as `ec2-12-34-56-78.us-west-2.compute.amazonaws.com`. 
 
-However, you can access the server directly with the IP without configuring any DNS names. If you do so, you cannot configure `HTTPS` so you will access it insecurely just using `HTTP` and everything on the wire, including access keys, is unencrypted. 
+Once you got the IP address and the DNS name, you can give to your server a bettername https://en.wikipedia.org/wiki/List_of_managed_DNS_providers[using a domain name provider]. We cannot give here precise instructions as there are many DNS providers and each has different rules to do the setup. Check with your chosen domain name provider.
 
-If you are comfortable with this *insecure* setup, skip to the <<server,server>> installation section. Otherwise, you do better to set up a DNS name and enable `HTTPS` protocol provisioning a certificate. 
+If you have this name, configure it and enable DNS with:
 
-So, once you got the IP address of your server, either use the assigned DNS name of your provider or give it a DNS name https://en.wikipedia.org/wiki/List_of_managed_DNS_providers[using a domain name provider]. We cannot give here precise instructions as there are many DNS providers and each has different rules to do the setup. Check with your chosen domain name provider.
-
-Once you got a name in the DNS for your server, let's say `<dns-name>` you can configure it and enable SSL
+----
+nuv config apihost <dns-name> --tls=<email-address>
+----
 
 [IMPORTANT]
 ====
 Replace the `<dns-name>` with the actual DNS name, without using prefixes like `http://` or suffixes like `:443`. Also, replace `<email-address>` with your actual email address.
 ====
 
-Use  the following command to give a DNS name to your server and enable SSL:
-
-----
-nuv config apihost <dns-name> --tls=<email-address>
-----
-
+then proceed with the server installation.
 
 [#server]
 == Server Installation
 
-If you have access to a Linux server, with:
+Once you got accessto a Linux server, with:
 
 . an IP address or DNS name, referred as `<server>`
 . passwordless access with `ssh` to a Linux user `<user>`
@@ -96,10 +91,6 @@ then you can install Nuvolaris in it.
 
 The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, https://k3s.io[K3S], courtesy of https://github.com/alexellis/k3sup[K3Sup].
 
-[IMPORTANT]
-====
-Replace in the following command `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same as `<dns-name`>` you have configured in the previous paragraph if you did it.
-====
 
 To install Nuvolaris, first check you have access to the server with:
 
@@ -114,6 +105,12 @@ If you do not receive errors, you can proceed to install Nuvolaris with this com
 ----
 nuv setup server <server> <user>
 ----
+
+[IMPORTANT]
+====
+Replace in the commands `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same as `<dns-name>`  you have configured in the previous paragraph if you did it, or just the IP address of a server in your intranet
+====
+
 
 Now wait until the installation completes. Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial] to learn how to code with it.
 
