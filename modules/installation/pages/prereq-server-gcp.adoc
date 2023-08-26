@@ -46,3 +46,29 @@ nuv config gcloud
 
 The system will then ask the following questions:
 
+----
+*** Please, specify GCloud Project Id and press enter.
+nuvolaris
+*** Please, specify GCloud Zone and press enter.
+To get a list of valid values use:
+  gcloud compute zones list
+
+Just press enter for default [us-east1-d]: 
+
+*** Please, specify GCloud virtual machine type and press enter.
+To get a list of valid values, use:
+  gcloud compute machine-types list
+
+Just press enter for default [n2-standard-4]: 
+
+*** Please, specify GCloud disk size in gigabyte and press enter.
+Just press enter for default [200]: 
+
+*** Please, specify GCloud public SSH key and press enter.
+If you already have a public SSH key provide its path here. If you do not have it, generate a key pair with the following command:
+  ssh-keygen
+The public key defaults to ~/.ssh/id_rsa.pub.
+
+Just press enter for default [/home/ubuntu/.ssh/id_rsa.pub]: 
+
+----
