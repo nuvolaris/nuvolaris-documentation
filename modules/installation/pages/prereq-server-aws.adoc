@@ -136,3 +136,5 @@ You can read the IP address of your server with
 ----
 nuv cloud aws vm-getip <server-name>
 ----
+
+You need this IP when xref:configure-dns.adoc[configuring a DNS name] for the server.
