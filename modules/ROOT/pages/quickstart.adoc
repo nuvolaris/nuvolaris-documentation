@@ -1,14 +1,21 @@
 = Quick Start
 
-This is a TL;DR (too long, don't read)  guide to the installation process, aimed at experienced people in a hurry, that gives you a high-level overview of the installation process, omitting a lot of details, that are covered in the rest of the documentation.
+This is a quick start guide to the installation process, targetting experienced users in a hurry. 
 
-Of course, if this guide is not enough and things fail, you can always apply the rule: "if everything fails, read the manual", as it is there, even if you don't want to read it.
+It provides a high-level overview of the installation process, omitting advanced of details. 
+The missing pieces are covered in the rest of the documentation.
+
+Of course, if this guide is not enough and things fail, you can always apply the rule: "if everything fails, read the manual".
 
 == Prerequisites
 
-First, xref:installation:download.adoc[download `nuv`], the Nuvolaris CLI, the version suitable for your environment. We support the 64-bit version of recent Windows, MacOS and major Linux distributions.
+Start ensuring the prerequsites are satisfied:
 
-Second, configure the services you want to enable. By default, Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:
+. xref:installation:download.adoc[Download and install `nuv`], the Nuvolaris CLI, picking version suitable for your environment. We support 64-bit versions of recent Windows, MacOS and major Linux distributions.
+
+. configure the services you want to enable. By default, Nuvolaris will install only the serverless engine, accessible in htt with no services enabled. 
+
+If you want to enable all the services, use:
 
 ----
 nuv config enable --all
@@ -29,8 +36,7 @@ Your options are:
 [#locally]
 == Local Installation
 
-If you have a *decent* workstation (with at least 16GB of memory) running a *recent* **64-bit** operating system, you can install 
-https://www.docker.com/products/docker-desktop/[Docker Desktop] and then install Nuvolaris in it.
+If you have a *decent* workstation (with at least 16GB of memory) running a *recent* **64-bit** operating system, you can install https://www.docker.com/products/docker-desktop/[Docker Desktop] and then install Nuvolaris in it.
 
 Once you have: 
 
@@ -38,7 +44,7 @@ Once you have:
 . configured the services 
 . installed Docker Desktop
 
-you can install Nuvolaris and its services in Docker with just:
+you can install Nuvolaris and its services in Docker with just this command:
 
 ----
 nuv setup devcluster
@@ -49,7 +55,7 @@ Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutor
 [#internet-server]
 == Internet Server Configuration
 
-If you have access to the server on the Internet, you will get an IP address to reach it.
+If you have access to a server on the Internet, you will know its **IP address**.
 
 Many cloud providers also give you a DNS name, usually very hard to remember such as `ec2-12-34-56-78.us-west-2.compute.amazonaws.com`. Nonetheless, you are advised to use it as it is more than just the IP address and should be used to refer to your server.
 
