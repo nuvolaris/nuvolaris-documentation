@@ -72,3 +72,37 @@ The public key defaults to ~/.ssh/id_rsa.pub.
 Just press enter for default [/home/ubuntu/.ssh/id_rsa.pub]: 
 
 ----
+
+[#provision]
+== Provision a server
+
+You can provision one or more servers  using `nuv`. The servers will use the parameters you have just configured.
+
+You can create a new server with:
+
+----
+nuv cloud aws vm-create <server-name>
+----
+
+[IMPORTANT]
+=====
+Replace `<server-name>` with a name you choose, for example `nuvolaris-server`
+=====
+
+The command will create a new server in AWS with the parameters you specified in configuration.
+
+You can also:
+
+. list servers you created with `nuv cloud aws create vm-list`
+. delete a server you created and you do not need anymore with `nuv cloud aws delete <server-name>`
+
+[#retrieve-ip]
+== Retrieve IP
+
+The server will be provisioned with an IP address assigned by AWS.
+
+You can read the IP address of your server with 
+
+----
+nuv cloud aws vm-getip <server-name>
+----
