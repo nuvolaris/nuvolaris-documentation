@@ -6,7 +6,8 @@ We have already implemented a large part of our roadmap, integrating support for
 
 Nuvolaris itself is based on a rich operator, supporting the deployment of several integrated services:
 
-* https://redis.io[Redis], a storage service
+* Publishing of static assets
+* https://redis.io[Redis], an in-memory key-value store
 * https://min.io[MinIO], an object storage service
 * https://www.postgresql.org[Postgres] a relational database
 * https://www.ferretdb.io[FerretDB] A MongoDB-compatible adapter 
