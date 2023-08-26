@@ -1,6 +1,6 @@
 = Server Installation
 
-This section describes how to install Nuvolaris on a remote server
+This page describes how to install Nuvolaris on a Linux server accessible with SSH.
 
 == Prerequisite
 
