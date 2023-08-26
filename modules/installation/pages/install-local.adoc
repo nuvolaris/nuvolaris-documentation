@@ -6,7 +6,7 @@ This page describes how to install Nuvolaris on your local machine.
 
 Before installing, you need to:
 
-* install xref:prereq-docker.adoc[Docker ].
+* install xref:prereq-docker.adoc[Docker].
 * install xref:download.adoc[nuv].
 * xref:configure.adoc[configure] the services you want
 
