@@ -27,7 +27,6 @@ for informations how to reconfigure and update the system.
 
 If something goes wrong, you can check:
 
-* the list of the xref:faq.adoc[FAQ] 
 * the xref:debug.adoc[Troubleshooting] page
 * our online http://nuvolaris.discourse.group[Forum]
 
