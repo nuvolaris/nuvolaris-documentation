@@ -1,0 +1,41 @@
+= Prerequisites to install Nuvolaris in a Google GKE Cluster
+
+https://cloud.google.com/kubernetes-engine[Google GKE] is a pre-built Kubernetes cluster offered by the cloud provider https://cloud.google.com/gcp[Google Cloud Platform (GCP)].
+
+You can create a GKE Cluster in GCP for installing using Nuvolaris using xref:download.adoc[nuv] as follows:
+
+. install the <<install-cli, GCloud CLI>>
+. <<configure, configure GKE>>
+. <<provision, provision GKE>>
+. optionally, retrieve the <<retrieve-lb, load balancer address>> to configure a DNS name
+
+Once you have GKE up and running you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
+
+[#install-cli]
+== Installing the GCloud CLI
+
+Our cli `nuv` uses under the hood the https://cloud.google.com/sdk/gcloud[GCloud CLI version 2], so you need to dowload and install it https://cloud.google.com/sdk/docs/install[following those instructions].
+
+Once installed, ensure it is available on the terminal executing the following command:
+
+----
+gcloud version
+----
+
+you should receive something like this:
+
+====
+`
+Google Cloud SDK 443.0.0
+beta 2023.08.11
+bq 2.0.96
+bundled-python3-unix 3.9.16
+core 2023.08.11
+gcloud-crc32c 1.0.0
+gke-gcloud-auth-plugin 0.5.5
+gsutil 5.25
+`
+====
+
+[#configure]
+== Configuring GKE
