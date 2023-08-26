@@ -10,6 +10,11 @@ Before installing, you need to:
 * install xref:download.adoc[nuv].
 * xref:configure.adoc[configure] the services you want
 
+[NOTE]
+====
+You cannot have https and static publishing in a local installation. If you enable them, the configuration will be ignored.
+====
+
 == Installation
 
 ----
