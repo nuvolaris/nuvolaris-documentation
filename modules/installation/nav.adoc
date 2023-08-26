@@ -12,7 +12,7 @@
 **** xref:prereq-osh.adoc[RedHat OpenShift]
 **** xref:prereq-cluster.adoc[Generic Kubernetes]
 ** xref:configure.adoc[Configure Nuvolaris]
-*** xref:configure-dns.adoc[DNS]
+*** xref:configure-dns.adoc[DNS and SSL]
 *** xref:configure-services.adoc[Services]
 ** xref:install.adoc[Install Nuvolaris]
 *** xref:install-local.adoc[Local Installation]
