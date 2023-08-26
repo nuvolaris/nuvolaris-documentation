@@ -1,6 +1,11 @@
 = Configure a generic Linux server to install Nuvolaris 
 
-Read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
+If you have access to a generic Linux server, to be able to install Nuvolaris it needs to:
+
+. be accessible without a password with `ssh`
+. be able to run root commands without a password with `sudo`
+
+If your server does not already satisfy those requirements, read below for information how to create a <<sshkey, sshkey>> and <<sudo, configure sudo>>
 
 [#sshkey]
 == Installing a Public SSH key
