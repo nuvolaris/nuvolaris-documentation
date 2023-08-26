@@ -1,4 +1,4 @@
-= Provision a server in Amazon Web Services
+= Provision a Linux server in Amazon Web Services
 
 You can provision a server suitable to install Nuvolaris in cloud provider https://aws.amazon.com/[Amazon Web Services] xref:download.adoc[nuv] as follows: 
 
@@ -106,7 +106,7 @@ Just press enter for default [100]:
 [#provision]
 == Provision a server
 
-You can provision one or more servers now using `nuv`. The servers will use the parameters you have just configured.
+You can provision one or more servers using `nuv`. The servers will use the parameters you have just configured.
 
 You can create a new server with:
 
