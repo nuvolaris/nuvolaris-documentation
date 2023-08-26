@@ -172,7 +172,7 @@ If you have access to a Kubernetes cluster with:
 . you have installed the `nginx-ingress`
 . you know the IP address of the controller of your `nginx-ingress`
 
-you can install Nuvolaris in it. You can read xref:prereq-cluster.adoc[more details here].
+you can install Nuvolaris in it. You can read xref:installation:prereq-cluster.adoc[more details here].
 
 You can get this access either by provisioning a Kubernetes cluster in <<cloud, cloud>> or getting access to it from your system administrator.
 
