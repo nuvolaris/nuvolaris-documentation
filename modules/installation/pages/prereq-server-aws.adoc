@@ -124,7 +124,7 @@ The command will create a new server in AWS with the parameters you specified in
 You can also:
 
 . list servers you created with `nuv cloud aws vm-list`
-. delete a server you created and you do not need anymore with `nuv cloud aws delete <server-name>`
+. delete a server you created and you do not need anymore with `nuv cloud aws vm-delete <server-name>`
 
 [#retrieve-ip]
 == Retrieve IP
