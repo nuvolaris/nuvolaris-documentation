@@ -99,10 +99,12 @@ You can also:
 [#retrieve-ip]
 == Retrieve IP
 
-The server will be provisioned with an IP address assigned by AWS.
+The server will be provisioned with an IP address assigned by Google Cloud.
 
 You can read the IP address of your server with 
 
 ----
-nuv cloud aws vm-getip <server-name>
+nuv cloud gcloud vm-getip <server-name>
 ----
+
+You need this IP when xref:configure-dns.adoc[configuring a DNS name] for the server.
