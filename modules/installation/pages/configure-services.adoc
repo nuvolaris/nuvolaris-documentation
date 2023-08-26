@@ -22,7 +22,8 @@ nuv config disable --all
 
 Or select the services you want, as follows.
 
-== Statics
+[#static]
+== Static Asset Publishing
 
 The static service allows you to publish static asset. 
 
