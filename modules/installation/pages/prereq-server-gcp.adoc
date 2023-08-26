@@ -43,3 +43,6 @@ Before you can provision a Linux server you have to configure AWS typing the com
 ----
 nuv config gcloud
 ----
+
+The system will then ask the following questions:
+
