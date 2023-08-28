@@ -2,6 +2,13 @@
 
 Welcome to xref:about.adoc[Nuvolaris Community] version 3 beta!
 
+Starting points to consult this documentation:
+
+* xref:quickstart.adoc[Quick Start]
+* xref:whats-new.adoc[What's New]
+* xref:installation:index.adoc[Installation Guide]
+* xref:tutorial:index.adoc[Development Tutorial]
+
 [IMPORTANT]
 ====
 This is a **preview** of the documentation.
@@ -10,10 +17,25 @@ Since it is not yet complete, pages that are still incomple are marked as follow
 🚧 **Work in progress**
 ====
 
-Here a few starting points to consult this documentation:
+== Bug Bounty
 
-* xref:quickstart.adoc[Quick Start]
-* xref:whats-new.adoc[What's New]
-* xref:installation:index.adoc[Installation Guide]
-* xref:tutorial:index.adoc[Development Tutorial]
+The installer already passes https://github.com/nuvolaris/nuvolaris-testing/actions[all the tests] in our supported platforms and the installation documentation is complete.
+
+So if you feel brave, it is time to try to install it.
+
+== Installation successful?
+
+If your installation is successful, report it in our forum, and we will invite you to https://nuvolaris.discourse.group/t/install-nuvolaris-and-join-us-at-the-install-party/74[join us at the *Install Party*]!
+
+We are organizing an Install Party live, and will invite all those who reported a successful installation https://nuvolaris.discourse.group/[in our forum]!
+
+## Installation fails???
+
+If your installation fails, please https://bit.ly/nuvbugs[file a bug], and we will thank you.
+
+We have 10 copies of our book [Learning Apache OpenWhisk](https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless/dp/1492046167), the serverless engine that is the foundation of Nuvolaris.
+
+We will make a gift of a copy of the book to whose who will give us significant help in fixing the bugs with useful and reproducible bug reports.
+
+
 
