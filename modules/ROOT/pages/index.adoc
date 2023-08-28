@@ -33,9 +33,9 @@ We are organizing an Install Party live, and will invite all those who reported 
 
 If your installation fails, please https://bit.ly/nuvbugs[file a bug], and we will thank you.
 
-We have 10 copies of our book [Learning Apache OpenWhisk](https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless/dp/1492046167), the serverless engine that is the foundation of Nuvolaris.
+We have 10 copies of the book https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless/dp/1492046167[Learning Apache OpenWhisk], the serverless engine that is the foundation of Nuvolaris. The book was written by the CEO of Nuvolaris, https://linkedin.com/in/msciab[Michele Sciabarra].
 
-We will make a gift of a copy of the book to whose who will give us significant help in fixing the bugs with useful and reproducible bug reports.
+We will make a gift of a copy of the book, signed by the author, to whose who will give us significant help in fixing the bugs with useful and reproducible bug reports.
 
 
 
