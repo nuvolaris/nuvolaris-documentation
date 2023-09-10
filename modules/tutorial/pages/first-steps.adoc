@@ -9,7 +9,7 @@ Use the debug subcommand to see what's going on and grab the "postgres_url" valu
 
 [source,bash]
 ----
-nuv debug config
+nuv debug status
 ----
 
 Copy the Postgres URL and now we can create a new package for the application:
