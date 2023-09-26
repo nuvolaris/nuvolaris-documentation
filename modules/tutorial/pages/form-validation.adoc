@@ -1,6 +1,6 @@
 == Form Validation and Submission
 
-Now that we have a contact form, we have to handle the submission. We can do that by adding a new action that will be called when the form is submitted. Let's create a `submit.js` file.
+Now that we have a contact form and a package for our actions, we have to handle the submission. We can do that by adding a new action that will be called when the form is submitted. Let's create a `submit.js` file in our `packages/contact` folder.
 
 [source,javascript]
 ----
@@ -70,8 +70,7 @@ if(errors.length) {
   var errs = "<ul><li>"+errors.join("</li><li>")+"</li></ul>"
   return {
     body: "<h1>Errors!</h1>"+
-      data + errs +
-      '<br><a href="javascript:window.history.back()">Back</a>'
+      errs + '<br><a href="javascript:window.history.back()">Back</a>'
    }
 } else {
    var data = "<pre>"+message.join("\n")+"</pre>"
@@ -83,7 +82,9 @@ if(errors.length) {
 }
 ----
 
-The code is not yet complete, but let's start deploying it:
+Note how this action is returning html code. Actions can return a `{ body: <html> }` kind of response and have their own url so they can be invoked via a browser and display some content.
+
+Let's start deploying the action (although it is not complete yet):
 
 [source,bash]
 ----
@@ -91,8 +92,38 @@ nuv action create contact/submit submit.js --web true
 ok: created action contact/submit
 ----
 
-Now if you go to the contact form page and submit it correctly, you should see the "Thank you" page.
+The `--web true` specifies it is a web action. We are creating a `submit` action in the `contact` package, that's why we are passing `contact/submit`.
+
+You can retrieve the url with:
+
+[source,bash]
+----
+nuv url contact/submit
+
+$ http://localhost:80/api/v1/web/nuvolaris/contact/submit
+----
+
+You probably have the same url as a result. If you click on it you will see the Error page with a list of errors, that's because we just invoked the submit logic for the contact form directly, without passing in any args. This is meant to be used via the contact form page!
+
+We need to wire it into the index.html. So let's open it again and add a couple of attributes to the form:
+
+[source,html]
+----
+---             <form method="POST"> <-- old
++++            <form method="POST" action="/api/v1/web/nuvolaris/contact/submit"
+               enctype="application/x-www-form-urlencoded"> <-- new
+----
+
+Upload the web folder again with the new changes:
+
+[source,bash]
+----
+nuv web upload web/
+----
+
+Now if you go to the contact form page the send button should work. It will invoke the submit action which in turn will return some html. 
+
+If you fill it corectly, you should see the "Thank you" page.
 
 image::submit.png["Submit Result",align="center"]
 
-Almost like magic, the submit action is automatically triggered by the form submit button with the right data.

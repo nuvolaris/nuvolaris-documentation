@@ -1,10 +1,8 @@
 == Getting Started
 
-Imagine we have a static website and need server logic to store contacts 
-and validate data. This would require a server, a database and
-some code to glue it all together. With a serverless approach, we can
-just sprinkle little functions (that we call actions) on top of our static website and let Nuvolaris 
-take care of the rest. No more setting up VMs, backend web servers, databases, etc.
+Imagine we have a static website and need server logic to store contacts and validate data. This would require a server, a database and some code to glue it all together. With a serverless approach, we can just sprinkle little functions (that we call actions) on top of our static website and let Nuvolaris take care of the rest. No more setting up VMs, backend web servers, databases, etc.
+
+In this tutorial, we will see how you can take advantage of several services which are already part of a Nuvolaris deployment and develop a contact form page for users to fill it with their emails and messages, which are then sent via email to us and stored in a database.
 
 === Nuvolaris CLI: Nuv
 
@@ -16,31 +14,17 @@ it here: https://github.com/nuvolaris/nuv/releases[Nuv Releases]
 
 === Deploy Nuvolaris Locally
 
-To start using Nuvolaris we can easily setup a local deployment consisting of a Kubernetes cluster and Nuvolaris. This 
-will give us a ready-to-use serverless environment. We also want to enable an extra service: a Postgres database, because we will use it later. Let's run in the terminal:
+To start using Nuvolaris we can easily setup a local deployment consisting of a Kubernetes cluster and Nuvolaris. This will give us a ready-to-use serverless environment. 
+
+We also want to enable some extra services: a Postgres database, Static content with the Minio storage and a cron scheduler. We will use them shortly to upload frontend and store the data for our app! Let's run in the terminal:
 
 [source,bash]
 ----
-nuv config enable --postgres
-----
-
-If it's the first time you use the nuv tool, it will ask you to download the tasks. In this case, just run:
-
-[source,bash]
-----
-nuv -update
-----
-
-Then re-run the config command. This will enable the extra services.
-
-Now just run:
-
-[source,bash]
-----
+nuv config enable --postgres --static --minio --cron
 nuv setup devcluster
 ----
 
-And with just that (when it finishes), we have a serverless platform ready to use!
+And with just that (when it finishes), we have a serverless platform (with extra services) ready to use!
 
 == Cleaning Up
 
@@ -49,9 +33,8 @@ Once you are done experimenting and want to tear everything down, just run:
 [source,bash]
 ----
 nuv setup devcluster --uninstall
-nuv config disable --postgres
+
+nuv config reset
 ----
 
-This will remove Nuvolaris and the local cluster, and disable the Postgres database that we enabled earlier.
-
-Check out the other tutorials to learn how to build more complex applications with Nuvolaris!
+This will remove Nuvolaris and the local cluster, and reset the configuration.

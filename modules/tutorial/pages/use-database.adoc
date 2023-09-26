@@ -1,7 +1,8 @@
 == Storing the Message in the Database
 
-Now we are ready to use the database that we enabled at the beginning of the tutorial. 
-Since we are using a relational database, we need to create a table to store the contact data. We can do that by creating a new action called `create-table.js`:
+We are ready to use the database that we enabled at the beginning of the tutorial.
+
+Since we are using a relational database, we need to create a table to store the contact data. We can do that by creating a new action called `create-table.js` in the `packages/contact` folder:
 
 [source,javascript]
 ----
@@ -33,27 +34,23 @@ async function main(args) {
 }
 ----
 
-We just need to run this once and it does not need to be a web action. We can deploy it with:
+We just need to run this once, therefore it doesn't need to be a web action. Here we can take advantage of the `cron` service we enabled! 
+
+With the cron scheduler you can annotate an action with 2 kinds of labels. One to make Nuvolaris periodically invoke the action, the other to automatically execute an action once, on creation.
+
+Let's create the action with the latter, which means annotating the action with `autoexec true`:
 
 [source,bash]
 ----
-nuv action create contact/create-table create-table.js
+nuv action create contact/create-table create-table.js -a autoexec true
 ok: created action contact/create-table
 ----
 
-Now we run it:
-
-[source,bash]
-----
-nuv action invoke contact/create-table -r
-{}
-----
-
-This time we invoked the action manually with `-r` to get the result, which is an empty object because the action does not return anything.
+Nuvolaris will invoke this action as soon as possible, so we can go on.
 
 === The Action to Store the Data
 
-We could just write the code to insert data into the table in the `submit.js` action, but it's better to have a separate action for that. Let's create a new action called `write.js`:
+We could just write the code to insert data into the table in the `submit.js` action, but it's better to have a separate action for that. Let's create a new file called `write.js` in the `packages/contact` folder:
 
 [source,javascript]
 ----
@@ -91,15 +88,14 @@ ok: created action contact/write
 
 === Finalizing the Submit Action
 
-Alright, we are almost done. We just need to add the code to invoke the `write` action to store the data. We can do that by adding a small function
-inside the `submit.js` action:
+Alright, we are almost done. We just need to add the code to invoke the `write` action to store the data. We can do that by adding a small function inside the `submit.js` action:
 
 [source,javascript]
 ----
 var openwhisk = require('openwhisk')
 
 function save(doc) {
-  var ow = openwhisk({api_key: "25cdfc80-1e9f-4863-9162-42e8d6ae11c6:0ESe6byS0fD8xi93OIZGeIHFb0siACR1d6OtjLfEeLzEFaWJ8ArddHzsiII8MHMO"})
+  var ow = openwhisk({api_key: <whisk auth>})
   return ow.actions.invoke({
     "name": "contact/write",
     "params": {
@@ -113,17 +109,17 @@ function save(doc) {
 ...
 ----
 
-Add that above the `main` function! What we are doing here is importing the special `openwhisk` module that gives you access to the Openwhisk 
-API (the Nuvolaris' serverless engine) from within any action. To construct 
-the `ow` object we need to pass the API key, which you can get with
+Add that above the `main` function. What we are doing here is importing the special `openwhisk` module that gives you access to the Openwhisk API (the Nuvolaris' serverless engine) from within any action. 
+
+To construct the `ow` object you need to pass the API key, which you can get with:
 
 [source,bash]
 ----
-nuv property get --auth
+nuv -wsk property get --auth
 ok: whisk auth get
 ----
 
-If you are using the default user, the key should be the same as the one in the code above.
+Nuv embeds the wsk cli tool, so you have access to it via `-wsk`.
 
 Now we can replace that last TODO with a call to the `save` function:
 
