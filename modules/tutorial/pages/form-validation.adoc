@@ -100,7 +100,7 @@ You can retrieve the url with:
 ----
 nuv url contact/submit
 
-$ http://localhost:80/api/v1/web/nuvolaris/contact/submit
+$ <apihost>/api/v1/web/nuvolaris/contact/submit
 ----
 
 You probably have the same url as a result. If you click on it you will see the Error page with a list of errors, that's because we just invoked the submit logic for the contact form directly, without passing in any args. This is meant to be used via the contact form page!

@@ -51,7 +51,7 @@ Now we just have to upload it to our Nuvolaris deployment. You could upload it u
 nuv web upload web/
 ----
 
-Pass to `nuv web upload` the path to folder where the index.html is stored in (the `web` folder if you followed the tutorial) and visit again http://localhost:80http://url[http://localhost:80]. 
+Pass to `nuv web upload` the path to folder where the index.html is stored in (the `web` folder if you followed the tutorial) and visit again the `<apihost>`. 
 
 Now you should see the new index page:
 

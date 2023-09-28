@@ -74,7 +74,7 @@ As before let's grab the url:
 [source,bash]
 ----
 nuv url contact/submit-sendemail
-http://localhost:80/api/v1/web/nuvolaris/contact/submit-sendemail
+<apihost>/api/v1/web/nuvolaris/contact/submit-sendemail
 ----
 
 And update the `index.html`:
