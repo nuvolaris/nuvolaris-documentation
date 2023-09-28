@@ -12,29 +12,33 @@ deploy (and interact with) the platform seamlessly to the cloud, locally and in 
 Nuv is cross-platform and can be installed on Windows, Linux and MacOS. You can find 
 it here: https://github.com/nuvolaris/nuv/releases[Nuv Releases]
 
-=== Deploy Nuvolaris Locally
+=== Deploy Nuvolaris
 
-To start using Nuvolaris we can easily setup a local deployment consisting of a Kubernetes cluster and Nuvolaris. This will give us a ready-to-use serverless environment. 
+To start using Nuvolaris you can refer to the installation guide xref:index.adoc[Installation Guide]. You can follow the local installation to quickly get started with Nuvolaris deployed on your machine, or if you want to follow the tutorial on a deployment on cloud you can pick one of the many supported cloud provider. Once installed come back here!
+
+==== Enabling Services
 
 We also want to enable some extra services: a Postgres database, Static content with the Minio storage and a cron scheduler. We will use them shortly to upload frontend and store the data for our app! Let's run in the terminal:
 
 [source,bash]
 ----
 nuv config enable --postgres --static --minio --cron
-nuv setup devcluster
 ----
 
-And with just that (when it finishes), we have a serverless platform (with extra services) ready to use!
-
-== Cleaning Up
-
-Once you are done experimenting and want to tear everything down, just run:
+Since you should already have a deployment running, we have to update it with the new services so they get deployed. Simply run:
 
 [source,bash]
 ----
-nuv setup devcluster --uninstall
-
-nuv config reset
+nuv update apply
 ----
 
-This will remove Nuvolaris and the local cluster, and reset the configuration.
+And with just that (when it finishes), we have everything we need ready to use!
+
+==== Cleaning Up
+
+Once you are done and want to clean the services configuration, just run:
+
+[source,bash]
+----
+nuv config disable --postgres --static --minio --cron
+----
