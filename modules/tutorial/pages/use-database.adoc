@@ -46,7 +46,7 @@ nuv action create contact/create-table create-table.js -a autoexec true
 ok: created action contact/create-table
 ----
 
-Nuvolaris will invoke this action as soon as possible, so we can go on.
+With `-a` you can add "annotations" to an action. Nuvolaris will invoke this action as soon as possible, so we can go on.
 
 === The Action to Store the Data
 
@@ -95,7 +95,7 @@ Alright, we are almost done. We just need to add the code to invoke the `write` 
 var openwhisk = require('openwhisk')
 
 function save(doc) {
-  var ow = openwhisk({api_key: <whisk auth>})
+  var ow = openwhisk({api_key: process.env.__OW_API_KEY})
   return ow.actions.invoke({
     "name": "contact/write",
     "params": {
@@ -111,15 +111,7 @@ function save(doc) {
 
 Add that above the `main` function. What we are doing here is importing the special `openwhisk` module that gives you access to the Openwhisk API (the Nuvolaris' serverless engine) from within any action. 
 
-To construct the `ow` object you need to pass the API key, which you can get with:
-
-[source,bash]
-----
-nuv -wsk property get --auth
-ok: whisk auth get
-----
-
-Nuv embeds the wsk cli tool, so you have access to it via `-wsk`.
+To construct the `ow` object you need to pass the API key, which you can get as an environment variable when annotating the action with a special value.
 
 Now we can replace that last TODO with a call to the `save` function:
 
@@ -133,12 +125,14 @@ save({
     })
 ----
 
-Let's update the action:
+Let's update the action with the new code and the special annotation:
 
 [source,bash]
 ----
-nuv action update contact/submit submit.js --web true
+nuv action update contact/submit submit.js --web true -a provide-api-key true
 ok: updated action contact/submit
 ----
+
+As before with `autoexec` we are adding an annotation, but this time it's to instruct the platform to inject the api key as an env var in the function's environment, so we have access to it in the code.
 
 Now the pipeline is complete, and we can test it by submitting the form again. This time the data will be stored in the database.
