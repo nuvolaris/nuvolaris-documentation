@@ -16,7 +16,7 @@ it here: https://github.com/nuvolaris/nuv/releases[Nuv Releases]
 
 To start using Nuvolaris you can refer to the installation guide xref:index.adoc[Installation Guide]. You can follow the local installation to quickly get started with Nuvolaris deployed on your machine, or if you want to follow the tutorial on a deployment on cloud you can pick one of the many supported cloud provider. Once installed come back here!
 
-==== Enabling Services
+=== Enabling Services
 
 We also want to enable some extra services: a Postgres database, Static content with the Minio storage and a cron scheduler. We will use them shortly to upload frontend and store the data for our app! Let's run in the terminal:
 
