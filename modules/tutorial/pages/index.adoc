@@ -11,5 +11,5 @@ We will see the development process from start to finish, including the deployme
 ** xref:form-validation.adoc[Form Validation]
 ** xref:use-database.adoc[Use Database]
 ** xref:send-email.adoc[Sending Email]
-
+** xref:packaging.adoc[App Deployment]
 
