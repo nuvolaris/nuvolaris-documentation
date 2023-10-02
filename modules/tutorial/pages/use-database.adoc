@@ -48,6 +48,31 @@ ok: created action contact/create-table
 
 With `-a` you can add "annotations" to an action. Nuvolaris will invoke this action as soon as possible, so we can go on.
 
+====
+
+In Nuvolaris an action invocation is called an `activation`. You can keep track, retrieve information and check logs from an action with `nuv activation`. For example, with:
+
+[source,bash]
+----
+nuv activation list
+----
+
+You can retrieve the list of invocations. For caching reasons the first time you run the command the list might be empty. Just run it again and you will see the latest invocations (probably some `hello` actions from the deployment).
+
+If we want to make sure `create-table` was invoked, we can do it with this command. The cron scheduler can take up to 1 minute to run an `autoexec` action, so let's wait a bit and run `nuv activation list` again.
+
+[source,bash]
+----
+nuv activation list
+
+Datetime            Activation ID                    Kind      Start Duration   Status  Entity
+2023-10-02 09:52:01 1f02d3ef5c32493682d3ef5c32b936da nodejs:18 cold  312ms      success nuvolaris/create-table:0.0.1
+...
+----
+
+Each activation has an `Activation ID` which can be used with other `nuv activation` subcommands or with the `nuv logs` command.
+====
+
 === The Action to Store the Data
 
 We could just write the code to insert data into the table in the `submit.js` action, but it's better to have a separate action for that. Let's create a new file called `write.js` in the `packages/contact` folder:

@@ -17,7 +17,9 @@ Then we can proceed to create a new action called `send-email.js` (in the `packa
 ----
 async function main(args) {
     let response = args.body;
-    await fetch("https://api.sendgrid.com/v3/mail/send", {
+    console.log("Is SendGrid API key defined? " + (args.sendgrid ? "Yes" : "No"));
+    console.log("Sending email to " + args.to + " from " + args.from)
+    let res = await fetch("https://api.sendgrid.com/v3/mail/send", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -34,21 +36,20 @@ async function main(args) {
             ]
         })
     });
+    console.log("Status from SendGrid request: " + res.status);
     return { body: response };
 }
 ----
 
 This action uses 4 parameters, the `args.sendgrid` which is the API key. The `args.from` and `args.to`, the sender and recipient, and finally `args.body` which is the content. This last one will be the body returned from the submitted action.
 
+We've also put some logs that we can use later for debugging purposes.
+
 Let's first set up the action:
 
 [source,bash]
 ----
-SENDGRID="<put your api key>"
-FROM=<your authorized sender>
-TO=<your destination>
-
-nuv action create contact/sendemail send-email.js -p sendgrid $SENDGRID -p from $FROM -p to $TO --web true
+nuv action create contact/sendemail send-email.js -p sendgrid <your api key> -p from <your authorized sender> -p to <your destination> --web true
 ----
 
 We are already setting the first 3 parameters, the last one is given in input by the submit action at every invocation.
@@ -88,6 +89,22 @@ And update the `index.html`:
 
 Don't forget to re-upload the web folder with `nuv web upload web/`.
 
-
 Now try to fill out the form again and press send! It will execute the sequence and you will receive the email on your email account that you used in SendGrid.
 
+====
+
+The tutorial introduced you to some utilities to retrieve information and to the concept of `activation`. Let's use some more commands to check out the logs and see if the email was really sent.
+
+The easiest way to check for all the activations that happen in this app with all their logs is:
+
+[source,bash]
+----
+nuv activation poll
+
+Enter Ctrl-c to exit.
+Polling for activation logs
+----
+This command polls continuously for log messages. If you go ahead and submit a message in the app, all the actions will show up here together with their log messages. Since we've added logs in the send-email action they will be printed here.
+
+To also check if there are some problems with your actions, run a couple of times `nuv activation list` and check the `Status` of the activations. If you see some `developer error` or any other errors, just grab the activation ID and run `nuv logs <activation ID>`.
+====

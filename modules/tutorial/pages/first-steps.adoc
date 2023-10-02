@@ -89,3 +89,39 @@ The actions under this package will be able to access the "dbUri" variable from 
 
 To follow the same structure for our action files, let's create a folder `packages` and inside another folder `contact` to give our actions a nice, easy to find, home.
 
+==== 
+To manage and check out your packages, you can use the `nuv packages` subcommands.
+
+[source,bash]
+----
+nuv package list
+
+packages
+/nuvolaris/contact  private
+/nuvolaris/hello    private     <-- a default package created during development
+----
+
+And to get specific information on a package:
+
+[source,bash]
+----
+nuv package get contact
+
+ok: got package contact
+{
+    "namespace": "nuvolaris",
+    "name": "contact",
+    "version": "0.0.1",
+    "publish": false,
+    "parameters": [
+        {
+            "key": "dbUri",
+            "value": <postgres_url>
+        }
+    ],
+    "binding": {},
+    "updated": 1696232618540
+}
+
+----
+====

@@ -103,7 +103,7 @@ nuv url contact/submit
 $ <apihost>/api/v1/web/nuvolaris/contact/submit
 ----
 
-You probably have the same url as a result. If you click on it you will see the Error page with a list of errors, that's because we just invoked the submit logic for the contact form directly, without passing in any args. This is meant to be used via the contact form page!
+If you click on it you will see the Error page with a list of errors, that's because we just invoked the submit logic for the contact form directly, without passing in any args. This is meant to be used via the contact form page!
 
 We need to wire it into the index.html. So let's open it again and add a couple of attributes to the form:
 
@@ -127,3 +127,36 @@ If you fill it corectly, you should see the "Thank you" page.
 
 image::submit.png["Submit Result",align="center"]
 
+
+====
+
+The `nuv action` command can be used for many more things besides creating actions. For example, you can use it to list all available actions:
+
+[source,bash]
+----
+nuv action list
+
+actions
+/nuvolaris/contact/submit                                              private nodejs:18
+---- 
+
+And you can also get info on a specific action:
+
+[source,bash]
+----
+nuv action get contact/submit
+
+{
+    "namespace": "nuvolaris/contact",
+    "name": "submit",
+    "version": "0.0.1",
+    "exec": {
+        "kind": "nodejs:18",
+        "binary": false
+    },
+ ...
+}
+----
+
+These commands can come in handy when you need to debug your actions.
+====
