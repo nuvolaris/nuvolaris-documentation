@@ -5,7 +5,7 @@ async function main(args) {
 
     const createTable = `
     CREATE TABLE IF NOT EXISTS contacts (
-        id UUID PRIMARY KEY,
+        id serial PRIMARY KEY,
         name varchar(50),
         email varchar(50),
         phone varchar(50),

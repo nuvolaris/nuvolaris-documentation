@@ -8,7 +8,6 @@ ____
 Welcome to Nuvolaris static content distributor landing page!!! 
 ____
 
-
 That's because we've activated the static content, and by default it starts with this simple `index.html` page. We will instead have our own index page that shows the users a contact form powered by Nuvolaris actions. Let's write it now.
 
 Let's create a folder that will contain all of our app code: `contact_us_app`. 
@@ -60,7 +59,7 @@ Now we just have to upload it to our Nuvolaris deployment. You could upload it u
 nuv web upload web/
 ----
 
-Pass to `nuv web upload` the path to folder where the index.html is stored in (the `web` folder if you followed the tutorial) and visit again `<apihost>`. 
+Pass to `nuv web upload` the path to folder where the index.html is stored in (the `web` folder) and visit again `<apihost>`. 
 
 Now you should see the new index page:
 
@@ -68,9 +67,9 @@ image::form.png[Form,align="center"]
 
 === The Contact Package 
 
-The contact form we just uploaded does not do anything. To make it work let's start by creating a new package to hold our actions, furthermore, we can bind to this package the database url, so the actions can directly access it!
+The contact form we just uploaded does not do anything. To make it work let's start by creating a new package to hold our actions. Moreover, we can bind to this package the database url, so the actions can directly access it!
 
-With the debug command you can see what's going on in your deployment. This time let's use   it to grab the "postgres_url" value:
+With the `debug` command you can see what's going on in your deployment. This time let's use it to grab the "postgres_url" value:
 
 [source,bash]
 ----
@@ -98,7 +97,7 @@ nuv package list
 
 packages
 /nuvolaris/contact  private
-/nuvolaris/hello    private     <-- a default package created during development
+/nuvolaris/hello    private     <-- a default package created during deployment
 ----
 
 And to get specific information on a package:

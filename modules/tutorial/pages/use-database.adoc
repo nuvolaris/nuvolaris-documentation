@@ -13,7 +13,7 @@ async function main(args) {
 
     const createTable = `
     CREATE TABLE IF NOT EXISTS contacts (
-        id UUID PRIMARY KEY,
+        id serial PRIMARY KEY,
         name varchar(50),
         email varchar(50),
         phone varchar(50),
@@ -22,19 +22,22 @@ async function main(args) {
     `
     // Connect to database server
     await client.connect();
+    console.log('Connected to database');
 
     try {
-        await client.query(createTable)
+        await client.query(createTable);
+        console.log('Contact table created');
     } catch (e) {
         console.log(e);
-        throw e
+        throw e;
     } finally {
         client.end();
     }
 }
 ----
 
-We just need to run this once, therefore it doesn't need to be a web action. Here we can take advantage of the `cron` service we enabled! 
+We just need to run this once, therefore it doesn't need to be a web action. Here we can take advantage of the `cron` service we enabled!
+There are also a couple of console logs that we can check out.
 
 With the cron scheduler you can annotate an action with 2 kinds of labels. One to make Nuvolaris periodically invoke the action, the other to automatically execute an action once, on creation.
 
@@ -49,7 +52,6 @@ ok: created action contact/create-table
 With `-a` you can add "annotations" to an action. Nuvolaris will invoke this action as soon as possible, so we can go on.
 
 ====
-
 In Nuvolaris an action invocation is called an `activation`. You can keep track, retrieve information and check logs from an action with `nuv activation`. For example, with:
 
 [source,bash]
@@ -70,12 +72,24 @@ Datetime            Activation ID                    Kind      Start Duration   
 ...
 ----
 
-Each activation has an `Activation ID` which can be used with other `nuv activation` subcommands or with the `nuv logs` command.
+Each activation has an `Activation ID` which can be used with other `nuv activation` subcommands or with the `nuv logs` command. 
+
+Once the create-table activation appears in the list, we can check out the logs with either `nuv logs <activation-id>` or `nuv logs --last` to quickly grab the last activation's logs.:
+
+[source,bash]
+----
+nuv logs --last
+
+2023-10-15T14:41:01.230674546Z stdout: Connected to database
+2023-10-15T14:41:01.238457338Z stdout: Contact table created
+----    
 ====
 
 === The Action to Store the Data
 
-We could just write the code to insert data into the table in the `submit.js` action, but it's better to have a separate action for that. Let's create a new file called `write.js` in the `packages/contact` folder:
+We could just write the code to insert data into the table in the `submit.js` action, but it's better to have a separate action for that. 
+
+Let's create a new file called `write.js` in the `packages/contact` folder:
 
 [source,javascript]
 ----
@@ -87,23 +101,26 @@ async function main(args) {
     // Connect to database server
     await client.connect();
 
-    const { name, email, phone, message } = args
+    const { name, email, phone, message } = args;
 
     try {
-        await client.query(
+        let res = await client.query(
             'INSERT INTO contacts(name,email,phone,message) VALUES($1,$2,$3,$4)',
             [name, email, phone, message]
-        )
+        );
+        console.log(res);
     } catch (e) {
         console.log(e);
-        throw e
+        throw e;
     } finally {
         client.end();
     }
 }
 ----
 
-Very similar to the create table action, but this time we are inserting data into the table by passing the values as parameters. Let's deploy it:
+Very similar to the create table action, but this time we are inserting data into the table by passing the values as parameters. There is also a `console.log` on the response in case we want to check some logs again.
+
+ Let's deploy it:
 
 [source,bash]
 ----
@@ -134,7 +151,7 @@ function save(doc) {
 ...
 ----
 
-Add that above the `main` function. What we are doing here is importing the special `openwhisk` module that gives you access to the Openwhisk API (the Nuvolaris' serverless engine) from within any action. 
+Add that above the `main` function. What we are doing here is importing the special `openwhisk` module that gives you access to the Openwhisk API (the Nuvolaris serverless engine) from within any action. 
 
 To construct the `ow` object you need to pass the API key, which you can get as an environment variable when annotating the action with a special value.
 
@@ -161,3 +178,16 @@ ok: updated action contact/submit
 As before with `autoexec` we are adding an annotation, but this time it's to instruct the platform to inject the api key as an env var in the function's environment, so we have access to it in the code.
 
 Now the pipeline is complete, and we can test it by submitting the form again. This time the data will be stored in the database.
+
+====
+If you want to retrive info from you database, nuv provides several utilities under the `nuv devel` command. They are useful to interact with the integrated services, such as the database we are using.
+
+For instance, let's run:
+
+[source,bash]
+----
+nuv devel psql sql "SELECT * FROM CONTACTS"
+
+[{'id': 1, 'name': 'Nuvolaris', 'email': 'info@nuvolaris.io', 'phone': '5551233210', 'message': 'This is awesome!'}]
+----
+====

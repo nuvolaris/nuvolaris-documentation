@@ -137,7 +137,7 @@ The `nuv action` command can be used for many more things besides creating actio
 nuv action list
 
 actions
-/nuvolaris/contact/submit                                              private nodejs:18
+/nuvolaris/contact/submit               private nodejs:18
 ---- 
 
 And you can also get info on a specific action:
