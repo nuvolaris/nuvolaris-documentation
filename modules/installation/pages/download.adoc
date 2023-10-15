@@ -11,16 +11,23 @@ You can download it for your system. It is available for the following operating
 * for Microsoft Windows, 64-bit version only, version 10 or greater, for Intel architecture, in Microsoft Installer `msi` format
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.msi[Download `nuv` for Windows on Intel]
 
+* on Apple macOS, version 12 (Monterey) or greater, for Intel and ARM architectures, in `pkg` format.
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Download `nuv` for Mac Intel ] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[Download `nuv` for Mac M1/M2]
 
-* on Apple macOS,  version 12 (Monterey) or greater, for Intel and ARM architectures, in `pkg` format.
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.pkg[Download `nuv` for Mac on Intel ] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.pkg[Download `nuv` for  Mac on ARM]
+* On Linux, for Ubuntu 22 (Jammy), Debian 12 (Bookwork), 64-bit version, in format `.deb`; for RedHat 9 and for SuSE Tumbleweed, in `rpm` format; Available for Intel and ARM architectures, 64 bit only.
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Download `nuv` for Ubuntu 22/Debian 12/ on Intel] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.deb[Download `nuv` for Ubuntu 22/Debian 11 on ARM]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.rpm[Download `nuv` for RedHat 9/RockyLinux 9/SuSE Tumbleweed on Intel] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.rpm[Download `nuv` for RedHat 9/RockyLinux 9/SuSE Tumbleweed on ARM]
 
-* On Linux, for Ubuntu at least version 22, for Debian at least version 12 Linux, 64-bit version, in format `.deb`; for RedHat at least version 8 and for SuSE at least version 12, in `rpm` format; Available for Intel and ARM architectures, 64 bit only.
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.deb[Download `nuv` for Debian/Ubuntu on Intel] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.deb[Download `nuv` for Debian/Ubuntu on ARM]
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64.rpm[Download `nuv` for RedHat/SuSE on Intel] 
-** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64.rpm[Download `nuv` for RedHat/SuSE on ARM]
+* On Linux, for Ubuntu 20 (Focal), Debian 11 (Bullseye), 64-bit version, in format `.deb`; for RedHat at least version 8 and for SuSE Leap, in `rpm` format; Available for Intel and ARM architectures, 64 bit only.
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64_ubuntu20.deb[Download `nuv` for Ubuntu 20/Debian 11 on Intel] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64_ubuntu20.deb[Download `nuv` for Ubuntu 20/Debian 1/ on ARM]
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_amd64_redhat8.rpm[Download `nuv` for RedHat 8/RockyLinux 8/SuSE Leap on Intel] 
+** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64_redhat8.rpm[Download `nuv` for RedHat 8/RockyLinux 8/SuSE Leap on ARM]
+
+
 
 Download your version from this page, then install it according to the procedures of your operating system.
 
