@@ -120,8 +120,7 @@ async function main(args) {
 
 Very similar to the create table action, but this time we are inserting data into the table by passing the values as parameters. There is also a `console.log` on the response in case we want to check some logs again.
 
- Let's deploy it:
-
+Let's deploy it:
 [source,bash]
 ----
 nuv action create contact/write write.js
