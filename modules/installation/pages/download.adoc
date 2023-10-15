@@ -28,7 +28,6 @@ You can download it for your system. It is available for the following operating
 ** https://{base-url}/{cur-ver}/nuv_{cur-ver}_arm64_redhat8.rpm[Download `nuv` for RedHat 8/RockyLinux 8/SuSE Leap on ARM]
 
 
-
 Download your version from this page, then install it according to the procedures of your operating system.
 
 In all the operating systems with a graphical user interface, you can just double clicking on the installer to install it.
