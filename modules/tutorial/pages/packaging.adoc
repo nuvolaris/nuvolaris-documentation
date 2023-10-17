@@ -27,7 +27,7 @@ Then under each package, the `actions` keyword is needed so we can add our actio
 
 Finally we used the `inputs` keyword to define the parameters to inject in the function.
 
-If we apply this manifest file (we will see how soon), it will be the same as the previous `nuv action create contact/notify <path-to-notify.js> -p notifications $NOTIFICATIONS --web true`.
+If we apply this manifest file (we will see how soon), it will be the same as the previous `nuv action create contact/notify <path-to-notify.js> -p notifications $NOTIFICATIONS --web true`. You need to have the webhooks url in the `NOTIFICATIONS` environment variable.
 
 === The Submit Action
 
@@ -72,7 +72,7 @@ packages:
 
 Note the `create-table` action does not have the `web` set to true as it is not needed to be exposed to the world. Instead it just has the annotation for cron scheduler.
 
-=== The Submit->Notify Sequence
+=== The Sequences
 
 Lastly, we created a sequence with `submit` and `notify` that we have to specify it in the manifest file as well.
 
@@ -87,8 +87,12 @@ packages:
       ...
 
     sequences:
+      submit-write:
+        actions: submit, write
+        web: true
       submit-notify:
-        actions: submit, notify
+        actions: submit-write, notify
+        web: true
 ----
 
 We just have to add the `sequences` key at the `contact` level (next to `actions`) and define the sequences we want with the available actions. 
@@ -129,8 +133,11 @@ packages:
           autoexec: true
 
     sequences:
+      submit-write:
+        actions: submit, write
+        web: true
       submit-notify:
-        actions: submit, notify
+        actions: submit-write, notify
         web: true
 ----
 
@@ -140,7 +147,7 @@ It checks if there is a `packages` folder with inside a manifest file and deploy
 
 It does all what we did manually until now in one command.
 
-So, from the top level directory of our app let's run (let's also set the input env var):
+So, from the top level directory of our app, let's run (to also set the input env var):
 
 [source, bash]
 ----
