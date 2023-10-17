@@ -167,7 +167,7 @@ then <<cluster, install the cluster>>.
 [#cluster]
 == Cluster Install
 
-In short, if you have now accett to kubernetes cluster,  you can now install Nuvolaris with:
+In short, if you have access to kubernetes cluster, you can  install Nuvolaris with:
 
 ----
 nuv setup cluster
@@ -188,7 +188,7 @@ you can install Nuvolaris in it. You can read xref:installation:prereq-cluster.a
 
 You can get this access either by provisioning a Kubernetes cluster in <<cloud, cloud>> or getting access to it from your system administrator.
 
-Whatever the way you get access to your Kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
+Whatever the way you get access to your Kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory. This file will give access to the Kubernetes cluster to install Nuvolaris.
 
 === Performing the installation
 
