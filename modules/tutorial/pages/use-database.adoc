@@ -61,7 +61,7 @@ nuv activation list
 
 You can retrieve the list of invocations. For caching reasons the first time you run the command the list might be empty. Just run it again and you will see the latest invocations (probably some `hello` actions from the deployment).
 
-If we want to make sure `create-table` was invoked, we can do it with this command. The cron scheduler can take up to 1 minute to run an `autoexec` action, so let's wait a bit and run `nuv activation list` again.
+If we want to make sure `create-table` was invoked, we can do it with this command. The cron scheduler can take up to 1 minute to run an `autoexec` action, so let's wait a bit and run `nuv activation list` again. 
 
 [source,bash]
 ----
@@ -72,9 +72,21 @@ Datetime            Activation ID                    Kind      Start Duration   
 ...
 ----
 
+Or we could run `nuv activation poll` to listen for new logs.
+
+[source,bash]
+----
+nuv activation poll
+
+Enter Ctrl-c to exit.
+Polling for activation logs
+----
+
+When the logs from the `create-table` action appear, we can stop the command with `Ctrl-c`.
+
 Each activation has an `Activation ID` which can be used with other `nuv activation` subcommands or with the `nuv logs` command. 
 
-Once the create-table activation appears in the list, we can check out the logs with either `nuv logs <activation-id>` or `nuv logs --last` to quickly grab the last activation's logs.:
+We can also check out the logs with either `nuv logs <activation-id>` or `nuv logs --last` to quickly grab the last activation's logs.:
 
 [source,bash]
 ----
@@ -115,6 +127,8 @@ async function main(args) {
     } finally {
         client.end();
     }
+
+    return { body: args.body };
 }
 ----
 
@@ -127,58 +141,56 @@ nuv action create contact/write write.js
 ok: created action contact/write
 ----
 
-=== Finalizing the Submit Action
+=== Finalizing the Submit 
 
-Alright, we are almost done. We just need to add the code to invoke the `write` action to store the data. We can do that by adding a small function inside the `submit.js` action:
-
-[source,javascript]
-----
-var openwhisk = require('openwhisk')
-
-function save(doc) {
-  var ow = openwhisk({api_key: process.env.__OW_API_KEY})
-  return ow.actions.invoke({
-    "name": "contact/write",
-    "params": {
-      "name": doc.name,
-      "email": doc.email,
-      "phone": doc.phone,
-      "message": doc.message
-    }
-  })
-}
-...
-----
-
-Add that above the `main` function. What we are doing here is importing the special `openwhisk` module that gives you access to the Openwhisk API (the Nuvolaris serverless engine) from within any action. 
-
-To construct the `ow` object you need to pass the API key, which you can get as an environment variable when annotating the action with a special value.
-
-Now we can replace that last TODO with a call to the `save` function:
-
-[source,javascript]
-----
-save({
-      "name": args.name,
-      "email": args.email,
-      "phone": args.phone,
-      "message": args.message
-    })
-----
-
-Let's update the action with the new code and the special annotation:
+Alright, we are almost done. We just need to create a pipeline of `submit` -> `write` actions. The `submit` action returns the 4 form fields together with the HTML body. The `write` action expects those 4 fields to store them. Let's put them together into a `sequence`:
 
 [source,bash]
 ----
-nuv action update contact/submit submit.js --web true -a provide-api-key true
-ok: updated action contact/submit
+nuv action create contact/submit-write  --sequence contact/submit,contact/write --web true
+ok: created action contact/submit-write
 ----
 
-As before with `autoexec` we are adding an annotation, but this time it's to instruct the platform to inject the api key as an env var in the function's environment, so we have access to it in the code.
+With this command we created a new action called `submit-write` that is a sequence of `submit` and `write`. This means that Nuvolaris will call in a sequence `submit` first, then get its output and use it as input to call `write`.
 
 Now the pipeline is complete, and we can test it by submitting the form again. This time the data will be stored in the database.
 
+Note that `write` passes on the HTML body so we can still see the thank you message.
+
 ====
+Let's check out again the action list:
+
+[source,bash]
+----
+nuv action list
+
+actions
+/nuvolaris/contact/submit-write                  private sequence
+/nuvolaris/contact/write                         private nodejs:18
+/nuvolaris/contact/create-table                  private nodejs:18
+/nuvolaris/contact/submit                        private nodejs:18
+----
+
+You might probably have something similar. Note the submit-write is managed as an action, but it's actually a sequence of 2 actions. This is a very powerful feature of Nuvolaris, as it allows you to create complex pipelines of actions that can be managed as a single unit.
+====
+
+=== Trying the Sequence
+
+As before, we have to update our `index.html` to use the new action:
+
+[source,html]
+----
+---            <form method="POST" action="/api/v1/web/nuvolaris/contact/submit"
+               enctype="application/x-www-form-urlencoded"> <-- old
++++            <form method="POST" action="/api/v1/web/nuvolaris/contact/submit-write"
+               enctype="application/x-www-form-urlencoded"> <-- new
+
+----
+
+We just need to add `-write` to the action name.
+
+Try again to fill the contact form (with correct data) and submit it. This time the data will be stored in the database.
+
 If you want to retrive info from you database, nuv provides several utilities under the `nuv devel` command. They are useful to interact with the integrated services, such as the database we are using.
 
 For instance, let's run:
@@ -189,4 +201,4 @@ nuv devel psql sql "SELECT * FROM CONTACTS"
 
 [{'id': 1, 'name': 'Nuvolaris', 'email': 'info@nuvolaris.io', 'phone': '5551233210', 'message': 'This is awesome!'}]
 ----
-====
+
