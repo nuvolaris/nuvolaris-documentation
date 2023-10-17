@@ -167,6 +167,16 @@ then <<cluster, install the cluster>>.
 [#cluster]
 == Cluster Install
 
+In short, if you have now accett to kubernetes cluster,  you can now install Nuvolaris with:
+
+----
+nuv setup cluster
+----
+
+For a slightly longer discussion, checking prerequisites before installing, read on.
+
+=== Prerequisited to install
+
 If you have access to a Kubernetes cluster with: 
 
 . access to the `cluster-admin` role
@@ -180,10 +190,9 @@ You can get this access either by provisioning a Kubernetes cluster in <<cloud, 
 
 Whatever the way you get access to your Kubernetes cluster, you will end up with a configuration file which is usually stored in a file named `.kube/config` in your home directory.
 
+=== Performing the installation
 
-To install: 
-
-. check you have actually access to a Kubernetes cluster, by running this command:
+To install, first, verify you have actually access to the Kubernetes cluster, by running this command:
 
 ----
 nuv debug kube info
@@ -195,12 +204,12 @@ You should get information about your cluster, something like this:
 Kubernetes control plane is running at https://api.nuvolaris.osh.n9s.cc:6443
 =====
 
-. if you have access to the cluster, you can install Nuvolaris with the command:
+Now you can finally install Nuvolaris with the command:
 
 ----
 nuv setup cluster
 ----
 
-Now, wait until the process is complete and if there are no errors, Nuvolaris is installed and ready to go.
+Wait until the process is complete and if there are no errors, Nuvolaris is installed and ready to go.
 
 Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial] to learn how to code with it.
