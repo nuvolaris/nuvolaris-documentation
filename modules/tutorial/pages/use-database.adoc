@@ -128,7 +128,13 @@ async function main(args) {
         client.end();
     }
 
-    return { body: args.body };
+    return { 
+        body: args.body
+        name,
+        email,
+        phone,
+        message
+     };
 }
 ----
 
@@ -155,7 +161,7 @@ With this command we created a new action called `submit-write` that is a sequen
 
 Now the pipeline is complete, and we can test it by submitting the form again. This time the data will be stored in the database.
 
-Note that `write` passes on the HTML body so we can still see the thank you message.
+Note that `write` passes on the HTML body so we can still see the thank you message. If we want to hide it, we can just remove the `body` property from the return value of `write`. We are still returning the other 4 fields, so another action can use them (spoiler: it will happen next chapter).
 
 ====
 Let's check out again the action list:
@@ -171,12 +177,20 @@ actions
 /nuvolaris/contact/submit                        private nodejs:18
 ----
 
-You might probably have something similar. Note the submit-write is managed as an action, but it's actually a sequence of 2 actions. This is a very powerful feature of Nuvolaris, as it allows you to create complex pipelines of actions that can be managed as a single unit.
+You probably have something similar. Note the submit-write is managed as an action, but it's actually a sequence of 2 actions. This is a very powerful feature of Nuvolaris, as it allows you to create complex pipelines of actions that can be managed as a single unit.
 ====
 
 === Trying the Sequence
 
-As before, we have to update our `index.html` to use the new action:
+As before, we have to update our `index.html` to use the new action. First let's get the URL of the `submit-write` action:
+
+[source,bash]
+----
+nuv url contact/submit-write
+<apihost>/api/v1/web/nuvolaris/contact/submit-write
+----
+
+Then we can update the `index.html` file:
 
 [source,html]
 ----
@@ -184,7 +198,6 @@ As before, we have to update our `index.html` to use the new action:
                enctype="application/x-www-form-urlencoded"> <-- old
 +++            <form method="POST" action="/api/v1/web/nuvolaris/contact/submit-write"
                enctype="application/x-www-form-urlencoded"> <-- new
-
 ----
 
 We just need to add `-write` to the action name.
