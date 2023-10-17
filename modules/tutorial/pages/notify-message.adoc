@@ -1,0 +1,109 @@
+== Contact Notification
+
+It would be great if we receive a notification when an user tries to contact us. For this tutorial we will pick slack to receive a message when it happens.
+
+
+We need to:
+
+* have a slack workspace where we can send messages;
+* create a slack app that will be added to the workspace;
+* activate a webhook for the app that we can trigger from an action;
+
+Check out the following scheme for the steps:
+
+image::slackurl.png["Slack Webhook",align="center"]
+
+Once we have a webhook we can use to send messages we can proceed to create a new action called `notify.js` (in the `packages/contact` folder):
+
+
+
+[source,javascript]
+----
+// notify.js
+const axios = require('axios').default;
+
+function main(args) {
+    return axios.post(args.notifications, {
+        text: args.text
+    }).then(r => {
+        console.log("Message sent");
+        return {
+            body: r.data
+        }
+    }).catch(e => {
+        console.log("Error sending message", e);
+        return {
+            body: e
+        }
+    });
+}
+----
+
+This action uses 2 parameters, the `args.notifications` is the webhook that we will pass as a parameter. The `args.text` key is the text of the message. The action will return the body of the response from the webhook.
+
+We've also put some logs that we can use later for debugging purposes.
+
+Let's first set up the action:
+
+[source,bash]
+----
+nuv action create contact/notify notify.js -p notifications <your webhook> --web true
+ok: created action contact/notify
+----
+
+We are already setting the `notifications` parameter, which is the webhook. The other one is the text that the submit action will give in input at every invocation.
+
+=== Creating the Action Sequence
+
+We have developed an action that can send a slack message as a standalone action, but we designed it to take the output of the submit action and return it as is. Let's create a pipeline of actions now where the output of a command is used as an input for another command.
+
+Note that it will send messages for every submission, even for incorrect inputs, so we will know if someone is trying to use the form without providing all the information. But we will only store the fully validated data in the database. 
+
+Let's create the sequence, and then test it:
+
+[source,bash]
+----
+nuv action create contact/submit-notify --sequence contact/submit,contact/notify --web true
+ok: created action contact/submit-notify
+----
+
+Now to start using this sequence instead of using the submit action, we need to update the `web/index.html` page to invoke the new sequence.
+
+As before let's grab the url:
+
+[source,bash]
+----
+nuv url contact/submit-notify
+<apihost>/api/v1/web/nuvolaris/contact/submit-notify
+----
+
+And update the `index.html`:
+
+[source,html]
+----
+--- <form method="POST" action="/api/v1/web/nuvolaris/contact/submit" enctype="application/x-www-form-urlencoded">
+
++++ <form method="POST" action="/api/v1/web/nuvolaris/contact/submit-notify" enctype="application/x-www-form-urlencoded">
+----
+
+Don't forget to re-upload the web folder with `nuv web upload web/`.
+
+Now try to fill out the form again and press send! It will execute the sequence and you will receive the message from your Slack App.
+
+====
+
+The tutorial introduced you to some utilities to retrieve information and to the concept of `activation`. Let's use some more commands to check out the logs and see if the email was really sent.
+
+The easiest way to check for all the activations that happen in this app with all their logs is:
+
+[source,bash]
+----
+nuv activation poll
+
+Enter Ctrl-c to exit.
+Polling for activation logs
+----
+This command polls continuously for log messages. If you go ahead and submit a message in the app, all the actions will show up here together with their log messages. Since we've added logs in the notify action they will be printed here.
+
+To also check if there are some problems with your actions, run a couple of times `nuv activation list` and check the `Status` of the activations. If you see some `developer error` or any other errors, just grab the activation ID and run `nuv logs <activation ID>`.
+====

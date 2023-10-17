@@ -3,5 +3,5 @@
 ** xref:first-steps.adoc[🚧 First Steps]
 ** xref:form-validation.adoc[🚧 Form Validation]
 ** xref:use-database.adoc[🚧 Use Database]
-** xref:send-email.adoc[🚧 Sending Email]
+** xref:notify-message.adoc[🚧 Sending Notifications]
 ** xref:packaging.adoc[🚧 App Deployment]
