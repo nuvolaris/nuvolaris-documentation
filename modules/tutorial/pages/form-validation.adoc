@@ -66,6 +66,7 @@ With the validation phase, we added to the "errors" array all the errors we foun
 
 [source,javascript]
 ----
+// return the result
 if(errors.length) {
   var errs = "<ul><li>"+errors.join("</li><li>")+"</li></ul>"
   return {
@@ -74,17 +75,21 @@ if(errors.length) {
    }
 } else {
    var data = "<pre>"+message.join("\n")+"</pre>"
-   // storing in the database
-   // TODO: <Store the message in the database> 
    return {
-     body: "<h1>Thank you!</h1>"+ data
+      body: "<h1>Thank you!</h1>"+ data,
+      name: args.name,
+      email: args.email,
+      phone: args.phone,
+      message: args.message
    }
 }
 ----
 
-Note how this action is returning html code. Actions can return a `{ body: <html> }` kind of response and have their own url so they can be invoked via a browser and display some content.
+Note how this action is returning HTML code. Actions can return a `{ body: <html> }` kind of response and have their own url so they can be invoked via a browser and display some content. 
 
-Let's start deploying the action (although it is not complete yet):
+The HTML code to display is always returned in the `body` field, but we can also return other stuff. In this case we added a a field for each of the form fields. This gives us the possibility to invoke in a sequence another action that can act just on those fields to store the data in the database.
+
+Let's start deploying the action:
 
 [source,bash]
 ----
@@ -127,6 +132,7 @@ If you fill it corectly, you should see the "Thank you" page.
 
 image::submit.png["Submit Result",align="center"]
 
+Note how only the HTML from the `body` field is displayed, the other fields are ignored in this case.
 
 ====
 
@@ -160,3 +166,58 @@ nuv action get contact/submit
 
 These commands can come in handy when you need to debug your actions.
 ====
+
+Here is the complete the `submit.js` action:
+
+[source,javascript]
+----
+function main(args) {
+  let message = []
+  let errors = []
+
+  // validate the name
+  if (args.name) {
+    message.push("name: " + args.name)
+  } else {
+    errors.push("No name provided")
+  }
+
+  // validate the email
+  var re = /\S+@\S+\.\S+/;
+  if (args.email && re.test(args.email)) {
+    message.push("email: " + args.email)
+  } else {
+    errors.push("Email missing or incorrect.")
+  }
+
+  // validate the phone
+  if (args.phone && args.phone.match(/\d/g).length >= 10) {
+    message.push("phone: " + args.phone)
+  } else {
+    errors.push("Phone number missing or incorrect.")
+  }
+
+  // validate the message
+  if (args.message) {
+    message.push("message:" + args.message)
+  }
+
+  // return the result
+  if (errors.length) {
+    var errs = "<ul><li>" + errors.join("</li><li>") + "</li></ul>"
+    return {
+      body: "<h1>Errors!</h1>" +
+        errs + '<br><a href="javascript:window.history.back()">Back</a>'
+    }
+  } else {
+    var data = "<pre>" + message.join("\n") + "</pre>"
+    return {
+      body: "<h1>Thank you!</h1>" + data,
+      name: args.name,
+      email: args.email,
+      phone: args.phone,
+      message: args.message
+    }
+  }
+}
+----
