@@ -31,7 +31,7 @@ If we apply this manifest file (we will see how soon), it will be the same as th
 
 === The Submit Action
 
-The submit action we wrote earlier uses an annotation to inject the api key in the action's environment. The manifest file also supports annotations and it's quite straightforward. Let's define the submit action:
+The submit action is quite straightforward:
 
 [source,yaml]
 ----
@@ -42,8 +42,6 @@ packages:
       submit:
         function: contact/submit.js
         web: true
-        annotations:
-          provide-api-key: true
 ----
 
 === The Database Actions
@@ -120,8 +118,6 @@ packages:
       submit:
         function: contact/submit.js
         web: true
-        annotations:
-          provide-api-key: true
 
       write:
         function: contact/write.js
