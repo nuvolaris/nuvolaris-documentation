@@ -6,16 +6,16 @@ You can detect and load entire projects into Nuvolaris with a single command usi
 
 == Project Detection
 
-A project has a root folder, within which there can be 2 folders with special names:
+When deploying a project, `nuv` checks in the given path for 2 special folders:
 
-* A `packages` folder: contains sub-folders that are treated as packages and are assumed to contain actions in the form of either files or folders, which we refer to as Single File Actions (SFA) and Multi File Actions (MFA).
-* A `web` folder: contains folders and files with static web content.
+* The `packages` folder: contains sub-folders that are treated as nuvolaris packages and are assumed to contain actions in the form of either files or folders, which we refer to as Single File Actions (SFA) and Multi File Actions (MFA).
+* The `web` folder: contains static web content.
 
 Anything else is ignored. This lets you store things in the root folder that are not meant to be deployed on Nuvolaris (such as build folders and project documentation).
 
 === Single File Actions
 
-A single file action is simply a file with an extension (the supported ones: `.js`  `.py` `.go` `.java`)
+A single file action is simply a file with specific extension (the supported ones: `.js`  `.py` `.go` `.java`), whici is directly deployed as an action.
 
 === Multi File Actions
 
