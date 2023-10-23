@@ -31,9 +31,22 @@ If the extension is in format: `.<version>.<extension>`, the command will have `
 
 === Multi File Actions [[multi_file_actions]]
 
-TODO
+Multi File Actions consist of a folder with a `main` file inside together with other files, which could also be libraries or other dependencies (think of `node_modules` for Javascript actions).
 
-`nuv` implements some heuristics to decide the correct type of file to build.
+These kind of actions are deployed as zips, so the deployer will create a zip archive of the folder and then add its path to the manifest file.
+
+To chose the right runtime for the action, `nuv` will look for the extension of the `main` file and create a corresponding zip as follows:
+
+- `<action-name>.js.zip` if there is a `main.js`
+- `<action-name>.py.zip` if there is a `__main__.py`
+- `<action-name>.go.zip` if there is a `main.go`
+- `<action-name>.java.zip` if there is a `Main.java`
+// - `<action-name>.php.zip` if there is a `main.php`
+
+
+if no main is found, it will be just `.zip`.
+
+As for the Single File Action, the extension will determine the runtime version.
 
 
 // * if there is a `package.json`  or any `js` field in the folder then it is  `.js` and it builds with `npm install ; npm build`
@@ -42,3 +55,4 @@ TODO
 // * if there is a `go.mod` then it builds using `go build`
 
 // The command that `nuv` will generate consists of i) zip the folder ii) create the action with the zip archive and the correct type of the runtime.
+
