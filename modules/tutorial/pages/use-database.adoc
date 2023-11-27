@@ -129,7 +129,7 @@ async function main(args) {
     }
 
     return { 
-        body: args.body
+        body: args.body,
         name,
         email,
         phone,
