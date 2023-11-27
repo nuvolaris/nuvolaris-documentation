@@ -7,6 +7,11 @@ The missing pieces are covered in the rest of the documentation.
 
 Of course, if this guide is not enough and things fail, you can always apply the rule: "if everything fails, read the manual".
 
+If you have access to kubernetes cluster, you can install Nuvolaris with:
+----
+nuv setup cluster
+----
+
 == Prerequisites
 
 Start ensuring the prerequsites are satisfied:
@@ -167,7 +172,7 @@ then <<cluster, install the cluster>>.
 [#cluster]
 == Cluster Install
 
-In short, if you have access to kubernetes cluster, you can  install Nuvolaris with:
+As mentioned before, if you have access to kubernetes cluster, you can install Nuvolaris with:
 
 ----
 nuv setup cluster
