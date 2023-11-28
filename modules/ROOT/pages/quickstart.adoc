@@ -124,7 +124,7 @@ nuv setup server <server> <user>
 
 [IMPORTANT]
 ====
-Replace in the commands `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same as `<dns-name>`  you have configured in the previous paragraph if you did it, or just the IP address of a server in your intranet
+Replace in the commands `<server>`  with the address of your server, and `<user>` with the actual user to use in your server. The `<server>` can be the same as `<dns-name>`  you have configured in the previous paragraph, if you did so, or simply the IP address of a server on your intranet
 ====
 
 Now wait until the installation completes. Once it is installed, you can proceed to read the xref:tutorial:index.adoc[tutorial] to learn how to code with it.
