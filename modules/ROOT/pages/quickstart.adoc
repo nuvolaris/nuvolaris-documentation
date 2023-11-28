@@ -93,7 +93,7 @@ then proceed with the server installation.
 [#server]
 == Server Installation
 
-Once you got accessto a Linux server, with:
+Once you got access to a Linux server, with:
 
 . an IP address or DNS name, referred as `<server>`
 . passwordless access with `ssh` to a Linux user `<user>`
