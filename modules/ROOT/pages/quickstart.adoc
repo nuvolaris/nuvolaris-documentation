@@ -93,15 +93,15 @@ then proceed with the server installation.
 [#server]
 == Server Installation
 
-Once you got access to a Linux server, with:
+Once you got access to a Linux server with:
 
-. an IP address or DNS name, referred as `<server>`
-. passwordless access with `ssh` to a Linux user `<user>`
-. at least 8GB of memory and 50GB of disk space available
-. the user `<user>` has passwordless `sudo` rights
-. the firewall that allows traffic to ports 80, 443 and 6443
-. **without** any Docker or Kubernetes installed
-. **without** any Web server or Web application installed
+. An IP address or DNS name, referred to as `<server>`
+. Passwordless access with `ssh` to a Linux user `<user>`
+. At least 8GB of memory and 50GB of disk space available
+. The user `<user>` has passwordless `sudo` rights
+. The firewall that allows traffic to ports 80, 443 and 6443
+. **Without** any Docker or Kubernetes installed
+. **Without** any Web server or Web application installed
 
 then you can install Nuvolaris in it.
 
