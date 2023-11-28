@@ -12,7 +12,7 @@ Of course, if this guide is not enough and things fail, you can always apply the
 Start ensuring the prerequsites are satisfied:
 
  
-* xref:installation:download.adoc[Download and install `nuv`], the Nuvolaris CLI, picking version suitable for your environment. We support 64-bit versions of recent Windows, MacOS and major Linux distributions.
+* xref:installation:download.adoc[Download and install] nuv, the Nuvolaris CLI, picking version suitable for your environment. We support 64-bit versions of recent Windows, MacOS and major Linux distributions.
 
 * Check that nuv is correctly installed: open the terminal and write:
 
