@@ -3,7 +3,7 @@
 The deployer can be seen as a set of commands in `nuv`, namely the `devel` and `project` commands. With the former you can run some development-related tasks.
 
 - `nuv devel detect`: to check if a project folder satisfies the conditions to be deployed as a project;
-- `nuv devel scan`: to generate the `manifest.yaml` file that describes the project (required for deployment) if you don't wanna write it yoursel;
+- `nuv devel scan`: to generate the `manifest.yaml` file that describes the project (required for deployment) if you don't wanna write it yourself;
 - `nuv devel deploy`: to quickly run the previous 2 commands and then `nuv project deploy` so you can do the entire procedure in one go.
 
 Meanwhile `nuv project deploy` is the actual deployment operation that can be applied on a folder with at least the `packages` sub-folder and a `manifest.yaml` inside.
@@ -44,7 +44,7 @@ To chose the right runtime for the action, `nuv` will look for the extension of 
 // - `<action-name>.php.zip` if there is a `main.php`
 
 
-if no main is found, it will be just `.zip`.
+If no main is found, it will be just `.zip`.
 
 As for the Single File Action, the extension will determine the runtime version.
 

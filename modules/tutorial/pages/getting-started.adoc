@@ -14,7 +14,7 @@ it here: https://github.com/nuvolaris/nuv/releases[Nuv Releases]
 
 === Deploy Nuvolaris
 
-To start using Nuvolaris you can refer to the installation guide xref:index.adoc[Installation Guide]. You can follow the local installation to quickly get started with Nuvolaris deployed on your machine, or if you want to follow the tutorial on a deployment on cloud you can pick one of the many supported cloud provider. Once installed come back here!
+To start using Nuvolaris you can refer to the installation guide xref:../../installation/pages/index.adoc[Installation Guide]. You can follow the local installation to quickly get started with Nuvolaris deployed on your machine, or if you want to follow the tutorial on a deployment on cloud you can pick one of the many supported cloud provider. Once installed come back here!
 
 === Enabling Services
 

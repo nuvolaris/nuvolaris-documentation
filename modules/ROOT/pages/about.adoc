@@ -1,6 +1,6 @@
 = About Nuvolaris Community
 
-Nuvolaris Community is an Open Source project, released under the  https://github.com/nuvolaris/nuvolaris/blob/main/LICENSE[Apache License 2.0] providing a portable and complete https://martinfowler.com/articles/serverless.html[Serverless] environment, allowing to build quickly and easily cloud-native applications.
+Nuvolaris Community is an Open Source project, released under the https://github.com/nuvolaris/nuvolaris/blob/main/LICENSE[Apache License 2.0] providing a portable and complete https://martinfowler.com/articles/serverless.html[Serverless] environment, allowing to build quickly and easily cloud-native applications.
 
 Our goal is to make Nuvolaris *ubitiquous*, allowing it to easily run a complete and portable environment that runs in every https://kubernetes.io/[Kubernetes]. 
 

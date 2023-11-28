@@ -73,7 +73,7 @@ With the `debug` command you can see what's going on in your deployment. This ti
 
 [source,bash]
 ----
-nuv debug status | grep postgres_url
+nuv -config -d | grep POSTGRES_URL
 ----
 
 Copy the Postgres URL (something like `postgresql://...`). Now we can create a new package for the application:

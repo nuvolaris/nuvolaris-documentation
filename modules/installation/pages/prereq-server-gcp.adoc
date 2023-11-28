@@ -7,6 +7,7 @@ You can provision a server suitable to install Nuvolaris in cloud provider https
 . <<provision, provision a server>>
 . retrieve the <<retrieve-ip, ip address>> to configure a DNS name
 
+
 Once you have Linux server up and running you can proceed xref:configure.adoc[configuring] and xref:install-cluster.adoc[installing Nuvolaris].
 
 [#install-cli]
@@ -34,6 +35,23 @@ gke-gcloud-auth-plugin 0.5.5
 gsutil 5.25
 `
 ====
+
+[#enable services]
+== Enabling gcloud services
+You need to enable the following permissions for Google Cloud
+
+----
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable dns.googleapis.com
+gcloud services enable iamcredentials.googleapis.com
+gcloud services enable iam.googleapis.com
+gcloud services enable servicemanagement.googleapis.com
+gcloud services enable serviceusage.googleapis.com
+gcloud services enable storage-api.googleapis.com
+gcloud services enable storage-component.googleapis.com
+gcloud services enable deploymentmanager.googleapis.com
+gcloud services enable resourcemanager.projects.delete
+----
 
 [#configure]
 == Configuring GKE to provision a server
