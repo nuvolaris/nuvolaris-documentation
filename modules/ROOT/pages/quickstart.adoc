@@ -198,11 +198,6 @@ If you have access to a Kubernetes cluster with:
 . The `nginx-ingress` installed
 . Knowledge of the IP address of your `nginx-ingress` controller
 
-
-Access to the `cluster-admin` role
-Block storage configured as the default storage class
-The `nginx-ingress` installed
-
 you can install Nuvolaris in it. You can read xref:installation:prereq-cluster.adoc[more details here].
 
 You can get this access either by provisioning a Kubernetes cluster in <<cloud, cloud>> or getting access to it from your system administrator.
