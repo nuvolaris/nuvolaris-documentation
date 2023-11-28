@@ -50,10 +50,9 @@ Once you have:
 . installed the CLI 
 . configured the services 
 . installed Docker Desktop
-. Make sure Docker Desktop its running before the next operation
 
-
-you can install Nuvolaris and its services in Docker with just this command:
+Make sure Docker Desktop its running before the next operation.
+You can install Nuvolaris and its services in Docker with just this command:
 
 ----
 nuv setup devcluster
