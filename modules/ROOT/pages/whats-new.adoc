@@ -23,7 +23,7 @@ You can then install Nuvolaris in the following cloud providers:
 * https://cloud.google.com/kubernetes-engine[Google GKE]
 * https://linode.com/[Akamai] (formerly Linode LKS)
 
-You can also install it  in private clouds on servers running:
+You can also install it in private clouds on servers running:
 
 * https://www.redhat.com/en/technologies/cloud-computing/openshift[RedHat OpenShift]
 * https://microk8s.io[Canonical MicroK8S]
