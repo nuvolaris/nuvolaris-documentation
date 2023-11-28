@@ -44,7 +44,7 @@ To chose the right runtime for the action, `nuv` will look for the extension of 
 // - `<action-name>.php.zip` if there is a `main.php`
 
 
-if no main is found, it will be just `.zip`.
+If no main is found, it will be just `.zip`.
 
 As for the Single File Action, the extension will determine the runtime version.
 
