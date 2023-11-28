@@ -7,24 +7,27 @@ The missing pieces are covered in the rest of the documentation.
 
 Of course, if this guide is not enough and things fail, you can always apply the rule: "if everything fails, read the manual".
 
-If you have access to kubernetes cluster, you can install Nuvolaris with:
-----
-nuv setup cluster
-----
-
 == Prerequisites
 
 Start ensuring the prerequsites are satisfied:
 
-. xref:installation:download.adoc[Download and install `nuv`], the Nuvolaris CLI, picking version suitable for your environment. We support 64-bit versions of recent Windows, MacOS and major Linux distributions.
+ 
+* xref:installation:download.adoc[Download and install `nuv`], the Nuvolaris CLI, picking version suitable for your environment. We support 64-bit versions of recent Windows, MacOS and major Linux distributions.
 
-. configure the services you want to enable. By default, Nuvolaris will install only the serverless engine, accessible in htt with no services enabled. 
+* Check that nuv is correctly installed: open the terminal and write:
+
+----
+    nuv -info
+----
+
+* Configure the services you want to enable. By default, Nuvolaris will install only the serverless engine, accessible in htt with no services enabled. 
 
 If you want to enable all the services, use:
 
 ----
 nuv config enable --all
 ----
+
 
 otherwise pick the services you want, among `--redis`, `--mongodb`, `--minio`, `--cron`, `--postgres`. Note that `--mongodb` is actually https://www.ferretdb.io[FerretDB] and requires Postgres which is implicitly also enabled. More details xref:installation:configure.adoc[here]. 
 
@@ -179,7 +182,7 @@ then <<cluster, install the cluster>>.
 [#cluster]
 == Cluster Install
 
-As mentioned before, if you have access to kubernetes cluster, you can install Nuvolaris with:
+In short, if you have access to kubernetes cluster, you can install Nuvolaris with:
 
 ----
 nuv setup cluster
