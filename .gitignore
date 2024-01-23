@@ -1,3 +1,7 @@
 .git-hooks
 .vscode/
 build/
+_*
+media/
+.env
+.ipynb_checkpoints/
