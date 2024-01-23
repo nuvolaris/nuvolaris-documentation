@@ -1,0 +1,90 @@
+version: '3'
+
+dotenv: [.env]
+
+vars:
+  A: "-a"
+
+tasks:
+
+  default: task --list-all
+  
+  setup:
+    - |
+      sudo apt-get -y install build-essential pkg-config libpango1.0-dev python3-dev ffmpeg graphviz     
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install ipython openai manim Pygments jupyter jupyter_manim lolviz
+
+  cli:
+    - |
+      source venv/bin/activate
+      export $(cat .env)
+      ipython
+
+  jupyter: 
+    - |
+      source venv/bin/activate
+      jupyter notebook --port=8080 --ip=10.1.0.2 --NotebookApp.password="$JUPYTER_PASSWORD"
+
+  _extract:
+    requires: {vars: [N]}
+    cmds:
+    - |
+      source venv/bin/activate
+      N={{.N}}
+      DIR=$(dirname {{.N}})
+      rm -f $DIR/_tmp.ipynb
+      jq <$N | grep -v '%%manim' | grep -v 'jupyter_manim' >$DIR/_tmp.ipynb
+      cd $DIR
+      jupyter nbconvert --to script _tmp.ipynb
+
+  _render:
+    requires: {vars: [N]}
+    cmds:
+    - |
+      source venv/bin/activate
+      DIR=$(dirname {{.N}})
+      cd $DIR
+      manim --flush_cache _tmp.py {{.A}} 
+
+  _concat:
+    requires: {vars: [N]}
+    cmds:
+    - |
+      source venv/bin/activate
+      DIR=$(dirname {{.N}})
+      cd $DIR
+      >_files.txt
+      cat _tmp.py | awk '/class/{sub(/.Scene.:$/, "", $2); print $2}' | while read F 
+      do echo "file media/videos/_tmp/1080p60/$F.mp4" >>_files.txt
+      done
+      #export FILES=""
+      #cat _tmp.py | awk '/class/{sub(/.Scene.:$/, "", $2); print $2}' | while read F
+      #do echo $F 
+      #   export FILES="$FILES -i media/videos/_tmp/1080p60/$F.mp4"
+      #   echo $FILES
+      #done
+      #echo FILES=$FILES
+      ffmpeg -f concat -i _files.txt -c copy video.mp4
+
+  render:
+    requires: {vars: [N]}
+    cmds:
+    - task: _extract
+    - task: _render
+    - task: _concat
+
+  #render:
+  #  requires: {vars: [N]}
+  #  cmds:
+  #  - task: _render
+  #  - |
+  #    source venv/bin/activate
+  #    N={{.N}}
+  #    DIR=$(dirname {{.N}})
+  #    cd $DIR
+  #    manim --flush_cache --media_dir ../media -a _tmp.py
+  #    ffmpet
+
+
