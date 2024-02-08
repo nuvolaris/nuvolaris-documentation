@@ -1,4 +1,4 @@
-* xref:index.adoc[🚧 Developer Guide]
+* xref:index.adoc[🚧 Development]
 ** xref:overview.adoc[🚧 Overview]
 ** xref:deployment.adoc[🚧 Deployment]
 ** xref:publishing.adoc[🚧 Publishing]
