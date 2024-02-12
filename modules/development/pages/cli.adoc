@@ -20,7 +20,6 @@ Now let's give an overview of the command line interface of Nuvolaris, namely th
 
 The command can be dowloaded in precompile binary format for many platform following the `Download` button on  https://www.nuvolaris.io/.
 
-
 XXXXXX
 
 
