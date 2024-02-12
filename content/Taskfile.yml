@@ -11,10 +11,10 @@ tasks:
   
   setup:
     - |
-      sudo apt-get -y install build-essential pkg-config libpango1.0-dev python3-dev ffmpeg      
+      sudo apt-get -y install build-essential pkg-config libpango1.0-dev python3-dev ffmpeg graphviz     
       python3 -m venv venv
       source venv/bin/activate
-      pip install ipython openai manim Pygments jupyter jupyter_manim
+      pip install ipython openai manim Pygments jupyter jupyter_manim lolviz
 
   cli:
     - |
@@ -34,7 +34,7 @@ tasks:
       source venv/bin/activate
       N={{.N}}
       DIR=$(dirname {{.N}})
-      rm $DIR/_tmp.ipynb
+      rm -f $DIR/_tmp.ipynb
       jq <$N | grep -v '%%manim' | grep -v 'jupyter_manim' >$DIR/_tmp.ipynb
       cd $DIR
       jupyter nbconvert --to script _tmp.ipynb

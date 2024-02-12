@@ -5,3 +5,7 @@ _*
 media/
 .env
 .ipynb_checkpoints/
+apikey.txt
+*.mp4
+content/venv/
+
