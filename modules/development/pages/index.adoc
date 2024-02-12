@@ -2,7 +2,4 @@
 
 NOTE: This section is Work in progress and some features described here are not implemented!
 
-* xref:overview.adoc[Overview]
-* xref:deployment.adoc[Deployment]
-* xref:publishing.adoc[Publishing]
-
+Intro to be written
