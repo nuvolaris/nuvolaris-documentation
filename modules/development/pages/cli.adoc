@@ -1,5 +1,21 @@
 ==  Nuvolaris CLI 
 
+The `nuv` command is the commnd line interface to Nuvolaris and let's you to manipulate the components of the system.
+
+To start working with you have to login in some Nuvolaris installation. The administrator should have provided with username, password and the URL to access the system. For example,  you are the user `msciab` and the system is available on `https://nuvolaris.dev`.
+
+In order to login type the folowing and enter you password.
+
+----
+nuv -login https://nuvolaris.dev max
+Enter Password: 
+----
+
+If the password is correct you are logged in the system and you can use the commands described below.
+
+
+=== Overview 
+
 Nuvolaris applications are composed by some "entities" that you can manipulate either using a command line interface or programmatically with code. 
 
 The command line interface is the `nuv` command line tools, that can be used directly on the command line or automated through scripts. You can also a REST API crafted explicitly for Nuvolaris. 
@@ -13,234 +29,140 @@ The entities available in Nuvolaris are:
 * *Rules*: Rules establish an association between a trigger and an action. Consequently, when a trigger is fired, all associated actions are invoked accordingly.
 * *Feeds*: These are specialized actions which must implement a pattern to send events delivered to actions through triggers and rules. In a sense they are the source of a triggers.
 
-[id=the-nuv-command]
 === The `nuv` command
 
-Now let's give an overview of the command line interface of Nuvolaris, namely the command `nuv`. 
+Let's now provide an overview of Nuvolaris' command line interface, focusing on the `nuv` command.
 
-The command can be dowloaded in precompile binary format for many platform following the `Download` button on  https://www.nuvolaris.io/.
-
-XXXXXX
+The command can be dowloaded in precompile binary format for many platform following the `Download` button on  https://www.nuvolaris.io/
 
 
-The `wsk` command is composed of many commands, each one with many subcommands. The general format is: 
+The `nuv` command is composed of many commands, each one with many subcommands. The general format is: 
 
 ----
-wsk <COMMAND> <SUB-COMMAND> <PARAMETERS> <FLAGS>
+nuv <entity> <command> <parameters> <flags>
 ----
 
-Note that `<PARAMETERS>` and `<FLAGS>` are different for each `<SUBCOMMAND>`, and for each `<COMMAND>` there are many subcommands.
+Note that `<paramtes>` and `<flags>` are different for each `<command>`, and for each `<entity>` there are many subcommands.
 
-The CLI itself is self-documenting and provides help when you do not feed enough parameters to it.  Just typing `wsk` you get the list of the main commands. If you type the `wsk` command then the subcommand you get the help for that subcommand. 
+The CLI shows documention in the form of help output if you do not provide enough parameters to it.  Start with  `nuv` to get the list of the main commands.  If you type the `nuv <entity>` get the help for that entity, and so on. 
 
-For example, let's see `wsk` output (showing the command)  and the more frequently used command, `action`, also showing the more common subcommands, shared with many others:
+For example, let's see `nuv` output (showing the command)  and the more frequently used command, `action`, also showing the more common subcommands, shared with many others:
 
 ----
-$ wsk
-Available Commands:
+$ nuv
+Welcome to Nuv, the all-mighty Nuvolaris Build Tool
+
+The top level commands all have subcommands.
+Just type nuv <command> to see its subcommands.
+
+Commands:
   action      work with actions
   activation  work with activations
+  invoke      shorthand for action invoke (-r is the default)
+  logs        shorthand for activation logs
   package     work with packages
+  result      shorthand for activation result
   rule        work with rules
   trigger     work with triggers
-  property    work with whisk properties
-  namespace   work with namespaces
-  list        list entities in the current namespace
-$ wsk action
-  create      create a new action             <1>
-  update      update an existing action       <2>
-  invoke      invoke action
-  get         get action                      <3>
-  delete      delete action                   <4>
-  list        list all action                 <5>
+  url         get the url of a web action$ wsk action
 ----
-<1> `create` available for actions, packages, rules and triggers
-<2> `update` available for actions, packages, rules and triggers
-<3> `get` available for actions, packages, rules and triggers, and also for activations, namespaces and properties
-<4> `delete` available for actions, package, rule and triggers
-<5> `list` available for actions, package, rule and triggers, and also for namespace and for everything.
 
-[TIP]
-Remembering that commands are the entities and the subcommands are C.R.U.D. (Create, get/list for Retrieve, Update, Delete)  gives you a good mnemonic of how the whole `wsk` command works.  Of course, there are individual cases, but we cover those in the discussion along the chapter.
-
-Subcommands also have flags, some specific for the subcommand. In the rest of the paragraph, we discuss all the subcommands. We provide the details of interesting flags as we meet them.
-
-
-==== Configure the wsk command
-
-The `wsk` command has many "properties" you can configure to access to an OpenWhisk environment. When you use the IBM Cloud, those properties are actually set for you by the `ibmcloud` main command. If you have a different OpenWhisk deployment, you may need to change the properties manually to access it. 
-
-You can see the currently configured properties with:
-
-----
-$ wsk property get
-Client key
-whisk auth            xxxxx:YYYYY                  <1>
-whisk API host        openwhisk.eu-gb.bluemix.net  <2>
-whisk API version    v1
-whisk namespace        _                            <3>
-whisk CLI version    2017-11-15T19:55:32+00:00
-whisk API build        2018-02-28T23:44:25Z
-whisk API build number    whisk-build-7922
-----
-<1> the API authentication  key (replaced in the example with `xxxxx:YYYYY`) - your own will be different
-<2> the OpenWhisk host you connect to control OpenWhisk with the CLI - depends on your location
-<3> your current namespace (the value `_` is a shorthand for you default namespace)
-
-If you install a local OpenWhisk environment,  you need to set those properties using  `wsk property set` manually. In particular, you need to set the `whisk auth` and the `whisk host` properties with values provided by your local installation.
-==== OpenWhisk Entity Names
-
-Let's see how we name things. As you may already know, in OpenWhisk we have the following entities with a name:
-
-* packages
-* actions
-* sequences
-* triggers
-* rules 
-* feeds
-
-There are precise naming conventions for them. Furthermore, those conventions are reflected in the structure of the URL used to invoke the various elements of OpenWhisk.
-
-First and before all, each user is placed in a *namespace*, and everything a user creates, belong to it. It acts as a workspace and also provides a base URL for what a user creates. Credentials for a user allows access to all the resources in its namespace.
-
-For example, when I registered in the IBM Cloud, my namespace was `/openwhisk@example.com_dev/`. It is  my username followed by `_dev` (for development). 
-
-You can create a namespace in an OpenWhisk installation if you are authorized, otherwise, a namespace is created for you by the system administrator. 
-
-Under a namespace you can create triggers, rules, actions and packages, so they will have names like:
-
-
-* `/openwhisk@example.com_dev/a-triggger`
-* `/openwhisk@example.com_dev/a-rule`
-* `/openwhisk@example.com_dev/a-package`
-* `/openwhisk@example.com_dev/an-action`
-
-When you create a package, you can put in its actions and feeds. So for example  below the package `a-package` you can have:
-
-
-*  `/openwhisk@example.com_dev/a-package/another-action`
-*  `/openwhisk@example.com_dev/a-package/a-feed`
-
-
-To recap:
-
-* The general format for entities is: `/namespace/package/entity`, but it can be reduced to `/namespacke/entity`
-* Under a `namespace` you can create triggers, rules, package, and actions but not feeds.
-* Under a `package` you can create actions and feeds, but not triggers, rules, and other packages.
-
+There are many more sub commands used for aministrative purposes. In this documentation we only focus on the   subcommands used to manage the main entities of Nuvolaris.
 
 [NOTE]
-Most of the time you do not need to specify the `namespace`. If you specify an action as a relative action (not starting with `/`) it will be placed in your current namespace. Note that the special namespace name of `_`  means "your current namespace" and the full namespace name automatically replace it.
+Keep in mind that commands represent entities, and their subcommands follow the CRUD model (Create, Retrieve via get/list, Update, Delete). This serves as a helpful mnemonic to understand the `nuv` command's functionality. While there are exceptions, these will be addressed throughout the chapter's discussion. Note however that some subcommand may have some specific flags.
 
-=== Define Packages
+==== Naming Entities
 
-In OpenWhisk, according to the naming conventions, all the `entities` are grouped in a *namespace*. We can put actions under a namespace. 
+Let's see how entities are named.
 
-Under a namespace, you can create *packages* to bundle actions together. A package is useful for two main purposes:
+Each user also has a  *namespace*, and everything a user creates, belongs to it. 
 
-* group related actions together, to reuse them and share with others;
-* share parameters, annotations etc;
-* provide base a URL to those related actions, useful for actions that refer each other, like in web applications. 
+The namespace is usually created by a system administrator.
 
-However, it is usually convenient to further groups actions. Packages are hence useful for grouping actions (and feeds, that are just actions too), treating them as a single unit. Furthermore, a package can also include parameters.
+Under a namespace you can create triggers, rules, actions and packages.
+
+Those entities will have a name like this:
+
+* `/mirella/demo-triggger`
+* `/mirella/demo-rule`
+* `/mirella/demo-package`
+* `/mirella/demo-action`
+
+When you create a package, you can put under it actions and feeds.  Those entities are named
 
 
-Let's do an example. We can just create a package `sample`, also providing a parameter, as follows.
+*  `/mirella/demo-package/demo-action`
+*  `/mirella/demo-package/demo-feed`
+
+[NOTE]
+In the commands you do not require to specify a namespace. If your user is `mirella`, your namespace is `/mirella`, and  You type `demo-package` to mean `/mirella/demo-package`, and `demo-package/demo-action` to mean `/mirella/demo-package/demo-action`.
+
+=== Managing Packages
+
+Nuvolaris groups actions and feeds in  *packages*  under a namespace.  A package lets you to:
+
+* group related actions together
+* share parameters and annotations (each action sees the parameters assigned to the package) 
+* provide to web actions a common prefix in the URL to invoke them.
+
+We can for example create a package `demo-package` and assign a parameter:
 
 
 ----
-$ wsk package create sample -p email michele@sciabarra.com
-ok: created package sample
+$ wsk package create demo-package -p email no-reply@nuvolaris.io
+ok: created package demo-package
 ----
 
-[TIP]
-Parameters of a package are available to all the actions in a package.
-
-
-Now you can `list` packages, `get` information from packages, `update` it (for example with different parameters) and finally  `delete` it.
+Let's go on with the commands to list, get informations, update it and finally delete a package:
 
 
 ----
-$ wsk package list
+$ nuv package list
 packages
-/openwhisk@example.com_dev/sample                                    private
-/openwhisk@example.com_dev/contact                                   private
-/openwhisk@example.com_dev/contactdb                                 private
-$ wsk package update sample -p email openwhisk@example.com
-ok: updated package sample
-$ wsk package get sample -s                     <1>
-package /openwhisk@example.com_dev/sample: Returns a result based on parameter email
+/mirella/demo-package/demo-action                               private
+$ nuv package update demo-package -p email info@nuvolaris.io
+ok: updated package demo-package
+$ nuv package get demo-package -s                     
+package /mirella/demo-package/sample: Returns a result based on parameter email
    (parameters: *email)
-$ wsk package delete sample
-ok: deleted package sample
+$ nuv package delete demo-package
+ok: deleted package demo-package
 ----
-<1> here we used the parameter `-s` to summarize information from the package
 
-Now let's see another essential function of a package: *binding*. 
+Note the `-s` flag to mean `summarize`.
 
-OpenWhisk allows to import (or *bind*)  to your namespace, packages from a third party, to customize them for your purposes. 
+=== Managing Actions
+
+The `nuv action` command is designed for managing actions, featuring the frequently utilized CRUD operations such as list, create, update, and delete. We will illustrate these operations through examples using a basic hello action. Let's assume we have the following file in current directory
 
 
-[NOTE]
-Keep in mind that credentials of a user allow access to all the resources under a namespace. As a result, to bind a package in our namespace has the effect of making it accessible to the other actions in the namespace. 
-
-For example, let's review first the packages available in the IBM Cloud. Of course, this cloud includes their solution for everyday needs like databases and message queues. The database available in the IBM Cloud is a scalable version of the popular no-SQL database CouchDB, i.e., Cloudant. 
-
-A package for Cloudant is available, as we can see below, and all we need to do to use it is to bind it. In the example below,  we use the configuration file `cloudant.json`. How to retrieve the configuration file is described in Chapter 2.
-
-----
-$ wsk package list /whisk.system
-packages                                              <1>
-/whisk.system/cloudant                                                 shared
-/whisk.system/websocket                                                shared
-/whisk.system/alarms                                                   shared
-/whisk.system/messaging                                                shared
-$ wsk package get /whisk.system/cloudant  -s | head -2 <2>
-package /whisk.system/cloudant: Cloudant database service
-   (parameters: *apihost, *bluemixServiceName, 
-    *dbname, *host, overwrite, *password, *username)   <3>
-$ wsk package bind /whisk.system/cloudant patterndb  \ <4>
-    -P cloudant.json -p dbname pattern                 <5>
-ok: created binding contactdb
-----
-<1> We are listing the packages available in the IBM Cloud. I edited and shortened the output for clarity.
-<2> We are inspecting the Cloudant package. We are limiting to see only the first two lines, those describing the package.
-<3> Note here the required parameters to use the database
-<4> we created here the binding to make the database accessible
-<5> We are using the file `cloudant.json` for the specifying `host`, `username` and `password`, and providing the `dbname` on the command line.
-
-[TIP]
-Two common flags, available also for actions, feed and triggers are `-p` and `-P`. With `-p <name> <value>` you can specify a parameter named `<name>` with value `<value>`. With the `-P` you can put some parameters in a JSON file that is assumed to be a map. Check paragraph <<pattern-prototype>> for an example of the format.
-
-=== Create Actions
-
-The command `wsk action` lets you manipulate actions. The more commonly used subcommands of this command are the CRUD actions to `list`, `create`,  `update` and `delete` actions. Let's demonstrate them with some examples.
-
-We create and use a simple `now` action for our examples:
-
-.The `now.js` script
+.The `hello.js` script
 ----
 function main(args) {
-  return { body: Date() }
+  return { body: "Hello" }
 }
 ----
 
-Now, if we want to deploy this simple action in the package `basics` we do:
+If we want to deploy this simple action in the package `demo` let's execute:
 
 ----
-$ wsk package update basics                   <1>
-ok: updated package basics
-$ wsk action create basics/now basics/now.js  <2>
-ok: created action basics/now
+$ nuv package update demo                  
+ok: updated package demo
+$ nuv action update demo/hello hello.js
+ok: update action demo/hello
 ----
-<1> Ensuring we have a `basics` package
-<2> Create the action from the file stored in  `basics/now.js`
 
-[TIP]
-You could omit the `basics` and place the action in the namespace and not in a package. We do not advise to do so, however, because gathering your actions in packages is always a good idea to improve modularity and reuse.
+Note we ensured the package exists before creating the action. 
 
-Now that the action has been deployed, we can invoke it. The simplest way is to call it as:
+We can actually omit the package name. In this case the package name is `default` that always exists in a namespace. However we advice to always place actions in some named package. 
 
+[NOTE]
+We used `update` but we could have used `create` if the actions does not exists, because `update` also creates the action if does not exists and `update` if it is already there. However, `creates` generates an error if an action does not exist while `update` does not, so it is practical to alwasy use `update` insteand of `create` (unless we really want an error for an existing action for some reasons).
+
+XXXX
+
+Once the action 
 ----
 $ wsk action invoke basics/now
 ok: invoked /_/basics/now with id fec047bc81ff40bc8047bc81ff10bc85
