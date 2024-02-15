@@ -6,8 +6,7 @@ nav:
 - modules/ROOT/nav.adoc
 - modules/mastrogpt/nav.adoc
 - modules/nuvolaris/nav.adoc
-- modules/cli/nav.adoc
 - modules/development/nav.adoc
+- modules/cli/nav.adoc
 - modules/installation/nav.adoc
-- modules/admin/nav.adoc
 
