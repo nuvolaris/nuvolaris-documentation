@@ -1,0 +1,6 @@
+* xref:index.adoc[🚧 CLI]
+** xref:entities.adoc[🚧 Entities]
+** xref:project.adoc[🚧 Project]
+** xref:statics.adoc[🚧 Statics]
+** xref:admin.adoc[🚧 Administration]
+** xref:debug.adoc[🚧 Debugging]

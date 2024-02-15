@@ -1,4 +1,0 @@
-* xref:index.adoc[🚧 Administration]
-** xref:admin-dns.adoc[🚧 DNS]
-** xref:admin-services.adoc[🚧 Services]
-** xref:admin-users.adoc[🚧 Users]

@@ -1,7 +1,0 @@
-= Administration
-
-This is the guide to administration and maintenance
-
-. xref:admin-dns.adoc[Manage the DNS]
-. xref:admin-services.adoc[Manage the Services]
-. xref:admin-users[Manage the Users]
