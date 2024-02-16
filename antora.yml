@@ -5,7 +5,7 @@ display_version: 3.1 mastrogpt
 nav:
 - modules/ROOT/nav.adoc
 - modules/mastrogpt/nav.adoc
-- modules/nuvolaris/nav.adoc
+- modules/tutorial/nav.adoc
 - modules/development/nav.adoc
 - modules/cli/nav.adoc
 - modules/installation/nav.adoc
