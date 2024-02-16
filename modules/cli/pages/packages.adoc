@@ -1,0 +1,31 @@
+=  Packages
+
+Nuvolaris groups actions and feeds in  *packages*  under a namespace.  A package lets you to:
+
+* group related actions together
+* share parameters and annotations (each action sees the parameters assigned to the package) 
+* provide to web actions a common prefix in the URL to invoke them.
+
+We can for example create a package `demo-package` and assign a parameter:
+
+----
+$ wsk package create demo-package -p email no-reply@nuvolaris.io
+ok: created package demo-package
+----
+
+Let's go on with the commands to list, get informations, update it and finally delete a package:
+
+----
+$ nuv package list
+packages
+/mirella/demo-package/demo-action                               private
+$ nuv package update demo-package -p email info@nuvolaris.io
+ok: updated package demo-package
+$ nuv package get demo-package -s                     
+package /mirella/demo-package/sample: Returns a result based on parameter email
+   (parameters: *email)
+$ nuv package delete demo-package
+ok: deleted package demo-package
+----
+
+Note the `-s` flag to mean `summarize`.

@@ -1,0 +1,200 @@
+=  Triggers and Rules
+
+Now let's see how to create a trigger. 
+
+A trigger is merely a name for an arbitrary event. A trigger by itself does nothing. However with the help of rules, it becomes useful, because when a trigger is activated, it invokes all the associated rules, as shown in <<triggers>>.
+
+[id=triggers]
+.Triggers and rules
+image::dot/triggers-rules.dot.png[]
+
+Let's build now an example to see what triggers do. We use a simple action that does nothing except logging its activation. We use it to trace what is happening when you activate triggers. Note we start to construct the example now, but we complete it after we introduced rules, in the next paragraph.
+
+So, let's prepare our example, deploying first a simple `log.js` actions, that just logs its name:
+
+----
+function main(args) {
+  console.log(args.name)
+  return {}
+}
+----
+
+Then, we  deploy it twice, with two different names:
+
+----
+$ wsk action update basics/log-alpha -p name alpha basics/log.js
+ok: updated action basics/log-alpha
+$ wsk action update basics/log-beta -p name beta basics/log.js
+ok: updated action basics/log-alpha
+----
+
+By themselves, those actions do nothing except leaving a trace of their activation in the logs:
+
+----
+$ wsk action invoke basics/log-alpha                 <1>
+ok: invoked /_/basics/log-alpha with id 320b50d841064d0b8b50d841060d0bff
+$ wsk action invoke basics/log-beta                  <2>
+ok: invoked /_/basics/log-beta with id 990d284f090c45328d284f090c45320d
+$ wsk activation list --limit 2                      <3>
+activations 
+990d284f090c45328d284f090c45320d log-beta
+320b50d841064d0b8b50d841060d0bff log-alpha
+$ wsk activation poll --since-seconds 60 --exit 20   <4>
+Enter Ctrl-c to exit.
+Polling for activation logs
+Activation: 'log-beta' (e6b76a85c5584579b76a85c558957957)
+[
+    "2018-03-17T17:32:06.364836123Z stdout: beta"
+]
+Activation: 'log-alpha' (e92e4466ee8f4684ae4466ee8f6684da)
+[
+    "2018-03-17T17:32:00.842842699Z stdout: alpha"
+]
+----
+<1> invoking the action `log-alpha`
+<2> invoking the action `log-beta`
+<3> showing a list of activations
+<4> poll the activations (since 60 seconds, for 20 seconds) to see which activations happened and what they logged
+
+Now we are ready to create a trigger, using the command `wsk trigger create` as in <<creating-trigger>>.
+
+[NOTE]
+Of course, there is not only `create` but also `update` and  `delete`, and they work as expected, updating and deleting triggers. In the next paragraph, we see also the `fire` command, that needs you first create rules to do something useful.
+
+[id=creating-trigger]
+.Creating a trigger and inspecting it
+----
+$ wsk trigger create basics-alert
+ok: created trigger alert
+$ wsk trigger list
+triggers
+/openwhisk@example.com_dev/basics-alert                                     private
+$ wsk trigger get basics-alert
+ok: got trigger alert
+{
+    "namespace": "openwhisk@example.com_dev",
+    "name": "basics-alert",
+    "version": "0.0.1",
+    "limits": {},
+    "publish": false
+}
+----
+
+[WARNING]
+Triggers are a "namespace level" entity, and you cannot put them in a package.
+
+==== Associate Triggers to Actions with Rules
+
+Once we have a trigger and some actions we can create rules for the trigger. A rule connects the trigger with an action, so if you fire the trigger, it will invoke the action.  Let's see in practice in next listing.
+
+[id=creating-rules]
+.An example of creating a rule, triggering an event and inspecting the logs.
+----
+$ wsk rule create basics-alert-alpha \
+       basics-alert basics/log-alpha                      <1>
+ok: created rule basics-alert-alpha
+$ wsk trigger fire basics-alert                           <2>      
+ok: triggered /_/alert with id 86b8d33f64b845f8b8d33f64b8f5f887
+$ wsk activation logs 86b8d33f64b845f8b8d33f64b8f5f887 \  <3>
+   | jq                                                   <4>
+{
+  "statusCode": 0,
+  "success": true,
+  "activationId": "b57a1f1dc3414b06ba1f1dc341ab0626",     <5>
+  "rule": "openwhisk@example.com_dev/basics-alert-alpha",
+  "action": "openwhisk@example.com_dev/basics/alpha"
+}
+
+$ wsk activation logs b57a1f1dc3414b06ba1f1dc341ab0626    <6>
+2018-03-17T18:10:48.471777977Z stdout: alpha
+----
+<1> creating a rule to activate the action `basics/log-alpha` when the trigger `basics-alert` is fired
+<2> we can now fire the rule, it returns an activation id
+<3> let's inspect the activation id 
+<4> we piped the output in the `jq` utility to make the output more readable
+<5> in turn the rule invoked an action with this activation id
+<6> let's see what the rule did
+
+
+[NOTE]
+As for all the other commands, you can execute `list, `update` and `delete` by name.
+
+A trigger can enable multiple rules, so firing one trigger actually activates multiple actions. 
+
+Let's try this feature. However, before starting, let's open another terminal window and enable polling (with the command `wsk activation poll`) to see what happens.
+
+----
+$ wsk rule create basics-alert-beta basics-alert basics/log-beta
+ok: created rule basics-alert-beta
+$ wsk trigger fire basics-alert
+ok: triggered /_/basics-alert with id a731a03603bb4183b1a03603bb8183ce
+----
+
+If we check the logs we should see something like this:
+
+----
+$ wsk activation poll
+Enter Ctrl-c to exit.
+Polling for activation logs
+
+Activation: 'alert' (a731a03603bb4183b1a03603bb8183ce)    <1>
+[
+    "{\"statusCode\":0,\"success\":true,\
+    \"activationId\":\"3024596c57ac4c10a4596c57ac7c1042\",\
+    \"rule\":\"openwhisk@example.com_dev/basics-alert-alpha\",\"action\":\"openwhisk@example.com_dev/basics/log-alpha\"}",
+    "{\"statusCode\":0,\"success\":true,\
+    \"activationId\":\"6d88836c860d405f88836c860d305f83\",\"rule\":\"openwhisk@example.com_dev/basics-alert-beta\",\
+    \"action\":\"openwhisk@example.com_dev/basics/log-beta\"}"
+]
+
+Activation: 'log-alpha' (3024596c57ac4c10a4596c57ac7c1042) <2>
+[
+    "2018-03-17T18:34:58.633797676Z stdout: alpha"
+]
+
+Activation: 'log-beta' (6d88836c860d405f88836c860d305f83)  <3>
+[
+    "2018-03-17T18:34:58.629413468Z stdout: beta"
+]
+----
+<1> The trigger activation invoked 2 actions
+<2> This is the log of the first action
+<3> This is the log of the second action
+
+
+Rules can also be enabled and disabled without removing them. As the last example, we try to disable the first rule and fire the trigger again to see what happens. As before, first, we start the log polling to see what happened.
+
+----
+$ wsk rule disable basics-alert-alpha     <1>
+ok: disabled rule basics-alert-alpha
+$ wsk trigger fire basics-alert           <2>
+ok: triggered /_/basics-alert with id 0f4fa69d910f4c738fa69d910f9c73af
+----
+<1> disabling rule alert-alpha
+<2> firing the trigger again
+
+Moreover, if we go and check the result, we see this time only the action `log-beta` was invoked.
+
+----
+$ wsk activation poll
+Enter Ctrl-c to exit.
+Polling for activation logs
+
+Activation: 'basics-alert' (0f4fa69d910f4c738fa69d910f9c73af)
+[
+    "{\"statusCode\":0,\"success\":true,\"activationId\":\"a8221c7d7fe94e22a21c7d7fe9ce223c\",\
+    \"rule\":\"openwhisk@example.com_dev/alert-beta\",\
+    \"action\":\"openwhisk@example.com_dev/basics/log-beta\"}",
+    "{\"statusCode\":1,\"success\":false,\
+    \"rule\":\"openwhisk@example.com_dev/basics-alert-alpha\",\
+    \"error\":\"Rule 'openwhisk@example.com_dev/basics-alert-alpha' is inactive, \
+    action 'openwhisk@example.com_dev/basics/log-alpha' \
+    was not activated.\",\
+    \"action\":\"openwhisk@example.com_dev/basics/log-alpha\"}"
+]
+
+Activation: 'log-beta' (a8221c7d7fe94e22a21c7d7fe9ce223c)
+[
+    "2018-03-18T07:27:14.01530577Z  stdout: beta"
+]
+----
