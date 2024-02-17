@@ -27,6 +27,6 @@ If the password is correct you are logged in the system and you can use the comm
 
 Once logged in, you can:
 
-* learn how to manage Nuvolaris xref:entities.adoc[entities]:
+* learn how to manage Nuvolaris xref:entities.adoc[entities]
 * learn how to deploy xref:project.adoc[projects] and xref:assets.adoc[web assets]
 * learn how to xref:admin.adoc[administer the system] and xref:debug.adoc[debug the system]
