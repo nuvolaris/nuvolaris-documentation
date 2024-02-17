@@ -1,5 +1,5 @@
-* xref:index.adoc[🚧 CLI]
-** xref:entities.adoc[🚧 Entities]
+* xref:index.adoc[CLI]
+** xref:entities.adoc[Entities]
 *** xref:packages.adoc[🚧 Packages]
 *** xref:actions.adoc[🚧 Actions]
 *** xref:activations.adoc[🚧 Activations]

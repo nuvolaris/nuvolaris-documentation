@@ -2,13 +2,11 @@
 
 The `nuv` command is the commnd line interface to Nuvolaris 
 
-
 It let's you to install and manipulate the components of the system.
 
 If it is not already inclued in the development environment provided you can xref:installation:download.adoc[download an installer from here]  
 
-
-== Logging
+== Login into the system
 
 To start working with you have to login in some Nuvolaris installation. 
 
@@ -19,7 +17,7 @@ For example, let's assumoe you are the user `mirella` and the system is availabl
 In order to login type the folowing and enter you password.
 
 ----
-nuv -login https://nuvolaris.dev max
+nuv -login https://nuvolaris.dev mirella
 Enter Password: 
 ----
 
@@ -29,12 +27,6 @@ If the password is correct you are logged in the system and you can use the comm
 
 Once logged in, you can:
 
-* learn an overview about Nuvolaris xref:entities.adoc[entities]:
-*** xref:packages.adoc[packages]
-*** xref:actions.adoc[actions]
-*** xref:activations.adoc[activations]
-*** xref:sequences.adoc[sequences]
-*** xref:triggers.adoc[triggers]
-*** xref:rules.adoc[rules]
+* learn how to manage Nuvolaris xref:entities.adoc[entities]:
 * learn how to deploy xref:project.adoc[projects] and xref:assets.adoc[web assets]
-* learn how to  xref:admin.adoc[administer the system] and xref:debug.adoc[debug the system]
+* learn how to xref:admin.adoc[administer the system] and xref:debug.adoc[debug the system]
