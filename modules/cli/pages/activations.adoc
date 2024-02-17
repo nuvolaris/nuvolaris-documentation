@@ -1,18 +1,17 @@
 = Activations
 
-In the preceding paragraph, we saw when we invoke an action without waiting for the result; we receive as an answer just an invocation id.
-
-This fact brings us to the argument of this paragraph: the subcommand `wsk activation` to manage the results of invocations.
+Wen you invoke an action with `nuv action invoke` you receive as an an answer just an invocation id.
 
 
-To explore it, let's create a simple `echo.js` file:
+The invocation id allows to read results and outputs produced by the execution of an action 
 
 
-.A simple echo with logging for testing activations
+Let's demonstrate how it works modifying the `hello.js` adding a command to log some output/
+
 ----
 function main(args) {
-  console.log(args)
-  return args
+  console.log("Hello")
+  return { "body": "Hello"}
 }
 ----
 

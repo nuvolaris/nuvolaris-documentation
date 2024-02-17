@@ -1,0 +1,14 @@
+# TODO
+
+- cli
+   - nuv ide
+
+- documentation
+  - cli
+  - actions
+  - runtimes
+
+- ide
+  - use teller
+  - build the image
+  - build the ide with theia

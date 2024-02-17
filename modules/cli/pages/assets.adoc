@@ -1,3 +1,4 @@
+= Upload Web Assets
 TODO
 
 // == Static frontend
