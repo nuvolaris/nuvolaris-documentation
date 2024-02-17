@@ -1,89 +1,29 @@
 = Upload Web Assets
-TODO
 
-// == Static frontend
+The `web` folder in the root of a project is used to deploy static frontends. A static front-end is a collection of static asset under a given folder that will be published in a web server under a path.
 
-// The `web` folder in the root of a project is used to deploy static frontends. A static front-end is a collection of static asset under a given folder that will be published in a web server under a path.
+Every uses has associated a web accessible static area where you can upload static assets.
 
-// The path that will serve the static asset is determined by:
-// * Hostname
-// * Location of the asset
+You can upload a folder in this web area with
 
-// === Hostname
+`nuv web upload <folder>`
 
-// In general, for each namespace, there will be a `https://<namespace>.<domain>` website where to publish the resources. For the local deployment, there will be a website `http://127.0.0.1:8080` where the resources are published, with the namespace and the domain ignored.
 
-// === Path detection
+Synopsis:
 
-// The path where the assets are published depends on the path in the `web` hierarchy.
+----
+Subcommand: nuv web
 
-// The sub-folder `web` is published as "/".
+Commands to upload and manage static content.
 
-// Any subfolder `web` under `packages/<package>/web` is published under `/<packages>/`.
+Usage:
+  web upload <folder> [--quiet] [--clean]
 
-// Any subfolder `web` under `packages/default/<action>\web` is published as `/<action>`.
+Commands:
+  upload <folder>  Uploads a folder to the web bucket in Nuvolaris.
 
-// Any subfolder `web` under `packages/<package>/<action>/web` is published as `/<package>/<action>`
+Options:
+  --quiet   Do not print anything to stdout.
+  --clean   Remove all files from the web bucket instead.
+----
 
-// What is published (files collected) and how it is built is defined by the next paragraph.
-
-// === Building and Collecting
-
-// In every folder `web` it will check if there is a `nuvolaris.json`
-
-// If there is not a `nuvolaris.json` and not a `package.json` it will assume this base `nuvolaris.json`:
-
-// ----
-// {
-//   "collect": ".",
-//   "install": "echo nothing to install",
-//   "build": "echo nothing to build"
-// }
-// ----
-
-// If instead there is `packages.json`, it will assume this base `nuvolaris.json`:
-
-// ----
-// {
-//   "collect": "public",
-//   "install": "npm install",
-//   "build": "npm run build"
-// }
-// ----
-
-// Then it will read the `nuvolaris.json` replacing the keys in it with the default ones.
-
-// The generated taskfile will execute at the deployment step:
-
-// * the command defined by `install` only if there is not a `node_modules`
-// * the command defined by `build` always
-// * then it will collect for publishing (creating a crd instance) the files in the folder defined by `collect`
-
-// It is recommended that `nuv scan` does not execute directly the command but instead, it delegates to another command like `nuv build` and in turn the creation of `crd` to another `nuv crd` subcommand, after changing to the corresponding subfolder. All those commands should work by default in the current folder. 
-
-// == The Complete Mapping
-
-// To summarize, the mapping for packages is:
-
-// [cols="3*", options="header"]
-// |===
-// | Folder Name | Nuvolaris Package | Type
-// | Root directory |  | 
-// | packages |  | 
-// | packages/<package_name> | <package_name> | Nuvolaris Package
-// | <file_name> | default | Single File Action
-// | packages/<package_name>/<file_name> | <package_name> | Single File Action
-// | packages/<package_name>/<subfolder_name> | <package_name> | Multi File Action
-// |===
-
-// And the mapping for web folders is:
-
-// [cols="2*", options="header"]
-// |===
-// | Folder Name | Endpoint
-// | Root directory | 
-// | web | `/`
-// | packages/<package_name>/web | `/<package_name>/`
-// | packages/<default>/<action_name>/web | `packages/default/<action_name>\web`
-// | packages/<package_name>/<action_name>web | `/<package>/<action>`
-// |===

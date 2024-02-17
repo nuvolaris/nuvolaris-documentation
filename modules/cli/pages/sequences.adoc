@@ -1,97 +1,46 @@
-==== Managing Sequences
+= Sequences
 
-An essential feature of OpenWhisk is the ability to chain action in sequences, creating actions that use, as an input, the output of another action.
+You can combine actions in sequences and invoke them as a single action.
+
+Let's demostrate this combining the hello action with an other action encoding in base 64 the output.
 
 
-Let's do a practical example of a similar action sequence. We implement a word count application, separating it in two actions, put in a sequence. The first action splits the input, that is supposed to be a text file, in "words", while the second retrieves the words and produce a map as a result. In the map,  each word is then shown with its frequency.
+Let's write this function to encode the input in base 64:
 
-Let's start with the first action, `split.js`, as follows:
-
-----
+-----
+// file: b64.js
 function main(args) {
-    let words = args.text.split(' ')
-    return {
-        "words": words
-    }
+    let body = args['body'] || ""
+    return { body: Buffer.from(body).toString("base64") }
 }
-----
+-----
 
 
-You can deploy and test it, feeding a simple string:
-
-
-----
-$ wsk action update basics/split basics/split.js
-ok: updated action basics/split
-$ wsk action invoke basics/split \
-  -p text "the pen is on the table" -r \
-  | tee save.json <1>
+-----
+$ nuv action create demo/b64 b64.js
+ok: created action demo/b64
+$ nuv invoke demo/b64 -p body test
 {
-    "words": [
-        "the",
-        "pen",
-        "is",
-        "on",
-        "the",
-        "table"
-    ]
+    "body": "dGVzdA=="
 }
-----
-<1> note here we are saving the output in a file `save.json`
+-----
 
 
-Now it is time to do the second step, with this `count.js` actions:
+We can now create a sequence combining the `hello` action with the `b64` action:
 
-----
-function main(args) {
-    let words = args.words
-    let map = {}
-    let n = 0
-    for(word of words) {
-       n = map[word]
-       map[word] = n ? n+1 : 1
-    }
-    return map
-}
-----
-
-
-We can now deploy it and check the result, feeding the output of the first action as input:
-
-----
-$ wsk action update basics/count count.js
-ok: updated action basics/count
-$ wsk action invoke basics/count -P save.json -r
+-----
+$  nuv action create demo/seq --sequence demo/hello,demo/b64
+ok: created action demo/seq
+$ nuv invoke demo/seq
 {
-    "is": 1,
-    "on": 1,
-    "pen": 1,
-    "table": 1,
-    "the": 2
+  "body": "SGVsbG8="
 }
-----
+-----
 
 
-Now we have two actions, the second able to take the output of the first as input,  we can create a sequence:
+Let's verify the output of the sequence:
 
-----
-wsk action update basics/wordcount \
-  --sequence basics/split,basics/count <1>
-----
-<1> note here we are specifying a comma-separated list of existing action names
-
-The sequence can be now invoked as a single action, so we can feed the text input and see the result:
-
-----
-$ wsk action invoke basics/wordcount -r -p text  \
-"can you can a can as a canner can can a can"
-{
-    "a": 3,
-    "as": 1,
-    "can": 6,
-    "canner": 1,
-    "you": 1
-}
-----
-
-[id=actions-including-libraries]
+-----
+$ echo SGVsbG8= | base64 -d
+Hello
+-----

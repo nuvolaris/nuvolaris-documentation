@@ -19,14 +19,13 @@ Let's now provide an overview of Nuvolaris' command line interface, focusing on 
 
 The command can be dowloaded in precompile binary format for many platform following the `Download` button on  https://www.nuvolaris.io/
 
-
 The `nuv` command is composed of many commands, each one with many subcommands. The general format is: 
 
 ----
 nuv <entity> <command> <parameters> <flags>
 ----
 
-Note that `<paramtes>` and `<flags>` are different for each `<command>`, and for each `<entity>` there are many subcommands.
+Note that `<parameters>` and `<flags>` are different for each `<command>`, and for each `<entity>` there are many subcommands.
 
 The CLI shows documention in the form of help output if you do not provide enough parameters to it.  Start with  `nuv` to get the list of the main commands.  If you type the `nuv <entity>` get the help for that entity, and so on. 
 

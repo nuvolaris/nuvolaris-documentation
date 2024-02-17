@@ -22,4 +22,4 @@ Options:
   --minio                 enable minio
   --postgres              enable postgres
   --storagequota=<quota>
-----
+-----

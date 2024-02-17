@@ -1,62 +1,57 @@
 = Activations
 
-Wen you invoke an action with `nuv action invoke` you receive as an an answer just an invocation id.
-
+Wen you invoke an action with `nuv action invoke` you receive as an answer just an invocation id.
 
 The invocation id allows to read results and outputs produced by the execution of an action 
 
+Let's demonstrate how it works modifying the `hello.js` adding a command to log some output.
 
-Let's demonstrate how it works modifying the `hello.js` adding a command to log some output/
-
-----
+-----
 function main(args) {
   console.log("Hello")
   return { "body": "Hello"}
 }
-----
+-----
 
 Now, let's deploy and invoke it (with a parameter `hello=world`) to get the activation id:
 
 ----
-$ wsk action create basics/echo echo.js
-ok: created action basics/echo
-$ wsk action invoke basics/echo -p hello world
-ok: invoked /_/basics/echo with id 82deb0ec37524a9e9eb0ec37525a9ef1
+$ nuv action update demo/hello hello.js
+ok: updated action demo/hello
+$ nuv action invoke demo/hello
+ok: invoked /_/demo/hello with id 0367e39ba7c74268a7e39ba7c7126846
 ----
 
+Associated with every invocation there is an activation id (in the example is `0367e39ba7c74268a7e39ba7c7126846`).
 
-As we explained in Chapter 1, when actions are invoked, they are identified by an activation id, used to save and retrieve results and logs from the database.
+We use this id to retrieve results of the invocation with `nuv activation result` or its shortcut, just `nuv result`, and we can retrieve the logs using  `nuv activation logs` or just `nuv logs`.
 
-Now, the long alphanumeric (actually, hexadecimal) identifier displayed is the activation id. We can now use with it the option `result` to get the result, and `logs` to get the logs.
-
-----
-$ ID=$(wsk action invoke basics/echo -p hello world \
-  | awk '{ print $6}')
-$ wsk activation result $ID
+-----
+$ nuv result 0367e39ba7c74268a7e39ba7c7126846
 {
-    "hello": "world"
+  "body": "Hello"
 }
-$ wsk activation logs $ID
-2018-03-15T18:17:36.551486467Z stdout: { hello: 'world' }
-----
+$ nuv logs 0367e39ba7c74268a7e39ba7c7126846
+2024-02-17T20:01:31.901124753Z stdout: Hello
+-----
 
-[TIP]
-You can also use the `wsk result --last` to get the result of the last invoked action.
+You can list the activations with `nuv activation list` and limit the number with `--limit` if you are interested in a subset. 
 
-The `activation` subcommand has another two useful options. 
-
-One is `list`. It will return a list of *all* the activations in chronological order. Since the list can be very long, it is useful always to use the option `--limit <n>` to see only the latest `<n>`:
 
 ----
-$ wsk activation list --limit 4
-activations
-82deb0ec37524a9e9eb0ec37525a9ef1 echo
-219bacbdb838449d9bacbdb838149de2 echo
-1b75cd02fd1f4782b5cd02fd1f078284 echo
-6fa117115aa74f90a117115aa7cf90e0 now
+$ nuv activation list  --limit 5
+Datetime            Activation ID                    Kind      Start Duration   Status  Entity
+2024-02-17 20:01:31 0367e39ba7c74268a7e39ba7c7126846 nodejs:18 warm  8ms        success dashboard/hello:0.0.1
+2024-02-17 20:00:00 f4f82ee713444028b82ee71344b0287d nodejs:18 warm  5ms        success dashboard/hello:0.0.1
+2024-02-17 19:59:54 98d19fe130da4e93919fe130da7e93cb nodejs:18 cold  33ms       success dashboard/hello:0.0.1
+2024-02-17 17:40:53 f25e1f8bc24f4f269e1f8bc24f1f2681 python:3  warm  3ms        success dashboard/index:0.0.2
+2024-02-17 17:35:12 bed3213547cc4aed93213547cc8aed8e python:3  warm  2ms        success dashboard/index:0.0.2
 ----
 
-Another useful option (and probably the most useful)  is `poll`. With this option, you can continuously display logs for actions as they happen.  It is a handy option for debugging because let you to monitor what is going on in the remote serverless system.
+Note also the `--since` useful to show activation from a given timestamp (you can show a timestamp with  `date +%s`).
 
-[TIP]
-You can poll for just an action or for all the actions at the same time.
+Since it can be quite annoying to keep trace of the activation id, there are two useful alternatives. 
+
+With `nuv result --last`  and  `nuv logs --last` you can retrieve just the last result or log.
+
+With `nuv activation poll` the cli starts a loop and display all the activations while they happen.
