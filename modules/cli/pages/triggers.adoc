@@ -1,20 +1,18 @@
-=  Triggers 
+= Triggers
 
-Now let's see what trigger is and how to use it. 
+Now let's see what a trigger is and how to use it.
 
-We can define a *trigger* as an object representing an event source that triggers the execution of *actions*. When activated by an event, associated actions are executed
+We can define a *trigger* as an object representing an event source that triggers the execution of *actions*. When activated by an event, associated actions are executed.
 
 In other words, a trigger is a mechanism that listens for specific events or conditions and initiates actions in response to those events. It acts as the starting point for a workflow.
 
-[id=triggers]
+[[triggers]]
 .Triggers and rules
 image::trigger.png["Trigger example",align="center"]
 
+Let's now build an example to see what triggers do. We use a simple action that does nothing except logging its activation. We will use it to trace what is happening when you activate triggers. Note that we start constructing the example now, but we will complete it after we introduce rules in the next paragraph.
 
-Let's build now an example to see what triggers do. 
-We use a simple action that does nothing except logging its activation. We use it to trace what is happening when you activate triggers. Note we start to construct the example now, but we complete it after we introduced rules, in the next paragraph.
-
-== Example: Sending Slack Notifications When Users Visit Certain Pages on our website
+== Example: Sending Slack Notifications When Users Visit Certain Pages on Our Website
 
 Let's consider a scenario where we want to send Slack notifications when users visit specific pages on our website.
 
@@ -28,11 +26,13 @@ PageVisitTrigger:
   parameters:
     page: string
 ----
+
 [NOTE]
-Of course, there is not only `create` but also `update` and  `delete`, and they work as expected, updating and deleting triggers. In the next paragraph, we see also the `fire` command, that needs you first create rules to do something useful.
+Of course, there are not only `create` but also `update` and `delete`, and they work as expected, updating and deleting triggers. In the next paragraph, we will also see the `fire` command, which requires you to first create rules to do something useful.
 
 === Step 2: Associate the Trigger with an Action
-Next, we create an action named "SendSlackNotification" that sends a notification to Slack when invoked. We then associate this action with our "PageVisitTrigger" trigger, specifying that it should be triggered when users visit certain pages.
+
+Next, we create an action named "SendSlackNotification" that sends a notification to Slack when invoked. Then, we associate this action with our "PageVisitTrigger" trigger, specifying that it should be triggered when users visit certain pages.
 
 [source,yaml]
 ----
