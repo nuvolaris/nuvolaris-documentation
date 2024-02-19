@@ -12,7 +12,7 @@ image::trigger.png["Trigger example",align="center"]
 
 Let's now build an example to see what triggers do. We use a simple action that does nothing except logging its activation. We will use it to trace what is happening when you activate triggers. Note that we start constructing the example now, but we will complete it after we introduce rules in the next paragraph.
 
-== Example: Sending Slack Notifications When Users Visit Certain Pages on Our Website
+== Example: Sending Slack Notifications 
 
 Let's consider a scenario where we want to send Slack notifications when users visit specific pages on our website.
 
@@ -25,6 +25,20 @@ We create a trigger named "PageVisitTrigger" that listens for events related to 
 PageVisitTrigger:
   parameters:
     page: string
+----
+
+To create the trigger, you can use the following command:
+
+[source,shell]
+----
+$ nuv trigger create PageVisitTrigger
+----
+
+Once the trigger is created, you can update it to add parameters, such as the page parameter:
+
+[source,shell]
+----
+$ nuv trigger update PageVisitTrigger --param page homepage
 ----
 
 [NOTE]
@@ -47,6 +61,13 @@ actions:
           url: /homepage
         - page: contact
           url: /contact
+----
+
+To associate the trigger with an action, you can use the following command:
+
+[source,shell]
+----
+$ nuv rule create TriggerRule PageVisitTrigger SendSlackNotification
 ----
 
 In this example, whenever a user visits either the homepage or the contact page, the "SendSlackNotification" action will be triggered, resulting in a Slack notification being sent.
