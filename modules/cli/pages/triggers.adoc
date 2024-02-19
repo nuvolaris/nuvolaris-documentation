@@ -7,7 +7,7 @@ We can define a *trigger* as an object representing an event source that trigger
 In other words, a trigger is a mechanism that listens for specific events or conditions and initiates actions in response to those events. It acts as the starting point for a workflow.
 
 [[triggers]]
-.Triggers and rules
+.Triggers and actions
 image::trigger.png["Trigger example",align="center"]
 
 == Example: Sending Slack Notifications 
