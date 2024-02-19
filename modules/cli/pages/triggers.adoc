@@ -6,7 +6,7 @@ We can define a trigger as an object representing an event source that triggers 
 
 [id=triggers]
 .Triggers and rules
-image::trigger.png["Trigger example",align="center"]
+image::trigger.jpg["Trigger example",align="center"]
 
 
 Let's build now an example to see what triggers do. We use a simple action that does nothing except logging its activation. We use it to trace what is happening when you activate triggers. Note we start to construct the example now, but we complete it after we introduced rules, in the next paragraph.
