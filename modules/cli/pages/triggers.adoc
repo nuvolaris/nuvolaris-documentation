@@ -22,24 +22,24 @@ function main(args) {
 Then, we  deploy it twice, with two different names:
 
 ----
-$ wsk action update basics/log-alpha -p name alpha basics/log.js
+$ nuv action update basics/log-alpha -p name alpha basics/log.js
 ok: updated action basics/log-alpha
-$ wsk action update basics/log-beta -p name beta basics/log.js
+$ nuv action update basics/log-beta -p name beta basics/log.js
 ok: updated action basics/log-alpha
 ----
 
 By themselves, those actions do nothing except leaving a trace of their activation in the logs:
 
 ----
-$ wsk action invoke basics/log-alpha                 <1>
+$ nuv action invoke basics/log-alpha                 <1>
 ok: invoked /_/basics/log-alpha with id 320b50d841064d0b8b50d841060d0bff
-$ wsk action invoke basics/log-beta                  <2>
+$ nuv action invoke basics/log-beta                  <2>
 ok: invoked /_/basics/log-beta with id 990d284f090c45328d284f090c45320d
-$ wsk activation list --limit 2                      <3>
+$ nuv activation list --limit 2                      <3>
 activations 
 990d284f090c45328d284f090c45320d log-beta
 320b50d841064d0b8b50d841060d0bff log-alpha
-$ wsk activation poll --since-seconds 60 --exit 20   <4>
+$ nuv activation poll --since-seconds 60 --exit 20   <4>
 Enter Ctrl-c to exit.
 Polling for activation logs
 Activation: 'log-beta' (e6b76a85c5584579b76a85c558957957)
@@ -56,7 +56,7 @@ Activation: 'log-alpha' (e92e4466ee8f4684ae4466ee8f6684da)
 <3> showing a list of activations
 <4> poll the activations (since 60 seconds, for 20 seconds) to see which activations happened and what they logged
 
-Now we are ready to create a trigger, using the command `wsk trigger create` as in <<creating-trigger>>.
+Now we are ready to create a trigger, using the command `nuv trigger create` as in <<creating-trigger>>.
 
 [NOTE]
 Of course, there is not only `create` but also `update` and  `delete`, and they work as expected, updating and deleting triggers. In the next paragraph, we see also the `fire` command, that needs you first create rules to do something useful.
@@ -64,12 +64,12 @@ Of course, there is not only `create` but also `update` and  `delete`, and they 
 [id=creating-trigger]
 .Creating a trigger and inspecting it
 ----
-$ wsk trigger create basics-alert
+$ nuv trigger create basics-alert
 ok: created trigger alert
-$ wsk trigger list
+$ nuv trigger list
 triggers
 /openwhisk@example.com_dev/basics-alert                                     private
-$ wsk trigger get basics-alert
+$ nuv trigger get basics-alert
 ok: got trigger alert
 {
     "namespace": "openwhisk@example.com_dev",
