@@ -14,7 +14,7 @@ Let's now build an example to see what triggers do. We use a simple action that 
 
 == Example: Sending Slack Notifications 
 
-Let's consider a scenario where we want to send Slack notifications when users visit specific pages on our website.
+Let's consider a scenario where we want to send Slack notifications when users visit specific pages and submit a contact form.
 
 === Step 1: Define the Trigger
 
@@ -42,7 +42,7 @@ $ nuv trigger update PageVisitTrigger --param page homepage
 ----
 
 [NOTE]
-Of course, there are not only `create` but also `update` and `delete`, and they work as expected, updating and deleting triggers. In the next paragraph, we will also see the `fire` command, which requires you to first create rules to do something useful.
+Of course, there are not only `create` and `update`, but also `delete`, and they work as expected, updating and deleting triggers. In the next paragraph, we will also see the `fire` command, which requires you to first create rules to do something useful.
 
 === Step 2: Associate the Trigger with an Action
 
