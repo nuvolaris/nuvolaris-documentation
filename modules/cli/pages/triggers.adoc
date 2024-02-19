@@ -1,86 +1,56 @@
 =  Triggers 
 
-Now let's see how to create a trigger. 
+Now let's see what trigger is and how to use it. 
 
-We can define a trigger as an object representing an event source that triggers the execution of actions. When activated by an event, associated actions are executed
+We can define a *trigger* as an object representing an event source that triggers the execution of *actions*. When activated by an event, associated actions are executed
+
+In other words, a trigger is a mechanism that listens for specific events or conditions and initiates actions in response to those events. It acts as the starting point for a workflow.
 
 [id=triggers]
 .Triggers and rules
 image::trigger.png["Trigger example",align="center"]
 
 
-Let's build now an example to see what triggers do. We use a simple action that does nothing except logging its activation. We use it to trace what is happening when you activate triggers. Note we start to construct the example now, but we complete it after we introduced rules, in the next paragraph.
+Let's build now an example to see what triggers do. 
+We use a simple action that does nothing except logging its activation. We use it to trace what is happening when you activate triggers. Note we start to construct the example now, but we complete it after we introduced rules, in the next paragraph.
 
-So, let's prepare our example, deploying first a simple `log.js` actions, that just logs its name:
+== Example: Sending Slack Notifications When Users Visit Certain Pages on our website
 
+Let's consider a scenario where we want to send Slack notifications when users visit specific pages on our website.
+
+=== Step 1: Define the Trigger
+
+We create a trigger named "PageVisitTrigger" that listens for events related to user visits on our website.
+
+[source,yaml]
 ----
-function main(args) {
-  console.log(args.name)
-  return {}
-}
+PageVisitTrigger:
+  parameters:
+    page: string
 ----
-
-Then, we  deploy it twice, with two different names:
-
-----
-$ nuv action update basics/log-alpha -p name alpha basics/log.js
-ok: updated action basics/log-alpha
-$ nuv action update basics/log-beta -p name beta basics/log.js
-ok: updated action basics/log-alpha
-----
-
-By themselves, those actions do nothing except leaving a trace of their activation in the logs:
-
-----
-$ nuv action invoke basics/log-alpha                 <1>
-ok: invoked /_/basics/log-alpha with id 320b50d841064d0b8b50d841060d0bff
-$ nuv action invoke basics/log-beta                  <2>
-ok: invoked /_/basics/log-beta with id 990d284f090c45328d284f090c45320d
-$ nuv activation list --limit 2                      <3>
-activations 
-990d284f090c45328d284f090c45320d log-beta
-320b50d841064d0b8b50d841060d0bff log-alpha
-$ nuv activation poll --since-seconds 60 --exit 20   <4>
-Enter Ctrl-c to exit.
-Polling for activation logs
-Activation: 'log-beta' (e6b76a85c5584579b76a85c558957957)
-[
-    "2018-03-17T17:32:06.364836123Z stdout: beta"
-]
-Activation: 'log-alpha' (e92e4466ee8f4684ae4466ee8f6684da)
-[
-    "2018-03-17T17:32:00.842842699Z stdout: alpha"
-]
-----
-<1> invoking the action `log-alpha`
-<2> invoking the action `log-beta`
-<3> showing a list of activations
-<4> poll the activations (since 60 seconds, for 20 seconds) to see which activations happened and what they logged
-
-Now we are ready to create a trigger, using the command `nuv trigger create` as in <<creating-trigger>>.
-
 [NOTE]
 Of course, there is not only `create` but also `update` and  `delete`, and they work as expected, updating and deleting triggers. In the next paragraph, we see also the `fire` command, that needs you first create rules to do something useful.
 
-[id=creating-trigger]
-.Creating a trigger and inspecting it
+=== Step 2: Associate the Trigger with an Action
+Next, we create an action named "SendSlackNotification" that sends a notification to Slack when invoked. We then associate this action with our "PageVisitTrigger" trigger, specifying that it should be triggered when users visit certain pages.
+
+[source,yaml]
 ----
-$ nuv trigger create basics-alert
-ok: created trigger alert
-$ nuv trigger list
-triggers
-/openwhisk@example.com_dev/basics-alert                                     private
-$ nuv trigger get basics-alert
-ok: got trigger alert
-{
-    "namespace": "openwhisk@example.com_dev",
-    "name": "basics-alert",
-    "version": "0.0.1",
-    "limits": {},
-    "publish": false
-}
+actions:
+  SendSlackNotification:
+    function: /actions/sendSlackNotification
+  triggers:
+    - name: PageVisitTrigger
+      action: SendSlackNotification
+      rules:
+        - page: homepage
+          url: /homepage
+        - page: contact
+          url: /contact
 ----
 
-[WARNING]
-Triggers are a "namespace level" entity, and you cannot put them in a package.
+In this example, whenever a user visits either the homepage or the contact page, the "SendSlackNotification" action will be triggered, resulting in a Slack notification being sent.
 
+== Conclusion
+
+Triggers provide a flexible and scalable way to automate workflows based on various events. By defining triggers and associating them with actions, you can create powerful applications that respond dynamically to user interactions, system events, or any other specified conditions.
