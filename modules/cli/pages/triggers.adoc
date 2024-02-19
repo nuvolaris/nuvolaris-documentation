@@ -10,8 +10,6 @@ In other words, a trigger is a mechanism that listens for specific events or con
 .Triggers and rules
 image::trigger.png["Trigger example",align="center"]
 
-Let's now build an example to see what triggers do. We use a simple action that does nothing except logging its activation. We will use it to trace what is happening when you activate triggers. Note that we start constructing the example now, but we will complete it after we introduce rules in the next paragraph.
-
 == Example: Sending Slack Notifications 
 
 Let's consider a scenario where we want to send Slack notifications when users visit specific pages and submit a contact form.
