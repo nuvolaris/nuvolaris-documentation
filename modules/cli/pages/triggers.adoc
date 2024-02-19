@@ -2,7 +2,7 @@
 
 Now let's see how to create a trigger. 
 
-A trigger is merely a name for an arbitrary event. A trigger by itself does nothing. However with the help of rules, it becomes useful, because when a trigger is activated, it invokes all the associated rules, as shown in <<triggers>>.
+We can define a trigger as an object representing an event source that triggers the execution of actions. When activated by an event, associated actions are executed
 
 [id=triggers]
 .Triggers and rules
