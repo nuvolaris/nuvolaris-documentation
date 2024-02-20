@@ -63,23 +63,78 @@ it will return:
 }
 ----
 
+=== Make tha same pizza, with sequences
 
+Perfect, now you have your own pizza, and this is probably the most important thing. Enjoy! 
 
-We can now create a sequence combining the `hello` action with the `b64` action:
+Okay, let's get serious. What if you would like to edit only a specific part of your algorithm, like adding fresh tomato instead of classic, or reducing the amount of water in your pizza dough? Every time, you have to edit your main action pizza.js to modify only a part.
+
+Again, what if before returning a pizza you'd like to invoke a new action like "add basil," or if you decide to refrigerate the pizza dough after preparing it but before cooking it?
+
+This is where sequences come into play!
 
 -----
-$  nuv action create demo/seq --sequence demo/hello,demo/b64
-ok: created action demo/seq
-$ nuv invoke demo/seq
-{
-  "body": "SGVsbG8="
+// File: preparePizzaDough.js
+function main(args) {
+  let persons = args.howManyPerson;
+
+  let flour = persons * 180; // grams
+  let water = persons * 120; // ml
+
+  let yeast = (flour + water) * 0.02;
+
+  const sixHours = 6 * 60 * 60 * 1000;
+
+  let pizzaDough =
+    "Mix " +
+    flour +
+    " grams of flour with " +
+    water +
+    " ml of water and add " +
+    yeast +
+    " grams of brewer's yeast";
+
+  return { pizzaDough: pizzaDough };
 }
------
-
-
-Let's verify the output of the sequence:
 
 -----
-$ echo SGVsbG8= | base64 -d
-Hello
+
 -----
+// File: cookPizza.js
+function main(args) {
+  let pizzaDough = args.pizzaDough;
+  let whichPizza = args.whichPizza;
+
+  let baseIngredients = "Tomato, mozzarella";
+  if (whichPizza === "Margherita") {
+    return {
+      result:
+        "Cook " +
+        pizzaDough +
+        " topped with " +
+        baseIngredients +
+        " for 3 minutes at 380°C",
+    };
+  } else if (whichPizza === "Sausage") {
+    baseIngredients += ", sausage";
+    return {
+      result:
+        "Cook " +
+        pizzaDough +
+        " topped with " +
+        baseIngredients +
+        ". Cook for 3 minutes at 380°C",
+    };
+  }
+}
+
+-----
+
+Ok, now code is splitted correctly and we are able to scale it more easily.
+
+-----
+nuv action create preparePizzaDough preparePizzaDough.js
+nuv action create cookPizza cookPizza.js
+nuv action create pizzaSequence --sequence preparePizzaDough,cookPizza
+-----
+
