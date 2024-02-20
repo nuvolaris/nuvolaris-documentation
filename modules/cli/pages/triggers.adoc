@@ -6,9 +6,6 @@ We can define a *trigger* as an object representing an event source that trigger
 
 In other words, a trigger is a mechanism that listens for specific events or conditions and initiates actions in response to those events. It acts as the starting point for a workflow.
 
-[[triggers]]
-.Triggers and actions
-image::trigger.png["Trigger example",align="center"]
 
 == Example: Sending Slack Notifications 
 
@@ -45,21 +42,6 @@ Of course, there are not only `create` and `update`, but also `delete`, and they
 === Step 2: Associate the Trigger with an Action
 
 Next, we create an action named "SendSlackNotification" that sends a notification to Slack when invoked. Then, we associate this action with our "PageVisitTrigger" trigger, specifying that it should be triggered when users visit certain pages.
-
-[source,yaml]
-----
-actions:
-  SendSlackNotification:
-    function: /actions/sendSlackNotification
-  triggers:
-    - name: PageVisitTrigger
-      action: SendSlackNotification
-      rules:
-        - page: homepage
-          url: /homepage
-        - page: contact
-          url: /contact
-----
 
 To associate the trigger with an action, you can use the following command:
 [source,shell]

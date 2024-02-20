@@ -4,10 +4,6 @@ You can combine actions into sequences and invoke them as a single action. There
 
 == Create all as a single action
 
-[[pizza]]
-.A Simple Margherita Pizza
-image::pizza.png["Sequence example",align="center"]
-
 Suppose we want to describe an algorithm to prepare a pizza. We could prepare everything in a single action, creating something like this:
 
 [source, javascript]
