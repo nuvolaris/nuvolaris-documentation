@@ -27,7 +27,7 @@ $ nuv trigger create notifyAlert
 
 It's all ready, we can now create our rule! 
 
-Syntax is: "nuv rule create " + {ruleName} + " " + {triggerName} + " " + {actionName}
+The syntax follows this pattern: "nuv rule create {ruleName} {triggerName} {actionName}"
 
 ----
 $ nuv rule create alertRule notifyAlert alert
