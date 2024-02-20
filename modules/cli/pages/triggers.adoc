@@ -66,7 +66,7 @@ To associate the trigger with an action, you can use the following command:
 ----
 $ nuv rule create TriggerRule PageVisitTrigger SendSlackNotification
 ----
-We'll see better this aspect onxref:rules.adoc[Rules]
+We'll see better this aspect on xref:rules.adoc[Rules]
 
 In this example, whenever a user visits either the homepage or the contact page, the "SendSlackNotification" action will be triggered, resulting in a Slack notification being sent.
 
