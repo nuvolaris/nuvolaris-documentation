@@ -1,6 +1,9 @@
 =  Packages
 
-Nuvolaris groups actions and feeds in  *packages*  under a namespace.  A package lets you to:
+Nuvolaris groups actions and feeds in  *packages*  under a namespace. 
+It is conceptually similar to a folder containing a group of related files
+
+A package lets you to:
 
 * group related actions together
 * share parameters and annotations (each action sees the parameters assigned to the package) 
@@ -9,23 +12,44 @@ Nuvolaris groups actions and feeds in  *packages*  under a namespace.  A package
 We can for example create a package `demo-package` and assign a parameter:
 
 ----
-$ wsk package create demo-package -p email no-reply@nuvolaris.io
+$ nuv package create demo-package -p email no-reply@nuvolaris.io
 ok: created package demo-package
 ----
+This command creates a new package with the specified name.
 
 Let's go on with the commands to list, get informations, update it and finally delete a package:
 
 ----
 $ nuv package list
+----
 packages
-/mirella/demo-package/demo-action                               private
+/nuvolaris/demo-package/                           private
+
+----
 $ nuv package update demo-package -p email info@nuvolaris.io
+----
 ok: updated package demo-package
+
+----
 $ nuv package get demo-package -s                     
-package /mirella/demo-package/sample: Returns a result based on parameter email
+----
+package /nuvolaris/demo-package/sample: Returns a result based on parameter email
    (parameters: *email)
-$ nuv package delete demo-package
-ok: deleted package demo-package
+
+note the final -s, which means "summarize"
+
 ----
 
-Note the `-s` flag to mean `summarize`.
+$ nuv package delete demo-package
+----
+ok: deleted package demo-package
+
+
+== Adding Actions to the Package ==
+
+Actions can be added to a package using the command nuv action create <package-name>/<action-name>. This associates an existing action with the specified package.
+
+== Using Packages ==
+
+Once a package is created, actions within it can be invoked using their full path, with this schema: <package-name>/<action-name>.
+This allows organizing actions hierarchically and avoiding naming conflicts.
