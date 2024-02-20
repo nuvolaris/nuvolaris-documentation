@@ -7,6 +7,7 @@ The `nuv action` command is designed for managing actions, featuring frequently 
 [.text]
 ====
 The `hello.js` script
+
 ----
 function main(args) {
     return { body: "Hello" }
