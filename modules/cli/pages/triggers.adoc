@@ -14,15 +14,7 @@ Let's consider a scenario where we want to send Slack notifications when users v
 === Step 1: Define the Trigger
 
 We create a trigger named "PageVisitTrigger" that listens for events related to user visits on our website.
-
-[source,yaml]
-----
-PageVisitTrigger:
-  parameters:
-    page: string
-----
-
-To create the trigger, you can use the following command:
+To create it, you can use the following command:
 
 [source,shell]
 ----
