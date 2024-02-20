@@ -157,7 +157,6 @@ Finally, let's invoke it
 -----
 nuv action invoke --result pizzaSequence -p howManyPerson 4 -p whichPizza "Margherita"
 
-
 {
     "result": "Cook Mix 720 grams of flour with 480 ml of water and add 24 grams of brewer's yeast topped with tomato and mozzarella for 3 minutes at 380°C"
 }
@@ -165,4 +164,4 @@ nuv action invoke --result pizzaSequence -p howManyPerson 4 -p whichPizza "Margh
 
 == Conclusion
 
-Now our code is split correctly, and we are able to scale it more easily!
+Now, thanks to sequences, our code is split correctly, and we are able to scale it more easily!
