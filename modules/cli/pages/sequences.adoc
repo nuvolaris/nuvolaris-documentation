@@ -10,9 +10,10 @@ What if you would like to edit only a specific part of your algorithm, like addi
 
 Again, what if before returning a pizza you'd like to invoke a new action like "add basil," or if you decide to refrigerate the pizza dough after preparing it but before cooking it?
 
-This is where sequences come into play!
+This is where sequences come into play.
 
 Create a file called *preparePizzaDough.js*
+
 -----
 function main(args) {
   
