@@ -2,11 +2,11 @@
 
 You can combine actions into sequences and invoke them as a single action. Therefore, a sequence represents a logical junction between two or more actions, where each action is invoked in a specific order.
 
-== Create all as a single action
+== Combine actions sequentially
 
-Suppose we want to describe an algorithm to prepare a pizza. We could prepare everything in a single action, creating all in a single action, from preparing dough to adding all ingredients and cooking it.
+Suppose we want to describe an algorithm for preparing a pizza. We could prepare everything in a single action, creating it all in one go, from preparing the dough to adding all the ingredients and cooking it.
 
-What if you would like to edit only a specific part of your algorithm, like adding fresh tomato instead of classic, or reducing the amount of water in your pizza dough? Every time, you have to edit your main action pizza.js to modify only a part.
+What if you would like to edit only a specific part of your algorithm, like adding fresh tomato instead of classic, or reducing the amount of water in your pizza dough? Every time, you have to edit your main action to modify only a part.
 
 Again, what if before returning a pizza you'd like to invoke a new action like "add basil," or if you decide to refrigerate the pizza dough after preparing it but before cooking it?
 
