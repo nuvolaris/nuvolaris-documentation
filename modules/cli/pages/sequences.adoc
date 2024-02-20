@@ -13,6 +13,7 @@ Suppose we want to describe an algorithm to prepare a pizza. We could prepare ev
 [source, javascript]
 ----
 // file: pizza.js
+
 function main(args) {
 
     let persons = args.howManyPerson;
