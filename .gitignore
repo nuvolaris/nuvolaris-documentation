@@ -9,4 +9,4 @@ apikey.txt
 *.mp4
 content/venv/
 sources/
-
+.DS_Store
