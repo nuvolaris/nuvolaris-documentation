@@ -22,16 +22,14 @@ function main(args) {
     let water = persons * 120; // ml
 
     let pizzaDough = preparePizzaDough(flour, water);
-    
     let cookedPizza = cookPizza(pizzaDough, whichPizza);
 
     return { "result": cookedPizza };
 }
 
 function preparePizzaDough(flour, water) {
+    
     let yeast = (flour + water) * 0.02; 
-
-    const sixHours = 6 * 60 * 60 * 1000;
 
     return "Mix " + flour + " grams of flour with " + water + " ml of water and add " + yeast + " grams of brewer's yeast"
         
@@ -39,32 +37,35 @@ function preparePizzaDough(flour, water) {
 
 function cookPizza(pizzaDough, whichPizza) {
     let baseIngredients = "Tomato, mozzarella";
+    
     if (whichPizza === "Margherita") {
         return "Cook " + pizzaDough + " topped with " + baseIngredients + " for 3 minutes at 380°C";
-    } else if (whichPizza === "Sausage") {
+    } 
+    else if (whichPizza === "Sausage") {
         baseIngredients += ", sausage";
         return "Cook " + pizzaDough + " topped with " + baseIngredients + ". Cook for 3 minutes at 380°C";
     }     
 }
 ----
 
-With the command:
+If we execute the commands:
 
 [source, bash]
 ----
+nuv action create pizza/pizza pizza.js
 nuv action invoke pizza/pizza -p howManyPerson 4 -p pizza "Margherita"
 ----
 
-it will return:
+Nuv will return:
 
 [source, json]
 ----
 "result": {
-    "result": "Cook Mix 720 grams of flour with 480 ml of water and add 24 grams of brewer's yeast topped with Tomato, mozzarella for 3 minutes at 380°C"
+    "Cook Mix 720 grams of flour with 480 ml of water and add 24 grams of brewer's yeast topped with Tomato, mozzarella for 3 minutes at 380°C"
 }
 ----
 
-== Making the same, but with actions and sequences
+== Making the same with sequences
 
 Perfect, now you have your own pizza, and this is probably the most important thing. Enjoy! 
 
@@ -77,6 +78,7 @@ This is where sequences come into play!
 Create a file called *preparePizzaDough.js*
 -----
 function main(args) {
+  
   let persons = args.howManyPerson;
 
   let flour = persons * 180; // grams
@@ -103,6 +105,7 @@ function main(args) {
 Now, in a file *cookPizza.js*
 -----
 function main(args) {
+  
   let pizzaDough = args.pizzaDough;
   let whichPizza = args.whichPizza;
 
@@ -128,7 +131,6 @@ function main(args) {
     };
   }
 }
-
 
 -----
 We have now split our code to prepare pizza into two different actions. When we need to edit only one action without editing everything, we can do it! Otherwise, we can now add new actions that can be invoked or not before cooking pizza (or after).
