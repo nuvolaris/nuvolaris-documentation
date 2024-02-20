@@ -17,39 +17,53 @@ ok: created package demo-package
 ----
 This command creates a new package with the specified name.
 
+== Package create, update, delete
+
 Let's go on with the commands to list, get informations, update it and finally delete a package:
 
+First, list our packages:
 ----
 $ nuv package list
-----
+
 packages
 /nuvolaris/demo-package/                           private
+----
+
+If you want to update a package adding a param:
 
 ----
 $ nuv package update demo-package -p email info@nuvolaris.io
-----
+
 ok: updated package demo-package
-
 ----
-$ nuv package get demo-package -s                     
-----
-package /nuvolaris/demo-package/sample: Returns a result based on parameter email
-   (parameters: *email)
 
-note the final -s, which means "summarize"
+Let's see some package infos
+----
+$ nuv package get demo-package -s 
+package /nuvolaris/demo-package/sample:
+   (parameters: *email)                   
+----
+
+*note* the final -s, which means "summarize"
+
+Finally, delete a package 
 
 ----
 
 $ nuv package delete demo-package
-----
+
 ok: deleted package demo-package
 
+----
 
-== Adding Actions to the Package ==
+=== Adding Actions to the Package 
 
 Actions can be added to a package using the command nuv action create <package-name>/<action-name>. This associates an existing action with the specified package.
 
-== Using Packages ==
+=== Using Packages 
 
 Once a package is created, actions within it can be invoked using their full path, with this schema: <package-name>/<action-name>.
 This allows organizing actions hierarchically and avoiding naming conflicts.
+
+== Conclusion
+Packages in Nuvolaris provide a flexible and organized way to manage actions and their dependencies. Using the Nuv CLI, you can efficiently create, add actions, and manage package dependencies, simplifying the development and management of serverless applications.
