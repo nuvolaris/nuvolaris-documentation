@@ -2,7 +2,7 @@
 
 You can combine actions into sequences and invoke them as a single action. Therefore, a sequence represents a logical junction between two or more actions, where each action is invoked in a specific order.
 
-== Example: Create all as a single action
+== Create all as a single action
 
 [[pizza]]
 .A Simple Margherita Pizza
@@ -64,7 +64,7 @@ it will return:
 }
 ----
 
-=== Making the same, but with actions and sequences
+== Making the same, but with actions and sequences
 
 Perfect, now you have your own pizza, and this is probably the most important thing. Enjoy! 
 
@@ -161,6 +161,6 @@ nuv action invoke --result pizzaSequence -p howManyPerson 4 -p whichPizza "Margh
 }
 -----
 
-=== Conclusion
+== Conclusion
 
 Now our code is split correctly, and we are able to scale it more easily!
