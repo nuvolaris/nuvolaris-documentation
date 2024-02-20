@@ -1,29 +1,68 @@
 = Sequences
 
-You can combine actions in sequences and invoke them as a single action.
+You can combine actions into sequences and invoke them as a single action. Therefore, a sequence represents a logical junction between two or more actions, where each action is invoked in a specific order.
 
-Let's demostrate this combining the hello action with an other action encoding in base 64 the output.
+== Example: making a pizza
 
+Suppose we want to describe an algorithm to prepare a pizza. We could prepare everything in a single action, creating something like this:
 
-Let's write this function to encode the input in base 64:
-
------
-// file: b64.js
+[source, javascript]
+----
+// file: pizza.js
 function main(args) {
-    let body = args['body'] || ""
-    return { body: Buffer.from(body).toString("base64") }
-}
------
 
+    let persons = args.howManyPerson;
+    let whichPizza = args.pizza;
 
------
-$ nuv action create demo/b64 b64.js
-ok: created action demo/b64
-$ nuv invoke demo/b64 -p body test
-{
-    "body": "dGVzdA=="
+    let flour = persons * 180; // grams
+    let water = persons * 120; // ml
+
+    let pizzaDough = preparePizzaDough(flour, water);
+    
+    let cookedPizza = cookPizza(pizzaDough, whichPizza);
+
+    return { "result": cookedPizza };
 }
------
+
+function preparePizzaDough(flour, water) {
+    let yeast = (flour + water) * 0.02; 
+
+    const sixHours = 6 * 60 * 60 * 1000;
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Mix " + flour + " grams of flour with " + water + " ml of water and add " + yeast + " grams of brewer's yeast");
+        }, sixHours);
+    });
+}
+
+function cookPizza(pizzaDough, whichPizza) {
+    let baseIngredients = "Tomato, mozzarella";
+    if (whichPizza === "Margherita") {
+        return "Cook " + pizzaDough + " topped with " + baseIngredients + " for 3 minutes at 380°C";
+    } else if (whichPizza === "Sausage") {
+        baseIngredients += ", sausage";
+        return "Cook " + pizzaDough + " topped with " + baseIngredients + ". Cook for 3 minutes at 380°C";
+    }     
+}
+----
+
+With the command:
+
+[source, bash]
+----
+nuv action invoke pizza/pizza -p howManyPerson 4 -p pizza "Margherita"
+----
+
+it will return:
+
+[source, json]
+----
+"result": {
+    "result": "Cook Mix 720 grams of flour with 480 ml of water and add 24 grams of brewer's yeast topped with Tomato, mozzarella for 3 minutes at 380°C"
+}
+----
+
 
 
 We can now create a sequence combining the `hello` action with the `b64` action:
