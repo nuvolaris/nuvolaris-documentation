@@ -2,117 +2,85 @@
 
 Once we have a trigger and some actions, we can create rules for the trigger. A rule connects the trigger with an action, so if you fire the trigger, it will invoke the action. Let's see this in practice in the next listing.
 
-[id=creating-rules]
+[[creating-rules]]
 .An example of creating a rule, triggering an event, and inspecting the logs.
+
+<1> First of all, create a file called *alert.js*
 ----
-$ nuv rule create notify-suspicious-activity notify-trigger send-email    <1>
-ok: created rule notify-suspicious-activity
-$ nuv trigger fire notify-trigger                                           <2>
-ok: triggered /_/notify-trigger with id 86b8d33f64b845f8b8d33f64b8f5f887
-$ nuv activation logs 86b8d33f64b845f8b8d33f64b8f5f887                       <3>
-   | jq
-{
-  "statusCode": 0,
-  "success": true,
-  "activationId": "b57a1f1dc3414b06ba1f1dc341ab0626",
-  "rule": "openwhisk@example.com_dev/notify-suspicious-activity",
-  "action": "openwhisk@example.com_dev/send-email"
+function main() {
+  console.log("Suspicious activity!");
+  return {
+    result: "Suspicious activity!",
+  };
 }
-
-$ nuv activation logs b57a1f1dc3414b06ba1f1dc341ab0626                       <4>
-2018-03-17T18:10:48.471777977Z stdout: Email sent: Suspicious activity detected!
-
-$ nuv rule disable notify-suspicious-activity                                <5>
-ok: disabled rule notify-suspicious-activity
-$ nuv trigger fire notify-trigger                                           <6>
-ok: triggered /_/notify-trigger with id 0f4fa69d910f4c738fa69d910f9c73af
 ----
-<1> Creating a rule to activate the "send-email" action when the "notify-trigger" is fired.
-<2> Firing the "notify-trigger" trigger.
-<3> Inspecting the activation ID.
-<4> Viewing the log of the "send-email" action.
-<5> Disabling the "notify-suspicious-activity" rule.
-<6> Firing the "notify-trigger" trigger again.
 
+<2> Then, create a nuv action for this file
+----
+$ nuv action create alert alert.js  
+----
+
+<3> Now, create a trigger that we call *notifyAlert*
+
+----
+$ nuv trigger create notifyAlert
+----
+
+<4> It's all ready, we can now create our rule! 
+
+Syntax is: "nuv rule create " + {ruleName} + " " + {triggerName} + " " + {actionName}
+
+----
+$ nuv rule create alertRule notifyAlert alert
+----
+
+<5> Our environment can now be alerted if something suspicious occurred! 
+
+Before starting, let's open another terminal window and enable polling (with the command `nuv activation poll`) to see what happens.
+----
+$ nuv activation poll
+Enter Ctrl-c to exit.
+Polling for activation logs
+----
+
+It's time, fire the trigger!
+
+----
+$ nuv trigger fire notifyAlert                                          
+ok: triggered /notifyAlert with id 86b8d33f64b845f8b8d33f64b8f5f887
+----
+
+<6> Go to see activation our open CLI with activation polling now!
+
+----
+Enter Ctrl-c to exit.
+Polling for activation logs
+
+Activation: 'alert' (dfb43932d304483db43932d304383dcf)
+[
+    "2024-02-20T03:15.15472494535Z stdout: Suspicious activity!"
+]
+
+----
 
 [NOTE]
 As with all the other commands, you can execute `list`, `update`, and `delete` by name.
 
 A trigger can enable multiple rules, so firing one trigger actually activates multiple actions. 
 
-Let's try this feature. However, before starting, let's open another terminal window and enable polling (with the command `nuv activation poll`) to see what happens.
+Rules can also be enabled and disabled without removing them. As in the last example, let's try to disable the first rule and fire the trigger again to see what happens. 
 
-----
-$ nuv rule create basics-alert-beta basics-alert basics/log-beta
-ok: created rule basics-alert-beta
-$ nuv trigger fire basics-alert
-ok: triggered /_/basics-alert with id a731a03603bb4183b1a03603bb8183ce
-----
-
-If we check the logs, we should see something like this:
-
-----
-$ nuv activation poll
-Enter Ctrl-c to exit.
-Polling for activation logs
-
-Activation: 'alert' (a731a03603bb4183b1a03603bb8183ce)    <1>
-[
-    "{\"statusCode\":0,\"success\":true,\
-    \"activationId\":\"3024596c57ac4c10a4596c57ac7c1042\",\
-    \"rule\":\"openwhisk@example.com_dev/basics-alert-alpha\",\"action\":\"openwhisk@example.com_dev/basics/log-alpha\"}",
-    "{\"statusCode\":0,\"success\":true,\
-    \"activationId\":\"6d88836c860d405f88836c860d305f83\",\"rule\":\"openwhisk@example.com_dev/basics-alert-beta\",\
-    \"action\":\"openwhisk@example.com_dev/basics/log-beta\"}"
-]
-
-Activation: 'log-alpha' (3024596c57ac4c10a4596c57ac7c1042) <2>
-[
-    "2018-03-17T18:34:58.633797676Z stdout: alpha"
-]
-
-Activation: 'log-beta' (6d88836c860d405f88836c860d305f83)  <3>
-[
-    "2018-03-17T18:34:58.629413468Z stdout: beta"
-]
-----
-<1> The trigger activation invoked 2 actions.
-<2> This is the log of the first action.
-<3> This is the log of the second action.
-
-Rules can also be enabled and disabled without removing them. As in the last example, let's try to disable the first rule and fire the trigger again to see what happens. As before, first, we start the log polling to see what happened.
-
-----
-$ nuv rule disable basics-alert-alpha     <1>
-ok: disabled rule basics-alert-alpha
-$ nuv trigger fire basics-alert           <2>
-ok: triggered /_/basics-alert with id 0f4fa69d910f4c738fa69d910f9c73af
-----
-<1> Disabling the rule alert-alpha.
+<1> Disabling the rule.
 <2> Firing the trigger again.
-
-Moreover, if we go and check the result, we see this time only the action `log-beta` was invoked.
-
 ----
-$ nuv activation poll
-Enter Ctrl-c to exit.
-Polling for activation logs
+$ nuv rule disable alertRule    
+ok: disabled rule alertRule
+$ nuv trigger fire notifyAlert
+ok: triggered /_/notifyAlert with id 0f4fa69d910f4c738fa69d910f9c73af
+----
 
-Activation: 'basics-alert' (0f4fa69d910f4c738fa69d910f9c73af)
-[
-    "{\"statusCode\":0,\"success\":true,\"activationId\":\"a8221c7d7fe94e22a21c7d7fe9ce223c\",\
-    \"rule\":\"openwhisk@example.com_dev/alert-beta\",\
-    \"action\":\"openwhisk@example.com_dev/basics/log-beta\"}",
-    "{\"statusCode\":1,\"success\":false,\
-    \"rule\":\"openwhisk@example.com_dev/basics-alert-alpha\",\
-    \"error\":\"Rule 'openwhisk@example.com_dev/basics-alert-alpha' is inactive, \
-    action 'openwhisk@example.com_dev/basics/log-alpha' \
-    was not activated.\",\
-    \"action\":\"openwhisk@example.com_dev/basics/log-alpha\"}"
-]
-
-Activation: 'log-beta' (a8221c7d7fe94e22a21c7d7fe9ce223c)
-[
-    "2018-03-18T07:27:14.01530577Z  stdout: beta"
-]
+In the activation polling window, we can see that now any action is executed. 
+Of course, we can enable the rule again with 
+----
+nuv rule enable alertRule  
 ----
