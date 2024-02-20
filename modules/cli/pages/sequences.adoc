@@ -4,69 +4,9 @@ You can combine actions into sequences and invoke them as a single action. There
 
 == Create all as a single action
 
-Suppose we want to describe an algorithm to prepare a pizza. We could prepare everything in a single action, creating something like this:
+Suppose we want to describe an algorithm to prepare a pizza. We could prepare everything in a single action, creating all in a single action, from preparing dough to adding all ingredients and cooking it.
 
-[source, javascript]
-----
-// file: pizza.js
-
-function main(args) {
-
-    let persons = args.howManyPerson;
-    let whichPizza = args.pizza;
-
-    let flour = persons * 180; // grams
-    let water = persons * 120; // ml
-
-    let pizzaDough = preparePizzaDough(flour, water);
-    let cookedPizza = cookPizza(pizzaDough, whichPizza);
-
-    return { "result": cookedPizza };
-}
-
-function preparePizzaDough(flour, water) {
-    
-    let yeast = (flour + water) * 0.02; 
-
-    return "Mix " + flour + " grams of flour with " + water + " ml of water and add " + yeast + " grams of brewer's yeast"
-        
-}
-
-function cookPizza(pizzaDough, whichPizza) {
-    let baseIngredients = "Tomato, mozzarella";
-    
-    if (whichPizza === "Margherita") {
-        return "Cook " + pizzaDough + " topped with " + baseIngredients + " for 3 minutes at 380°C";
-    } 
-    else if (whichPizza === "Sausage") {
-        baseIngredients += ", sausage";
-        return "Cook " + pizzaDough + " topped with " + baseIngredients + ". Cook for 3 minutes at 380°C";
-    }     
-}
-----
-
-If we execute the commands:
-
-[source, bash]
-----
-nuv action create pizza/pizza pizza.js
-nuv action invoke pizza/pizza -p howManyPerson 4 -p pizza "Margherita"
-----
-
-Nuv will return:
-
-[source, json]
-----
-"result": {
-    "Cook Mix 720 grams of flour with 480 ml of water and add 24 grams of brewer's yeast topped with Tomato, mozzarella for 3 minutes at 380°C"
-}
-----
-
-== Making the same with sequences
-
-Perfect, now you have your own pizza, and this is probably the most important thing. Enjoy! 
-
-Okay, let's get serious. What if you would like to edit only a specific part of your algorithm, like adding fresh tomato instead of classic, or reducing the amount of water in your pizza dough? Every time, you have to edit your main action pizza.js to modify only a part.
+What if you would like to edit only a specific part of your algorithm, like adding fresh tomato instead of classic, or reducing the amount of water in your pizza dough? Every time, you have to edit your main action pizza.js to modify only a part.
 
 Again, what if before returning a pizza you'd like to invoke a new action like "add basil," or if you decide to refrigerate the pizza dough after preparing it but before cooking it?
 
