@@ -5,12 +5,12 @@ Once we have a trigger and some actions we can create rules for the trigger. A r
 [id=creating-rules]
 .An example of creating a rule, triggering an event and inspecting the logs.
 ----
-$ wsk rule create basics-alert-alpha \
+$ nuv rule create basics-alert-alpha \
        basics-alert basics/log-alpha                      <1>
 ok: created rule basics-alert-alpha
-$ wsk trigger fire basics-alert                           <2>      
+$ nuv trigger fire basics-alert                           <2>      
 ok: triggered /_/alert with id 86b8d33f64b845f8b8d33f64b8f5f887
-$ wsk activation logs 86b8d33f64b845f8b8d33f64b8f5f887 \  <3>
+$ nuv activation logs 86b8d33f64b845f8b8d33f64b8f5f887 \  <3>
    | jq                                                   <4>
 {
   "statusCode": 0,
@@ -20,7 +20,7 @@ $ wsk activation logs 86b8d33f64b845f8b8d33f64b8f5f887 \  <3>
   "action": "openwhisk@example.com_dev/basics/alpha"
 }
 
-$ wsk activation logs b57a1f1dc3414b06ba1f1dc341ab0626    <6>
+$ nuv activation logs b57a1f1dc3414b06ba1f1dc341ab0626    <6>
 2018-03-17T18:10:48.471777977Z stdout: alpha
 ----
 <1> creating a rule to activate the action `basics/log-alpha` when the trigger `basics-alert` is fired
@@ -36,19 +36,19 @@ As for all the other commands, you can execute `list, `update` and `delete` by n
 
 A trigger can enable multiple rules, so firing one trigger actually activates multiple actions. 
 
-Let's try this feature. However, before starting, let's open another terminal window and enable polling (with the command `wsk activation poll`) to see what happens.
+Let's try this feature. However, before starting, let's open another terminal window and enable polling (with the command `nuv activation poll`) to see what happens.
 
 ----
-$ wsk rule create basics-alert-beta basics-alert basics/log-beta
+$ nuv rule create basics-alert-beta basics-alert basics/log-beta
 ok: created rule basics-alert-beta
-$ wsk trigger fire basics-alert
+$ nuv trigger fire basics-alert
 ok: triggered /_/basics-alert with id a731a03603bb4183b1a03603bb8183ce
 ----
 
 If we check the logs we should see something like this:
 
 ----
-$ wsk activation poll
+$ nuv activation poll
 Enter Ctrl-c to exit.
 Polling for activation logs
 
@@ -80,9 +80,9 @@ Activation: 'log-beta' (6d88836c860d405f88836c860d305f83)  <3>
 Rules can also be enabled and disabled without removing them. As the last example, we try to disable the first rule and fire the trigger again to see what happens. As before, first, we start the log polling to see what happened.
 
 ----
-$ wsk rule disable basics-alert-alpha     <1>
+$ nuv rule disable basics-alert-alpha     <1>
 ok: disabled rule basics-alert-alpha
-$ wsk trigger fire basics-alert           <2>
+$ nuv trigger fire basics-alert           <2>
 ok: triggered /_/basics-alert with id 0f4fa69d910f4c738fa69d910f9c73af
 ----
 <1> disabling rule alert-alpha
@@ -91,7 +91,7 @@ ok: triggered /_/basics-alert with id 0f4fa69d910f4c738fa69d910f9c73af
 Moreover, if we go and check the result, we see this time only the action `log-beta` was invoked.
 
 ----
-$ wsk activation poll
+$ nuv activation poll
 Enter Ctrl-c to exit.
 Polling for activation logs
 
