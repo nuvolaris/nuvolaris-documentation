@@ -58,7 +58,10 @@ ok: deleted package demo-package
 
 === Adding Actions to the Package 
 
-Actions can be added to a package using the command nuv action create <package-name>/<action-name>. This associates an existing action with the specified package.
+Actions can be added to a package using this command: 
+----
+nuv action create <package-name>/<action-name>. This associates an existing action with the specified package.
+----
 
 === Using Packages 
 
