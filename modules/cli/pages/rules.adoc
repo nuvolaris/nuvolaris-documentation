@@ -5,7 +5,8 @@ Once we have a trigger and some actions, we can create rules for the trigger. A 
 [[creating-rules]]
 .An example of creating a rule, triggering an event, and inspecting the logs.
 
-<1> First of all, create a file called *alert.js*
+== Create data
+First of all, create a file called *alert.js*
 ----
 function main() {
   console.log("Suspicious activity!");
@@ -15,18 +16,19 @@ function main() {
 }
 ----
 
-<2> Then, create a nuv action for this file
+Then, create a nuv action for this file
+
 ----
 $ nuv action create alert alert.js  
 ----
 
-<3> Now, create a trigger that we call *notifyAlert*
+Now, create a trigger that we call *notifyAlert*
 
 ----
 $ nuv trigger create notifyAlert
 ----
 
-<4> It's all ready, we can now create our rule! 
+It's all ready, we can now create our rule! 
 
 Syntax is: "nuv rule create " + {ruleName} + " " + {triggerName} + " " + {actionName}
 
@@ -34,7 +36,8 @@ Syntax is: "nuv rule create " + {ruleName} + " " + {triggerName} + " " + {action
 $ nuv rule create alertRule notifyAlert alert
 ----
 
-<5> Our environment can now be alerted if something suspicious occurred! 
+=== Test your rule
+Our environment can now be alerted if something suspicious occurred! 
 
 Before starting, let's open another terminal window and enable polling (with the command `nuv activation poll`) to see what happens.
 ----
@@ -50,7 +53,7 @@ $ nuv trigger fire notifyAlert
 ok: triggered /notifyAlert with id 86b8d33f64b845f8b8d33f64b8f5f887
 ----
 
-<6> Go to see activation our open CLI with activation polling now!
+Go to see activation our open CLI with activation polling now!
 
 ----
 Enter Ctrl-c to exit.
@@ -62,6 +65,8 @@ Activation: 'alert' (dfb43932d304483db43932d304383dcf)
 ]
 
 ----
+
+== Conclusion
 
 [NOTE]
 As with all the other commands, you can execute `list`, `update`, and `delete` by name.
