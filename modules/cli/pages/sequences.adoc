@@ -2,7 +2,7 @@
 
 You can combine actions into sequences and invoke them as a single action. Therefore, a sequence represents a logical junction between two or more actions, where each action is invoked in a specific order.
 
-== Example: Create All as a Single Action
+== Example: Create all as a single action
 
 [[pizza]]
 .A Simple Margherita Pizza
@@ -64,7 +64,7 @@ it will return:
 }
 ----
 
-=== Making the Same, but with More Actions and Sequence
+=== Making the same, but with actions and sequences
 
 Perfect, now you have your own pizza, and this is probably the most important thing. Enjoy! 
 
@@ -134,6 +134,8 @@ function main(args) {
 We have now split our code to prepare pizza into two different actions. When we need to edit only one action without editing everything, we can do it! Otherwise, we can now add new actions that can be invoked or not before cooking pizza (or after).
 
 Let's try it.
+
+=== Testing the sequence
 
 First, create our two actions
 -----
