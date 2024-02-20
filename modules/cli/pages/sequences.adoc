@@ -78,7 +78,7 @@ Again, what if before returning a pizza you'd like to invoke a new action like "
 
 This is where sequences come into play!
 
-In a file *preparePizzaDough.js*
+Create a file called *preparePizzaDough.js*
 -----
 function main(args) {
   let persons = args.howManyPerson;
@@ -136,13 +136,29 @@ function main(args) {
 
 
 -----
+We have now splitted our code to prepare pizza in two different actions. When we need to edit only one action without editing everything, we can do it! Otherwise, we can now add new actions that can be invoked or not before cooking pizza (or after)
 
 Let's try it.
+
+First, create our two actions
 -----
 nuv action create preparePizzaDough preparePizzaDough.js
+-----
+
+-----
 nuv action create cookPizza cookPizza.js
+-----
+
+Now, we can create the sequence: 
+-----
 nuv action create pizzaSequence --sequence preparePizzaDough,cookPizza
+-----
+
+Finally, let's invoke it 
+-----
 nuv action invoke --result pizzaSequence -p howManyPerson 4 -p whichPizza "Margherita"
+
+
 {
     "result": "Cook Mix 720 grams of flour with 480 ml of water and add 24 grams of brewer's yeast topped with tomato and mozzarella for 3 minutes at 380°C"
 }
