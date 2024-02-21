@@ -4,16 +4,15 @@
 
 MastroGPT is a product of Nuvolaris that enables the creation of your own artificial intelligence applications. The environment is connected to both the OpenAI API and the Nuv platform.
 
+With MastroGPT, you can deploy your software based on nuv entities(packages, actions, activations ...). 
+Currently, we offer support for Python, Node.js, Java, Go, and JavaScript runtimes. You can choose your preferred language and build your own AI application.
 
 == How to Start
-
-With MastroGPT, you can deploy your software based on nuv entities(packages, actions, activations ...). 
-Currently, we offer support for Python, Node.js, Java, Go, and JavaScript runtimes. You can choose your preferred language for backend development.
 
 As for the frontend, you have the option to use pure HTML/CSS/JS or a single-page application framework such as React, Angular, or Svelte (after building it with npm run build or similar).
 
 The unique constraint is to place backend code under the `/packages` folder and frontend code under the `/web` folder. 
-We'll explain better this on * xref:environment.adoc[Enviroment]
+We'll explain better this on xref:environment.adoc[Enviroment]
 
 MastroGPT, as mentioned earlier, offers developers everything they need to build their own applications, with specific integrations for AI and major cloud providers, a dedicated user interface, and a scalable serverless platform. In particular, direct access to OpenAI is provided (each environment has its own specific key) and is integrated seamlessly.
 
