@@ -23,7 +23,7 @@ image::IDE2.png["IDE",align="center"]
 Our platform offer a web ide fully integrated with your packages and web folder. In this way, all code is immediately saved and available on cloud. You need only an internet connection and all is ready, just code! 
 To access to web ide, simply click `IDE`. You'll be redirected on our tool from which a devcontainer with your code inside will start. 
 
-image::IDE1.png["IDE",align="center"]
+image::IDE.png["IDE",align="center"]
 *Pic fac simile from codespace, will change*
 
 == Actions
@@ -34,7 +34,7 @@ As mentioned above, actions are core part of your env. Inside an action (that ca
 To create one, just click `Create` under `Actions` on the sidebar.
 If you need to understand better what is an action and how you can use it, visit
 
-xref:./cli/pages/actions.adoc[Actions]
+xref:../cli/pages/actions.adoc[Actions]
 
 
 == Packages
@@ -45,7 +45,7 @@ A package is a collection of related serverless actions within the OpenWhisk ser
 
 == ChatGPTs
 
-image::GPT.png["GPT",align="center"]
+image::GPT.png["GPTS",align="center"]
 
 In this section you can create code to interact with your own gpt application! If you don't know what a GPT app is, visit: https://openai.com/blog/introducing-gpts
 
