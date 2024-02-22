@@ -32,7 +32,7 @@ image::ActionList.png["ActionList",align="center"]
 As mentioned above, actions are core part of your env. Inside an action (that can be Java, Go, Python, Js and more), you can define all your software functions.
 
 To create one, just click `Create` under `Actions` on the sidebar.
-If you need to understand better what is an action and how you can use it, visit:<</cli/pages/actions.adoc>>
+If you need to understand better what is an action and how you can use it link:https://nuvolaris.github.io/nuvolaris/3.1.0/cli/actions.html
 
 == Packages
 
