@@ -33,7 +33,7 @@ As mentioned above, actions are core part of your env. Inside an action (that ca
 
 To create one, just click `Create` under `Actions` on the sidebar.
 If you need to understand better what is an action and how you can use it, see:
-xref:../../cli/pages/actions.adoc[Environment].
+xref:../../cli/pages/actions.adoc[Actions].
 
 == Packages
 
