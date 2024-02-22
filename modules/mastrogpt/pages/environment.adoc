@@ -34,9 +34,8 @@ As mentioned above, actions are core part of your env. Inside an action (that ca
 To create one, just click `Create` under `Actions` on the sidebar.
 If you need to understand better what is an action and how you can use it, visit
 
-xref:../cli/pages/actions.adoc[Actions]
 
-
+<<nuvolaris-documentation/3.1.0/modules/cli/pages/actions.adoc>>
 == Packages
 
 image::CreatePackage.png["ActionList",align="center"]
@@ -45,7 +44,7 @@ A package is a collection of related serverless actions within the OpenWhisk ser
 
 == ChatGPTs
 
-image::GPT.png["GPTS",align="center"]
+image::GPTS.png["GPTS",align="center"]
 
 In this section you can create code to interact with your own gpt application! If you don't know what a GPT app is, visit: https://openai.com/blog/introducing-gpts
 
