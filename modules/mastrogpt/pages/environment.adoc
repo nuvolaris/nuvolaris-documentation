@@ -1,9 +1,52 @@
-== Environment
+= Environment
+
+Admin is your principal access gateway to MastroGPT env.
+Here, you can build everything you need to deploy your code and integrate with OpenAI API and with nuv serverless and full scalable infrastucture. 
+
+== Homepage
+image::HomePage.png["HomePage",align="center"]
+
+As you can see, the homepage immediately showcases some of the key features and is intentionally minimalistic. Everything you need to kickstart your platform development journey is just a click away. Within the "Actions" section, you'll find the code you'll be uploading gradually as actions. Here, you can view a list of your actions, invoke them, or make modifications as needed. Similarly, within the "Packages" section, which you can think of as containers for actions, you'll find the same functionality.
+
+- *Actions*: This section provides access to the code you'll gradually upload as actions. Here, you can view, invoke, or modify your actions as needed.
+
+- *Packages*: Think of this section as containers for your actions. Here, you can manage and organize your actions within packages.
+
+- *Activations*: Serving as a log for your platform and code activities, activations track each invoked action. Utilize activations for debugging and monitoring purposes.
+
+- *MastroGpt*: Immediate access to create GPT apps and explore demos crafted by our team and beta testers awaits you in this section.
+
+== IDE
+
+image::IDE2.png["IDE",align="center"]
+
+Our platform offer a web ide fully integrated with your packages and web folder. In this way, all code is immediately saved and available on cloud. You need only an internet connection and all is ready, just code! 
+To access to web ide, simply click `IDE`. You'll be redirected on our tool from which a devcontainer with your code inside will start. 
+
+image::IDE1.png["IDE",align="center"]
+*Pic fac simile from codespace, will change*
+
+== Actions
+image::ActionList.png["ActionList",align="center"]
+
+As mentioned above, actions are core part of your env. Inside an action (that can be Java, Go, Python, Js and more), you can define all your software functions.
+
+To create one, just click `Create` under `Actions` on the sidebar.
+If you need to understand better what is an action and how you can use it, visit
+
+xref:./cli/pages/actions.adoc[Actions]
 
 
-== Launching with Codespaces
+== Packages
 
-== Launching with Docker
+image::CreatePackage.png["ActionList",align="center"]
 
+A package is a collection of related serverless actions within the OpenWhisk serverless computing platform. It serves as a container for grouping together actions that share common functionality or are designed to work together to accomplish a specific task or goal
 
+== ChatGPTs
 
+image::GPT.png["GPT",align="center"]
+
+In this section you can create code to interact with your own gpt application! If you don't know what a GPT app is, visit: https://openai.com/blog/introducing-gpts
+
+Gpts are AI application that use OpenAI capabilities inside a user app and can call external API to ask infos or to make request.
