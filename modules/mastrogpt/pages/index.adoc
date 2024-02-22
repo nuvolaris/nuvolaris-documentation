@@ -24,4 +24,4 @@ Consider these templates as starting points to become familiar with Nuv concepts
 
 Nuvolaris Admin is a fully integrated platform, linked to the Nuv namespace (every user has one namespace in Nuv) and all features ready to use. Its graphical interface makes the development process easy and intuitive. To use it, you have to register on our login page link:https://nuvolaris.dev/[https://nuvolaris.dev/].
 
-Every Admin feature is explained in <<environment, Environment>>.
+Every Admin feature is explained in xref:./environment.adoc#environment[].
