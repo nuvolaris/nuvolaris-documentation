@@ -1,7 +1,7 @@
-== OpenWhisk Actions
+== Nuvolaris Actions
 
-Actions are stateless functions that run on the OpenWhisk platform. For
-example, an action can be used to detect the faces in an image, respond
+Actions are stateless functions that run on the Nuvolaris platform, based on link:https://openwhisk.apache.org[Apache OpenWhisk]. 
+For example, an action can be used to detect the faces in an image, respond
 to a database change, respond to an API call, or post a Tweet. In
 general, an action is invoked in response to an event and produces some
 observable output.
