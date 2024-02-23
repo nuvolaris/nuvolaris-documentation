@@ -39,7 +39,7 @@ xref:../../cli/pages/actions.adoc[Actions].
 
 image::CreatePackage.png["ActionList",align="center"]
 
-A package is a collection of related serverless actions within the OpenWhisk serverless computing platform. It serves as a container for grouping together actions that share common functionality or are designed to work together to accomplish a specific task or goal
+A package is a collection of related serverless actions. It serves as a container for grouping together actions that share common functionality or are designed to work together to accomplish a specific task or goal
 
 == ChatGPTs
 
@@ -48,3 +48,30 @@ image::GPTS.png["GPTS",align="center"]
 In this section you can create code to interact with your own gpt application! If you don't know what a GPT app is, visit: https://openai.com/blog/introducing-gpts
 
 Gpts are AI application that use OpenAI capabilities inside a user app and can call external API to ask infos or to make request.
+= Creating a GPTs
+
+To begin creating a GPT app, you can start from the OpenAI environment as explained here. To unlock GPT's capabilities, you'll need a *Plus account*.
+
+* Create an Action
+
+image::createActionPizza.png[create action,align="center"]
+
+Firstly, you need to define a new action that will be exposed to OpenAI. This step is crucial as we're developing a smart app that will request information from these actions in real-time.
+
+In this instance, we're creating a simple function that will return ingredients to prepare a pizza based on parameters such as the number of people and pizza type.
+
+* Go to OpenAI
+
+Visit https://chat.openai.com/gpts
+
+* Click on Create
+
+By clicking on the create button, located at the top-right, you'll initiate the creation process for your app. Here, you'll need to provide a description of your app, define a name, and instructions. Instructions here are intended as prompt instructions.
+
+* Configure Actions
+
+Your GPTs can make external API calls to retrieve information in real-time when users request it. For example, in our PizzaGPTs application, a user might ask for ingredients to prepare a pizza. To obtain this response, OpenAI will call your Nuvolaris actions, as mentioned previously.
+
+* Actions
+
+This section provides access to the code you'll gradually upload as actions. Here, you can view, invoke, or modify your actions as needed.
