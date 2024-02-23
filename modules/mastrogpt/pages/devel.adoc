@@ -18,7 +18,7 @@ OpenAI is already integrated for every starter template. An API key is available
 
 When you need to use it, in your action file inside every package, simply insert in the first lines `--param` as in this example: 
 
-====
+----
 #--web true
 #--param OPENAI_API_KEY $OPENAI_API_KEY
 #--param OPENAI_API_HOST $OPENAI_API_HOST
@@ -34,7 +34,7 @@ def main(args):
    data = AI.models.list().model_dump()
    models = [m['id'] for m in data['data']]
    return { "models": models }
-====
+----
 
 === Development
 
@@ -149,6 +149,10 @@ def main(args):
 
 If your action includes in the first line a `#--web true` parameter, the action will be available online via HTTPS, both inside and outside nuvolaris environment. In this way, you can deploy your site as needed. 
 
+=== Utils
+
+MastroGPT, to improve user development, offers some util features. For example, every time your source code will changed, it will be immediately available thanks to a scanner that observe your code and notify changes on your development environment.
+
 === Web and Packages Folders
 
 image::webFolder.png["webFolder",align="center"]
@@ -160,3 +164,5 @@ The `packages` folder contains your server-side code. There, you can deploy and 
 Inside the `web` folder, you can place every HTML/CSS/JS file that you need to build your own site or web app. If you use some framework single-page application, like Angular, React, Svelte, remember to copy the content of the build folder (after `npm run build` or similar) into the `web` folder.
 
 So, if your index.html needs to call via index.js a backend action, simply call the URL of your action here, and your platform will be entirely available.
+
+To make available on your nuvolaris env, see xref:deploy.adoc[deploy]

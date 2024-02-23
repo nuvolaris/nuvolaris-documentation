@@ -1,0 +1,14 @@
+== Deploy
+
+To make available your application on your nuvolaris env, you can run this command on CLI from your web ide.
+All the actions, packages and web folder files will be immediately available.
+
+Be careful, deployer delete all your old files and will substitute them with your new code. 
+
+----
+deploy
+----
+
+image::deploy.png["deploy",align="center"]
+
+Now, if you go again into the admin at https://nuvolaris.dev, you'll see your actions and files saved inside
