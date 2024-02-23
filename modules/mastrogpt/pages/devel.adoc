@@ -1,3 +1,27 @@
 == Development
 
-The development command
+As mentioned in xref:/environment.adoc[environment], MastroGPT offer a complete developer suite, with functions and capabilities.
+
+To start using it, simply click on `IDE` into your Admin env at https://nuvolaris.dev and choice a starter point to explore MastroGPT architecture.
+
+In this example, we'll see a Wordpress demo, a simplified nuvolaris env from which you can develop both your backend functions and frontend html/css/js files.
+
+=== From Ide, choice your starter
+
+image::IdeStarters.png["IdeStarters",align="center"]
+
+When you click on one of these starters (that you can see as ready to use templates) nuv will redirect you on a web IDE with a devcontainer inside, from which you can edit code and test it directly!
+
+=== Devel
+
+image::webIde1.png["webIde1",align="center"]
+
+Once inside the web IDE, you'll be promped to enter `Task devel` or `Task deploy` via CLI. Task devel is a nuv feature that will create into your nuvolaris env packages, actions and web content (placed into web folder). 
+
+So, if you enter `Task devel` or `devel`, a devcontainer will start and you'll see immediately via browser the output of this code. 
+
+image::webIde4.png["webIde4",align="center"]
+
+=== Requirements
+
+=== Params
