@@ -14,7 +14,7 @@ As you can see, the homepage immediately showcases some of the key features and 
 
 - *Activations*: Serving as a log for your platform and code activities, activations track each invoked action. Utilize activations for debugging and monitoring purposes.
 
-- *MastroGpt*: Immediate access to create GPT apps and explore demos crafted by our team and beta testers awaits you in this section.
+- *MastroGPT*: Immediate access to create GPT apps and explore demos crafted by our team and beta testers awaits you in this section.
 
 == IDE
 
@@ -45,13 +45,13 @@ A package is a collection of related serverless actions. It serves as a containe
 
 image::GPTS.png["GPTS",align="center"]
 
-In this section you can create code to interact with your own gpt application! If you don't know what a GPT app is, visit: https://openai.com/blog/introducing-gpts
+In this section you can create code to interact with your own GPT application! If you don't know what a GPT app is, visit: https://openai.com/blog/introducing-gpts
 
-Gpts are AI application that use OpenAI capabilities inside a user app and can call external API to ask infos or to make request.
+GPTs are AI application that use OpenAI capabilities inside a user app and can call external API to ask infos or to make request.
 
 === Creating a GPTs
 
-To begin creating a GPT app, you can start from the OpenAI environment as explained here. To unlock GPT's capabilities, you'll need a *Plus account*.
+To begin creating a GPT app, you can start from the OpenAI environment. To unlock GPT's capabilities, you'll need a *Plus account*.
 
 * Create an Action
 
@@ -61,18 +61,34 @@ Firstly, you need to define a new action that will be exposed to OpenAI. This st
 
 In this instance, we're creating a simple function that will return ingredients to prepare a pizza based on parameters such as the number of people and pizza type.
 
+* Deploy your actions as GPT spec
+
+image::PizzaGPTspec.png[create gpt spec, align="center"]
+
+To expose your code as an action callable from OpenAI, you need to deploy it in our GPTs builder. It's quite easy, simply go on `GPT App builder`, insert a name for your app, select the action you want to expose and click on `Build Spec`. Will be returned an https link. Copy it somewhere, you need to paste on OpenAI env when creating your GPTs
+
 * Go to OpenAI
 
 Visit https://chat.openai.com/gpts
 
 * Click on Create
 
+image::CreateGPT1.png[create gpt,align="center"]
+
 By clicking on the create button, located at the top-right, you'll initiate the creation process for your app. Here, you'll need to provide a description of your app, define a name, and instructions. Instructions here are intended as prompt instructions.
 
 * Configure Actions
 
+image::CreateGPT2.png[create action,align="center"]
+
 Your GPTs can make external API calls to retrieve information in real-time when users request it. For example, in our PizzaGPTs application, a user might ask for ingredients to prepare a pizza. To obtain this response, OpenAI will call your Nuvolaris actions, as mentioned previously.
 
-* Actions
+* Import your action url
 
-This section provides access to the code you'll gradually upload as actions. Here, you can view, invoke, or modify your actions as needed.
+image::CreateGPT3.png[create action,align="center"]
+
+Almost done! It's time to paste your action url built before as suggested in this pic. Once done, just click on `Save` button on the top-right!
+
+* Test your app
+
+If all is correct, now your GPTs is capable of calling your nuvolaris action when needed!
