@@ -22,7 +22,6 @@ Here's a simple example created in Svelte. Using `npm run build` directly on a n
 </video>
 ++++
 
-
 == Conclusion 
 
 By following this process, your app becomes immediately available, ready for use and distribution.
