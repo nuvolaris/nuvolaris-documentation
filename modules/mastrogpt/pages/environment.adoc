@@ -48,7 +48,8 @@ image::GPTS.png["GPTS",align="center"]
 In this section you can create code to interact with your own gpt application! If you don't know what a GPT app is, visit: https://openai.com/blog/introducing-gpts
 
 Gpts are AI application that use OpenAI capabilities inside a user app and can call external API to ask infos or to make request.
-= Creating a GPTs
+
+=== Creating a GPTs
 
 To begin creating a GPT app, you can start from the OpenAI environment as explained here. To unlock GPT's capabilities, you'll need a *Plus account*.
 
