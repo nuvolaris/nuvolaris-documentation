@@ -1,23 +1,22 @@
-== Deploy
+= Deploy
 
-To make available your application on your nuvolaris env, you can run this command on CLI from your web ide.
-All the actions, packages and web folder files will be immediately available.
+To make your application available on your Nuvolaris environment, you can run this command in the CLI from your web IDE. All actions, packages, and files in the web folder will be immediately accessible.
 
 ----
 deploy
 ----
 
-image::deploy.png["deploy",align="center"]
+image::deploy.png[Deploy,align="center"]
 
-Now, if you go again into the admin at https://nuvolaris.dev, you'll see your actions and files saved inside
+Now, if you revisit the admin interface at https://nuvolaris.dev, you'll see your actions and files saved inside.
 
-=== Instant deployment
+== Instant deployment
 
-So, if you try to edit some action or file, both from Admin env or from IDE and deploy it, code will be immediately available on your namespace env.
+So, if you attempt to edit an action or file, whether from the Admin environment or the IDE, and then deploy it, the code will immediately become available in your namespace environment.
 
-Using IDE, all will be available in local (on your dev container), every time you edit an action or your html files after that you type `devel` on CLI.
+When using the IDE, everything will be accessible locally (on your development container). After editing an action or HTML files, simply type `devel` in the CLI.
 
-Here, a really simple example made in Svelte with `npm run build` directly on a namespace environment
+Here's a simple example created in Svelte. Using `npm run build` directly on a namespace environment, we are going to change the primary color of our waitlist site.
 
 [[embed-video]]
 ++++
@@ -27,3 +26,7 @@ Here, a really simple example made in Svelte with `npm run build` directly on a 
 </video>
 ++++
 
+
+== Conclusion 
+
+By following this process, your app becomes immediately available, ready for use and distribution.
