@@ -64,7 +64,7 @@ As packages need libraries, actions need parameters.
 
 The naming convention to use a parameter is: #--param {paramName} {envParamName}
 
-Some parameters are available by default inside nuv .env file. To use these parameters, remember to specify them inside every single action, like here:
+Some parameters are available by default inside nuv .env file. To use these parameters, remember to specify them inside every single action, as shown here:
 
 ----
 #--web true
@@ -151,7 +151,7 @@ If your action includes in the first line a `#--web true` parameter, the action 
 
 === Utils
 
-MastroGPT, to improve user development, offers some util features. For example, every time your source code will changed, it will be immediately available thanks to a scanner that observe your code and notify changes on your development environment.
+To improve user development, MastroGPT offers some util features. For example, every time your source code changes, it will be immediately available thanks to a scanner that observes your code and notifies changes on your dev environment.
 
 === Web and Packages Folders
 
