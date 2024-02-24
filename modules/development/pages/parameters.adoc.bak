@@ -43,7 +43,7 @@ from the `params` object in this example.
 . Update the action so it is ready to use:
 
 ....
-nuv action update hello hello.js
+wsk action update hello hello.js
 ....
 
 [arabic, start=3]
@@ -52,7 +52,7 @@ supplying a file containing the desired parameters
 
 To pass parameters directly through the command-line, supply a key/value
 pair to the `--param` flag:
-`nuv action invoke --result hello --param name Dorothy --param place Kansas`
+`wsk action invoke --result hello --param name Dorothy --param place Kansas`
 
 This produces the result:
 
@@ -84,7 +84,7 @@ and `place`. If we invoke the action with a single `person` parameter
 that is valid JSON:
 
 ....
-nuv action invoke --result hello -p person '{"name": "Dorothy", "place": "Kansas"}'
+wsk action invoke --result hello -p person '{"name": "Dorothy", "place": "Kansas"}'
 ....
 
 The result is the same because the CLI automatically parses the `person`
@@ -111,14 +111,14 @@ To specify default parameters explicitly on the command-line, provide a
 key/value pair to the `param` flag:
 
 ....
-nuv action update hello --param place Kansas
+wsk action update hello --param place Kansas
 ....
 
 [arabic, start=2]
 . Invoke the action, passing only the `name` parameter this time.
 
 ....
-nuv action invoke --result hello --param name Dorothy
+wsk action invoke --result hello --param name Dorothy
 ....
 
 [source,json]
@@ -137,7 +137,7 @@ specifying the parameter value at invocation time.
 the output:
 
 ....
-nuv action invoke --result hello --param name Dorothy --param place "Washington, DC"
+wsk action invoke --result hello --param name Dorothy --param place "Washington, DC"
 ....
 
 [source,json]
@@ -166,7 +166,7 @@ package and shows an action making use of it.
 . Create a package with a parameter set:
 
 ....
-nuv package update MyApp --param name World
+wsk package update MyApp --param name World
 ....
 
 [arabic, start=2]
@@ -179,14 +179,14 @@ nuv package update MyApp --param name World
 ....
 
 ....
-nuv action update MyApp/hello hello.js
+wsk action update MyApp/hello hello.js
 ....
 
 [arabic, start=3]
 . Invoke the action, and observe the default package parameter in use:
 
 ....
-nuv action invoke --result MyApp/hello
+wsk action invoke --result MyApp/hello
 ....
 
 ....
@@ -217,7 +217,7 @@ function main(params) {
 . Update the action with the updated contents of `hello.js`:
 
 ....
-nuv action update hello hello.js
+wsk action update hello hello.js
 ....
 
 [arabic, start=3]
@@ -237,7 +237,7 @@ JSON-formatted parameters:
 observe the output
 
 ....
-nuv action invoke --result hello --param-file parameters.json
+wsk action invoke --result hello --param-file parameters.json
 ....
 
 [source,json]

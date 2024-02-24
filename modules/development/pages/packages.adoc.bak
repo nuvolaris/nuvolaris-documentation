@@ -1,16 +1,16 @@
-== Using and creating OpenWhisk and Nuvolaris packages
+== Using and creating OpenWhisk packages
 
-In OpenWhisk and Nuvolaris, you can use packages to bundle together a set of related
+In OpenWhisk, you can use packages to bundle together a set of related
 actions, and share them with others.
 
 A package can include _actions_ and _feeds_. - An action is a piece of
-code that runs on OpenWhisk and Nuvolaris. For example, the Cloudant package includes
+code that runs on OpenWhisk. For example, the Cloudant package includes
 actions to read and write records to a Cloudant database. - A feed is
 used to configure an external event source to fire trigger events. For
 example, the Alarm package includes a feed that can fire a trigger at a
 specified frequency.
 
-Every OpenWhisk and Nuvolaris entity, including packages, belongs in a _namespace_,
+Every OpenWhisk entity, including packages, belongs in a _namespace_,
 and the fully qualified name of an entity is
 `/namespaceName[/packageName]/entityName`. Refer to the
 link:./reference.md#openwhisk-entities[naming guidelines] for more
@@ -23,7 +23,7 @@ creating and sharing packages.
 
 === Browsing packages
 
-Several packages are registered with OpenWhisk and Nuvolaris. You can get a list of
+Several packages are registered with OpenWhisk. You can get a list of
 packages in a namespace, list the entities in a package, and get a
 description of the individual entities in a package.
 
@@ -31,7 +31,7 @@ description of the individual entities in a package.
 . Get a list of packages in the `/whisk.system` namespace.
 
 ....
-$ nuv package list /whisk.system
+$ wsk package list /whisk.system
 ....
 
 ....
@@ -53,7 +53,7 @@ packages
 . Get a list of entities in the `/whisk.system/cloudant` package.
 
 ....
-$ nuv package get --summary /whisk.system/cloudant
+$ wsk package get --summary /whisk.system/cloudant
 ....
 
 ....
@@ -92,7 +92,7 @@ on a specific Cloudant account, for example.
 . Get a description of the `/whisk.system/cloudant/read` action.
 
 ....
-$ nuv action get --summary /whisk.system/cloudant/read
+$ wsk action get --summary /whisk.system/cloudant/read
 ....
 
 ....
@@ -120,7 +120,7 @@ next few steps show how to invoke the `greeting` action in the
 . Get a description of the `/whisk.system/samples/greeting` action.
 
 ....
-$ nuv action get --summary /whisk.system/samples/greeting
+$ wsk action get --summary /whisk.system/samples/greeting
 ....
 
 ....
@@ -135,7 +135,7 @@ Notice that the `greeting` action takes two parameters: `name` and
 . Invoke the action without any parameters.
 
 ....
-$ nuv action invoke --result /whisk.system/samples/greeting
+$ wsk action invoke --result /whisk.system/samples/greeting
 ....
 
 ....
@@ -150,7 +150,7 @@ The output is a generic message because no parameters were specified.
 . Invoke the action with parameters.
 
 ....
-$ nuv action invoke --result /whisk.system/samples/greeting --param name Mork --param place Ork
+$ wsk action invoke --result /whisk.system/samples/greeting --param name Mork --param place Ork
 ....
 
 ....
@@ -181,7 +181,7 @@ package.
 parameter value.
 
 ....
-$ nuv package bind /whisk.system/samples valhallaSamples --param place Valhalla
+$ wsk package bind /whisk.system/samples valhallaSamples --param place Valhalla
 ....
 
 ....
@@ -192,7 +192,7 @@ ok: created binding valhallaSamples
 . Get a description of the package binding.
 
 ....
-$ nuv package get --summary valhallaSamples
+$ wsk package get --summary valhallaSamples
 ....
 
 ....
@@ -215,7 +215,7 @@ available in the `valhallaSamples` package binding.
 . Invoke an action in the package binding.
 
 ....
-$ nuv action invoke --result valhallaSamples/greeting --param name Odin
+$ wsk action invoke --result valhallaSamples/greeting --param name Odin
 ....
 
 ....
@@ -231,7 +231,7 @@ you set when you created the `valhallaSamples` package binding.
 . Invoke an action and overwrite the default parameter value.
 
 ....
-$ nuv action invoke --result valhallaSamples/greeting --param name Odin --param place Asgard
+$ wsk action invoke --result valhallaSamples/greeting --param name Odin --param place Asgard
 ....
 
 ....
@@ -247,7 +247,7 @@ action invocation overwrites the default value set in the
 === Creating and using trigger feeds
 
 Feeds offer a convenient way to configure an external event source to
-fire these events to a OpenWhisk and Nuvolaris trigger. This example shows how to use
+fire these events to a OpenWhisk trigger. This example shows how to use
 a feed in the Alarms package to fire a trigger every second, and how to
 use a rule to invoke an action every second.
 
@@ -255,7 +255,7 @@ use a rule to invoke an action every second.
 . Get a description of the feed in the `/whisk.system/alarms` package.
 
 ....
-$ nuv package get --summary /whisk.system/alarms
+$ wsk package get --summary /whisk.system/alarms
 ....
 
 ....
@@ -266,7 +266,7 @@ package /whisk.system/alarms: Alarms and periodic utility
 ....
 
 ....
-$ nuv action get --summary /whisk.system/alarms/alarm
+$ wsk action get --summary /whisk.system/alarms/alarm
 ....
 
 ....
@@ -283,7 +283,7 @@ The API host endpoint that will be receiving the feed.
 . Create a trigger that fires every eight seconds.
 
 ....
-$ nuv trigger create everyEightSeconds --feed /whisk.system/alarms/alarm -p cron "*/8 * * * * *" -p trigger_payload "{\"name\":\"Mork\", \"place\":\"Ork\"}"
+$ wsk trigger create everyEightSeconds --feed /whisk.system/alarms/alarm -p cron "*/8 * * * * *" -p trigger_payload "{\"name\":\"Mork\", \"place\":\"Ork\"}"
 ....
 
 ....
@@ -303,7 +303,7 @@ function main(params) {
 . Make sure that the action exists.
 
 ....
-$ nuv action update hello hello.js
+$ wsk action update hello hello.js
 ....
 
 [arabic, start=5]
@@ -311,7 +311,7 @@ $ nuv action update hello hello.js
 `everyEightSeconds` trigger fires.
 
 ....
-$ nuv rule create myRule everyEightSeconds hello
+$ wsk rule create myRule everyEightSeconds hello
 ....
 
 ....
@@ -322,7 +322,7 @@ ok: created rule myRule
 . Check that the action is being invoked by polling for activation logs.
 
 ....
-$ nuv activation poll
+$ wsk activation poll
 ....
 
 You should see activations every eight seconds for the trigger, the
@@ -342,7 +342,7 @@ example:
 . Create a package called ``custom''.
 
 ....
-$ nuv package create custom
+$ wsk package create custom
 ....
 
 ....
@@ -353,7 +353,7 @@ ok: created package custom
 . Get a summary of the package.
 
 ....
-$ nuv package get --summary custom
+$ wsk package get --summary custom
 ....
 
 ....
@@ -375,7 +375,7 @@ function main(args) { return args; }
 . Create an `identity` action in the `custom` package.
 
 ....
-$ nuv action create custom/identity identity.js
+$ wsk action create custom/identity identity.js
 ....
 
 ....
@@ -390,7 +390,7 @@ contain only actions and can’t contain another package.
 . Get a summary of the package again.
 
 ....
-$ nuv package get --summary custom
+$ wsk package get --summary custom
 ....
 
 ....
@@ -406,7 +406,7 @@ You can see the `custom/identity` action in your namespace now.
 . Invoke the action in the package.
 
 ....
-$ nuv action invoke --result custom/identity
+$ wsk action invoke --result custom/identity
 ....
 
 ....
@@ -422,7 +422,7 @@ example:
 . Update the `custom` package with two parameters: `city` and `country`.
 
 ....
-$ nuv package update custom --param city Austin --param country USA
+$ wsk package update custom --param city Austin --param country USA
 ....
 
 ....
@@ -434,7 +434,7 @@ ok: updated package custom
 `identity` action in the package inherits parameters from the package.
 
 ....
-$ nuv package get custom
+$ wsk package get custom
 ....
 
 ....
@@ -454,7 +454,7 @@ ok: got package custom
 ....
 
 ....
-$ nuv action get custom/identity
+$ wsk action get custom/identity
 ....
 
 ....
@@ -478,7 +478,7 @@ ok: got action custom/identity
 action indeed inherits the parameters.
 
 ....
-$ nuv action invoke --result custom/identity
+$ wsk action invoke --result custom/identity
 ....
 
 ....
@@ -494,7 +494,7 @@ are merged with the package parameters; the invocation parameters
 override the package parameters.
 
 ....
-$ nuv action invoke --result custom/identity --param city Dallas --param state Texas
+$ wsk action invoke --result custom/identity --param city Dallas --param state Texas
 ....
 
 ....
@@ -508,15 +508,15 @@ $ nuv action invoke --result custom/identity --param city Dallas --param state T
 === Sharing a package
 
 After the actions and feeds that comprise a package are debugged and
-tested, the package can be shared with all OpenWhisk and Nuvolaris users. Sharing the
+tested, the package can be shared with all OpenWhisk users. Sharing the
 package makes it possible for the users to bind the package, invoke
-actions in the package, and author OpenWhisk and Nuvolaris rules and sequence actions.
+actions in the package, and author OpenWhisk rules and sequence actions.
 
 [arabic]
 . Share the package with all users:
 
 ....
-$ nuv package update custom --shared yes
+$ wsk package update custom --shared yes
 ....
 
 ....
@@ -528,7 +528,7 @@ ok: updated package custom
 true.
 
 ....
-$ nuv package get custom
+$ wsk package get custom
 ....
 
 ....
@@ -549,7 +549,7 @@ is private, then all of its contents are also private.
 the package and action.
 
 ....
-$ nuv package get --summary custom
+$ wsk package get --summary custom
 ....
 
 ....

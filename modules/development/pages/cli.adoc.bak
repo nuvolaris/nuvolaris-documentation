@@ -1,13 +1,13 @@
-== OpenWhisk and Nuvolaris CLI
+== OpenWhisk CLI
 
-OpenWhisk and Nuvolaris offers a powerful command line interface that allows complete
+OpenWhisk offers a powerful command line interface that allows complete
 management of all aspects of the system.
 
-=== Setting up the OpenWhisk and Nuvolaris CLI
+=== Setting up the OpenWhisk CLI
 
-* Building OpenWhisk and Nuvolaris from a cloned repository results in the generation
+* Building OpenWhisk from a cloned repository results in the generation
 of the command line interface. The generated CLIs are located in
-`openwhisk/bin/`. The main CLI is located in `openwhisk/bin/nuv` that
+`openwhisk/bin/`. The main CLI is located in `openwhisk/bin/wsk` that
 runs on the operating system, and CPU architecture on which it was
 built. Executables for other operating system, and CPU architectures are
 located in the following directories: `openwhisk/bin/mac/`,
@@ -16,26 +16,26 @@ located in the following directories: `openwhisk/bin/mac/`,
 download the CLI using the deployment’s base URL. A list of downloadable
 CLIs for various operating systems, and CPU architectures can be
 obtained from the following location `{BASE URL}/cli`. The `{BASE URL}`
-is the OpenWhisk and Nuvolaris API hostname or IP address.
+is the OpenWhisk API hostname or IP address.
 
 There are two required properties to configure in order to use the CLI:
 
 [arabic]
-. *API host* (name or IP address) for the OpenWhisk and Nuvolaris deployment you want
+. *API host* (name or IP address) for the OpenWhisk deployment you want
 to use.
 . *Authorization key* (username and password) which grants you access to
-the OpenWhisk and Nuvolaris API.
+the OpenWhisk API.
 
 The API host can be acquired from the `edge.host` property in
 `whisk.properties` file, which is generated during deployment of
-OpenWhisk and Nuvolaris. Run the following command from your `openwhisk` directory to
+OpenWhisk. Run the following command from your `openwhisk` directory to
 set the API host:
 
 ....
-./bin/nuv property set --apihost <openwhisk_baseurl>
+./bin/wsk property set --apihost <openwhisk_baseurl>
 ....
 
-*Tip:* If you are using a local OpenWhisk and Nuvolaris deployment with a self-signed
+*Tip:* If you are using a local OpenWhisk deployment with a self-signed
 SSL certificate, you can use `--insecure` to bypass certificate
 validation.
 
@@ -48,15 +48,15 @@ the CLI to use the guest account, you can run the following command from
 your `openwhisk` directory:
 
 ....
-./bin/nuv property set --auth `cat ansible/files/auth.guest`
+./bin/wsk property set --auth `cat ansible/files/auth.guest`
 ....
 
-*Tip:* The OpenWhisk and Nuvolaris CLI stores properties in the `~/.nuvprops`
+*Tip:* The OpenWhisk CLI stores properties in the `~/.wskprops`
 configuration file by default. The location of this file can be altered
 by setting the `WSK_CONFIG_FILE` environment variable.
 
 The required properties described above have the following keys in the
-`.nuvprops` file:
+`.wskprops` file:
 
 * *APIHOST* - Required key for the API host value.
 * *AUTH* - Required key for the Authorization key.
@@ -66,12 +66,12 @@ action].
 
 ==== Optional Whisk Properties
 
-Some OpenWhisk and Nuvolaris providers make use of optional properties that can be
-added to the `.nuvprops` file. The following keys are optional:
+Some OpenWhisk providers make use of optional properties that can be
+added to the `.wskprops` file. The following keys are optional:
 
 * *APIGW_ACCESS_TOKEN* - Optional, provider-specific authorization token
 for an independently hosted API Gateway service used for managing
-OpenWhisk and Nuvolaris API endpoints.
+OpenWhisk API endpoints.
 * *APIGW_TENANT_ID* - Optional, provider-relative identifier of the
 tenant (owner for access control purposes) of any API endpoints that are
 created by the CLI.
@@ -97,22 +97,22 @@ To write the bash command completion to your local directory, run the
 following command:
 
 ....
-nuv sdk install bashauto
+wsk sdk install bashauto
 ....
 
-The command script `nuv_cli_bash_completion.sh` will now be in your
-current directory. To enable command line completion of nuv commands,
+The command script `wsk_cli_bash_completion.sh` will now be in your
+current directory. To enable command line completion of wsk commands,
 source the auto completion script into your bash environment.
 
 ....
-source nuv_cli_bash_completion.sh
+source wsk_cli_bash_completion.sh
 ....
 
 Alternatively, to install bash command completion, run the following
 command:
 
 ....
-eval "`nuv sdk install bashauto --stdout`"
+eval "`wsk sdk install bashauto --stdout`"
 ....
 
 For Mac users, autocomplete doesn’t insert space after using TAB. To
@@ -120,19 +120,19 @@ workaround this, you need to modify the output script like the
 following:
 
 ....
-eval "`nuv sdk install bashauto --stdout | sed 's/-o nospace//'`"
+eval "`wsk sdk install bashauto --stdout | sed 's/-o nospace//'`"
 ....
 
 *Note:* Every time a new terminal is opened, this command must run to
 enable bash command completion. Alternatively, adding the previous
 command to the `.bashrc` or `.profile` will prevent this.
 
-=== Using the OpenWhisk and Nuvolaris CLI
+=== Using the OpenWhisk CLI
 
 After you have configured your environment, you can begin using the
-OpenWhisk and Nuvolaris CLI to do the following:
+OpenWhisk CLI to do the following:
 
-* Run your code snippets, or actions, on OpenWhisk and Nuvolaris. See
+* Run your code snippets, or actions, on OpenWhisk. See
 link:./actions.md[Creating and invoking actions].
 * Use triggers and rules to enable your actions to respond to events.
 See link:./triggers_rules.md[Creating triggers and rules].
@@ -141,7 +141,7 @@ sources. See link:./packages.md[Using and creating packages].
 * Explore the catalog of packages and enhance your applications with
 external services, such as a
 link:./catalog.md#using-the-cloudant-package[Cloudant event source]. See
-link:./catalog.md[Using OpenWhisk and Nuvolaris-enabled services].
+link:./catalog.md[Using OpenWhisk-enabled services].
 
 === Configure the CLI to use an HTTPS proxy
 
@@ -164,5 +164,5 @@ cert path for your corresponding environment configuration. * Run the
 following command to pass client certificate:
 
 ....
-./bin/nuv property set --cert <client_cert_path> --key <client_key_path>
+./bin/wsk property set --cert <client_cert_path> --key <client_key_path>
 ....

@@ -1,9 +1,9 @@
 == Adding Action Language Runtimes
 
-OpenWhisk and Nuvolaris supports link:actions.md#languages-and-runtimes[several
+OpenWhisk supports link:actions.md#languages-and-runtimes[several
 languages and runtimes] but there may be other languages or runtimes
 that are important for your organization, and for which you want tighter
-integration with the platform. The OpenWhisk and Nuvolaris platform is extensible and
+integration with the platform. The OpenWhisk platform is extensible and
 you can add new languages or runtimes (with custom packages and
 third-party dependencies) following the guide described here.
 
@@ -31,12 +31,12 @@ functions are shown below.
 === Platform requirements
 
 In order for your language runtime to be properly recognized by the
-OpenWhisk and Nuvolaris platform, and officially recognized by the Apache OpenWhisk and Nuvolaris
+OpenWhisk platform, and officially recognized by the Apache OpenWhisk
 project, please follow these requirements and best practices:
 
 [arabic]
 . Implement the runtime in its own repository to permit a management
-lifecycle independent of the rest of the OpenWhisk and Nuvolaris platform.
+lifecycle independent of the rest of the OpenWhisk platform.
 . Introduce the runtime specification into the
 link:../ansible/files/runtimes.json[runtimes manifest],
 . Add the runtime to the
@@ -59,7 +59,7 @@ link:#runtime-proxy-tests[Runtime proxy tests]
 === The runtimes manifest
 
 Actions when created specify the desired runtime for the function via a
-property called ``kind''. When using the `nuv` CLI, this is specified as
+property called ``kind''. When using the `wsk` CLI, this is specified as
 `--kind <runtime-kind>`. The value is typically a string describing the
 language (e.g., `nodejs`) followed by a colon and the version for the
 runtime as in `nodejs:20` or `php:8.1`.
@@ -136,7 +136,7 @@ function main(args) {
 
 An action consists of the user function (and its dependencies) along
 with a _proxy_ that implements a canonical protocol to integrate with
-the OpenWhisk and Nuvolaris platform.
+the OpenWhisk platform.
 
 The proxy is a web server with two endpoints. * It listens on port
 `8080`. * It implements `/init` to initialize the container. * It also
@@ -186,7 +186,7 @@ instance.
 ** `__OW_DEADLINE` the approximate time when this initializer will have
 consumed its entire duration quota (measured in epoch milliseconds).
 
-The initialization route is called exactly once by the OpenWhisk and Nuvolaris
+The initialization route is called exactly once by the OpenWhisk
 platform, before executing a function. The route should report an error
 if called more than once. It is possible however that a single
 initialization will be followed by many activations (via `/run`). If an
@@ -204,7 +204,7 @@ failure. The value of the error field may be any valid JSON value. The
 proxy should make sure to generate meaningful log message on failure to
 aid the end user in understanding the failure.
 
-*Time limit:* Every action in OpenWhisk and Nuvolaris has a defined time limit (e.g.,
+*Time limit:* Every action in OpenWhisk has a defined time limit (e.g.,
 60 seconds). The initialization must complete within the allowed
 duration. Failure to complete initialization within the allowed time
 frame will destroy the container.
@@ -212,23 +212,23 @@ frame will destroy the container.
 *Limitation:* The proxy does not currently receive any of the activation
 context at initialization time. There are scenarios where the context is
 convenient if present during initialization. This will require a change
-in the OpenWhisk and Nuvolaris platform itself. Note that even if the context is
+in the OpenWhisk platform itself. Note that even if the context is
 available during initialization, it must be reset with every new
 activation since the information will change with every execution.
 
 ==== Activation
 
 The proxy is ready to execute a function once it has successfully
-completed initialization. The OpenWhisk and Nuvolaris platform will invoke the
+completed initialization. The OpenWhisk platform will invoke the
 function by posting an HTTP request to `/run` with a JSON object
 providing a new activation context and the input parameters for the
 function. There may be many activations of the same function against the
 same proxy (viz. container). Currently, the activations are guaranteed
 not to overlap — that is, at any given time, there is at most one
-request to `/run` from the OpenWhisk and Nuvolaris platform.
+request to `/run` from the OpenWhisk platform.
 
 The route must accept a JSON object and respond with a JSON object,
-otherwise the OpenWhisk and Nuvolaris platform will treat the activation as a failure
+otherwise the OpenWhisk platform will treat the activation as a failure
 and proceed to destroy the container. The JSON object provided by the
 platform follows the following schema:
 
@@ -247,7 +247,7 @@ platform follows the following schema:
 
 * `value` is a JSON object and contains all the parameters for the
 function activation.
-* `namespace` is the OpenWhisk and Nuvolaris namespace for the action (e.g.,
+* `namespace` is the OpenWhisk namespace for the action (e.g.,
 `whisk.system`).
 * `action_name` is the link:reference.md#fully-qualified-names[fully
 qualified name] of the action.
@@ -261,7 +261,7 @@ The `value` is the function parameters. The rest of the properties
 become part of the activation context which is a set of environment
 variables constructed by capitalizing each of the property names, and
 prefixing the result with `__OW_`. Additionally, the context must define
-`__OW_API_HOST` whose value is the OpenWhisk and Nuvolaris API host. This value is
+`__OW_API_HOST` whose value is the OpenWhisk API host. This value is
 currently provided as an environment variable defined at container
 startup time and hence already available in the context.
 
@@ -275,14 +275,14 @@ activation].
 activation error. The response from the handler must be a JSON object
 with a single field called `error` describing the failure. The value of
 the error field may be any valid JSON value. Should the proxy fail to
-respond with a JSON object, the OpenWhisk and Nuvolaris platform will treat the
+respond with a JSON object, the OpenWhisk platform will treat the
 failure as an uncaught exception. These two failures modes are
 distinguished by the value of the `response.status` in the
 link:actions.md#understanding-the-activation-record[activation record]
 which is ``application error'' if the proxy returned an ``error''
 object, and ``action developer error'' otherwise.
 
-*Time limit:* Every action in OpenWhisk and Nuvolaris has a defined time limit (e.g.,
+*Time limit:* Every action in OpenWhisk has a defined time limit (e.g.,
 60 seconds). The activation must complete within the allowed duration.
 Failure to complete activation within the allowed time frame will
 destroy the container.
@@ -328,11 +328,11 @@ The canonical test suite should be extended by the new runtime tests.
 Additional tests will be required depending on the feature set provided
 by the runtime.
 
-Since the OpenWhisk and Nuvolaris platform is language and runtime agnostic, it is
+Since the OpenWhisk platform is language and runtime agnostic, it is
 generally not necessary to add integration tests. That is the unit tests
 verifying the protocol are sufficient. However, it may be necessary in
-some cases to modify the `nuv` CLI or other OpenWhisk and Nuvolaris clients. In which
-case, appropriate tests should be added as necessary. The OpenWhisk and Nuvolaris
+some cases to modify the `wsk` CLI or other OpenWhisk clients. In which
+case, appropriate tests should be added as necessary. The OpenWhisk
 platform will perform a generic integration test as part of its basic
 system tests. This integration test will require a
 link:#the-test-action[test function] to be available so that the test
@@ -341,7 +341,7 @@ harness can create, invoke, and delete the action.
 === Supporting Additional Execution Environments
 
 There are now several runtimes that support execution environments in
-addition to OpenWhisk and Nuvolaris. Currently only an interface for single entrypoint
+addition to OpenWhisk. Currently only an interface for single entrypoint
 execution environments has been defined, but more could be defined in
 the future.
 
@@ -349,7 +349,7 @@ the future.
 
 Single entrypoint proxies are proxies that have only onde addressable
 http endpoint. They do not use `/init` and `/run` enpoints utilized by
-standard OpenWhisk and Nuvolaris runtime environments; instead both the initialization
+standard OpenWhisk runtime environments; instead both the initialization
 and activation are handled through one endpoint. The first example of
 such a proxy was implemented for Knative Serving, but the same interface
 can be used for any single entrypoint execution environment. In an

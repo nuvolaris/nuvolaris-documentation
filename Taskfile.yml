@@ -1,6 +1,8 @@
 version: 3 
 tasks:
+  
   default: task -l
+
   download:
     desc: download original documentation and convert it
     dir: modules/development/pages
@@ -28,3 +30,9 @@ tasks:
       cmd:  |
             curl  -sL {{.SOURCES}}/{{.ITEM}}.md -o {{.ITEM}}.md
             pandoc -f markdown -w asciidoc {{.ITEM}}.md -o {{.ITEM}}.adoc
+
+  fixes:
+    desc: download original documentation and convert it
+    dir: modules/development/pages
+    cmds: 
+    - sed -i.bak -e 's/wsk/nuv/g' -e 's/OpenWhisk/OpenWhisk and Nuvolaris/g' *.adoc

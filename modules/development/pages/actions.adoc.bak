@@ -1,6 +1,6 @@
-== OpenWhisk and Nuvolaris Actions
+== OpenWhisk Actions
 
-Actions are stateless functions that run on the OpenWhisk and Nuvolaris platform. For
+Actions are stateless functions that run on the OpenWhisk platform. For
 example, an action can be used to detect the faces in an image, respond
 to a database change, respond to an API call, or post a Tweet. In
 general, an action is invoked in response to an event and produces some
@@ -11,20 +11,20 @@ link:#languages-and-runtimes[supported languages and runtimes], or from
 a binary-compatible executable, or even executables packaged as Docker
 containers.
 
-* The OpenWhisk and Nuvolaris CLI
-https://github.com/apache/openwhisk-cli/releases[`nuv`] makes it easy to
+* The OpenWhisk CLI
+https://github.com/apache/openwhisk-cli/releases[`wsk`] makes it easy to
 create and invoke actions. Instructions for configuring the CLI are
 available link:cli.md[here].
 * You can also use the link:rest_api.md[REST API].
 
 While the actual function code will be specific to a
-link:#languages-and-runtimes[language and runtime], the OpenWhisk and Nuvolaris
+link:#languages-and-runtimes[language and runtime], the OpenWhisk
 operations to create, invoke and manage an action are the same
 regardless of the implementation choice. We recommend that you review
 link:#the-basics[the basics] before moving on to advanced topics.
 
 * link:#the-basics[The basics of working with actions] (_start here_)
-* Common `nuv` CLI operations and tips
+* Common `wsk` CLI operations and tips
 ** link:#watching-action-output[Watching action output]
 ** link:#getting-actions[Getting actions]
 ** link:#listing-actions[Listing actions]
@@ -180,13 +180,13 @@ function accepts a dictionary as input and produces a dictionary as
 output. The input and output dictionaries are key-value pairs, where the
 key is a string and the value is any valid JSON value. The dictionaries
 are canonically represented as JSON objects when interfacing to an
-action via the REST API or the `nuv` CLI. - The function must be called
+action via the REST API or the `wsk` CLI. - The function must be called
 `main` or otherwise must be explicitly exported to identify it as the
 entry point. The mechanics may vary depending on your choice of
 language, but in general the entry point can be specified using the
-`--main` flag when using the `nuv` CLI.
+`--main` flag when using the `wsk` CLI.
 
-In this section, you’ll invoke a built-in action using the `nuv` CLI,
+In this section, you’ll invoke a built-in action using the `wsk` CLI,
 which you should link:cli.md[download and configure] first if necessary.
 
 ==== Invoking a built-in action
@@ -206,7 +206,7 @@ basic tutorial.
 Let’s take a look at the action body by saving the function locally:
 
 ....
-nuv action get /whisk.system/samples/greeting --save
+wsk action get /whisk.system/samples/greeting --save
 ok: saved action code to /path/to/openwhisk/greeting.js
 ....
 
@@ -241,10 +241,10 @@ function main(params) {
 ----
 
 The command to invoke an action and get its result is
-`nuv action invoke <name> --result` as in:
+`wsk action invoke <name> --result` as in:
 
 ....
-nuv action invoke /whisk.system/samples/greeting --result
+wsk action invoke /whisk.system/samples/greeting --result
 ....
 
 This command will print the following result to the terminal:
@@ -258,7 +258,7 @@ This command will print the following result to the terminal:
 
 ==== Passing parameters to actions
 
-Actions may receive parameters as input, and the `nuv` CLI makes it
+Actions may receive parameters as input, and the `wsk` CLI makes it
 convenient to pass parameters to the actions from the command line.
 Briefly, this is done with the flag `--param key value` where `key` is
 the property name and `value` is any valid JSON value. There is a longer
@@ -274,7 +274,7 @@ word ``stranger'', - `place` whose value will replace the word
 ``somewhere''.
 
 ....
-nuv action invoke /whisk.system/samples/greeting --result --param name Dorothy --param place Kansas
+wsk action invoke /whisk.system/samples/greeting --result --param name Dorothy --param place Kansas
 {
   "msg": "Hello, Dorothy from Kansas!"
 }
@@ -284,24 +284,24 @@ nuv action invoke /whisk.system/samples/greeting --result --param name Dorothy -
 
 The style of invocation shown above is synchronous in that the request
 from the CLI _blocks_ until the activation completes and the result is
-available from the OpenWhisk and Nuvolaris platform. This is generally useful for
+available from the OpenWhisk platform. This is generally useful for
 rapid iteration and development.
 
 You can invoke an action asynchronously as well, by dropping the
 `--result` command line option. In this case the action is invoked, and
-the OpenWhisk and Nuvolaris platform returns an activation ID which you can use later
+the OpenWhisk platform returns an activation ID which you can use later
 to retrieve the activation record.
 
 ....
-nuv action invoke /whisk.system/samples/greeting
+wsk action invoke /whisk.system/samples/greeting
 ok: invoked /whisk.system/samples/greeting with id 5a64676ec8aa46b5a4676ec8aaf6b5d2
 ....
 
-To retrieve the activation record, you use the `nuv activation get <id>`
+To retrieve the activation record, you use the `wsk activation get <id>`
 command, as in:
 
 ....
-nuv activation get 5a64676ec8aa46b5a4676ec8aaf6b5d2
+wsk activation get 5a64676ec8aa46b5a4676ec8aaf6b5d2
 ok: got activation 5a64676ec8aa46b5a4676ec8aaf6b5d2
 {
   "activationId": "5a64676ec8aa46b5a4676ec8aaf6b5d2",
@@ -321,7 +321,7 @@ receiving the activation record entirely instead of just the result.
 This is achieved using the `--blocking` command line parameter.
 
 ....
-nuv action invoke /whisk.system/samples/greeting --blocking
+wsk action invoke /whisk.system/samples/greeting --blocking
 ok: invoked /whisk.system/samples/greeting with id 5975c24de0114ef2b5c24de0118ef27e
 {
   "activationId": "5975c24de0114ef2b5c24de0118ef27e",
@@ -356,15 +356,15 @@ record] for more details.
 ==== Working with activations
 
 Some common CLI commands for working with activations are: -
-`nuv activation list`: lists all activations -
-`nuv activation get --last`: retrieves the most recent activation record
-- `nuv activation result <activationId>`: retrieves only the result of
+`wsk activation list`: lists all activations -
+`wsk activation get --last`: retrieves the most recent activation record
+- `wsk activation result <activationId>`: retrieves only the result of
 the activation (or use `--last` to get the most recent result). -
-`nuv activation logs <activationId>`: retrieves only the logs of the
-activation. - `nuv activation logs <activationId> --strip`: strips
+`wsk activation logs <activationId>`: retrieves only the logs of the
+activation. - `wsk activation logs <activationId> --strip`: strips
 metadata from each log line so the logs are easier to read.
 
-===== The `nuv activation list` command
+===== The `wsk activation list` command
 
 The `activation list` command lists all activations, or activations
 filtered by namespace or name. The result set can be limited by using
@@ -382,7 +382,7 @@ Flags:
 For example, to list the last 6 activations:
 
 ....
-nuv activation list --limit 6
+wsk activation list --limit 6
 ....
 
 The meaning of the different columns in the list are:
@@ -393,8 +393,8 @@ The meaning of the different columns in the list are:
 |`Datetime` |The date and time when the invocation occurred.
 
 |`Activation ID` |An activation ID that can be used to retrive the
-result using the `nuv activation get`, `nuv activation result` and
-`nuv activation logs` commands.
+result using the `wsk activation get`, `wsk activation result` and
+`wsk activation logs` commands.
 
 |`Kind` |The runtime or action type
 
@@ -469,19 +469,19 @@ Earlier we saved the code from the `greeting` action locally. We can use
 it to create our own version of the action in our own namespace.
 
 ....
-nuv action create greeting greeting.js
+wsk action create greeting greeting.js
 ok: created action greeting
 ....
 
 For convenience, you can omit the namespace when working with actions
 that belong to you. Also if there is no package, then you simply use the
 action name without a link:packages.md[package] name. If you modify the
-code and want to update the action, you can use `nuv action update`
-instead of `nuv action create`. The two commands are otherwise the same
+code and want to update the action, you can use `wsk action update`
+instead of `wsk action create`. The two commands are otherwise the same
 in terms of their command like parameters.
 
 ....
-nuv action update greeting greeting.js
+wsk action update greeting greeting.js
 ok: updated action greeting
 ....
 
@@ -496,19 +496,19 @@ the specified value to the function.
 Here is an example.
 
 ....
-nuv action invoke greeting --result
+wsk action invoke greeting --result
 {
   "msg": "Hello, stranger from somewhere!"
 }
 ....
 
 ....
-nuv action update greeting --param name Toto
+wsk action update greeting --param name Toto
 ok: updated action greeting
 ....
 
 ....
-nuv action invoke greeting --result
+wsk action invoke greeting --result
 {
   "msg": "Hello, Toto from somewhere!"
 }
@@ -517,7 +517,7 @@ nuv action invoke greeting --result
 You may still provide additional parameters, as in the `place`:
 
 ....
-nuv action invoke greeting --result --param place Kansas
+wsk action invoke greeting --result --param place Kansas
 {
   "msg": "Hello, Toto from Kansas!"
 }
@@ -526,7 +526,7 @@ nuv action invoke greeting --result --param place Kansas
 and even override the `name`:
 
 ....
-nuv action invoke greeting --result --param place Kansas --param name Dorothy
+wsk action invoke greeting --result --param place Kansas --param name Dorothy
 {
   "msg": "Hello, Dorothy from Kansas!"
 }
@@ -540,7 +540,7 @@ and dispatches an activation.
 The system returns an activation ID (in the case of a non-blocking
 invocation) to confirm that the invocation was received. Notice that if
 there’s a network failure or other failure which intervenes before you
-receive an HTTP response, it is possible that OpenWhisk and Nuvolaris received and
+receive an HTTP response, it is possible that OpenWhisk received and
 processed the request.
 
 The system attempts to invoke the action once and records the `status`
@@ -575,7 +575,7 @@ invocation might run before the first. If the actions have side effects,
 they might be observed in any order.
 * There is no guarantee that actions will execute atomically. Two
 actions can run concurrently and their side effects can be interleaved.
-OpenWhisk and Nuvolaris does not ensure any particular concurrent consistency model
+OpenWhisk does not ensure any particular concurrent consistency model
 for side effects. Any concurrency side effects will be
 implementation-dependent.
 * Actions have two phases: an initialization phase, and a run phase.
@@ -598,7 +598,7 @@ aware of vulnerabilities they may inherit from third-party dependencies.
 
 === Creating action sequences
 
-A powerful feature of the OpenWhisk and Nuvolaris programming model is the ability to
+A powerful feature of the OpenWhisk programming model is the ability to
 compose actions together. A common composition is a sequence of actions,
 where the result of one action becomes the input to the next action in
 the sequence.
@@ -611,7 +611,7 @@ sequence.
 . Display the actions in the `/whisk.system/utils` package.
 
 ....
-nuv package get --summary /whisk.system/utils
+wsk package get --summary /whisk.system/utils
 ....
 
 ....
@@ -632,7 +632,7 @@ here, although the package contains more actions.
 as an argument to the next action.
 
 ....
-nuv action create mySequence --sequence /whisk.system/utils/split,/whisk.system/utils/sort
+wsk action create mySequence --sequence /whisk.system/utils/split,/whisk.system/utils/sort
 ....
 
 This action sequence converts some lines of text to an array, and sorts
@@ -642,7 +642,7 @@ the lines.
 . Invoke the action:
 
 ....
-nuv action invoke --result mySequence --param payload "Over-ripe sushi,\nThe Master\nIs full of regret."
+wsk action invoke --result mySequence --param payload "Over-ripe sushi,\nThe Master\nIs full of regret."
 ....
 
 [source,json]
@@ -678,18 +678,18 @@ described link:conductors.md[here].
 
 === Watching action output
 
-OpenWhisk and Nuvolaris actions might be invoked by other users, in response to
+OpenWhisk actions might be invoked by other users, in response to
 various events, or as part of an action sequence. In such cases it can
 be useful to monitor the invocations.
 
-You can use the OpenWhisk and Nuvolaris CLI to watch the output of actions as they are
+You can use the OpenWhisk CLI to watch the output of actions as they are
 invoked.
 
 [arabic]
 . Issue the following command from a shell:
 
 ....
-nuv activation poll
+wsk activation poll
 ....
 
 This command starts a polling loop that continuously checks for logs
@@ -699,7 +699,7 @@ from activations.
 . Switch to another window and invoke an action:
 
 ....
-nuv action invoke /whisk.system/samples/helloWorld --param payload Bob
+wsk action invoke /whisk.system/samples/helloWorld --param payload Bob
 ok: invoked /whisk.system/samples/helloWorld with id 7331f9b9e2044d85afd219b12c0f1491
 ....
 
@@ -712,15 +712,15 @@ Activation: helloWorld (7331f9b9e2044d85afd219b12c0f1491)
 ....
 
 Similarly, whenever you run the poll utility, you see in real time the
-logs for any actions running on your behalf in OpenWhisk and Nuvolaris.
+logs for any actions running on your behalf in OpenWhisk.
 
 === Getting actions
 
 Metadata that describes existing actions can be retrieved via the
-`nuv action get` command.
+`wsk action get` command.
 
 ....
-nuv action get hello
+wsk action get hello
 ok: got action hello
 {
     "namespace": "guest",
@@ -751,7 +751,7 @@ An action can be invoked through the REST interface via an HTTPS
 request. To get an action URL, execute the following command:
 
 ....
-nuv action get greeting --url
+wsk action get greeting --url
 ....
 
 A URL with the following format will be returned for standard actions:
@@ -764,7 +764,7 @@ https://${APIHOST}/api/v1/namespaces/${NAMESPACE}/actions/greeting
 Authentication is required when invoking an action via an HTTPS request
 using this resource path. For more information regarding action
 invocations using the REST interface, see link:rest_api.md#actions[Using
-REST APIs with OpenWhisk and Nuvolaris].
+REST APIs with OpenWhisk].
 
 Another way of invoking an action which does not require authentication
 is via link:webactions.md#web-actions[web actions].
@@ -774,14 +774,14 @@ command line option at action creation time (or later when updating the
 action).
 
 ....
-nuv action update greeting --web true
+wsk action update greeting --web true
 ok: updated action greeting
 ....
 
 The resource URL for a web action is different:
 
 ....
-nuv action get greeting --url
+wsk action get greeting --url
 ok: got action greeting
 https://${APIHOST}/api/v1/web/${NAMESPACE}/${PACKAGE}/greeting
 ....
@@ -789,7 +789,7 @@ https://${APIHOST}/api/v1/web/${NAMESPACE}/${PACKAGE}/greeting
 You can use `curl` or wget to invoke the action.
 
 ....
-curl `nuv action get greeting --url | tail -1`.json
+curl `wsk action get greeting --url | tail -1`.json
 {
   "payload": "Hello, Toto from somewhere!"
 }
@@ -808,7 +808,7 @@ corresponds to the action kind is used, or an extension of `.zip` will
 be used for action code that is a zip file.
 
 ....
-nuv action get /whisk.system/samples/greeting --save
+wsk action get /whisk.system/samples/greeting --save
 ok: saved action code to /path/to/openwhisk/greeting.js
 ....
 
@@ -817,17 +817,17 @@ ok: saved action code to /path/to/openwhisk/greeting.js
 `--save-as` flag.
 
 ....
-nuv action get /whisk.system/samples/greeting --save-as hello.js
+wsk action get /whisk.system/samples/greeting --save-as hello.js
 ok: saved action code to /path/to/openwhisk/hello.js
 ....
 
 === Listing actions
 
 You can list all the actions that you have created using
-`nuv action list`:
+`wsk action list`:
 
 ....
-nuv action list
+wsk action list
 ....
 
 ....
@@ -841,7 +841,7 @@ updated. For easier browsing, you can use the flag `--name-sort` or `-n`
 to sort the list alphabetically:
 
 ....
-nuv action list --name-sort
+wsk action list --name-sort
 ....
 
 ....
@@ -864,7 +864,7 @@ to group related actions into link:packages.md[packages]. To filter your
 list of actions to just those within a specific package, you can use:
 
 ....
-nuv action list /whisk.system/utils
+wsk action list /whisk.system/utils
 ....
 
 ....
@@ -888,7 +888,7 @@ You can clean up by deleting actions that you do not want to use.
 . Run the following command to delete an action:
 
 ....
-nuv action delete greeting
+wsk action delete greeting
 ok: deleted greeting
 ....
 
@@ -896,7 +896,7 @@ ok: deleted greeting
 . Verify that the action no longer appears in the list of actions.
 
 ....
-nuv action list
+wsk action list
 ....
 
 ....
@@ -908,13 +908,13 @@ actions
 
 The action environment contains several properties that are specific to
 the running action. These allow the action to programmatically work with
-OpenWhisk and Nuvolaris assets via the REST API, or set an internal alarm when the
+OpenWhisk assets via the REST API, or set an internal alarm when the
 action is about to use up its allotted time budget. The properties are
 accessible via the system environment for all supported runtimes:
-Node.js, Python, Swift, Java and Docker actions when using the OpenWhisk and Nuvolaris
+Node.js, Python, Swift, Java and Docker actions when using the OpenWhisk
 Docker skeleton.
 
-* `__OW_API_HOST` the API host for the OpenWhisk and Nuvolaris deployment running this
+* `__OW_API_HOST` the API host for the OpenWhisk deployment running this
 action.
 * `__OW_API_KEY` the API key for the subject invoking the action, this
 key may be a restricted API key. This property is absent unless

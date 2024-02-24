@@ -1,7 +1,7 @@
 == Developing a new Runtime with the ActionLoop proxy
 
-The link:actions-new.md[OpenWhisk and Nuvolaris runtime specification] defines the
-expected behavior of an OpenWhisk and Nuvolaris runtime; you can choose to implement a
+The link:actions-new.md[OpenWhisk runtime specification] defines the
+expected behavior of an OpenWhisk runtime; you can choose to implement a
 new runtime from scratch by just following this specification. However,
 the fastest way to develop a new, compliant runtime is by reusing the
 _https://github.com/apache/openwhisk-runtime-go#actionloop-runtime[ActionLoop
@@ -14,9 +14,9 @@ _fast_) runtime in a few hours or less.
 The `ActionLoop proxy` is a runtime ``engine'', written in the
 https://golang.org/[Go programming language], originally developed
 specifically to support the
-https://github.com/apache/openwhisk-runtime-go[OpenWhisk and Nuvolaris Go language
+https://github.com/apache/openwhisk-runtime-go[OpenWhisk Go language
 runtime]. However, it was written in a generic way such that it has
-since been adopted to implement OpenWhisk and Nuvolaris runtimes for Swift, PHP,
+since been adopted to implement OpenWhisk runtimes for Swift, PHP,
 Python, Rust, Java, Ruby and Crystal. Even though it was developed with
 compiled languages in mind it works equally well with scripting
 languages.
@@ -30,10 +30,10 @@ and responsive. In fact, the ActionLoop proxy has also been adopted to
 improve the performance of existing runtimes like Python, Ruby, PHP, and
 Java where performance has improved by a factor between 2x to 20x.
 
-==== Precompilation of OpenWhisk and Nuvolaris Actions
+==== Precompilation of OpenWhisk Actions
 
 In addition to being the basis for new runtime development, ActionLoop
-runtimes can also support offline ``precompilation'' of OpenWhisk and Nuvolaris Action
+runtimes can also support offline ``precompilation'' of OpenWhisk Action
 source files into a ZIP file that contains only the compiled binaries
 which are very fast to start once deployed. More information on this
 approach can be found here:
@@ -171,11 +171,11 @@ change to one supporting `Ruby` as we continue in this tutorial.
 === Preparing the Docker environment
 
 Our language runtime’s `Dockerfile` has the task of preparing an
-environment for executing OpenWhisk and Nuvolaris Actions. Using the ActionLoop
+environment for executing OpenWhisk Actions. Using the ActionLoop
 approach, we use a multistage Docker build to
 
 [arabic]
-. derive our OpenWhisk and Nuvolaris language runtime from an existing Docker image
+. derive our OpenWhisk language runtime from an existing Docker image
 that has all the target language’s tools and libraries for running
 functions authored in that language.
 * In our case, we will reference the `ruby:2.6.2-alpine3.9` image from
@@ -184,7 +184,7 @@ Docker Hub.
 . leverage the existing `openwhisk/actionlooop-v2` image on Docker Hub
 from which we will ``extract'' the _ActionLoop_ proxy (i.e. copy
 `/bin/proxy` binary) our runtime will use to process Activation requests
-from the OpenWhisk and Nuvolaris platform and execute Actions by using the language’s
+from the OpenWhisk platform and execute Actions by using the language’s
 tools and libraries from step #1.
 
 === Repurpose the renamed Python Dockerfile for Ruby builds
@@ -289,7 +289,7 @@ require "./main__"
 
 _Note that you are free to decide the path and filename for the
 function’s source code. In our examples, we chose a base filename that
-includes the word `"main"` (since it is OpenWhisk and Nuvolaris’s default function
+includes the word `"main"` (since it is OpenWhisk’s default function
 name) and append two underscores to better assure uniqueness._
 
 ===== Open File Descriptor (FD) 3 for function results output
@@ -458,7 +458,7 @@ launch the Java runtime.
 
 ==== How the ActionLoop proxy handles action uploads
 
-The OpenWhisk and Nuvolaris user can upload actions with the `nuv` Command Line
+The OpenWhisk user can upload actions with the `wsk` Command Line
 Interface (CLI) tool as a single file.
 
 This single file can be:
@@ -514,7 +514,7 @@ will be invoked with 3 parameters:
 
 [arabic]
 . `<main>` is the name of the main function specified by the user on the
-`nuv` command line
+`wsk` command line
 . `<src>` is the absolute directory with the sources already unzipped
 . an empty `<bin>` directory where we are expected to place our final
 executables
@@ -620,7 +620,7 @@ Here we will learn how to:
 . enter in a test environment
 . simple smoke tests to check things work
 . writing the validation tests
-. testing the image in an actual OpenWhisk and Nuvolaris environment
+. testing the image in an actual OpenWhisk environment
 
 ==== Entering in the test environment
 
@@ -691,7 +691,7 @@ $ make debug
 # results omitted for brevity ...
 # (you should see a shell prompt of your image)
 $ /bin/proxy -debug
-2019/04/08 07:47:36 OpenWhisk and Nuvolaris ActionLoop Proxy 2: starting
+2019/04/08 07:47:36 OpenWhisk ActionLoop Proxy 2: starting
 ----
 
 Now the runtime is started in debug mode, listening on port 8080, and
@@ -724,7 +724,7 @@ The proxy’s debug output should appear something like:
 [source,bin]
 ----
 /proxy # /bin/proxy -debug
-2019/04/08 07:54:57 OpenWhisk and Nuvolaris ActionLoop Proxy 2: starting
+2019/04/08 07:54:57 OpenWhisk ActionLoop Proxy 2: starting
 2019/04/08 07:58:00 compiler: /proxy/bin/compile
 2019/04/08 07:58:00 it is source code
 2019/04/08 07:58:00 compiling: ./action/16/src/exec main: hello
@@ -826,7 +826,7 @@ action/2/bin/main__.rb
 If we have reached this point in the tutorial, the runtime is able to
 run and execute a simple test action. Now we need to validate the
 runtime against a set of mandatory tests both locally and within an
-OpenWhisk and Nuvolaris staging environment. Additionally, we should author and
+OpenWhisk staging environment. Additionally, we should author and
 automate additional tests for language specific features and styles.
 
 The `starter kit` includes two handy `makefiles` that we can leverage
@@ -926,11 +926,11 @@ Congratulations! The runtime works locally! Time to test it on the
 public cloud. So as the last step before moving forward, let’s push the
 image to Docker Hub with `make push`.
 
-==== Testing on OpenWhisk and Nuvolaris
+==== Testing on OpenWhisk
 
-To run this test you need to configure access to OpenWhisk and Nuvolaris with `nuv`. A
+To run this test you need to configure access to OpenWhisk with `wsk`. A
 simple way is to get access is to register a free account in the IBM
-Cloud but this works also with our own deployment of OpenWhisk and Nuvolaris.
+Cloud but this works also with our own deployment of OpenWhisk.
 
 Edit the Makefile as we did previously:
 
@@ -952,13 +952,13 @@ Test single:
 [source,bash]
 ----
 $ make test-single
-nuv action update hello-demo-ruby hello.rb --docker docker.io/linus/actionloop-demo-ruby-v2.6:latest --main hello
+wsk action update hello-demo-ruby hello.rb --docker docker.io/linus/actionloop-demo-ruby-v2.6:latest --main hello
 ok: updated action hello-demo-ruby
-nuv action invoke hello-demo-ruby -r
+wsk action invoke hello-demo-ruby -r
 {
     "greeting": "Hello stranger!"
 }
-nuv action invoke hello-demo-ruby -p name Mike -r
+wsk action invoke hello-demo-ruby -p name Mike -r
 {
     "greeting": "Hello Mike!"
 }
@@ -972,13 +972,13 @@ $ make test-src-zip
 zip src.zip main.rb hello.rb
   adding: main.rb (deflated 42%)
   adding: hello.rb (deflated 42%)
-nuv action update hello-demo-ruby src.zip --docker docker.io/linus/actionloop-demo-ruby-v2.6:latest
+wsk action update hello-demo-ruby src.zip --docker docker.io/linus/actionloop-demo-ruby-v2.6:latest
 ok: updated action hello-demo-ruby
-nuv action invoke hello-demo-ruby -r
+wsk action invoke hello-demo-ruby -r
 {
     "greeting": "Hello stranger!"
 }
-nuv action invoke hello-demo-ruby -p name Mike -r
+wsk action invoke hello-demo-ruby -p name Mike -r
 {
     "greeting": "Hello Mike!"
 }
@@ -990,13 +990,13 @@ Test binary ZIP:
 ----
 $ make test-bin-zip
 docker run -i actionloop-demo-ruby-v2.6:latest -compile main <src.zip >bin.zip
-nuv action update hello-demo-ruby bin.zip --docker docker.io/actionloop/actionloop-demo-ruby-v2.6:latest
+wsk action update hello-demo-ruby bin.zip --docker docker.io/actionloop/actionloop-demo-ruby-v2.6:latest
 ok: updated action hello-demo-ruby
-nuv action invoke hello-demo-ruby -r
+wsk action invoke hello-demo-ruby -r
 {
     "greeting": "Hello stranger!"
 }
-nuv action invoke hello-demo-ruby -p name Mike -r
+wsk action invoke hello-demo-ruby -p name Mike -r
 {
     "greeting": "Hello Mike!"
 }
@@ -1062,6 +1062,6 @@ BUILD SUCCESSFUL in 55s
 ----
 
 Big congratulations are in order having reached this point successfully.
-At this point, our runtime should be ready to run on any OpenWhisk and Nuvolaris
+At this point, our runtime should be ready to run on any OpenWhisk
 platform and also can be submitted for consideration to be included in
-the Apache OpenWhisk and Nuvolaris project.
+the Apache OpenWhisk project.

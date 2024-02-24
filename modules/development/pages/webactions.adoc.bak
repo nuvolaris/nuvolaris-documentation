@@ -1,9 +1,9 @@
 == Web Actions
 
-Web actions are OpenWhisk and Nuvolaris actions annotated to quickly enable you to
+Web actions are OpenWhisk actions annotated to quickly enable you to
 build web based applications. This allows you to program backend logic
 which your web application can access anonymously without requiring an
-OpenWhisk and Nuvolaris authentication key. It is up to the action developer to
+OpenWhisk authentication key. It is up to the action developer to
 implement their own desired authentication and authorization (i.e. OAuth
 flow).
 
@@ -31,17 +31,17 @@ namespace `guest` using the CLI’s `--web` flag with a value of `true` or
 
 [source,bash]
 ----
-$ nuv package create demo
+$ wsk package create demo
 ok: created package demo
 ----
 
 ....
-$ nuv action create /guest/demo/hello hello.js --web true
+$ wsk action create /guest/demo/hello hello.js --web true
 ok: created action /guest/demo/hello
 ....
 
 ....
-$ nuv action get /guest/demo/hello --url
+$ wsk action get /guest/demo/hello --url
 ok: got action hello
 https://${APIHOST}/api/v1/web/guest/demo/hello
 ....
@@ -149,16 +149,16 @@ omitted from the headers.
 It is important to be aware of the link:reference.md[response size
 limit] for actions since a response that exceeds the predefined system
 limits will fail. Large objects should not be sent inline through
-OpenWhisk and Nuvolaris, but instead deferred to an object store, for example.
+OpenWhisk, but instead deferred to an object store, for example.
 
 === Handling HTTP requests with actions
 
-An OpenWhisk and Nuvolaris action that is not a web action requires both
+An OpenWhisk action that is not a web action requires both
 authentication and must respond with a JSON object. In contrast, web
 actions may be invoked without authentication, and may be used to
 implement HTTP handlers that respond with _headers_, _statusCode_, and
 _body_ content of different types. The web action must still return a
-JSON object, but the OpenWhisk and Nuvolaris system (namely the `controller`) will
+JSON object, but the OpenWhisk system (namely the `controller`) will
 treat a web action differently if its result includes one or more of the
 following as top level JSON properties:
 
@@ -196,7 +196,7 @@ as parameters to the action input argument. They are:
 . `__ow_headers` (type: map string to string): the request headers.
 . `__ow_path` (type: string): the unmatched path of the request
 (matching stops after consuming the action extension).
-. `__ow_user` (type: string): the namespace identifying the OpenWhisk and Nuvolaris
+. `__ow_user` (type: string): the namespace identifying the OpenWhisk
 authenticated subject.
 . `__ow_body` (type: string): the request body entity, as a base64
 encoded string when content is binary or JSON object/array, or plain
@@ -389,7 +389,7 @@ automatically finalized when enabling web actions.
 
 [source,bash]
 ----
-$ nuv action create /guest/demo/hello hello.js \
+$ wsk action create /guest/demo/hello hello.js \
       --parameter name Jane \
       --web true
 ----
@@ -407,7 +407,7 @@ link:annotations.md#annotations-specific-to-web-actions[web action
 annotation] to secure the web action. When the `require-whisk-auth`
 annotation is set to `true`, the action will authenticate the invocation
 request’s Basic Authorization credentials to confirm they represent a
-valid OpenWhisk and Nuvolaris identity. When set to a number or a case-sensitive
+valid OpenWhisk identity. When set to a number or a case-sensitive
 string, the action’s invocation request must include a
 `X-Require-Whisk-Auth` header having this same value. Secured web
 actions will return a `Not Authorized` when credential validation fails.
@@ -421,14 +421,14 @@ value.
 
 [source,bash]
 ----
-$ nuv action update /guest/demo/hello hello.js --web true --web-secure my-secret
+$ wsk action update /guest/demo/hello hello.js --web true --web-secure my-secret
 ----
 
 or
 
 [source,bash]
 ----
-$ nuv action update /guest/demo/hello hello.js --web true -a require-whisk-auth my-secret
+$ wsk action update /guest/demo/hello hello.js --web true -a require-whisk-auth my-secret
 ----
 
 [source,bash]
@@ -448,7 +448,7 @@ To disable a web action from being invoked via web API
 
 [source,bash]
 ----
-$ nuv action update /guest/demo/hello hello.js --web false
+$ wsk action update /guest/demo/hello hello.js --web false
 ----
 
 === Raw HTTP handling
@@ -482,7 +482,7 @@ $ curl https://${APIHOST}/api/v1/web/guest/demo/hello.json?name=Jane -X POST -H 
 }
 ----
 
-OpenWhisk and Nuvolaris uses the
+OpenWhisk uses the
 http://doc.akka.io/docs/akka-http/current/scala/http/[Akka Http]
 framework to
 http://doc.akka.io/api/akka-http/10.0.4/akka/http/scaladsl/model/MediaTypes$.html[determine]
@@ -495,7 +495,7 @@ Raw HTTP web actions are enabled via the `--web` flag using a value of
 
 [source,bash]
 ----
-$ nuv action create /guest/demo/hello hello.js --web raw
+$ wsk action create /guest/demo/hello hello.js --web raw
 ----
 
 ==== Disabling raw HTTP handling
@@ -505,7 +505,7 @@ Disabling raw HTTP can be accomplished by passing a value of `false` or
 
 [source,bash]
 ----
-$ nuv update create /guest/demo/hello hello.js --web false
+$ wsk update create /guest/demo/hello hello.js --web false
 ----
 
 ==== Decoding binary body content from Base64
@@ -581,7 +581,7 @@ following commands:
 
 [source,bash]
 ----
-$ nuv action create decode decode.js --web raw
+$ wsk action create decode decode.js --web raw
 ok: created action decode
 $ curl -k -H "content-type: application" -X POST -d "Decoded body" https://${APIHOST}/api/v1/web/guest/default/decodeNode.json
 {
@@ -631,7 +631,7 @@ Save the above function to `custom-options.js` and execute the following
 commands:
 
 ....
-$ nuv action create custom-option custom-options.js --web true -a web-custom-options true
+$ wsk action create custom-option custom-options.js --web true -a web-custom-options true
 $ curl https://${APIHOST}/api/v1/web/guest/default/custom-options.http -kvX OPTIONS
 < HTTP/1.1 200 OK
 < Server: nginx/1.11.13
@@ -659,7 +659,7 @@ values through a package binding.
 
 === Error Handling
 
-When an OpenWhisk and Nuvolaris action fails, there are two different failure modes.
+When an OpenWhisk action fails, there are two different failure modes.
 The first is known as an _application error_ and is analogous to a
 caught exception: the action returns a JSON object containing a top
 level `error` property. The second is a _developer error_ which occurs
@@ -684,7 +684,7 @@ sequence can generate adequate errors when necessary.
 === Vanity URL
 
 Web actions may be accessed via an alternate URL which treats the
-OpenWhisk and Nuvolaris namespace as a subdomain to the API host. This is suitable for
+OpenWhisk namespace as a subdomain to the API host. This is suitable for
 developing web actions that use cookies or local storage so that data is
 not inadvertently made visible to other web actions in other namespaces.
 The namespaces must match the regular expression `[a-zA-Z0-9-]+` (and

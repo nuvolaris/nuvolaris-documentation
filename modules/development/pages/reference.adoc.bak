@@ -1,25 +1,25 @@
-== OpenWhisk and Nuvolaris system details
+== OpenWhisk system details
 
-The following sections provide more details about the OpenWhisk and Nuvolaris system.
+The following sections provide more details about the OpenWhisk system.
 
-=== OpenWhisk and Nuvolaris entities
+=== OpenWhisk entities
 
 ==== Namespaces and packages
 
-OpenWhisk and Nuvolaris actions, triggers, and rules belong in a namespace, and
+OpenWhisk actions, triggers, and rules belong in a namespace, and
 optionally a package.
 
 Packages can contain actions and feeds. A package cannot contain another
 package, so package nesting is not allowed. Also, entities do not have
 to be contained in a package.
 
-In IBM Cloud, an organization+space pair corresponds to a OpenWhisk and Nuvolaris
+In IBM Cloud, an organization+space pair corresponds to a OpenWhisk
 namespace. For example, the organization `BobsOrg` and space `dev` would
-correspond to the OpenWhisk and Nuvolaris namespace `/BobsOrg_dev`.
+correspond to the OpenWhisk namespace `/BobsOrg_dev`.
 
 You can create your own namespaces if you’re entitled to do so. The
 `/whisk.system` namespace is reserved for entities that are distributed
-with the OpenWhisk and Nuvolaris system.
+with the OpenWhisk system.
 
 ==== Fully qualified names
 
@@ -50,7 +50,7 @@ entities and their aliases.
 |`/myOrg/filter` |`filter` |`/myOrg` | |`filter`
 |===
 
-You will be using this naming scheme when you use the OpenWhisk and Nuvolaris CLI,
+You will be using this naming scheme when you use the OpenWhisk CLI,
 among other places.
 
 ==== Entity names
@@ -73,7 +73,7 @@ More precisely, a name must match the following regular expression
 
 ==== Actions
 
-OpenWhisk and Nuvolaris has a few system limits, including how much memory an action
+OpenWhisk has a few system limits, including how much memory an action
 can use and how many action invocations are allowed per minute.
 
 *Note:* This default limits are for the open source distribution;

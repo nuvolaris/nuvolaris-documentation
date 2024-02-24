@@ -83,11 +83,11 @@ jar cvf hello.jar Hello.class
 *Note:* https://github.com/google/gson[google-gson] must exist in your
 Java CLASSPATH when compiling the Java file.
 
-You can create a OpenWhisk and Nuvolaris action called `helloJava` from this JAR file
+You can create a OpenWhisk action called `helloJava` from this JAR file
 as follows:
 
 ....
-nuv action create helloJava hello.jar --main Hello
+wsk action create helloJava hello.jar --main Hello
 ....
 
 When you use the command line and a `.jar` source file, you do not need
@@ -107,7 +107,7 @@ Action invocation is the same for Java actions as it is for Swift and
 JavaScript actions:
 
 ....
-nuv action invoke --result helloJava --param name World
+wsk action invoke --result helloJava --param name World
 ....
 
 [source,json]

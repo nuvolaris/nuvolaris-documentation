@@ -42,14 +42,14 @@ def main(args):
 
 Python actions always consume a dictionary and produce a dictionary. The
 entry method for the action is `main` by default but may be specified
-explicitly when creating the action with the `nuv` CLI using `--main`,
+explicitly when creating the action with the `wsk` CLI using `--main`,
 as with any other action type.
 
-You can create an OpenWhisk and Nuvolaris action called `helloPython` from this
+You can create an OpenWhisk action called `helloPython` from this
 function as follows:
 
 ....
-nuv action create helloPython hello.py
+wsk action create helloPython hello.py
 ....
 
 The CLI automatically infers the type of the action from the source file
@@ -60,7 +60,7 @@ Action invocation is the same for Python actions as it is for any other
 actions:
 
 ....
-nuv action invoke --result helloPython --param name World
+wsk action invoke --result helloPython --param name World
 ....
 
 [source,json]
@@ -90,7 +90,7 @@ and then create the action:
 
 [source,bash]
 ----
-nuv action create helloPython --kind python:3 helloPython.zip
+wsk action create helloPython --kind python:3 helloPython.zip
 ----
 
 == Packaging Python actions with a virtual environment in zip files
@@ -99,7 +99,7 @@ Another way of packaging Python dependencies is using a virtual
 environment (`virtualenv`). This allows you to link additional packages
 that may be installed via
 https://packaging.python.org/installing/[`pip`] for example. To ensure
-compatibility with the OpenWhisk and Nuvolaris container, package installations inside
+compatibility with the OpenWhisk container, package installations inside
 a virtualenv must be done in the target environment. So the docker image
 `openwhisk/python3action` should be used to create a virtualenv
 directory for your action.
@@ -108,7 +108,7 @@ As with basic zip file support, the name of the source file containing
 the main entry point must be `__main__.py`. In addition, the virtualenv
 directory must be named `virtualenv`. Below is an example scenario for
 installing dependencies, packaging them in a virtualenv, and creating a
-compatible OpenWhisk and Nuvolaris action.
+compatible OpenWhisk action.
 
 [arabic]
 . Given a `requirements.txt` file that contains the `pip` modules and
@@ -134,7 +134,7 @@ zip -r helloPython.zip virtualenv __main__.py
 
 [source,bash]
 ----
-nuv action create helloPython --kind python:3 helloPython.zip
+wsk action create helloPython --kind python:3 helloPython.zip
 ----
 
 == Python 3 actions
