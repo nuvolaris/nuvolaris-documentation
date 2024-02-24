@@ -1,4 +1,10 @@
 = Rules
+:namespace: yourNamespace
+:packagename: yourPackageName
+:actionname: yourActionName
+:triggername: yourTriggerName
+:rulename: yourRuleName
+:activationname: yourActivationName
 
 Once we have a trigger and some actions, we can create rules for the trigger. A rule connects the trigger with an action, so if you fire the trigger, it will invoke the action. Let's see this in practice in the next listing.
 
