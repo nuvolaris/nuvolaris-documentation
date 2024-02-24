@@ -33,7 +33,6 @@ Wait until the command completes and you will have Nuvolaris up and running.
 
 
 * xref:tutorial:index.adoc[Check the tutorial] to learn how to use it.
-* xref:admin:index.adoc[Check the Administrative Guide] to learn how to maintain it
 * To uninstall, execute the command:
 
 ----

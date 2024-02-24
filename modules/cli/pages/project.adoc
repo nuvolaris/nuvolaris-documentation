@@ -21,4 +21,3 @@ A single file action is simply a file with specific extension (the supported one
 
 A multi-file action is a folder containing a `main` file and dependencies. The folder is bundled into a zip file and deployed as an action.
 
-image:nuv-projects.png[]

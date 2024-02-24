@@ -7,6 +7,6 @@
 *** xref:triggers.adoc[Triggers]
 *** xref:rules.adoc[Rules]
 ** xref:project.adoc[🚧 Project]
-** xref:statics.adoc[🚧 Assets]
+//** xref:statics.adoc[🚧 Assets]
 ** xref:admin.adoc[Administration]
 ** xref:debug.adoc[Debugging]
