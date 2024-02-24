@@ -39,12 +39,14 @@ list of entities in the collection.
 
 There are entity endpoints for each type of entity:
 
-* `https://$APIHOST/api/v1/namespaces/{namespace}`
-* `https://$APIHOST/api/v1/namespaces/{namespace}/actions/[{packageName}/]{actionName}`
-* `https://$APIHOST/api/v1/namespaces/{namespace}/triggers/{triggerName}`
-* `https://$APIHOST/api/v1/namespaces/{namespace}/rules/{ruleName}` 
-* `https://$APIHOST/api/v1/namespaces/{namespace}/packages/{packageName}`
-* `https://$APIHOST/api/v1/namespaces/{namespace}/activations/{activationName}`
+----
+https://$APIHOST/api/v1/namespaces/{namespace}`
+https://$APIHOST/api/v1/namespaces/{namespace}/actions/[{packageName}/]{actionName}
+https://$APIHOST/api/v1/namespaces/{namespace}/triggers/{triggerName}
+https://$APIHOST/api/v1/namespaces/{namespace}/rules/{ruleName}
+https://$APIHOST/api/v1/namespaces/{namespace}/packages/{packageName}
+https://$APIHOST/api/v1/namespaces/{namespace}/activations/{activationName}
+----
 
 The namespace and activation endpoints support only GET requests. The
 actions, triggers, rules, and packages endpoints support GET, PUT, and
