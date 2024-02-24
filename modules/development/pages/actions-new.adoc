@@ -1,6 +1,6 @@
 == Adding Action Language Runtimes
 
-OpenWhisk and Nuvolaris supports link:actions.md#languages-and-runtimes[several
+OpenWhisk and Nuvolaris supports link:index-runtimes.adoc[several
 languages and runtimes] but there may be other languages or runtimes
 that are important for your organization, and for which you want tighter
 integration with the platform. The OpenWhisk and Nuvolaris platform is extensible and

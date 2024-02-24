@@ -48,9 +48,9 @@ execution. The run phase receives the action parameters provided at
 invocation time. Initialization is skipped if an action is dispatched to
 a previously initialized container — this is referred to as a _warm
 start_. You can tell if an
-link:annotations.md#annotations-specific-to-activations[invocation was a
-warm activation or a cold one requiring initialization] by inspecting
+invocation was a warm activation or a cold one requiring initialization by inspecting
 the activation record.
+
 * An action runs for a bounded amount of time. This limit can be
 configured per action, and applies to both the initialization and the
 execution separately. If the action time limit is exceeded during the
@@ -70,8 +70,8 @@ Docker skeleton.
 * `__OW_API_HOST` the API host for the OpenWhisk and Nuvolaris deployment running this
 action.
 * `__OW_API_KEY` the API key for the subject invoking the action, this
-key may be a restricted API key. This property is absent unless
-explicitly link:./annotations.md#annotations-for-all-actions[requested].
+key may be a restricted API key. This property is absent unless requested with the annotation
+explicitly xref:privide-api-key[`provide-api-key`] 
 * `__OW_NAMESPACE` the namespace for the _activation_ (this may not be
 the same as the namespace for the action).
 * `__OW_ACTION_NAME` the fully qualified name of the running action.

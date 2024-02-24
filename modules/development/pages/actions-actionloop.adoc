@@ -1,6 +1,6 @@
 == Developing a new Runtime with the ActionLoop proxy
 
-The link:actions-new.md[OpenWhisk and Nuvolaris runtime specification] defines the
+The link:actions-new.adoc[OpenWhisk and Nuvolaris runtime specification] defines the
 expected behavior of an OpenWhisk and Nuvolaris runtime; you can choose to implement a
 new runtime from scratch by just following this specification. However,
 the fastest way to develop a new, compliant runtime is by reusing the
