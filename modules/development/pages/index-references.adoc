@@ -42,7 +42,9 @@ The programming languages currently directly supported are :
 [[development-references]]
 == Reference
 
-* xref:rest_api.adoc[Rest API]
-* xref:actions-actionloop.adoc[Building your runtime]
-* xref:actions-new.adoc[Runtimes under the hood]
 * xref:reference.adoc[Naming and Limits]
+* xref:cli.adoc[Advanced CLI]
+* xref:rest_api.adoc[Rest API]
+* xref:actions-new.adoc[Runtimes under the hood]
+* xref:actions-actionloop.adoc[Building your runtime]
+

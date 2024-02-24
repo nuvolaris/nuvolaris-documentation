@@ -7,11 +7,10 @@ general, an action is invoked in response to an event and produces some
 observable output.
 
 An action may be created from a function programmed using a number of
-link:development-runtimes[supported languages and runtimes], or from
-a binary-compatible executable, or even executables packaged as Docker
-containers.
+xref:index-runtimes.adoc[supported languages and runtimes], or from
+a binary-compatible executable.
 
-* The Nuvolaris CLI makes it easy to create and invoke actions. Instructions for configuring and using the CLI are available xref:cli.adoc[here].
+* The Nuvolaris CLI makes it easy to create and invoke actions. Instructions for configuring and using the CLI are available xref:cli:index.adoc[here].
 * You can also use the xref:rest_api.adoc[REST API].
 
 While the actual function code will be specific to a
