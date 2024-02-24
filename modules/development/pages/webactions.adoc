@@ -47,9 +47,7 @@ https://${APIHOST}/api/v1/web/guest/demo/hello
 ----
 
 Using the `--web` flag with a value of `true` or `yes` allows an action
-to be accessible via REST interface without the need for credentials. To
-configure a web action with credentials refer to
-link:webactions.md#securing-web-actions[Securing web actions]. A web
+to be accessible via REST interface without the need for credentials. A web
 action can be invoked using a URL that is structured as follows:
 
 ----
