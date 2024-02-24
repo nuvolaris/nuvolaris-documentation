@@ -1,0 +1,28 @@
+version: 3 
+tasks:
+  default: echo  ok
+  download:
+    dir: modules/development/pages
+    vars:
+      SOURCES: https://raw.githubusercontent.com/apache/openwhisk/master/docs/
+    cmds:
+    - for: 
+      - actions
+      - webactions
+      - packages
+      - parameters
+      - annotations
+      - actions-new
+      - actions-actionloop
+      - actions-nodejs
+      - actions-python
+      - actions-go
+      - actions-java
+      - actions-php
+      - cli
+      - feeds
+      - reference
+      - rest_api
+      cmd:  |
+            curl  -sL {{.SOURCES}}/{{.ITEM}}.md -o {{.ITEM}}.md
+            pandoc -f markdown -w asciidoc {{.ITEM}}.md -o {{.ITEM}}.adoc

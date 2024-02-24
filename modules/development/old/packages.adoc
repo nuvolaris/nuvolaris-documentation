@@ -12,7 +12,7 @@ specified frequency.
 
 Every OpenWhisk entity, including packages, belongs in a _namespace_,
 and the fully qualified name of an entity is
-`/namespaceName[/packageName]/entityName`. Refer to the
+`+/namespaceName[/packageName]/entityName+`. Refer to the
 link:./reference.md#openwhisk-entities[naming guidelines] for more
 information.
 
@@ -28,7 +28,7 @@ packages in a namespace, list the entities in a package, and get a
 description of the individual entities in a package.
 
 [arabic]
-. Get a list of packages in the `/whisk.system` namespace.
+. Get a list of packages in the `+/whisk.system+` namespace.
 
 ....
 $ wsk package list /whisk.system
@@ -50,7 +50,7 @@ packages
 ....
 
 [arabic, start=2]
-. Get a list of entities in the `/whisk.system/cloudant` package.
+. Get a list of entities in the `+/whisk.system/cloudant+` package.
 
 ....
 $ wsk package get --summary /whisk.system/cloudant
@@ -68,28 +68,29 @@ package /whisk.system/cloudant: Cloudant database service
 ...
 ....
 
-*Note*: Parameters listed under the package with a prefix `*` are
-predefined, bound parameters. Parameters without a `*` are those listed
-under the link:./annotations.md[annotations] for each entity.
-Furthermore, any parameters with the prefix `**` are finalized bound
+*Note*: Parameters listed under the package with a prefix `+*+` are
+predefined, bound parameters. Parameters without a `+*+` are those
+listed under the link:./annotations.md[annotations] for each entity.
+Furthermore, any parameters with the prefix `+**+` are finalized bound
 parameters. This means that they are immutable, and cannot be changed by
 the user. Any entity listed under a package inherits specific bound
 parameters from the package. To view the list of known parameters of an
-entity belonging to a package, you will need to run a `get --summary` of
-the individual entity.
+entity belonging to a package, you will need to run a `+get --summary+`
+of the individual entity.
 
-This output shows that the Cloudant package provides the actions `read`
-and `write`, and the trigger feed called `changes`. The `changes` feed
-causes triggers to be fired when documents are added to the specified
-Cloudant database.
+This output shows that the Cloudant package provides the actions
+`+read+` and `+write+`, and the trigger feed called `+changes+`. The
+`+changes+` feed causes triggers to be fired when documents are added to
+the specified Cloudant database.
 
-The Cloudant package also defines the parameters `username`, `password`,
-`host`, and `dbname`. These parameters must be specified for the actions
-and feeds to be meaningful. The parameters allow the actions to operate
-on a specific Cloudant account, for example.
+The Cloudant package also defines the parameters `+username+`,
+`+password+`, `+host+`, and `+dbname+`. These parameters must be
+specified for the actions and feeds to be meaningful. The parameters
+allow the actions to operate on a specific Cloudant account, for
+example.
 
 [arabic, start=3]
-. Get a description of the `/whisk.system/cloudant/read` action.
+. Get a description of the `+/whisk.system/cloudant/read+` action.
 
 ....
 $ wsk action get --summary /whisk.system/cloudant/read
@@ -100,24 +101,24 @@ action /whisk.system/cloudant/read: Read document from database
    (parameters: *apihost, *dbname, *host, *id, params, *password, *username)
 ....
 
-_NOTE_: Notice that the parameters listed for the action `read` were
+_NOTE_: Notice that the parameters listed for the action `+read+` were
 expanded upon from the action summary compared to the package summary
 above. To see the official bound parameters for actions and triggers
 listed under packages, run an individual get summary for the particular
 entity.
 
-This output shows that the Cloudant `read` action lists eight
+This output shows that the Cloudant `+read+` action lists eight
 parameters, seven of which are predefined. These include the database
 and document ID to retrieve.
 
 === Invoking actions in a package
 
 You can invoke actions in a package, just as with other actions. The
-next few steps show how to invoke the `greeting` action in the
-`/whisk.system/samples` package with different parameters.
+next few steps show how to invoke the `+greeting+` action in the
+`+/whisk.system/samples+` package with different parameters.
 
 [arabic]
-. Get a description of the `/whisk.system/samples/greeting` action.
+. Get a description of the `+/whisk.system/samples/greeting+` action.
 
 ....
 $ wsk action get --summary /whisk.system/samples/greeting
@@ -128,8 +129,8 @@ action /whisk.system/samples/greeting: Returns a friendly greeting
    (parameters: name, place)
 ....
 
-Notice that the `greeting` action takes two parameters: `name` and
-`place`.
+Notice that the `+greeting+` action takes two parameters: `+name+` and
+`+place+`.
 
 [arabic, start=2]
 . Invoke the action without any parameters.
@@ -159,8 +160,8 @@ $ wsk action invoke --result /whisk.system/samples/greeting --param name Mork --
 }
 ....
 
-Notice that the output uses the `name` and `place` parameters that were
-passed to the action.
+Notice that the output uses the `+name+` and `+place+` parameters that
+were passed to the action.
 
 === Creating and using package bindings
 
@@ -169,16 +170,17 @@ yourself passing the same parameters to the action every time. You can
 avoid this by binding to a package and specifying default parameters.
 These parameters are inherited by the actions in the package.
 
-For example, in the `/whisk.system/cloudant` package, you can set
-default `username`, `password`, and `dbname` values in a package binding
-and these values are automatically passed to any actions in the package.
-
-In the following simple example, you bind to the `/whisk.system/samples`
+For example, in the `+/whisk.system/cloudant+` package, you can set
+default `+username+`, `+password+`, and `+dbname+` values in a package
+binding and these values are automatically passed to any actions in the
 package.
 
+In the following simple example, you bind to the
+`+/whisk.system/samples+` package.
+
 [arabic]
-. Bind to the `/whisk.system/samples` package and set a default `place`
-parameter value.
+. Bind to the `+/whisk.system/samples+` package and set a default
+`+place+` parameter value.
 
 ....
 $ wsk package bind /whisk.system/samples valhallaSamples --param place Valhalla
@@ -208,8 +210,8 @@ package /namespace/valhallaSamples: Returns a result based on parameter place
     (parameters: payload)
 ....
 
-Notice that all the actions in the `/whisk.system/samples` package are
-available in the `valhallaSamples` package binding.
+Notice that all the actions in the `+/whisk.system/samples+` package are
+available in the `+valhallaSamples+` package binding.
 
 [arabic, start=3]
 . Invoke an action in the package binding.
@@ -224,8 +226,8 @@ $ wsk action invoke --result valhallaSamples/greeting --param name Odin
 }
 ....
 
-Notice from the result that the action inherits the `place` parameter
-you set when you created the `valhallaSamples` package binding.
+Notice from the result that the action inherits the `+place+` parameter
+you set when you created the `+valhallaSamples+` package binding.
 
 [arabic, start=4]
 . Invoke an action and overwrite the default parameter value.
@@ -240,9 +242,9 @@ $ wsk action invoke --result valhallaSamples/greeting --param name Odin --param 
 }
 ....
 
-Notice that the `place` parameter value that is specified with the
+Notice that the `+place+` parameter value that is specified with the
 action invocation overwrites the default value set in the
-`valhallaSamples` package binding.
+`+valhallaSamples+` package binding.
 
 === Creating and using trigger feeds
 
@@ -252,7 +254,7 @@ a feed in the Alarms package to fire a trigger every second, and how to
 use a rule to invoke an action every second.
 
 [arabic]
-. Get a description of the feed in the `/whisk.system/alarms` package.
+. Get a description of the feed in the `+/whisk.system/alarms+` package.
 
 ....
 $ wsk package get --summary /whisk.system/alarms
@@ -274,10 +276,11 @@ action /whisk.system/alarms/alarm: Fire trigger when alarm occurs
    (parameters: *apihost, *cron, *trigger_payload)
 ....
 
-The `/whisk.system/alarms/alarm` feed takes two parameters: - `cron`: A
-crontab specification of when to fire the trigger. - `trigger_payload`:
-The payload parameter value to set in each trigger event. - `apihost`:
-The API host endpoint that will be receiving the feed.
+The `+/whisk.system/alarms/alarm+` feed takes two parameters: -
+`+cron+`: A crontab specification of when to fire the trigger. -
+`+trigger_payload+`: The payload parameter value to set in each trigger
+event. - `+apihost+`: The API host endpoint that will be receiving the
+feed.
 
 [arabic, start=2]
 . Create a trigger that fires every eight seconds.
@@ -291,7 +294,7 @@ ok: created trigger feed everyEightSeconds
 ....
 
 [arabic, start=3]
-. Create a `hello.js' file with the following action code.
+. Create a '`hello.js`' file with the following action code.
 
 ....
 function main(params) {
@@ -307,8 +310,8 @@ $ wsk action update hello hello.js
 ....
 
 [arabic, start=5]
-. Create a rule that invokes the `hello` action every time the
-`everyEightSeconds` trigger fires.
+. Create a rule that invokes the `+hello+` action every time the
+`+everyEightSeconds+` trigger fires.
 
 ....
 $ wsk rule create myRule everyEightSeconds hello
@@ -327,7 +330,7 @@ $ wsk activation poll
 
 You should see activations every eight seconds for the trigger, the
 rule, and the action. The action receives the parameters
-`{"name":"Mork", "place":"Ork"}` on every invocation.
+`+{"name":"Mork", "place":"Ork"}+` on every invocation.
 
 === Creating a package
 
@@ -339,7 +342,7 @@ To create a custom package with a simple action in it, try the following
 example:
 
 [arabic]
-. Create a package called ``custom''.
+. Create a package called "`custom`".
 
 ....
 $ wsk package create custom
@@ -364,15 +367,15 @@ package /myNamespace/custom
 Notice that the package is empty.
 
 [arabic, start=3]
-. Create a file called `identity.js` that contains the following action
-code. This action returns all input parameters.
+. Create a file called `+identity.js+` that contains the following
+action code. This action returns all input parameters.
 
 ....
 function main(args) { return args; }
 ....
 
 [arabic, start=4]
-. Create an `identity` action in the `custom` package.
+. Create an `+identity+` action in the `+custom+` package.
 
 ....
 $ wsk action create custom/identity identity.js
@@ -400,7 +403,7 @@ package /myNamespace/custom
   (parameters: none defined)
 ....
 
-You can see the `custom/identity` action in your namespace now.
+You can see the `+custom/identity+` action in your namespace now.
 
 [arabic, start=6]
 . Invoke the action in the package.
@@ -419,7 +422,8 @@ actions in the package. To see how this works, try the following
 example:
 
 [arabic]
-. Update the `custom` package with two parameters: `city` and `country`.
+. Update the `+custom+` package with two parameters: `+city+` and
+`+country+`.
 
 ....
 $ wsk package update custom --param city Austin --param country USA
@@ -431,7 +435,7 @@ ok: updated package custom
 
 [arabic, start=2]
 . Display the parameters in the package and action, and see how the
-`identity` action in the package inherits parameters from the package.
+`+identity+` action in the package inherits parameters from the package.
 
 ....
 $ wsk package get custom
@@ -524,8 +528,8 @@ ok: updated package custom
 ....
 
 [arabic, start=2]
-. Display the `publish` property of the package to verify that it is now
-true.
+. Display the `+publish+` property of the package to verify that it is
+now true.
 
 ....
 $ wsk package get custom
@@ -538,7 +542,7 @@ ok: got package custom
 ...
 ....
 
-Others can now use your `custom` package, including binding to the
+Others can now use your `+custom+` package, including binding to the
 package or directly invoking an action in it. Other users must know the
 fully qualified names of the package to bind it or invoke actions in it.
 Actions and feeds within a shared package are _public_. If the package
@@ -559,5 +563,5 @@ package /myNamespace/custom: Returns a result based on parameters city and count
    (parameters: none defined)
 ....
 
-In the previous example, you’re working with the `myNamespace`
+In the previous example, you’re working with the `+myNamespace+`
 namespace, and this namespace appears in the fully qualified name.
