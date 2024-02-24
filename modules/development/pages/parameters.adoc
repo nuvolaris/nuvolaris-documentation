@@ -105,7 +105,7 @@ parameter so that the action defaults to the place ``Kansas'':
 . Update the action by using the `--param` option to bind parameter
 values, or by passing a file that contains the parameters to
 `--param-file` (for examples of using files, see the section on
-link:#working-with-parameter-files[working with parameter files].
+xref:#working-with-parameter-files[working with parameter files].
 
 To specify default parameters explicitly on the command-line, provide a
 key/value pair to the `param` flag:
