@@ -7,7 +7,7 @@
 *** xref:scheduler.adoc[Scheduler]
 *** xref:packages.adoc[Packages]
 *** xref:feeds.adoc[Feeds]
-** xref:index-entities.adoc[Runtimes]
+** xref:index-runtimes.adoc[Runtimes]
 *** xref:actions-nodejs.adoc[Node]
 *** xref:actions-python.adoc[Python]
 //*** xref:actions-golang.adoc[Go]
