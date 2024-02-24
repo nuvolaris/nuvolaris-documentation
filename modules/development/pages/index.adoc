@@ -2,7 +2,7 @@
 
 Welcome to Nuvolaris Developer guide. 
 
-Nuvolaris is based on link:https://openwhisk.apache.org[Apache OpenWhisk and Nuvolaris] and the documentation in this section is derived for the official OpenWhisk and Nuvolaris documentation.
+Nuvolaris is based on link:https://openwhisk.apache.org[Apache OpenWhisk] and the documentation in this section is derived for the official OpenWhisk documentation.
 
 In this section we document xref:development-actions[actions] and xref:development-runtimes[runtimes], and we also provide some xref:development-references[reference documentation].
 
