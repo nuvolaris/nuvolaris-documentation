@@ -107,7 +107,9 @@ to the appropriate `fireTrigger` URL in OpenWhisk and Nuvolaris.
 
 The webhook should be directed to send notifications to a URL such as:
 
-`POST /namespaces/{namespace}/triggers/{triggerName}`
+----
+POST /namespaces/{namespace}/triggers/{triggerName}
+----
 
 The form with the POST request will be interpreted as a JSON document
 defining parameters on the trigger event. OpenWhisk and Nuvolaris rules pass these
