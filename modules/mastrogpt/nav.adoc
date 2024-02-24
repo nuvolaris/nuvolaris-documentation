@@ -1,6 +1,6 @@
 * xref:index.adoc[🚧 MastroGPT]
 ** xref:environment.adoc[🚧 Environment]
-** xref:devel.adoc[🚧 Development]
-** xref:deploy.adoc[🚧 Deployment]
+*** xref:devel.adoc[🚧 Development]
+*** xref:deploy.adoc[🚧 Deployment]
 
 
