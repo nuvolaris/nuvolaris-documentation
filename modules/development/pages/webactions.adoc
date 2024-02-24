@@ -149,7 +149,7 @@ The default content-type for an HTTP response is `application/json` and
 the body may be any allowed JSON value. The default content-type may be
 omitted from the headers.
 
-It is important to be aware of the link:reference.md[response size
+It is important to be aware of the xref:reference.adoc[response size
 limit] for actions since a response that exceeds the predefined system
 limits will fail. Large objects should not be sent inline through
 OpenWhisk and Nuvolaris, but instead deferred to an object store, for example.
@@ -212,10 +212,10 @@ doing so will result in a failed request with status equal to 400 Bad
 Request.
 
 The `__ow_user` is only present when the web action is
-link:annotations.md#annotations-specific-to-web-actions[annotated to
+xref:annotations.adoc#annotations-specific-to-web-actions[annotated to
 require authentication] and allows a web action to implement its own
 authorization policy. The `__ow_query` is available only when a web
-action elects to handle the link:#raw-http-handling[``raw'' HTTP
+action elects to handle the xref:#raw-http-handling[``raw'' HTTP
 request]. It is a string containing the query parameters parsed from the
 URI (separated by `&`). The `__ow_body` property is present either when
 handling ``raw'' HTTP requests, or when the HTTP request entity is not a
@@ -406,7 +406,7 @@ that try to change this value whether by accident or intentionally.
 
 By default, a web action can be invoked by anyone having the web
 action’s invocation URL. Use the `require-whisk-auth`
-link:annotations.md#annotations-specific-to-web-actions[web action
+xref:annotations.md#annotations-specific-to-web-actions[web action
 annotation] to secure the web action. When the `require-whisk-auth`
 annotation is set to `true`, the action will authenticate the invocation
 request’s Basic Authorization credentials to confirm they represent a
@@ -460,7 +460,7 @@ A web action may elect to interpret and process an incoming HTTP body
 directly, without the promotion of a JSON object to first class
 properties available to the action input (e.g., `args.name` vs parsing
 `args.__ow_query`). This is done via a `raw-http`
-link:annotations.md[annotation]. Using the same example show earlier,
+xref:annotations.adoc[annotation]. Using the same example show earlier,
 but now as a ``raw'' HTTP web action receiving `name` both as a query
 parameters and as JSON value in the HTTP request body:
 
@@ -657,7 +657,7 @@ the package instead.
 
 Action parameters are inherited from its package, and the binding if
 there is one. You can make package parameters
-link:./annotations.md#protected-parameters[immutable] by defining their
+xref:annotations.adoc#protected-parameters[immutable] by defining their
 values through a package binding.
 
 === Error Handling
@@ -684,44 +684,3 @@ content-type in the error response. Special consideration must be given
 to web actions that are sequences, so that components that make up a
 sequence can generate adequate errors when necessary.
 
-=== Vanity URL
-
-Web actions may be accessed via an alternate URL which treats the
-OpenWhisk and Nuvolaris namespace as a subdomain to the API host. This is suitable for
-developing web actions that use cookies or local storage so that data is
-not inadvertently made visible to other web actions in other namespaces.
-The namespaces must match the regular expression `[a-zA-Z0-9-]+` (and
-should be 63 characters or fewer) for the edge router to rewrite the
-subdomain to the corresponding URI. For a conforming namespace, the URL
-`https://guest.openwhisk-host/public/index.html` becomes a alias for
-`https://openwhisk-host/api/v1/web/guest/public/index.html`.
-
-For added convenience, and to provide the equivalent of an `index.html`,
-the edge router will also proxy `https://guest.openwhisk-host` to
-`https://openwhisk-host/api/v1/web/guest/public/index.html` where
-`/guest/public/index.html` (i.e., action is called `index` in a package
-called `public`) is a web action that responds with HTML content. If the
-action does not exist, the API host will respond with 404 Not Found.
-
-For a local deployment, you will need to provide name resolution for the
-vanity URL to work. The easiest solution is to add an entry in
-`/etc/host` for `<namespace>.openwhisk-host`, as in:
-
-[source,bash]
-----
-127.0.0.1  guest.openwhisk-host
-----
-
-or using a name resolver in combination with `curl` for example, as in:
-
-[source,bash]
-----
-$ curl -k https://guest.openwhisk-host --resolve guest.openwhisk-host:443:127.0.0.1
-----
-
-You also need to generate an edge router configuration (and SSL
-certificate) that uses the proper hostname. This may be done by
-modifying a proper host name (see
-link:../ansible/group_vars/all#L18[global environment variables]) and
-running the link:../ansible/setup.yml[`setup.yml`] and
-link:../ansible/edge.yml[`edge.yml`] playbooks.
