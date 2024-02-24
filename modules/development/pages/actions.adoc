@@ -71,7 +71,7 @@ Docker skeleton.
 action.
 * `__OW_API_KEY` the API key for the subject invoking the action, this
 key may be a restricted API key. This property is absent unless requested with the annotation
-explicitly xref:provide-api-key[`provide-api-key`] 
+explicitly xref:annotation.adoc#provide-api-key[`provide-api-key`] 
 * `__OW_NAMESPACE` the namespace for the _activation_ (this may not be
 the same as the namespace for the action).
 * `__OW_ACTION_NAME` the fully qualified name of the running action.

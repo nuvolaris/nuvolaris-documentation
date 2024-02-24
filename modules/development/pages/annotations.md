@@ -57,6 +57,7 @@ The annotations we have used for describing parameters include:
 
 The annotations are _not_ checked. So while it is conceivable to use the annotations to infer if a composition of two actions into a sequence is legal, for example, the system does not yet do that.
 
+[#provide-api-key]
 # Annotations for all actions
 
 The following annotations on an action are available.
