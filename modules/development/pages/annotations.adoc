@@ -1,4 +1,4 @@
-== Annotations on OpenWhisk and Nuvolaris assets
+== Annotations
 
 OpenWhisk and Nuvolaris actions, triggers, rules and packages (collectively referred
 to as assets) may be decorated with `annotations`. Annotations are
