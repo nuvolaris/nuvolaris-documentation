@@ -15,7 +15,7 @@ containers.
 * You can also use the xref:rest_api.adoc[REST API].
 
 While the actual function code will be specific to a
-link:#languages-and-runtimes[language and runtime], the OpenWhisk and Nuvolaris
+xref:development-runtime[language and runtime], the OpenWhisk and Nuvolaris
 operations to create, invoke and manage an action are the same
 regardless of the implementation choice. We recommend that you review
 link:#the-basics[the basics] before moving on to advanced topics.
