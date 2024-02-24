@@ -40,7 +40,7 @@ list of entities in the collection.
 There are entity endpoints for each type of entity:
 
 ----
-https://$APIHOST/api/v1/namespaces/{namespace}`
+https://$APIHOST/api/v1/namespaces/{namespace}
 https://$APIHOST/api/v1/namespaces/{namespace}/actions/[{packageName}/]{actionName}
 https://$APIHOST/api/v1/namespaces/{namespace}/triggers/{triggerName}
 https://$APIHOST/api/v1/namespaces/{namespace}/rules/{ruleName}
@@ -97,8 +97,7 @@ The OpenWhisk API supports request-response calls from web clients. OpenWhisk re
 
 *Attention:* Because OpenWhisk and Nuvolaris currently supports only one key per
 namespace, it is not recommended to use CORS beyond simple experiments.
-Use link:webactions.md[Web Actions] or link:apigateway.md[API Gateway]
-to expose your actions to the public and not use the OpenWhisk and Nuvolaris
+Use xref:webactions.adoc[Web Actions] to expose your actions to the public and not use the OpenWhisk and Nuvolaris
 authorization key for client applications that require CORS.
 
 === Using the CLI verbose mode
@@ -233,7 +232,7 @@ You get the following response:
 === Annotations and Web Actions
 
 To create an action as a web action, you need to add an
-link:annotations.md[annotation] of `web-export=true` for web actions.
+xref:annotations.adoc[annotation] of `web-export=true` for web actions.
 Since web-actions are publicly accessible, you should protect
 pre-defined parameters (i.e., treat them as final) using the annotation
 `final=true`. If you create or update an action using the CLI flag
@@ -277,10 +276,10 @@ names of the actions that compose the sequence in the desired order, so
 the output from the first action is passed as input to the next action.
 
 $ nuv action create sequenceAction –sequence
-/whisk.system/utils/split,/whisk.system/utils/sort
+/whisk-system/utils/split,/whisk-system/utils/sort
 
-Create a sequence with the actions `/whisk.system/utils/split` and
-`/whisk.system/utils/sort`.
+Create a sequence with the actions `/whisk-system/utils/split` and
+`/whisk-system/utils/sort`.
 
 [source,bash]
 ----
@@ -320,78 +319,6 @@ following HTTP request.
 curl -u $AUTH https://$APIHOST/api/v1/namespaces/_/triggers/events \
 -X POST -H "Content-Type: application/json" \
 -d '{"temperature":60}'
-----
-
-==== Triggers with Feed Actions
-
-There are special triggers that can be created using a feed action. The
-feed action configures a feed provider such that events from the
-provider results in triggers being fired. Learn more about these feed
-providers in the [feeds.md] documentation.
-
-Some of the available triggers that leverage a feed action are
-periodic/alarms, Slack, Github, Cloudant/Couchdb, and messageHub/Kafka.
-You also can create your own feed action and feed provider.
-
-Let’s create a trigger with name `periodic` to be fired at a specified
-frequency, every 2 hours (i.e. 02:00:00, 04:00:00, …).
-
-Using the CLI this will be done with one command
-
-[source,bash]
-----
-nuv trigger create periodic --feed /whisk.system/alarms/alarm \
-  --param cron "0 */2 * * *" -v
-----
-
-As you will see because we are using the `-v` flag is that two HTTP
-requests are sent, one is to create a trigger `periodic` and the other
-is to invoke a feed action `/whisk.system/alarms/alarm` with the
-parameters to configure the feed provider to fire the trigger every 2
-hours.
-
-To do the same with the REST API, lets create the trigger first
-
-[source,bash]
-----
-curl -u $AUTH https://$APIHOST/api/v1/namespaces/_/triggers/periodic?overwrite=true \
--X PUT -H "Content-Type: application/json" \
--d '{"name":"periodic","annotations":[{"key":"feed","value":"/whisk.system/alarms/alarm"}]}'
-----
-
-As you can see the annotation `feed` is stored in the trigger. Later we
-will use this annotation to know which feed action to use when deleting
-the trigger.
-
-Now that the trigger is created, lets invoke the feed action
-
-[source,bash]
-----
-curl -u $AUTH "https://$APIHOST/api/v1/namespaces/whisk.system/actions/alarms/alarm?blocking=true&result=false" \
--X POST -H "Content-Type: application/json" \
--d "{\"authKey\":\"$AUTH\",\"cron\":\"0 */2 * * *\",\"lifecycleEvent\":\"CREATE\",\"triggerName\":\"/_/periodic\"}"
-----
-
-Deleting the trigger is a similar to creating the trigger, this time
-deleting the trigger and also using the feed action to configure the
-feed provider to delete the handler for the trigger.
-
-Invoke the feed action to delete the trigger handler from the feed
-provider
-
-[source,bash]
-----
-curl -u $AUTH "https://$APIHOST/api/v1/namespaces/whisk.system/actions/alarms/alarm?blocking=true&result=false" \
--X POST -H "Content-Type: application/json" \
--d "{\"authKey\":\"$AUTH\",\"lifecycleEvent\":\"DELETE\",\"triggerName\":\"/_/periodic\"}"
-----
-
-Now delete the trigger with a HTTP request using `DELETE` method
-
-[source,bash]
-----
-curl -u $AUTH https://$APIHOST/api/v1/namespaces/_/triggers/periodic \
--X DELETE -H "Content-Type: application/json"
 ----
 
 === Rules
