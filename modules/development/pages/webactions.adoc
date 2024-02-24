@@ -406,7 +406,7 @@ that try to change this value whether by accident or intentionally.
 
 By default, a web action can be invoked by anyone having the web
 action’s invocation URL. Use the `require-whisk-auth`
-xref:annotations.md#annotations-specific-to-web-actions[web action
+xref:annotations.adoc#annotations-specific-to-web-actions[web action
 annotation] to secure the web action. When the `require-whisk-auth`
 annotation is set to `true`, the action will authenticate the invocation
 request’s Basic Authorization credentials to confirm they represent a
