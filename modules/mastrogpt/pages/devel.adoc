@@ -44,7 +44,7 @@ Once inside the web IDE, you'll be prompted to enter `Task devel` or `Task deplo
 
 So, if you enter `Task devel` or `devel`, a devcontainer will start and you'll see the output of this code immediately via the browser. 
 
-image::Webide4.png["WebIde4",align="center"]
+image::WebIde4.png["WebIde4",align="center"]
 
 === Requirements
 
