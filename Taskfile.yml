@@ -1,11 +1,13 @@
 version: 3 
 tasks:
-  default: echo  ok
+  default: task -l
   download:
+    desc: download original documentation and convert it
     dir: modules/development/pages
     vars:
       SOURCES: https://raw.githubusercontent.com/apache/openwhisk/master/docs/
     cmds:
+    - git commit -m "snapshotting before updating documentation" -a
     - for: 
       - actions
       - webactions
