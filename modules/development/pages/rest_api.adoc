@@ -1,6 +1,4 @@
 == Using REST APIs with OpenWhisk and Nuvolaris
-:namespace: *yourNamespace*
-
 
 After your OpenWhisk and Nuvolaris environment is enabled, you can use OpenWhisk and Nuvolaris with
 your web apps or mobile apps with REST API calls.
