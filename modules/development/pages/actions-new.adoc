@@ -1,9 +1,9 @@
 == Adding Action Language Runtimes
 
-OpenWhisk and Nuvolaris supports link:index-runtimes.adoc[several
+OpenWhisk and Nuvolaris supports xref:index-runtimes.adoc[several
 languages and runtimes] but there may be other languages or runtimes
 that are important for your organization, and for which you want tighter
-integration with the platform. The OpenWhisk and Nuvolaris platform is extensible and
+integration with the platform. The platform is extensible and
 you can add new languages or runtimes (with custom packages and
 third-party dependencies) following the guide described here.
 
@@ -11,50 +11,22 @@ third-party dependencies) following the guide described here.
 
 The unit of execution for all functions is a
 https://docs.docker.com[Docker container] which must implement a
-specific link:#action-interface[Action interface] that, in general
+specific xref:#action-interface[Action interface] that, in general
 performs:
 
 [arabic]
-. *link:#initialization[Initialization]* - accepts an initialization
+. *xref:#initialization[Initialization]* - accepts an initialization
 payload (the code) and prepared for execution,
-. *link:#activation[Activation]* - accepts a runtime payload (the input
+. *xref:#activation[Activation]* - accepts a runtime payload (the input
 parameters) and
 * prepares the activation context,
 * runs the function,
 * returns the function result,
-. *link:#logging[Logging]* - flushes all `stdout` and `stderr` logs and
+. *xref:#logging[Logging]* - flushes all `stdout` and `stderr` logs and
 adds a frame marker at the end of the activation.
 
-The specifics of the link:#action-interface[Action interface] and its
+The specifics of the xref:#action-interface[Action interface] and its
 functions are shown below.
-
-=== Platform requirements
-
-In order for your language runtime to be properly recognized by the
-OpenWhisk and Nuvolaris platform, and officially recognized by the Apache OpenWhisk and Nuvolaris
-project, please follow these requirements and best practices:
-
-[arabic]
-. Implement the runtime in its own repository to permit a management
-lifecycle independent of the rest of the OpenWhisk and Nuvolaris platform.
-. Introduce the runtime specification into the
-link:../ansible/files/runtimes.json[runtimes manifest],
-. Add the runtime to the
-link:../core/controller/src/main/resources/apiv1swagger.json[Swagger
-file]
-. Add a new `actions-<your runtime>.md` file to the link:.[docs]
-directory,
-. Add a link to your new runtime doc to the
-link:actions.md#languages-and-runtimes[top level actions index].
-. Add a standard link:#the-test-action[test action] to the
-link:../tests/dat/actions/unicode.tests[tests artifacts directory] (as
-shown below),
-
-The new runtime repository should conform to the
-link:#canonical-runtime-repository[Canonical runtime repository] layout
-(as shown below). Further, you should automate and pass the following
-test suites: - link:#action-interface-tests[Action Interface tests] -
-link:#runtime-proxy-tests[Runtime proxy tests]
 
 === The runtimes manifest
 
@@ -65,9 +37,7 @@ language (e.g., `nodejs`) followed by a colon and the version for the
 runtime as in `nodejs:20` or `php:8.1`.
 
 The manifest is a map of runtime family names to an array of specific
-kinds. The details of the schema are found in the
-link:../common/scala/src/main/scala/org/apache/openwhisk/core/entity/ExecManifest.scala[Exec
-Manifest]. As an example, the following entry add a new runtime family
+kinds. As an example, the following entry add a new runtime family
 called `nodejs` with a single kind `nodejs:20`.
 
 [source,json]
@@ -90,27 +60,6 @@ treated as the default for the runtime family. The JSON `image`
 structure defines the Docker image name that is used for actions of this
 kind (e.g., `openwhisk/nodejs10action:latest` for the JSON example
 above).
-
-=== Canonical runtime repository
-
-The runtime repository should follow the canonical structure used by
-other runtimes.
-
-....
-/path/to/runtime
-├── build.gradle         # Gradle build file to integrate with rest of build and test framework
-├── core
-│   └── <runtime name and version>
-│       ├── Dockerfile   # builds the runtime's Docker image
-│       └── ...          # your runtimes files which implement the action proxy
-└── tests
-    └── src              # tests suits...
-        └── ...          # ... which extend canonical interface plus additional runtime specific tests
-....
-
-The https://github.com/apache/openwhisk-runtime-docker[Docker skeleton
-repository] is an example starting point to fork and modify for your new
-runtime.
 
 === The test action
 
@@ -138,14 +87,15 @@ An action consists of the user function (and its dependencies) along
 with a _proxy_ that implements a canonical protocol to integrate with
 the OpenWhisk and Nuvolaris platform.
 
-The proxy is a web server with two endpoints. * It listens on port
-`8080`. * It implements `/init` to initialize the container. * It also
-implements `/run` to activate the function.
+The proxy is a web server with two endpoints. 
 
-The proxy also prepares the
-link:actions.md#accessing-action-metadata-within-the-action-body[execution
-context], and flushes the logs produced by the function to stdout and
+* It listens on port `8080`. 
+* It implements `/init` to initialize the container. 
+* It also implements `/run` to activate the function.
+
+The proxy also prepares the execution context, and flushes the logs produced by the function to stdout and
 stderr.
+
 
 ==== Initialization
 
@@ -248,7 +198,7 @@ platform follows the following schema:
 * `value` is a JSON object and contains all the parameters for the
 function activation.
 * `namespace` is the OpenWhisk and Nuvolaris namespace for the action (e.g.,
-`whisk.system`).
+`whisk-system`).
 * `action_name` is the link:reference.md#fully-qualified-names[fully
 qualified name] of the action.
 * `activation_id` is a unique ID for this activation.
@@ -278,9 +228,8 @@ the error field may be any valid JSON value. Should the proxy fail to
 respond with a JSON object, the OpenWhisk and Nuvolaris platform will treat the
 failure as an uncaught exception. These two failures modes are
 distinguished by the value of the `response.status` in the
-link:actions.md#understanding-the-activation-record[activation record]
-which is ``application error'' if the proxy returned an ``error''
-object, and ``action developer error'' otherwise.
+activation record which is `application error` if the proxy returned an `error`
+object, and `action developer error` otherwise.
 
 *Time limit:* Every action in OpenWhisk and Nuvolaris has a defined time limit (e.g.,
 60 seconds). The activation must complete within the allowed duration.
@@ -292,7 +241,7 @@ destroy the container.
 The proxy must flush all the logs produced during initialization and
 execution and add a frame marker to denote the end of the log stream for
 an activation. This is done by emitting the token
-https://github.com/apache/openwhisk/blob/59abfccf91b58ee39f184030374203f1bf372f2d/core/invoker/src/main/scala/whisk/core/containerpool/docker/DockerContainer.scala#L51[`XXX_THE_END_OF_A_WHISK_ACTIVATION_XXX`]
+`XXX_THE_END_OF_A_WHISK_ACTIVATION_XXX`
 as the last log line for the `stdout` _and_ `stderr` streams. Failure to
 emit this marker will cause delayed or truncated activation logs.
 
@@ -300,29 +249,26 @@ emit this marker will cause delayed or truncated activation logs.
 
 ==== Action Interface tests
 
-The link:#action-interface[Action interface] is enforced via a
-link:../tests/src/test/scala/actionContainers/BasicActionRunnerTests.scala[canonical
-test suite] which validates the initialization protocol, the runtime
+The xref:#action-interface[Action interface] is enforced via a canonical
+test suite which validates the initialization protocol, the runtime
 protocol, ensures the activation context is correctly prepared, and that
 the logs are properly framed. Your runtime should extend this test
 suite, and of course include additional tests as needed.
 
 ==== Runtime proxy tests
 
-There is a
-link:../tests/src/test/scala/actionContainers/BasicActionRunnerTests.scala[canonical
-test harness] for validating a new runtime.
 
-The tests verify that the proxy can handle the following scenarios: *
-Test the proxy can handle the identity functions (initialize and run). *
-Test the proxy can handle pre-defined environment variables as well as
-initialization parameters. * Test the proxy properly constructs the
-activation context. * Test the proxy can properly handle functions with
-Unicode characters. * Test the proxy can handle large payloads (more
-than 1MB). * Test the proxy can handle an entry point other than
-``main''. * Test the proxy does not permit re-initialization. * Test the
-error handling for an action returning an invalid response. * Test the
-proxy when initialized with no content.
+The tests verify that the proxy can handle the following scenarios: 
+
+* Test the proxy can handle the identity functions (initialize and run). 
+* Test the proxy can handle pre-defined environment variables as well as initialization parameters.  
+* Test the proxy properly constructs the activation context. 
+* Test the proxy can properly handle functions with Unicode characters. 
+* Test the proxy can handle large payloads (more than 1MB). 
+* Test the proxy can handle an entry point other than `main`. 
+* Test the proxy does not permit re-initialization. 
+* Test the error handling for an action returning an invalid response. 
+* Test the proxy when initialized with no content.
 
 The canonical test suite should be extended by the new runtime tests.
 Additional tests will be required depending on the feature set provided
@@ -345,18 +291,3 @@ addition to OpenWhisk and Nuvolaris. Currently only an interface for single entr
 execution environments has been defined, but more could be defined in
 the future.
 
-==== Action Proxy Single Entrypoint Interface
-
-Single entrypoint proxies are proxies that have only onde addressable
-http endpoint. They do not use `/init` and `/run` enpoints utilized by
-standard OpenWhisk and Nuvolaris runtime environments; instead both the initialization
-and activation are handled through one endpoint. The first example of
-such a proxy was implemented for Knative Serving, but the same interface
-can be used for any single entrypoint execution environment. In an
-effort to standardize how the various action proxy implementation
-containers are able to handle single entrypoint execution environments
-(such as Knative Serving), there is a description of the contract and
-example cases outlining how a container should respond with a given
-input. The descriptions and example cases are documented in
-link:single_entrypoint_proxy_contract.md[Single Entrypoint Proxy
-Contract].
