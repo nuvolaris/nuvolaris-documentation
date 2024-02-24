@@ -7,7 +7,7 @@ general, an action is invoked in response to an event and produces some
 observable output.
 
 An action may be created from a function programmed using a number of
-xref:development-runtimes[supported languages and runtimes], or from
+link:development-runtimes[supported languages and runtimes], or from
 a binary-compatible executable, or even executables packaged as Docker
 containers.
 
