@@ -34,8 +34,6 @@ you can choose where to install, either:
 
 After the installation, you can change later the configuration and update the system.
 
-Consult the  xref:admin:index.adoc[administrative guide] for more informations.
-
 == Support
 
 If you have issues, please check:

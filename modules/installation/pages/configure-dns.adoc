@@ -38,7 +38,7 @@ Note that:
 If you are registering a dedicated domain name for your cluster, you are advised to register wildcard name (`*`) for every domain name in `example.com` will resolve to your server. 
 ====
 
-Registering a wildcard is required to xref:admin:admin-users.adoc[get a different website for for multiple users].
+Registering a wildcard is required to get a different website for for multiple users.
 
 [#configure-apihost]
 == Configure Nuvolaris to use your DNS and and enable SSL

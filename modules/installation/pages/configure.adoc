@@ -6,7 +6,7 @@ Note that you can also skip this configuration, and install Nuvolaris without an
 
 Once you configure the installation, you can proceed xref:install.adoc[installing Nuvolaris].
 
-You can then reconfigure the system later. Consult the  xref:admin:index.adoc[administrative guide] for more informations.
+You can then reconfigure the system later.
 
 == Minimal Configuration
 
