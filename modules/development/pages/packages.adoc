@@ -28,45 +28,31 @@ packages in a namespace, list the entities in a package, and get a
 description of the individual entities in a package.
 
 [arabic]
-. Get a list of packages in the `/whisk.system` namespace.
+. Get a list of packages in the `/nuvolaris` namespace.
 
 ....
-$ nuv package list /whisk.system
+$ nuv package list /nuvolaris
 ....
 
 ....
 packages
-/whisk.system/cloudant                                                 shared
-/whisk.system/alarms                                                   shared
-/whisk.system/watson                                                   shared
-/whisk.system/websocket                                                shared
-/whisk.system/weather                                                  shared
-/whisk.system/system                                                   shared
-/whisk.system/utils                                                    shared
-/whisk.system/slack                                                    shared
-/whisk.system/samples                                                  shared
-/whisk.system/github                                                   shared
-/whisk.system/pushnotifications                                        shared
+/nuvolaris/openai                                                      private
+/nuvolaris/mastrogpt                                                   private
+/nuvolaris/examples                                                    private
 ....
 
 [arabic, start=2]
-. Get a list of entities in the `/whisk.system/cloudant` package.
+. Get a list of entities in the `/nuvolaris/openai` package.
 
-....
-$ nuv package get --summary /whisk.system/cloudant
-....
-
-....
-package /whisk.system/cloudant: Cloudant database service
-   (parameters: *apihost, *dbname, *host, overwrite, *password, *username)
- action /whisk.system/cloudant/read: Read document from database
-   (parameters: dbname, id, params)
- action /whisk.system/cloudant/write: Write document in database
-   (parameters: dbname, doc)
- feed   /whisk.system/cloudant/changes: Database change feed
-   (parameters: dbname, filter, query_params)
-...
-....
+----
+$ nuv package get --summary /nuvolaris/openai
+package /nuvolaris/openai
+   (parameters: none defined)
+ action /nuvolaris/openai/models
+   (parameters: none defined)
+ action /nuvolaris/openai/chat
+   (parameters: none defined)
+----
 
 *Note*: Parameters listed under the package with a prefix `*` are
 predefined, bound parameters. Parameters without a `*` are those listed
@@ -78,27 +64,16 @@ parameters from the package. To view the list of known parameters of an
 entity belonging to a package, you will need to run a `get --summary` of
 the individual entity.
 
-This output shows that the Cloudant package provides the actions `read`
-and `write`, and the trigger feed called `changes`. The `changes` feed
-causes triggers to be fired when documents are added to the specified
-Cloudant database.
-
-The Cloudant package also defines the parameters `username`, `password`,
-`host`, and `dbname`. These parameters must be specified for the actions
-and feeds to be meaningful. The parameters allow the actions to operate
-on a specific Cloudant account, for example.
 
 [arabic, start=3]
 . Get a description of the `/whisk.system/cloudant/read` action.
 
-....
-$ nuv action get --summary /whisk.system/cloudant/read
-....
+-----
+$ nuv action get --summary /nuvolaris/openai/chat
+action /nuvolaris/openai/chat: Returns a result based on parameters OPENAI_API_HOST and OPENAI_API_KEY
+   (parameters: **OPENAI_API_HOST, **OPENAI_API_KEY)
+-----
 
-....
-action /whisk.system/cloudant/read: Read document from database
-   (parameters: *apihost, *dbname, *host, *id, params, *password, *username)
-....
 
 _NOTE_: Notice that the parameters listed for the action `read` were
 expanded upon from the action summary compared to the package summary
@@ -106,228 +81,6 @@ above. To see the official bound parameters for actions and triggers
 listed under packages, run an individual get summary for the particular
 entity.
 
-This output shows that the Cloudant `read` action lists eight
-parameters, seven of which are predefined. These include the database
-and document ID to retrieve.
-
-=== Invoking actions in a package
-
-You can invoke actions in a package, just as with other actions. The
-next few steps show how to invoke the `greeting` action in the
-`/whisk.system/samples` package with different parameters.
-
-[arabic]
-. Get a description of the `/whisk.system/samples/greeting` action.
-
-....
-$ nuv action get --summary /whisk.system/samples/greeting
-....
-
-....
-action /whisk.system/samples/greeting: Returns a friendly greeting
-   (parameters: name, place)
-....
-
-Notice that the `greeting` action takes two parameters: `name` and
-`place`.
-
-[arabic, start=2]
-. Invoke the action without any parameters.
-
-....
-$ nuv action invoke --result /whisk.system/samples/greeting
-....
-
-....
-{
-    "payload": "Hello, stranger from somewhere!"
-}
-....
-
-The output is a generic message because no parameters were specified.
-
-[arabic, start=3]
-. Invoke the action with parameters.
-
-....
-$ nuv action invoke --result /whisk.system/samples/greeting --param name Mork --param place Ork
-....
-
-....
-{
-    "payload": "Hello, Mork from Ork!"
-}
-....
-
-Notice that the output uses the `name` and `place` parameters that were
-passed to the action.
-
-=== Creating and using package bindings
-
-Although you can use the entities in a package directly, you might find
-yourself passing the same parameters to the action every time. You can
-avoid this by binding to a package and specifying default parameters.
-These parameters are inherited by the actions in the package.
-
-For example, in the `/whisk.system/cloudant` package, you can set
-default `username`, `password`, and `dbname` values in a package binding
-and these values are automatically passed to any actions in the package.
-
-In the following simple example, you bind to the `/whisk.system/samples`
-package.
-
-[arabic]
-. Bind to the `/whisk.system/samples` package and set a default `place`
-parameter value.
-
-....
-$ nuv package bind /whisk.system/samples valhallaSamples --param place Valhalla
-....
-
-....
-ok: created binding valhallaSamples
-....
-
-[arabic, start=2]
-. Get a description of the package binding.
-
-....
-$ nuv package get --summary valhallaSamples
-....
-
-....
-package /namespace/valhallaSamples: Returns a result based on parameter place
-   (parameters: *place)
- action /namespace/valhallaSamples/helloWorld: Demonstrates logging facilities
-    (parameters: payload)
- action /namespace/valhallaSamples/greeting: Returns a friendly greeting
-    (parameters: name, place)
- action /namespace/valhallaSamples/curl: Curl a host url
-    (parameters: payload)
- action /namespace/valhallaSamples/wordCount: Count words in a string
-    (parameters: payload)
-....
-
-Notice that all the actions in the `/whisk.system/samples` package are
-available in the `valhallaSamples` package binding.
-
-[arabic, start=3]
-. Invoke an action in the package binding.
-
-....
-$ nuv action invoke --result valhallaSamples/greeting --param name Odin
-....
-
-....
-{
-    "payload": "Hello, Odin from Valhalla!"
-}
-....
-
-Notice from the result that the action inherits the `place` parameter
-you set when you created the `valhallaSamples` package binding.
-
-[arabic, start=4]
-. Invoke an action and overwrite the default parameter value.
-
-....
-$ nuv action invoke --result valhallaSamples/greeting --param name Odin --param place Asgard
-....
-
-....
-{
-    "payload": "Hello, Odin from Asgard!"
-}
-....
-
-Notice that the `place` parameter value that is specified with the
-action invocation overwrites the default value set in the
-`valhallaSamples` package binding.
-
-=== Creating and using trigger feeds
-
-Feeds offer a convenient way to configure an external event source to
-fire these events to a OpenWhisk and Nuvolaris trigger. This example shows how to use
-a feed in the Alarms package to fire a trigger every second, and how to
-use a rule to invoke an action every second.
-
-[arabic]
-. Get a description of the feed in the `/whisk.system/alarms` package.
-
-....
-$ nuv package get --summary /whisk.system/alarms
-....
-
-....
-package /whisk.system/alarms: Alarms and periodic utility
-   (parameters: *apihost, *cron, *trigger_payload)
- feed   /whisk.system/alarms/alarm: Fire trigger when alarm occurs
-    (parameters: none defined)
-....
-
-....
-$ nuv action get --summary /whisk.system/alarms/alarm
-....
-
-....
-action /whisk.system/alarms/alarm: Fire trigger when alarm occurs
-   (parameters: *apihost, *cron, *trigger_payload)
-....
-
-The `/whisk.system/alarms/alarm` feed takes two parameters: - `cron`: A
-crontab specification of when to fire the trigger. - `trigger_payload`:
-The payload parameter value to set in each trigger event. - `apihost`:
-The API host endpoint that will be receiving the feed.
-
-[arabic, start=2]
-. Create a trigger that fires every eight seconds.
-
-....
-$ nuv trigger create everyEightSeconds --feed /whisk.system/alarms/alarm -p cron "*/8 * * * * *" -p trigger_payload "{\"name\":\"Mork\", \"place\":\"Ork\"}"
-....
-
-....
-ok: created trigger feed everyEightSeconds
-....
-
-[arabic, start=3]
-. Create a `hello.js' file with the following action code.
-
-....
-function main(params) {
-    return {payload:  'Hello, ' + params.name + ' from ' + params.place};
-}
-....
-
-[arabic, start=4]
-. Make sure that the action exists.
-
-....
-$ nuv action update hello hello.js
-....
-
-[arabic, start=5]
-. Create a rule that invokes the `hello` action every time the
-`everyEightSeconds` trigger fires.
-
-....
-$ nuv rule create myRule everyEightSeconds hello
-....
-
-....
-ok: created rule myRule
-....
-
-[arabic, start=6]
-. Check that the action is being invoked by polling for activation logs.
-
-....
-$ nuv activation poll
-....
-
-You should see activations every eight seconds for the trigger, the
-rule, and the action. The action receives the parameters
-`{"name":"Mork", "place":"Ork"}` on every invocation.
 
 === Creating a package
 
