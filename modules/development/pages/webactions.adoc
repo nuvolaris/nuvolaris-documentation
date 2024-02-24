@@ -489,11 +489,6 @@ $ curl https://${APIHOST}/api/v1/web/guest/demo/hello.json?name=Jane -X POST -H 
 }
 ----
 
-OpenWhisk and Nuvolaris uses the
-http://doc.akka.io/docs/akka-http/current/scala/http/[Akka Http]
-framework to
-http://doc.akka.io/api/akka-http/10.0.4/akka/http/scaladsl/model/MediaTypes$.html[determine]
-which content types are binary and which are plain text.
 
 ==== Enabling raw HTTP handling
 
@@ -519,7 +514,7 @@ $ nuv update create /guest/demo/hello hello.js --web false
 
 When using raw HTTP handling, the `__ow_body` content will be encoded in
 Base64 when the request content-type is binary. Below are functions
-demonstrating how to decode the body content in Node, Python, Swift and
+demonstrating how to decode the body content in Node, Python, and
 PHP. Simply save a method shown below to file, create a raw HTTP web
 action utilizing the saved artifact, and invoke the web action.
 
@@ -543,31 +538,6 @@ def main(args):
         return {"body": decoded}
     except:
         return {"body": "Could not decode body from Base64."}
-----
-
-===== Swift
-
-[source,swift]
-----
-extension String {
-    func base64Decode() -> String? {
-        guard let data = Data(base64Encoded: self) else {
-            return nil
-        }
-
-        return String(data: data, encoding: .utf8)
-    }
-}
-
-func main(args: [String:Any]) -> [String:Any] {
-    if let body = args["__ow_body"] as? String {
-        if let decoded = body.base64Decode() {
-            return [ "body" : decoded ]
-        }
-    }
-
-    return ["body": "Could not decode body from Base64."]
-}
 ----
 
 ===== PHP
