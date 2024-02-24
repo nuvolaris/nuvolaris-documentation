@@ -13,13 +13,7 @@ Packages can contain actions and feeds. A package cannot contain another
 package, so package nesting is not allowed. Also, entities do not have
 to be contained in a package.
 
-In IBM Cloud, an organization+space pair corresponds to a OpenWhisk and Nuvolaris
-namespace. For example, the organization `BobsOrg` and space `dev` would
-correspond to the OpenWhisk and Nuvolaris namespace `/BobsOrg_dev`.
-
-You can create your own namespaces if you’re entitled to do so. The
-`/whisk.system` namespace is reserved for entities that are distributed
-with the OpenWhisk and Nuvolaris system.
+In Nuvolaris a namespace corresponds to an user. You can create users with the xref:cli:admin.adoc[admin subcommand] of the CLI.
 
 ==== Fully qualified names
 
@@ -75,12 +69,6 @@ More precisely, a name must match the following regular expression
 
 OpenWhisk and Nuvolaris has a few system limits, including how much memory an action
 can use and how many action invocations are allowed per minute.
-
-*Note:* This default limits are for the open source distribution;
-production deployments like IBM Cloud Functions likely have higher
-limits. As an operator or developer you can change some of the limits
-using link:../ansible/README.md#changing-limits[Ansible inventory
-variables].
 
 *Note:* On Openwhisk 2.0 with the scheduler service, *concurrent* in the
 table below really means the max containers that can be provisioned at
