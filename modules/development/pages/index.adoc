@@ -12,7 +12,7 @@ You can write actions in a number of programming languages.
 
 Nuvolaris supports directly <<development-runtimes, this list of programming languages>>.
 
-There is also a xref:actionloop.adoc[tutorial and a development kit] to build your own runtime for your favorite programming language.
+There is also a xref:actions-actionloop.adoc[tutorial and a development kit] to build your own runtime for your favorite programming language.
 
 
 [[development-actions]]
@@ -22,7 +22,7 @@ More informations about actions:
 
 * xref:actions.adoc[Action]
 * xref:parameters.adoc[Parameters]
-* xref:annotation.adoc[Annotation]
+* xref:annotations.adoc[Annotation]
 * xref:webactions.adoc[Web Actions]
 * xref:packages.adoc[Packages]
 * xref:feeds.adoc[Feeds]

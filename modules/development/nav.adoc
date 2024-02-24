@@ -2,7 +2,7 @@
 ** xref:development-actions[Actions]
 *** xref:actions.adoc[Action]
 *** xref:parameters.adoc[Parameters]
-*** xref:annotation.adoc[Annotation]
+*** xref:annotations.adoc[Annotations]
 *** xref:webactions.adoc[Web Actions]
 *** xref:packages.adoc[Packages]
 *** xref:feeds.adoc[Feeds]
