@@ -4,18 +4,18 @@ Welcome to Nuvolaris Developer guide.
 
 Nuvolaris is based on link:https://openwhisk.apache.org[Apache OpenWhisk] and the documentation in this section is derived for the official OpenWhisk documentation.
 
-In this section we document <<actions>> and <<runtimes>>, and we also provide some <<references, reference documentation>>.
+In this section we document <<development-actions, actions>> and <<development-runtimes. runtimes>>, and we also provide some <<development-references, reference documentation>>.
 
 Actions (functions) are the building blocks of Nuvolaris applications.
 
 You can write actions in a number of programming languages. 
 
-Nuvolaris supports directly <<runtimes, this list of programming languages>>.
+Nuvolaris supports directly <<development-runtimes, this list of programming languages>>.
 
-There is also a link:actionloop.adoc[tutorial and a development kit]to build your own runtime for your favorite programming language.
+There is also a xref:actionloop.adoc[tutorial and a development kit] to build your own runtime for your favorite programming language.
 
 
-[[actions]]
+[[development-actions]]
 == Actions
 
 More informations about actions:
@@ -27,7 +27,7 @@ More informations about actions:
 * xref:packages.adoc[Packages]
 * xref:feeds.adoc[Feeds]
 
-[[runtimes]]
+[[development-runtimes]]
 == Runtimes
 
 The programming languages currently directly supported are :
@@ -38,7 +38,7 @@ The programming languages currently directly supported are :
 //* xref:actions-java.adoc[Java]
 //* xref:actions-php.adoc[PHP]
 
-[[references]]
+[[development-references]]
 == Reference
 
 * xref:rest_api.adoc[Rest API]
