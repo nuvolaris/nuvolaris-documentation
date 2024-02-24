@@ -1,0 +1,47 @@
+diff --git a/development.patch b/development.patch
+index 7e03e2f..e69de29 100644
+--- a/development.patch
++++ b/development.patch
+@@ -1,13 +0,0 @@
+-diff --git a/modules/development/pages/index.adoc b/modules/development/pages/index.adoc
+-index e1a521d..2a3c17e 100644
+---- a/modules/development/pages/index.adoc
+-+++ b/modules/development/pages/index.adoc
+-@@ -2,7 +2,7 @@
+- 
+- Welcome to Nuvolaris Developer guide. 
+- 
+--Nuvolaris is based on link:https://openwhisk.apache.org[Apache OpenWhisk and Nuvolaris] and the documentation in this section is derived for the official OpenWhisk and Nuvolaris documentation.
+-+Nuvolaris is based on link:https://openwhisk.apache.org[Apache OpenWhisk] and the documentation in this section is derived for the official OpenWhisk documentation.
+- 
+- In this section we document xref:development-actions[actions] and xref:development-runtimes[runtimes], and we also provide some xref:development-references[reference documentation].
+- 
+diff --git a/modules/development/pages/actions.adoc b/modules/development/pages/actions.adoc
+index 717c278..4fa3b7e 100644
+--- a/modules/development/pages/actions.adoc
++++ b/modules/development/pages/actions.adoc
+@@ -7,18 +7,17 @@ general, an action is invoked in response to an event and produces some
+ observable output.
+ 
+ An action may be created from a function programmed using a number of
+-link:#languages-and-runtimes[supported languages and runtimes], or from
++xref:development-runtimes[supported languages and runtimes], or from
+ a binary-compatible executable, or even executables packaged as Docker
+ containers.
+ 
+-* The OpenWhisk and Nuvolaris CLI
+-https://github.com/apache/openwhisk-cli/releases[`nuv`] makes it easy to
+-create and invoke actions. Instructions for configuring the CLI are
+-available link:cli.md[here].
+-* You can also use the link:rest_api.md[REST API].
++* The xref:download.adoc[Nuvolaris CLI] makes it easy to
++create and invoke actions. Instructions for configuring and using the CLI are
++available xref:cli.adoc[here].
++* You can also use the xref:rest_api.adoc[REST API].
+ 
+ While the actual function code will be specific to a
+-link:#languages-and-runtimes[language and runtime], the OpenWhisk and Nuvolaris
++xref:development-runtimes[language and runtime], the OpenWhisk and Nuvolaris
+ operations to create, invoke and manage an action are the same
+ regardless of the implementation choice. We recommend that you review
+ link:#the-basics[the basics] before moving on to advanced topics.

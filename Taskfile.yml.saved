@@ -1,0 +1,39 @@
+version: 3 
+tasks:
+  
+  default: task -l
+
+  download:
+    desc: download original documentation and convert it
+    dir: modules/development/pages
+    vars:
+      SOURCES: https://raw.githubusercontent.com/apache/openwhisk/master/docs/
+    cmds:
+    - for: 
+      - actions
+      - webactions
+      - packages
+      - parameters
+      - annotations
+      - actions-new
+      - actions-actionloop
+      - actions-nodejs
+      - actions-python
+      - actions-go
+      - actions-java
+      - actions-php
+      - cli
+      - feeds
+      - reference
+      - rest_api
+      cmd:  |
+            curl  -sL {{.SOURCES}}/{{.ITEM}}.md -o {{.ITEM}}.md
+            pandoc -f markdown -w asciidoc {{.ITEM}}.md -o {{.ITEM}}.adoc
+    - sed -i -e 's/wsk/nuv/g' -e 's/OpenWhisk/OpenWhisk and Nuvolaris/g' *.adoc
+
+  fixes:
+    desc: download original documentation and convert it
+    dir: modules/development/pages
+    cmds: 
+    - 
+    
