@@ -10,3 +10,4 @@ apikey.txt
 content/venv/
 sources/
 .DS_Store
+.task
