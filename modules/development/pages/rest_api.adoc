@@ -89,14 +89,7 @@ In this example the authentication was passed using the `-u` flag, you
 can pass this value also as part of the URL as
 `https://USERNAME:PASSWORD@$APIHOST`.
 
-The OpenWhisk and Nuvolaris API supports request-response calls from web clients.
-OpenWhisk and Nuvolaris responds to `OPTIONS` requests with Cross-Origin Resource
-Sharing headers. Currently, all origins are allowed (that is,
-Access-Control-Allow-Origin is ```*`''), the standard set of methods are
-allowed (that is, Access-Control-Allow-Methods is
-```GET, DELETE, POST, PUT, HEAD`''), and Access-Control-Allow-Headers
-yields
-```Authorization, Origin, X-Requested-With, Content-Type, Accept, User-Agent`''.
+The OpenWhisk API supports request-response calls from web clients. OpenWhisk responds to `OPTIONS` requests with Cross-Origin Resource Sharing headers. Currently, all origins are allowed (that is, Access-Control-Allow-Origin is "`*`"), the standard set of methods are allowed (that is, Access-Control-Allow-Methods is `GET, DELETE, POST, PUT, HEAD`), and Access-Control-Allow-Headers yields `Authorization, Origin, X-Requested-With, Content-Type, Accept, User-Agent`.
 
 *Attention:* Because OpenWhisk and Nuvolaris currently supports only one key per
 namespace, it is not recommended to use CORS beyond simple experiments.
