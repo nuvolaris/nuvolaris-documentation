@@ -36,12 +36,12 @@ ok: created package demo
 ----
 
 ----
-$ nuv action create /guest/demo/hello hello.js --web true
-ok: created action /guest/demo/hello
+$ nuv action create demo/hello hello.js --web true
+ok: created action demo/hello
 ----
 
 ----
-$ nuv action get /guest/demo/hello --url
+$ nuv action get demo/hello --url
 ok: got action hello
 https://${APIHOST}/api/v1/web/guest/demo/hello
 ----
@@ -67,9 +67,13 @@ permitted as described later. The web action API path may be used with
 `curl` or `wget` without an API key. It may even be entered directly in
 your browser.
 
-Try opening
-https://$%7BAPIHOST%7D/api/v1/web/guest/demo/hello.http?name=Jane in
-your web browser. Or try invoking the action via `curl`:
+Try opening:
+
+----
+https://${APIHOST}/api/v1/web/guest/demo/hello.http?name=Jane
+----
+
+in your web browser. Or try invoking the action via `curl`:
 
 ....
 $ curl https://${APIHOST}/api/v1/web/guest/demo/hello.http?name=Jane
