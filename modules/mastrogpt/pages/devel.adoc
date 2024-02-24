@@ -38,13 +38,13 @@ def main(args):
 
 === Development
 
-image::webIde1.png["WebIde1",align="center"]
+image::WebIde1.png["WebIde1",align="center"]
 
 Once inside the web IDE, you'll be prompted to enter `Task devel` or `Task deploy` via CLI. Task devel is a nuv feature that will create packages, actions, and web content (placed into the web folder) into your nuvolaris environment. 
 
 So, if you enter `Task devel` or `devel`, a devcontainer will start and you'll see the output of this code immediately via the browser. 
 
-image::webide4.png["WebIde4",align="center"]
+image::Webide4.png["WebIde4",align="center"]
 
 === Requirements
 
