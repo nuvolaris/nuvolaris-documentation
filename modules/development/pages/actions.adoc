@@ -14,12 +14,12 @@ a binary-compatible executable.
 * You can also use the xref:rest_api.adoc[REST API].
 
 While the actual function code will be specific to a
-xref:development-runtime[language and runtime], the OpenWhisk and Nuvolaris
+xref:index-runtimes.adoc[language and runtime], the
 operations to create, invoke and manage an action are the same
 regardless of the implementation choice. We recommend that you review
 link:#the-basics[the basics] before moving on to advanced topics.
 
-* link:#the-basics[The basics of working with actions] (_start here_)
+* xref:the-basics[The basics of working with actions] (_start here_)
 * Common `nuv` CLI operations and tips
 ** link:#watching-action-output[Watching action output]
 ** link:#getting-actions[Getting actions]
@@ -169,6 +169,7 @@ created according to the following calculus. -
 arrives for long time, the number of prewarm containers will eventually
 converge to `minCount`.
 
+[[the-basics]]
 === The basics
 
 To use a function as an action, it must conform to the following: - The
