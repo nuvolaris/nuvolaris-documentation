@@ -18,14 +18,15 @@ All the capabilities in the system are available through a REST API.
 There are collection and entity endpoints for actions, triggers, rules,
 packages, activations, and namespaces.
 
-These are the collection endpoints: -
-`https://$APIHOST/api/v1/namespaces` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/actions` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/triggers` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/rules` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/packages` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/activations` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/limits`
+These are the collection endpoints:
+
+* `https://$APIHOST/api/v1/namespaces` 
+* `https://$APIHOST/api/v1/namespaces/{namespace}/actions` 
+* `https://$APIHOST/api/v1/namespaces/{namespace}/triggers` 
+* `https://$APIHOST/api/v1/namespaces/{namespace}/rules` 
+* `https://$APIHOST/api/v1/namespaces/{namespace}/packages` 
+* `https://$APIHOST/api/v1/namespaces/{namespace}/activations` 
+* `https://$APIHOST/api/v1/namespaces/{namespace}/limits`
 
 The `$APIHOST` is the OpenWhisk and Nuvolaris API hostname (for example, localhost,
 172.17.0.1, and so on). For the `{namespace}`, the character `_` can be
@@ -34,15 +35,14 @@ used to specify the user’s _default namespace_.
 You can perform a GET request on the collection endpoints to fetch a
 list of entities in the collection.
 
-There are entity endpoints for each type of entity: -
-`https://$APIHOST/api/v1/namespaces/{namespace}` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/actions/[{packageName}/]{actionName}`
--
-`https://$APIHOST/api/v1/namespaces/{namespace}/triggers/{triggerName}`
-- `https://$APIHOST/api/v1/namespaces/{namespace}/rules/{ruleName}` -
-`https://$APIHOST/api/v1/namespaces/{namespace}/packages/{packageName}`
--
-`https://$APIHOST/api/v1/namespaces/{namespace}/activations/{activationName}`
+There are entity endpoints for each type of entity:
+
+* `https://$APIHOST/api/v1/namespaces/{namespace}`
+* `https://$APIHOST/api/v1/namespaces/{namespace}/actions/[{packageName}/]{actionName}`
+* `https://$APIHOST/api/v1/namespaces/{namespace}/triggers/{triggerName}`
+* `https://$APIHOST/api/v1/namespaces/{namespace}/rules/{ruleName}` 
+* `https://$APIHOST/api/v1/namespaces/{namespace}/packages/{packageName}`
+* `https://$APIHOST/api/v1/namespaces/{namespace}/activations/{activationName}`
 
 The namespace and activation endpoints support only GET requests. The
 actions, triggers, rules, and packages endpoints support GET, PUT, and
