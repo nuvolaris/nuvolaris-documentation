@@ -1,8 +1,8 @@
-== OpenWhisk and Nuvolaris system details
+== System  details
 
 The following sections provide more details about the OpenWhisk and Nuvolaris system.
 
-=== OpenWhisk and Nuvolaris entities
+=== Entities
 
 ==== Namespaces and packages
 
