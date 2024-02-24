@@ -21,7 +21,7 @@ the command-line.
 
 Parameters can be passed to the action when it is invoked. These
 examples use JavaScript but all
-link:actions.md#languages-and-runtimes[the other languages] work the
+xref:index-runtimes.adoc[the other languages] work the
 same way.
 
 [arabic]
@@ -203,7 +203,7 @@ then pass the parameters in by supplying the filename with the
 creating/updating them, and when invoking actions.
 
 [arabic]
-. As an example, consider the very simple ``hello'' example from
+. As an example, consider the very simple `hello` example from
 earlier. Using `hello.js` with this content:
 
 [source,javascript]
