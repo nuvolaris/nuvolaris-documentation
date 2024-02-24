@@ -12,9 +12,8 @@ See below for documentation related to:
 
 * xref:index-entities.adoc[Nuvolaris and OpenWhisk Entities]  
 * xref:index-runtimes.adoc[Nuvolaris Runtimes]
-* xref:index-references[Reference material].
+* xref:index-references[Advanced Reference Documentation]
 
 
 There is also a xref:actions-actionloop.adoc[tutorial and a development kit] to build your own runtime for your favorite programming language.
-
 
