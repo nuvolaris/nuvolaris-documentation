@@ -18,9 +18,4 @@
 *** xref:actions-new.adoc[Runtimes under the hood]
 *** xref:reference.adoc[Naming and Limits]
 
-:namespace: yourNamespace
-:packagename: yourPackageName
-:actionname: yourActionName
-:triggername: yourTriggerName
-:rulename: yourRuleName
-:activationname: yourActivationName
+

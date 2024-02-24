@@ -1,4 +1,10 @@
 == Using REST APIs with OpenWhisk and Nuvolaris
+:namespace: yourNamespace
+:packagename: yourPackageName
+:actionname: yourActionName
+:triggername: yourTriggerName
+:rulename: yourRuleName
+:activationname: yourActivationName
 
 After your OpenWhisk and Nuvolaris environment is enabled, you can use OpenWhisk and Nuvolaris with
 your web apps or mobile apps with REST API calls.
