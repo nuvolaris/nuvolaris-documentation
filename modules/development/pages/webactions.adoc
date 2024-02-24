@@ -35,23 +35,28 @@ $ nuv package create demo
 ok: created package demo
 ----
 
-....
+----
 $ nuv action create /guest/demo/hello hello.js --web true
 ok: created action /guest/demo/hello
-....
+----
 
-....
+----
 $ nuv action get /guest/demo/hello --url
 ok: got action hello
 https://${APIHOST}/api/v1/web/guest/demo/hello
-....
+----
 
 Using the `--web` flag with a value of `true` or `yes` allows an action
 to be accessible via REST interface without the need for credentials. To
 configure a web action with credentials refer to
 link:webactions.md#securing-web-actions[Securing web actions]. A web
 action can be invoked using a URL that is structured as follows:
-`https://{APIHOST}/api/v1/web/{QUALIFIED ACTION NAME}.{EXT}`. The fully
+
+----
+https://{APIHOST}/api/v1/web/{QUALIFIED ACTION NAME}.{EXT}`
+----
+
+The fully
 qualified name of an action consists of three parts: the namespace, the
 package name, and the action name.
 
