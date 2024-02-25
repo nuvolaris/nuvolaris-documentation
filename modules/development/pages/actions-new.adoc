@@ -3,9 +3,15 @@
 OpenWhisk and Nuvolaris supports xref:index-runtimes.adoc[several
 languages and runtimes] but there may be other languages or runtimes
 that are important for your organization, and for which you want tighter
-integration with the platform. The platform is extensible and
-you can add new languages or runtimes (with custom packages and
-third-party dependencies) following the guide described here.
+integration with the platform. 
+
+The platform is extensible and you can add new languages or runtimes (with custom packages and
+third-party dependencies) 
+
+[NOTE]
+=====
+This guide describes the contract a runtime must satisfy. However all the Nuvolaris runtimes are implemented the xref:actions-actionlooop.adoc[using the ActionLoop Proxy]. This proxy is implemented in Go, already satifies the semantic of a runtime ands makes very easy to build a new runtime. You just need to provide  "launcher code" in your favorite programming language and a compilation script (generally written in python) for the initialization of an action. You are advised to use it for your own runtimes and use the material of this document as reference for the behaviour of a runtime.
+=====
 
 === Runtime general requirements
 
@@ -31,7 +37,7 @@ functions are shown below.
 === The runtimes manifest
 
 Actions when created specify the desired runtime for the function via a
-property called ``kind''. When using the `nuv` CLI, this is specified as
+property called `kind`. When using the `nuv` CLI, this is specified as
 `--kind <runtime-kind>`. The value is typically a string describing the
 language (e.g., `nodejs`) followed by a colon and the version for the
 runtime as in `nodejs:20` or `php:8.1`.
@@ -81,6 +87,7 @@ function main(args) {
 }
 ----
 
+[#action-interface]
 === Action Interface
 
 An action consists of the user function (and its dependencies) along
@@ -96,7 +103,7 @@ The proxy is a web server with two endpoints.
 The proxy also prepares the execution context, and flushes the logs produced by the function to stdout and
 stderr.
 
-
+[#initialization]
 ==== Initialization
 
 The initialization route is `/init`. It must accept a `POST` request
@@ -166,6 +173,7 @@ in the OpenWhisk and Nuvolaris platform itself. Note that even if the context is
 available during initialization, it must be reset with every new
 activation since the information will change with every execution.
 
+[#activation]
 ==== Activation
 
 The proxy is ready to execute a function once it has successfully
@@ -236,6 +244,7 @@ object, and `action developer error` otherwise.
 Failure to complete activation within the allowed time frame will
 destroy the container.
 
+[#logging]
 ==== Logging
 
 The proxy must flush all the logs produced during initialization and
@@ -245,8 +254,10 @@ an activation. This is done by emitting the token
 as the last log line for the `stdout` _and_ `stderr` streams. Failure to
 emit this marker will cause delayed or truncated activation logs.
 
+[#testing]
 === Testing
 
+[#action-interface-tests]
 ==== Action Interface tests
 
 The xref:#action-interface[Action interface] is enforced via a canonical
@@ -256,7 +267,6 @@ the logs are properly framed. Your runtime should extend this test
 suite, and of course include additional tests as needed.
 
 ==== Runtime proxy tests
-
 
 The tests verify that the proxy can handle the following scenarios: 
 
@@ -283,11 +293,3 @@ platform will perform a generic integration test as part of its basic
 system tests. This integration test will require a
 link:#the-test-action[test function] to be available so that the test
 harness can create, invoke, and delete the action.
-
-=== Supporting Additional Execution Environments
-
-There are now several runtimes that support execution environments in
-addition to OpenWhisk and Nuvolaris. Currently only an interface for single entrypoint
-execution environments has been defined, but more could be defined in
-the future.
-
