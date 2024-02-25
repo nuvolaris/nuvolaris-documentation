@@ -1,9 +1,9 @@
 [#mastrogpt31]
-== What's new in MastroGPT (a.k.a. Nuvolaris 3.1)?
+== What's new in MastroGPT (and Nuvolaris 3.1)?
 
 MastroGPT is a hosted service (also available on preises for enteprise customers) providing a number of extra features built on top of Nuvolaris in order to support easy development of LLM-based AI applications.
 
-It provides
+It provides:
 
 * an administrative interface
 * an integrated GPT apps builder
@@ -12,6 +12,10 @@ It provides
 * a set of starter application 
 * a set of examples and demo
 * access to OpenAI API
+
+There are also tons of improvements in Nuvolaris under the hood to support MastroGPT.
+
+Most of the imporevements are in the development tools, however there are also performance and reliability optimizations, bug fixes and new features to support MastroGPT.
 
 [#nuvolaris3]
 == What's new in Nuvolaris Community 3?
