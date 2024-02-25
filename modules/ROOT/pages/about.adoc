@@ -1,4 +1,11 @@
-= About Nuvolaris Community
+= About MastroGPT 
+
+MastroGPT is a hosted service, built on top of Nuvolaris, designed to fulfill the needs for a development enviroment allowing to build quickly LLM-based application.
+
+It provides a complete environemnt to start with. In addition to all the features of Nuvolaris, it adds in a hosted enviroment:
+
+
+= About Nuvolaris Community 
 
 Nuvolaris Community is an Open Source project, released under the https://github.com/nuvolaris/nuvolaris/blob/main/LICENSE[Apache License 2.0] providing a portable and complete https://martinfowler.com/articles/serverless.html[Serverless] environment, allowing to build quickly and easily cloud-native applications.
 

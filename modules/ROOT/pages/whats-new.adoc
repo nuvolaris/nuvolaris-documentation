@@ -1,10 +1,22 @@
-= What's New 
+== What's new in MastroGPT (a.k.a. Nuvolaris 3.1)?
 
-What's new in Nuvolaris Community 3?
+MastroGPT is a hosted service (also available on preises for enteprise customers) providing a number of extra features built on top of Nuvolaris in order to support easy development of LLM-based AI applications.
 
-We have already implemented a large part of our roadmap, integrating support for many integrated services and running it in many different environments.
+It provides
 
-Nuvolaris itself is based on a rich operator, supporting the deployment of several integrated services:
+* an administrative interface
+* an integrated GPT apps builder
+* incremental deployer
+* an online IDE to build applications 
+* a set of starter application 
+* a set of examples and demo
+* access to OpenAI API
+
+== What's new in Nuvolaris Community 3?
+
+Nuvolaris community is a distribution of Apache Openwhisk providing availability on multiple clouds and a set of integrated services
+
+Nuvolaris itself is based on a rich operator, supporting the deployment of several  services:
 
 * Publishing of static assets
 * https://redis.io[Redis], an in-memory key-value store
