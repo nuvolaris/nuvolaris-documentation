@@ -10,7 +10,7 @@ third-party dependencies)
 
 [NOTE]
 =====
-This guide describes the contract a runtime must satisfy. However all the Nuvolaris runtimes are implemented the xref:actions-actionlooop.adoc[using the ActionLoop Proxy]. This proxy is implemented in Go, already satifies the semantic of a runtime ands makes very easy to build a new runtime. You just need to provide  "launcher code" in your favorite programming language and a compilation script (generally written in python) for the initialization of an action. You are advised to use it for your own runtimes and use the material of this document as reference for the behaviour of a runtime.
+This guide describes the contract a runtime must satisfy. However all the Nuvolaris runtimes are implemented the xref:actions-actionloop.adoc[using the ActionLoop Proxy]. This proxy is implemented in Go, already satifies the semantic of a runtime ands makes very easy to build a new runtime. You just need to provide  "launcher code" in your favorite programming language and a compilation script (generally written in python) for the initialization of an action. You are advised to use it for your own runtimes and use the material of this document as reference for the behaviour of a runtime.
 =====
 
 === Runtime general requirements
@@ -67,6 +67,7 @@ structure defines the Docker image name that is used for actions of this
 kind (e.g., `openwhisk/nodejs10action:latest` for the JSON example
 above).
 
+[#the-test-function]
 === The test action
 
 The standard test action is shown below in JavaScript. It should be
@@ -132,7 +133,7 @@ environment. And contains several properties starting with the `__OW_`
 prefix that are specific to the running action.
 ** `__OW_API_KEY` the API key for the subject invoking the action, this
 key may be a restricted API key. This property is absent unless
-explicitly link:./annotations.md#annotations-for-all-actions[requested].
+explicitly xref:annotations.adoc#annotations-for-all-actions[requested].
 ** `__OW_NAMESPACE` the namespace for the _activation_ (this may not be
 the same as the namespace for the action).
 ** `__OW_ACTION_NAME` the fully qualified name of the running action.

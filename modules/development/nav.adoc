@@ -10,7 +10,7 @@
 ** xref:index-runtimes.adoc[Runtimes]
 *** xref:actions-nodejs.adoc[🚧 Node]
 *** xref:actions-python.adoc[🚧 Python]
-*** xref:actions-golang.adoc[🚧 Go]
+*** xref:actions-go.adoc[🚧 Go]
 *** xref:actions-java.adoc[🚧 Java]
 *** xref:actions-php.adoc[🚧 PHP]
 ** xref:index-references.adoc[References]

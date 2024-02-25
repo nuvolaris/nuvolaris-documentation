@@ -15,6 +15,7 @@ to be contained in a package.
 
 In Nuvolaris a namespace corresponds to an user. You can create users with the xref:cli:admin.adoc[admin subcommand] of the CLI.
 
+[#full-qualified-name]
 ==== Fully qualified names
 
 The fully qualified name of an entity is
