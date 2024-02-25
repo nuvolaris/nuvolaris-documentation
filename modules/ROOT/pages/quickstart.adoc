@@ -1,6 +1,6 @@
 = Quick Start to Self Hosted Nuvolaris
 
-If you are looking for an hosted service check xref:mastrogpt.adoc[MastroGPT].
+If you are looking for an hosted service check xref:mastrogpt:index.adoc[MastroGPT].
 
 If you instead prefer to self host and install Nuvolaris Community go ahead reading this document.
 

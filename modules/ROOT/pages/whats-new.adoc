@@ -1,3 +1,4 @@
+[#mastrogpt31]
 == What's new in MastroGPT (a.k.a. Nuvolaris 3.1)?
 
 MastroGPT is a hosted service (also available on preises for enteprise customers) providing a number of extra features built on top of Nuvolaris in order to support easy development of LLM-based AI applications.
@@ -12,6 +13,7 @@ It provides
 * a set of examples and demo
 * access to OpenAI API
 
+[#nuvolaris3]
 == What's new in Nuvolaris Community 3?
 
 Nuvolaris community is a distribution of Apache Openwhisk providing availability on multiple clouds and a set of integrated services
