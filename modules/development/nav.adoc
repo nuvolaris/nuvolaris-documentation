@@ -15,6 +15,7 @@
 *** xref:actions-php.adoc[🚧 PHP]
 ** xref:index-references.adoc[References]
 *** xref:rest_api.adoc[Rest API]
+*** xref:scheduler.adoc[Scheduler]
 *** xref:cli.adoc[Advanced CLI]
 *** xref:reference.adoc[Naming and Limits]
 *** xref:actions-new.adoc[Runtimes under the hood]
