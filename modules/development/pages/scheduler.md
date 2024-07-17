@@ -10,7 +10,7 @@ Using the `nuv` CLI, you can enable the scheduler with the following command:
 nuv config enable --cron
 
 # if Nuvolaris is not yet deployed
-nuv setup dev cluster
+nuv setup devcluster
 
 # alternatively if Nuvolaris is already deployed
 nuv update apply
